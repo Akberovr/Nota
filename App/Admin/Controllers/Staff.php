@@ -2,14 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: Hp
- * Date: 3/2/2018
- * Time: 2:20 PM
+ * Date: 3/3/2018
+ * Time: 7:08 PM
  */
 
 namespace App\Admin\Controllers;
 use \Core\View;
 
-class City extends \App\Controllers\Authenticated
+class Staff extends \App\Controllers\Authenticated
 {
     /**
      *Show the index page
@@ -19,28 +19,27 @@ class City extends \App\Controllers\Authenticated
 
     public function showAction(){
 
-        View::renderTemplate('Admin',"City/index.html");
+        View::renderTemplate('Admin',"Staff/index.html");
 
     }
 
     /**
-     * Add a new city
+     * Add a new Staff
      * @return void
-    */
+     */
     public function addAction(){
 
-        View::renderTemplate('Admin',"City/index.html");
+        View::renderTemplate('Admin',"Staff/index.html");
 
     }
 
     /**
-     * Edit the city
+     * Edit the Staff
      * @return void
      */
     public function editAction(){
 
-        View::renderTemplate('Admin',"City/index.html");
+        View::renderTemplate('Admin',"Staff/index.html");
 
     }
-
 }

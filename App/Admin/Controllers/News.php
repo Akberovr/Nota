@@ -2,15 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: Hp
- * Date: 3/2/2018
- * Time: 2:20 PM
+ * Date: 3/3/2018
+ * Time: 5:38 PM
  */
 
 namespace App\Admin\Controllers;
 use \Core\View;
 
-class City extends \App\Controllers\Authenticated
+class News extends \App\Controllers\Authenticated
 {
+
     /**
      *Show the index page
      *
@@ -19,28 +20,29 @@ class City extends \App\Controllers\Authenticated
 
     public function showAction(){
 
-        View::renderTemplate('Admin',"City/index.html");
+        View::renderTemplate('Admin',"News/index.html");
 
     }
 
     /**
-     * Add a new city
+     * Add a new News
      * @return void
-    */
+     */
     public function addAction(){
 
-        View::renderTemplate('Admin',"City/index.html");
+        View::renderTemplate('Admin',"News/index.html");
 
     }
 
     /**
-     * Edit the city
+     * Edit the News
      * @return void
      */
     public function editAction(){
 
-        View::renderTemplate('Admin',"City/index.html");
+        View::renderTemplate('Admin',"News/index.html");
 
     }
+
 
 }

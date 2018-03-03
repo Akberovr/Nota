@@ -50,7 +50,7 @@
 	$router->add('signup/activate/{token:[\da-f]+}',['controller'=>'Signup','action'=>'activate']);
 	$router->add("Admin",["namespace"=>'Admin',"controller"=>"home","action"=>"show"]);
 	$router->add('Admin/{controller}/{action}', ['namespace'=>'Admin']);
-	$router->add('Admin/{controller}/{id:\d+}/{action}', ['namespace'=>'Admin']);
+	$router->add('Admin/{controller}/{action}/{id:\d+}', ['namespace'=>'Admin']);
 
 	$url = $_SERVER['QUERY_STRING'];
 

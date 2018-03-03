@@ -23,7 +23,7 @@ class Helper
 
         $urlString = explode("/" , $url);
 
-        if (count($urlString) == 3) {
+        if (count($urlString) == 3 || count($urlString) == 4) {
             return $urlString[2];
         }else{
             $urlString[2] = null;

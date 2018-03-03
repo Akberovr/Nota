@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block subheading %} Staff {% endblock %}
+
+{% block context %}
+
+{% if source == "show" %}
+
+{% include "Staff/show_staff.html" %}
+
+{% elseif source == "add" %}
+
+{% include "Staff/add_staff.html" %}
+
+{% elseif source == "edit" %}
+
+{% include "Staff/edit_staff.html" %}
+
+{% else %}
+
+{% include "Staff/show_news.html" %}
+
+{% endif %}
+
+
+{% endblock %}

@@ -14,6 +14,11 @@
             {% include "City/add_city.html" %}
 
             {% block message %} Add {% endblock %}
+
+        {% elseif source == "edit" %}
+
+             {% include "City/edit_city.html" %}
+
         {% else %}
 
             {% include "City/show_city.html" %}

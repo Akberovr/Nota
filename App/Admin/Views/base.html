@@ -135,7 +135,15 @@
                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="fa fa-group"></i> Staff <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo3" class="collapse">
+                            <li>
+                                <a href="/admin/staff/show">Members</a>
+                            </li>
+                            <li>
+                                <a href="/admin/staff/add">Add Member</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
@@ -145,7 +153,19 @@
                     </li>
 
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> City <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-newspaper-o"></i> News <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="/admin/news/show">View News</a>
+                            </li>
+                            <li>
+                                <a href="/admin/news/add">Add News</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-home"></i> City <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
                                 <a href="/admin/city/show">View City</a>
@@ -155,12 +175,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="active">
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -180,12 +195,7 @@
                     <div class="col-lg-12">
 
                         <h1 class="page-header">
-
-                            {% if source == "show" %}
-                                Welcome
-                            {% else %}
-                                {%block message%}{% endblock %}
-                            {% endif %}
+                                Section
                             <small>{% block subheading %}{% endblock %}</small>
                         </h1>
                         <ol class="breadcrumb">
