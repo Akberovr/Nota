@@ -77,8 +77,13 @@ class View
 
                     $params[$key] = $value;
 
-                    $view = "/App/".$params["folder"]."/Views";
-                    return $view;
+                    if (preg_match('/^admin/i' , $params["folder"])){
+
+                        $view = "/App/".$params["folder"]."/Views";
+                        return $view;
+
+
+                    }
 
                 }
 
