@@ -20,7 +20,7 @@ class Signup extends \Core\Controller
      */
     public function newAction()
     {
-        !\App\Auth::getUser() ? View::renderTemplate('','Signup/new.html') :  $this->redirect("");
+        !\App\Auth::getUser() ? View::renderTemplate('Signup/new.html') :  $this->redirect("");
     }
 
     /**
@@ -40,7 +40,7 @@ class Signup extends \Core\Controller
 
         }else{
 
-            View::renderTemplate('','Signup/new.html', ['user' => $user ]);
+            View::renderTemplate('Signup/new.html', ['user' => $user ]);
 
         }
 
@@ -48,7 +48,7 @@ class Signup extends \Core\Controller
 
     public function successAction()
     {
-        View::renderTemplate('','Signup/success.html');
+        View::renderTemplate('Signup/success.html');
     }
 
     /**
@@ -66,7 +66,7 @@ class Signup extends \Core\Controller
      * @return void
     */
     public function activatedAction(){
-        View::renderTemplate('','Signup/activated.html');
+        View::renderTemplate('Signup/activated.html');
     }
 
 

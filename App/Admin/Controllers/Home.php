@@ -18,7 +18,7 @@ class Home extends  \App\Controllers\Authenticated
      */
     public function showAction(){
 
-        View::renderTemplate('Admin',"Home/index.html");
+        View::renderTemplate("Home/index.html");
 
     }
 

@@ -32,7 +32,7 @@ class Profile extends Authenticated
     */
 
     public function showAction(){
-        View::renderTemplate('','Profile/show.html',["user" => $this->user ]);
+        View::renderTemplate('Profile/show.html',["user" => $this->user ]);
     }
 
     /**
@@ -42,7 +42,7 @@ class Profile extends Authenticated
 
     public function editAction(){
 
-        View::renderTemplate('',"Profile/edit.html",["user" => $this->user]);
+        View::renderTemplate("Profile/edit.html",["user" => $this->user]);
 
     }
 
@@ -61,7 +61,7 @@ class Profile extends Authenticated
 
         }else{
 
-            View::renderTemplate('','profile/edit.html',[
+            View::renderTemplate('profile/edit.html',[
                 "user" => $this->user
             ]);
 

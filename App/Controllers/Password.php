@@ -22,7 +22,7 @@ class Password extends \Core\Controller
 
     public function forgotAction(){
         // Renders password/forgot.html, page of Password Controller
-        View::renderTemplate('','password/forgot.html');
+        View::renderTemplate('password/forgot.html');
     }
 
     /**
@@ -37,7 +37,7 @@ class Password extends \Core\Controller
         // Finds user with inputted email address
           User::sendPasswordReset($userEmail);
         // Render template if user exists with inputted value
-         View::renderTemplate('','Password/reset_requested.html');
+         View::renderTemplate('Password/reset_requested.html');
 
     }
 
@@ -53,7 +53,7 @@ class Password extends \Core\Controller
 
         $user = $this->getUserOrExit($token);
 
-        View::renderTemplate('','Password/reset.html',['token' => $token]);
+        View::renderTemplate('Password/reset.html',['token' => $token]);
 
     }
 
@@ -69,10 +69,10 @@ class Password extends \Core\Controller
 
         if($user->resetPassword($_POST['password'])){
 
-            View::renderTemplate('','Password/reset_success.html');
+            View::renderTemplate('Password/reset_success.html');
 
         }else{
-            View::renderTemplate('','Password/reset.html',[
+            View::renderTemplate('Password/reset.html',[
                 'token' => $token,
                 'user' =>$user
             ]);
@@ -94,7 +94,7 @@ class Password extends \Core\Controller
         if ($user){
             return $user;
         }else{
-            View::renderTemplate('','Password/token_expired.html');
+            View::renderTemplate('Password/token_expired.html');
             exit;
         }
 

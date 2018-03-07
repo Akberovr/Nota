@@ -23,7 +23,7 @@
 //				'age'  => 21
 //			]);
 
-			View::renderTemplate('','Home/index.html');
+			View::renderTemplate('Home/index.html');
 
 		}
 

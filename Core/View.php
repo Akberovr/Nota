@@ -36,20 +36,22 @@ class View
 
     }
 
-    public static function renderTemplate($viewLocation = null,$template, $args = [])
+    public static function renderTemplate($template, $args = [])
     {
-        echo static::getTemplate($viewLocation,$template, $args);
+        echo static::getTemplate($template, $args);
     }
 
 
-    public static function getTemplate($viewLocation = null,$template, $args = [])
+    public static function getTemplate($template, $args = [])
     {
 
         static $twig = null;
 
         if ($twig === null) {
 
-            $loader = new \Twig_Loader_Filesystem(dirname(__DIR__) . '/App/'.$viewLocation.'/Views');
+            $viewAddress = self::getViewAddress();
+
+            $loader = new \Twig_Loader_Filesystem(dirname(__DIR__) . $viewAddress);
             $twig = new \Twig_Environment($loader);
             //$twig->addGlobal('session',$_SESSION);
             // $twig->addGlobal('is_logged_in',\App\Auth::isLoggedIn());
@@ -63,6 +65,30 @@ class View
     }
 
 
+    public static function getViewAddress(){
+
+        if(preg_match("/^(?<folder>[a-z]+\/*)[a-z]*\/*[a-z]*/i" , $_SERVER['QUERY_STRING'] , $output_array)){
+
+            $params = [];
+
+            foreach ($output_array as $key => $value){
+
+                if(is_string($key)){
+
+                    $params[$key] = $value;
+
+                    $view = "/App/".$params["folder"]."/Views";
+                    return $view;
+
+                }
+
+            }
+        }
+
+        $view = "/App/Views";
+        return $view;
+
+    }
 
 
 }

@@ -52,10 +52,10 @@
 	$router->add('Admin/{controller}/{action}', ['namespace'=>'Admin']);
 	$router->add('Admin/{controller}/{action}/{id:\d+}', ['namespace'=>'Admin']);
 
-	$url = $_SERVER['QUERY_STRING'];
+	$url = $_SERVER['QUERY_STRING'] ;
+
 
 	$router->dispatch($url);
-
 
 
 ?>

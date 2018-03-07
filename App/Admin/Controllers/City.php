@@ -19,7 +19,7 @@ class City extends \App\Controllers\Authenticated
 
     public function showAction(){
 
-        View::renderTemplate('Admin',"City/index.html");
+        View::renderTemplate("City/index.html");
 
     }
 
@@ -29,7 +29,7 @@ class City extends \App\Controllers\Authenticated
     */
     public function addAction(){
 
-        View::renderTemplate('Admin',"City/index.html");
+        View::renderTemplate("City/index.html");
 
     }
 
@@ -39,7 +39,7 @@ class City extends \App\Controllers\Authenticated
      */
     public function editAction(){
 
-        View::renderTemplate('Admin',"City/index.html");
+        View::renderTemplate("City/index.html");
 
     }
 

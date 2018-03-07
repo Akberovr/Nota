@@ -19,7 +19,7 @@ class Login extends \Core\Controller{
 
     public function newAction(){
 
-        !\App\Auth::getUser() ? View::renderTemplate('','Login/new.html') :  $this->redirect("");
+        !\App\Auth::getUser() ? View::renderTemplate('Login/new.html') :  $this->redirect("");
 
     }
 
@@ -51,7 +51,7 @@ class Login extends \Core\Controller{
 
              Flash::addMessage("Login unsuccessful, please try again" , Flash::WARNING);
 
-             View::renderTemplate('','Login/new.html',[ 'email'=> $_POST['email'] , 'remember_me' => $remember_me ]);
+             View::renderTemplate('Login/new.html',[ 'email'=> $_POST['email'] , 'remember_me' => $remember_me ]);
          }
 
     }
