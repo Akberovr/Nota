@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Hp
@@ -7,40 +8,53 @@
  */
 
 namespace App\Admin\Controllers;
+
 use \Core\View;
+use App\Admin\Model\CityModel;
 
-class City extends \App\Controllers\Authenticated
-{
+class City extends \App\Controllers\Authenticated {
+
     /**
-     *Show the index page
+     * Show the index page
      *
-     *@return void
+     * @return void
      */
+    public function showAction() {
 
-    public function showAction(){
+        $city = CityModel::getCity();
 
-        View::renderTemplate("City/index.html");
 
+
+        View::renderTemplate("City/index.html", [
+            'city' => $city
+        ]);
     }
 
     /**
      * Add a new city
      * @return void
-    */
-    public function addAction(){
+     */
+    public function addAction() {
 
         View::renderTemplate("City/index.html");
-
     }
 
     /**
      * Edit the city
      * @return void
      */
-    public function editAction(){
+    public function getAction() {
 
-        View::renderTemplate("City/index.html");
 
+        $id = $this->route_params["id"];
+        $city = CityModel::getCityInfo($id);
+        
+        View::renderTemplate("City/edit_city.html", [
+            'city' => $city
+        ]);
+        print_r("<pre>");
+        print_r($city);
+        print_r("</pre>");
     }
 
 }

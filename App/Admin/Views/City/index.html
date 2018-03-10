@@ -8,6 +8,10 @@
         {% if source == "show" %}
 
             {% include "City/show_city.html" %}
+            
+        {% elseif source == "get" %}
+             
+            {% include "City/edit_city.html" %}            
 
         {% elseif source == "add" %}
 
@@ -15,10 +19,7 @@
 
             {% block message %} Add {% endblock %}
 
-        {% elseif source == "edit" %}
-
-             {% include "City/edit_city.html" %}
-
+        
         {% else %}
 
             {% include "City/show_city.html" %}

@@ -18,11 +18,6 @@
 
 		public function indexAction(){
 
-//			Views::render('Home/index.php',[
-//				'name' => 'Elshan',
-//				'age'  => 21
-//			]);
-
 			View::renderTemplate('Home/index.html');
 
 		}
