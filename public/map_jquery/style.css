@@ -1,0 +1,79 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #88a;
+  color: #fff;
+  font-family: Avenir, Calibri, sans-serif;
+}
+
+#canada-map {
+  fill: #174f17;
+}
+
+#canada-map g {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#canada-map g:hover {
+  fill: #2e9e2e;
+  cursor: pointer;
+}
+
+.active,
+.active:hover {
+  fill: #2e2e9e !important;
+}
+
+#provinceInfo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+@media all and (max-width: 800px) {
+  #provinceInfo {
+    width: 40%;
+  }
+}
+@media all and (max-width: 750px) {
+  #provinceInfo {
+    width: 100%;
+    position: static;
+    background: none;
+  }
+
+  #provinceInfo.show p {
+    color: #000 !important;
+    margin-bottom: 2rem;
+  }
+}
+#provinceInfo.show {
+  opacity: 1;
+}
+
+#provinceInfo h1 {
+  background: #2e2e9e;
+  padding: 0.3rem;
+  padding-left: 1rem;
+  margin-top: -0.5rem;
+  font-weight: 400;
+}
+
+#provinceInfo p {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+#provinceInfo img {
+  width: 100%;
+}
