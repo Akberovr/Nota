@@ -1,32 +1,38 @@
+
+<div class="lang-buttons">
+    <form action="#" method="GET">
+        <input type="submit" class="btn btn-primary active" value="en" name="lang">
+        <input type="submit" class="btn btn-primary active" value="az" name="lang">
+    </form>
+</div>
+
 <table class="table table-bordered table-hover">
     <thead>
-    <tr>
-        <th>Id</th>
-        <th>Author</th>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th>Image</th>
-        <th>Tags</th>
-        <th>Comments</th>
-        <th>View</th>
-        <th>Date</th>
-
-    </tr>
+        <tr>
+            <th>Id</th>
+            <th>City name</th>
+            <th>City info</th>
+             <th>Postal Code</th>
+            <th>Fax</th>
+            <th>Email</th>
+            <th>Address</th>
+        </tr>
     </thead>
     <tbody>
-        <tr>
 
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>
-    </tbody>
+        {% for cities in city %}
+         <tr>
+            <td>{{cities.id}}</td>
+            <td><a href="get/{{cities.id}}">{{cities.city_name}}</a></td>
+            <td>{{cities.city_info}}</td>
+            <td>{{cities.postal_code}}</td>
+            <td>{{cities.fax}}</td>
+            <td>{{cities.email}}</td>
+            <td>{{cities.address}}</td>
+             </tr>
+         {% endfor %}
+
+
+
+</tbody>
 </table>
