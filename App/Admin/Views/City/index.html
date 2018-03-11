@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 
 {% block subheading %} City {% endblock %}
+
 {% block context %}
-
-
 
         {% if source == "show" %}
 
@@ -19,13 +18,11 @@
 
             {% block message %} Add {% endblock %}
 
-        
         {% else %}
 
             {% include "City/show_city.html" %}
 
         {% endif %}
-
 
 {% endblock %}
 

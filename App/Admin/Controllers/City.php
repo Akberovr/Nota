@@ -10,7 +10,7 @@
 namespace App\Admin\Controllers;
 
 use \Core\View;
-use App\Admin\Model\CityModel;
+use App\Admin\Models\City as CityModel;
 
 class City extends \App\Controllers\Authenticated {
 
