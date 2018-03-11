@@ -24,7 +24,13 @@ class City extends \App\Controllers\Authenticated {
 
         $city = CityModel::getCity();
 
+<<<<<<< HEAD
         View::renderTemplate("City/index.html", [
+=======
+
+
+        View::renderTemplate("City/photo-gallery.html", [
+>>>>>>> 81798946c2e1aa49130345e18c952bfcbd28c36a
             'city' => $city
         ]);
     }
@@ -45,7 +51,7 @@ class City extends \App\Controllers\Authenticated {
         }
 
 
-        View::renderTemplate("City/index.html");
+        View::renderTemplate("City/photo-gallery.html");
     }
 
     /**

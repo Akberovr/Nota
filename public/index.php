@@ -44,6 +44,10 @@
 	$router->add('login',['controller'=>'Login','action'=>'new']);
 	$router->add('logout',['controller'=>'Login','action'=>'destroy']);
 	$router->add('signup',['controller'=>'Signup','action'=>'new']);
+	$router->add('news',['controller'=>'News','action'=>'index']);
+	$router->add('staff',['controller'=>'Staff','action'=>'index']);
+	$router->add('about',['controller'=>'Home','action'=>'about']);
+	$router->add('gallery/photos',['controller'=>'Gallery','action'=>'photos']);
 	$router->add('{controller}/{action}');
 	$router->add('{controller}/{id:\d+}/{action}');
 	$router->add('password/reset/{token:[\da-f]+}',['controller'=>'Password','action'=>'reset']);

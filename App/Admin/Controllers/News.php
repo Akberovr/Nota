@@ -20,7 +20,7 @@ class News extends \App\Controllers\Authenticated
 
     public function showAction(){
 
-        View::renderTemplate("News/index.html");
+        View::renderTemplate("News/photo-gallery.html");
 
     }
 
@@ -30,7 +30,7 @@ class News extends \App\Controllers\Authenticated
      */
     public function addAction(){
 
-        View::renderTemplate("News/index.html");
+        View::renderTemplate("News/photo-gallery.html");
 
     }
 
@@ -40,7 +40,7 @@ class News extends \App\Controllers\Authenticated
      */
     public function editAction(){
 
-        View::renderTemplate("News/index.html");
+        View::renderTemplate("News/photo-gallery.html");
 
     }
 

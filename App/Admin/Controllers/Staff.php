@@ -19,7 +19,7 @@ class Staff extends \App\Controllers\Authenticated
 
     public function showAction(){
 
-        View::renderTemplate("Staff/index.html");
+        View::renderTemplate("Staff/photo-gallery.html");
 
     }
 
@@ -29,7 +29,7 @@ class Staff extends \App\Controllers\Authenticated
      */
     public function addAction(){
 
-        View::renderTemplate("Staff/index.html");
+        View::renderTemplate("Staff/photo-gallery.html");
 
     }
 
@@ -39,7 +39,7 @@ class Staff extends \App\Controllers\Authenticated
      */
     public function editAction(){
 
-        View::renderTemplate("Staff/index.html");
+        View::renderTemplate("Staff/photo-gallery.html");
 
     }
 }
