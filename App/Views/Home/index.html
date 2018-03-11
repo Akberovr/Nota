@@ -1,17 +1,90 @@
-{% extends "base.html" %}
 
-{% block title %} Sign up {% endblock %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block body %}
+{% include "includes/header.html" %}
 
-<h1>Welcome Home</h1>
+<body>
+<!-- Fixed navbar -->
+{% include "includes/navigation.html"  %}
+<!-- end of navbar -->
 
-    
-   {% if current_user %}
-        Hello <b>{{current_user.name}} </b>
-   {% else %}
-      <p><a href="/Signup">Sign Up</a> or <a href="/Login">Login</a></p>
-   {% endif %}
-   
-   
-{% endblock   %}
+<!-- Head BAR -->
+{% include "includes/jumbotron_logo.html" %}
+<!-- End of Head BAR -->
+
+<!-- Carousel: SLIDER -->
+{% include "includes/carousel_slider.html" %}
+<!-- End of SLIDER -->
+
+<!-- Training COURSES -->
+{% include "includes/training_courses.html" %}
+<!-- End of Training COURCES -->
+
+<!-- JOIN to training courses
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>&nbsp;</h2>
+    <span class="subscription">TƏLİMLƏRƏ QEYDİYYAT</span>
+  </div>
+  </div>
+</div>
+-->
+
+<!-- ABOUT eGOV center -->
+<div class="container-fluid about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12"><!-- about -->
+                <div class="brief">
+                    <h4><i class="fa fa-fw fa-info-circle" aria-hidden="true"></i>MƏRKƏZ HAQQINDA</h4>
+                    <p>Əhalinin, dövlət qulluqçularının və dövlət müəssisələrində çalışan işçilərin informasiya texnologiyalarından istifadə sahəsində hazırlıq səviyyələrinin artırılması və elektron idarəçilik üzrə bacarıqların inkişaf etdirilməsi məqsədi ilə Azərbaycan respublikasının Nazirlər Kabinetinin 17 dekabr 2015-ci il tarixli 389 saylı Qərarı ilə Rabitə və Yüksək Texnologiyalar Nazirliyinin tabeliyində "E-Hökumət Təlim-Tədris Mərkəzi" MMC yaradılmışdır. Mərkəz 15 avqust 2016-cı ildə dövlət qeydiyyatına alınmış... </p>
+                    <a href="#">Davamı...</a><p>&nbsp;</p>
+                    <hr>
+                </div>
+
+                <!-- carousel -->
+                {% include "includes/testimonials.html" %}
+                <!-- end of carousel -->
+
+            </div>
+
+            {% include "includes/regional_map.html "%}
+
+            <!-- closing ABOUT eGOV center -->
+
+            <!-- ANNOUNCE slider owl -->
+            {% include "includes/news_slider.html"%}
+            <!-- end of ANNOUNCE slider -->
+
+            <!-- News/Events Section -->
+            {% include "includes/events.html"%}
+
+            <!-- URL Banners -->
+            {% include "includes/url_banners.html" %}
+
+            <!-- Footer -->
+            {% include "includes/footer.html" %}
+
+            <script>
+                $(document).ready(function() {
+                    $("#news-slider").owlCarousel({
+                        items : 2,
+                        itemsDesktop:[1199,2],
+                        itemsDesktopSmall:[980,2],
+                        itemsMobile : [700,1],
+                        pagination:false,
+                        navigation:true,
+                        navigationText:["",""],
+                        autoPlay:true
+                    });
+                    $("a").tooltip(); // for tooltips
+                    $('#LogoCarousel').carousel({ // for logo carousel
+                        interval: 6000
+                    })
+                });
+            </script>
+
+</body>
+</html>

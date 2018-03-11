@@ -22,6 +22,18 @@
 
 		}
 
+        /**
+         *Show the about page
+         *
+         *@return void
+         */
+
+        public function aboutAction(){
+
+            View::renderTemplate('Home/about.html');
+
+        }
+
 
 	}
 

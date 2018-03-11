@@ -25,7 +25,7 @@ class City extends \App\Controllers\Authenticated {
 
 
 
-        View::renderTemplate("City/index.html", [
+        View::renderTemplate("City/photo-gallery.html", [
             'city' => $city
         ]);
     }
@@ -36,7 +36,7 @@ class City extends \App\Controllers\Authenticated {
      */
     public function addAction() {
 
-        View::renderTemplate("City/index.html");
+        View::renderTemplate("City/photo-gallery.html");
     }
 
     /**
