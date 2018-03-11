@@ -42,7 +42,6 @@ class Config {
      * Show or hide error message on screen
      * @var beeloan
      */
-
     const SHOW_ERRORS = true;
 
     /**
