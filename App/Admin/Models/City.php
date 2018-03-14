@@ -9,13 +9,19 @@
 namespace App\Admin\Models;
 
 use PDO;
+use \Core\View;
+use \App\Flash;
 
 class City extends \Core\Model {
-    
-    
-    
-    
-    
+
+    /**
+     * Class constructor
+     *
+     * @param array $data  Initial property values
+     *
+     * @return void
+     */
+
     public function __construct($data=[])
     {
         foreach ($data as $key => $value) {
@@ -23,7 +29,43 @@ class City extends \Core\Model {
         };
     }
 
-    
+    /**
+     * Save the user model with the current property values
+     *
+     * @return boolean  True if the user was saved, false otherwise
+     */
+
+    public  function save() {
+
+        try {
+            //insert operation
+
+            $sql = "BEGIN;"
+                . "INSERT INTO city (city_name, city_info)"
+                . "VALUES(':name', ':info');"
+                . "SELECT LAST_INSERT_ID() INTO @city_id;"
+                . "INSERT INTO city_contact (city_id, postal_code, fax, email, address)"
+                . "VALUES(@city_id, ':postal_code', ':fax', ':email', ':address');"
+                . "INSERT INTO city_phone_number (city_id, city_phone)"
+                . "VALUES(, ':number');"
+                . "COMMIT;";
+            $db = static::getDB();
+            $stmt = $db->prepare($sql);
+            $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
+            $stmt->bindValue(':info', $this->info,PDO::PARAM_STR);
+            $stmt->bindValue(':postal_code', $this->postal_code , PDO::PARAM_STR);
+            $stmt->bindValue(':fax', $this->fax , PDO::PARAM_STR);
+            $stmt->bindValue(':email', $this->email , PDO::PARAM_STR);
+            $stmt->bindValue(':address', $this->address , PDO::PARAM_STR);
+            $stmt->bindValue(':number', $this->number , PDO::PARAM_STR);
+            return $stmt->execute();
+
+        } catch (Exception $e) {
+            $error = $e->getMessage();
+        }
+
+    }
+
 
     public static function getCity() {
 
@@ -126,36 +168,5 @@ class City extends \Core\Model {
         }
     }
 
-    public  function save() {
-        try {
-            //insert operation
- 
-                $sql = "BEGIN;"
-                        . "INSERT INTO city (city_name, city_info)"
-                        . "VALUES(':name', ':info');"
-                        . "SELECT LAST_INSERT_ID() INTO @city_id;"
-                        . "INSERT INTO city_contact (city_id, postal_code, fax, email, address)"
-                        . "VALUES(@city_id, ':postal_code', ':fax', ':email', ':address');"
-                        . "INSERT INTO city_phone_number (city_id, city_phone)"
-                        . "VALUES(, ':numbers');"
-                    . "COMMIT;";
-
-                $db = static::getDB();
-                $stmt = $db->prepare($sql);
-
-                $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
-                $stmt->bindValue(':info', $this->info,PDO::PARAM_STR);
-                $stmt->bindValue(':postal_code', $this->postal_code , PDO::PARAM_STR);
-                $stmt->bindValue(':fax', $this->fax , PDO::PARAM_STR);
-                $stmt->bindValue(':email', $this->email , PDO::PARAM_STR);
-                $stmt->bindValue(':address', $this->address , PDO::PARAM_STR);
-                $stmt->bindValue(':numbers', $this->numbers , PDO::PARAM_STR);
-
-                return $stmt->execute();
-        
-        } catch (Exception $e) {
-            $error = $e->getMessage();
-        }
-    }
 
 }

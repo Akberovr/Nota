@@ -29,24 +29,38 @@ class City extends \App\Controllers\Authenticated {
         ]);
     }
 
+
     /**
-     * Add a new city
+     * shows add city page
+     *
      * @return void
      */
-    public function addAction() {
+
+    public function addAction(){
+
+        View::renderTemplate("City/index.html");
+
+    }
+
+
+    /**
+     * Create a new city
+     *
+     * @return void
+     */
+    public function createAction()
+    {
         $city = new CityModel($_POST);
 
-        if (isset($_POST)) {
-            if ($city->save()) {
-                print_r("<pre>");
-                print_r($city);
-                print_r("</pre>");
-            }
+        if($city->save()){
+            echo "saved";
+        }else{
+            echo "Problem";
         }
 
 
-        View::renderTemplate("City/photo-gallery.html");
     }
+
 
     /**
      * Edit the city
