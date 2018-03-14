@@ -22,7 +22,7 @@ class Config {
      * @var string
      */
 
-    const DB_NAME = 'egov_Az';
+    const DB_NAME = 'egov_az';
 
     /**
      * Database user

@@ -1,43 +1,44 @@
 
 <h1>Update page</h1>
-<!--<p> <td>{{city.city_name}}</td></p>
-
-<form action="" method="post" enctype="multipart/form-data">
+<form action="/admin/city/update" method="post" enctype="multipart/form-data" >
+ 
     <div class="form-group">
-        <label for="title">Post Title</label>
-        <input value="" type="text" class="form-control" name="post_title">
+        <label for="inputName">City Name</label>
+        <input value="{{city.city_name}}" type="text" class="form-control" name="name" required >
     </div>
 
     <div class="form-group">
-        <label for="title">Post Author</label>
-        <input value="" type="text" class="form-control" name="post_author">
+        <label for="inputInfo">City info </label>
+        <textarea  class="form-control" id="" cols="30" rows="10"  name="info" required>{{city.city_info}}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="intputPostalCode">Postal Code</label>
+        <input value="{{city.postal_code}}" type="text" class="form-control" name="postal_code" required>
     </div>
 
     <div class="form-group">
-        <label for="title">Post Status</label>
-        <input value="" type="text" class="form-control" name="post_status">
-    </div>
-
-    <div class="form-group">
-        <label for="post_image">Post Image</label>
-        <input  type="file"  name="post_image">
-        <img  width="100" src="" alt="" />
+        <label for="inputFax">Fax</label>
+        <input value="{{city.fax}}" type="text" class="form-control" name="fax" required>
     </div>
 
 
     <div class="form-group">
-        <label for="title">Post Tags</label>
-        <input value="" type="text" class="form-control" name="post_tags">
+        <label for="inputEmail">Email</label>
+        <input value="{{city.email}}" type="email" class="form-control" name="email" required>
     </div>
 
     <div class="form-group">
-        <label for="title">Post Content</label>
-        <textarea value="" class="form-control" id="" cols="30" rows="10"  name="post_content"></textarea>
+        <label for="inputAddress">Address</label>
+        <input value="{{city.address}}" type="text" class="form-control" name="address" required>
     </div>
-
 
     <div class="form-group">
-        <input type="submit" class="btn-btn-primary" name="update" value="Submit">
+        <label for="inputNumber">Phone Number</label>
+        <input value="{{city.phone_number}}" type="text" class="form-control" name="number" required>
     </div>
 
-</form>-->
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Update</button>
+    </div>
+
+</form>
