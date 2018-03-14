@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block subheading %} Photos {% endblock %}
+
+{% block context %}
+
+        {% if source == "show" %}
+
+            {% include "Photos/show_photos.html" %}
+
+        {% elseif source == "add" %}
+
+            {% include "Photos/add_photo.html" %}
+
+        {% elseif source == "edit" %}
+
+            {% include "Photos/edit_photo.html" %}
+
+        {% else %}
+
+            {% include "Photos/show_photos.html" %}
+
+        {% endif %}
+
+
+{% endblock %}
