@@ -32,4 +32,19 @@ class Helper
 
     }
 
+    /**
+     * Gets the lang parametrs from @array $_GET
+     * @return String
+     */
+
+    public static function getLang(){
+
+        if (isset($_GET['lang'])){
+
+            return $_GET['lang'];
+
+        }
+
+    }
+
 }
