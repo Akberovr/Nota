@@ -10,6 +10,7 @@
 namespace App\Admin\Controllers;
 
 use \Core\View;
+use App\Flash;
 use App\Admin\Models\City as CityModel;
 
 class City extends \App\Controllers\Authenticated {
@@ -23,8 +24,6 @@ class City extends \App\Controllers\Authenticated {
 
         $city = CityModel::getCity();
 
-
-
         View::renderTemplate("City/index.html", [
             'city' => $city
         ]);
@@ -35,8 +34,18 @@ class City extends \App\Controllers\Authenticated {
      * @return void
      */
     public function addAction() {
+        $city = new CityModel($_POST);
 
-        View::renderTemplate("City/index.html");
+        if (isset($_POST)) {
+            if ($city->save()) {
+                print_r("<pre>");
+                print_r($city);
+                print_r("</pre>");
+            }
+        }
+
+
+        View::renderTemplate("City/photo-gallery.html");
     }
 
     /**
@@ -45,16 +54,28 @@ class City extends \App\Controllers\Authenticated {
      */
     public function getAction() {
 
-
         $id = $this->route_params["id"];
-        $city = CityModel::getCityInfo($id);
-        
+        $city = CityModel::findById($id);
+
         View::renderTemplate("City/edit_city.html", [
             'city' => $city
         ]);
         print_r("<pre>");
         print_r($city);
         print_r("</pre>");
+    }
+
+    public function deleteAction() {
+
+        $id = $this->route_params["id"];
+        $city = CityModel::deleteById($id);
+
+        Flash::addMessage("City deleted", Flash::SUCCESS);
+        $this->redirect('/Admin/City/show');
+
+        if ($_GET) {
+            print_r($id);
+        }
     }
 
 }
