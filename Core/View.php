@@ -58,6 +58,7 @@ class View
             $twig->addGlobal('current_user', \App\Auth::getUser());
             $twig->addGlobal('flash_messages', \App\Flash::getMessage());
             $twig->addGlobal('source' , \App\Helper::getURL());
+            $twig->addGlobal('lang' , \App\Helper::getLang());
 
         }
 
