@@ -1,21 +1,14 @@
 
-<div class="lang-buttons">
-    <form action="#" method="GET">
-        <input type="submit" class="btn btn-primary active" value="en" name="lang">
-        <input type="submit" class="btn btn-primary active" value="az" name="lang">
-    </form>
-</div>
+
 
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Id</th>
             <th>City name</th>
-            <th>City info</th>
-             <th>Postal Code</th>
-            <th>Fax</th>
-            <th>Email</th>
+            <th>City info</th> 
             <th>Address</th>
+             <th colspan="2">Modify</th>
         </tr>
     </thead>
     <tbody>
@@ -24,12 +17,11 @@
          <tr>
             <td>{{cities.id}}</td>
             <td><a href="get/{{cities.id}}">{{cities.city_name}}</a></td>
-            <td>{{cities.city_info}}</td>
-            <td>{{cities.postal_code}}</td>
-            <td>{{cities.fax}}</td>
-            <td>{{cities.email}}</td>
+            <td>{{cities.city_info}}</td>  
             <td>{{cities.address}}</td>
-             </tr>
+            <td ><a href="delete/{{cities.id}}" class="btn btn-danger" value="" >Delete</a> </td>
+             <td> <a href="get/{{cities.id}}" class="btn btn-info" value="" >Update</a> </td >
+          </tr> 
          {% endfor %}
 
 
