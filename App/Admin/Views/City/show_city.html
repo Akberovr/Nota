@@ -16,7 +16,16 @@
         {% for cities in city %}
          <tr>
             <td>{{cities.id}}</td>
-            <td><a href="get/{{cities.id}}">{{cities.city_name}}</a></td>
+
+             {% if lang == 'az' or lang == null %}
+
+                <td><a href="get/{{cities.id}}">{{cities.city_name}}</a></td>
+
+             {% elseif lang == 'en' %}
+
+                 <td><a href="get/{{cities.id}}?lang=en">{{cities.city_name}}</a></td>
+
+             {% endif %}
             <td>{{cities.city_info}}</td>  
             <td>{{cities.address}}</td>
             <td ><a href="delete/{{cities.id}}" class="btn btn-danger" value="" >Delete</a> </td>

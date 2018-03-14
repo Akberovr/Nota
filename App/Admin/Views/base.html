@@ -139,10 +139,21 @@
                         <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="glyphicon glyphicon-film"></i> Gallery <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo4" class="collapse">
+                            <li >
+                                <a href="/admin/photo/show">Show Photos</a>
+                            </li>
+                            <li>
+                                        <a href="/admin/video/show">Show Videos</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="fa fa-group"></i> Staff <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo3"><i class="fa fa-group"></i> Staff <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo3" class="collapse">
                             <li>
                                 <a href="/admin/staff/show">Members</a>
@@ -160,7 +171,7 @@
                     </li>
 
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-newspaper-o"></i> News <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo2"><i class="fa fa-newspaper-o"></i> News <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo2" class="collapse">
                             <li>
                                 <a href="/admin/news/show">View News</a>
@@ -172,7 +183,7 @@
                     </li>
 
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-home"></i> City <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-home"></i> City <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
                                 <a href="/admin/city/show">View City</a>
@@ -213,6 +224,12 @@
                                 <i class="fa fa-file"></i> Blank Page
                             </li>
                         </ol>
+
+                        {% for message in flash_messages %}
+                        <div class="alert alert-{{message.type}}">
+                            {{message.body}}
+                        </div>
+                        {% endfor %}
 
                     </div>
 
