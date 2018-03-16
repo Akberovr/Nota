@@ -1,7 +1,7 @@
 
 <h1>Update page</h1>
-<form action="/admin/city/update" method="post" enctype="multipart/form-data" >
- 
+<form action='/admin/city/update/{{id}}' method="post" enctype="multipart/form-data" >
+
     <div class="form-group">
         <label for="inputName">City Name</label>
         <input value="{{city.city_name}}" type="text" class="form-control" name="name" required >

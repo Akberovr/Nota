@@ -73,7 +73,8 @@ class City extends \App\Controllers\Authenticated {
         $city = CityModel::findById($id);
         
         View::renderTemplate("City/index.html", [
-            'city' => $city
+            'city' => $city,
+            'id' => $this->route_params['id']
         ]);
 //        print_r("<pre>");
 //        print_r($city);
@@ -83,12 +84,14 @@ class City extends \App\Controllers\Authenticated {
     function updateAction() {
 
          $city = new CityModel($_POST);
+
          $id = $this->route_params["id"];
+
          if($city->updateCity($id)){
-             
+
           Flash::addMessage("Changes Saved");
           $this->redirect('/Admin/City/show');
-          
+
         }else{
             echo "Problem";
         }
