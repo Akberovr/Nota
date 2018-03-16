@@ -53,7 +53,7 @@ class City extends \App\Controllers\Authenticated {
         $city = new CityModel($_POST);
 
         if($city->save()){
-            echo "saved";
+            $this->redirect('/Admin/City/show');
         }else{
             echo "Problem";
         }
@@ -69,14 +69,31 @@ class City extends \App\Controllers\Authenticated {
     public function getAction() {
 
         $id = $this->route_params["id"];
+        
         $city = CityModel::findById($id);
-
-        View::renderTemplate("City/edit_city.html", [
+        
+        View::renderTemplate("City/index.html", [
             'city' => $city
         ]);
-        print_r("<pre>");
-        print_r($city);
-        print_r("</pre>");
+//        print_r("<pre>");
+//        print_r($city);
+//        print_r("</pre>");
+    }
+    
+    function updateAction() {
+       
+
+         $city = new CityModel($_POST);
+         $id = $this->route_params["id"];
+         if($city->updateCity($id)){
+             
+          Flash::addMessage("Changes Saved");
+          $this->redirect('/Admin/City/show');
+          
+        }else{
+            echo "Problem";
+        }
+        
     }
 
     public function deleteAction() {
