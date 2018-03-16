@@ -81,7 +81,6 @@ class City extends \App\Controllers\Authenticated {
     }
     
     function updateAction() {
-       
 
          $city = new CityModel($_POST);
          $id = $this->route_params["id"];

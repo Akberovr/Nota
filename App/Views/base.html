@@ -12,20 +12,20 @@
 <body>
     <div class="container">
 
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="/">Home</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    {% if current_user %}
-                    <li><a href="/admin">Admin</a></li>
-                    <li><a href="/profile/show">Profile</a></li>
-                    <li><a href="/logout">Log out</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
+        <!--<nav class="navbar navbar-default">-->
+            <!--<div class="container-fluid">-->
+                <!--<ul class="nav navbar-nav navbar-left">-->
+                    <!--<li><a href="/">Home</a></li>-->
+                <!--</ul>-->
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                    <!--{% if current_user %}-->
+                    <!--<li><a href="/admin">Admin</a></li>-->
+                    <!--<li><a href="/profile/show">Profile</a></li>-->
+                    <!--<li><a href="/logout">Log out</a></li>-->
+                    <!--{% endif %}-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</nav>-->
 
     {% for message in flash_messages %}
         <div class="alert alert-{{message.type}}">
