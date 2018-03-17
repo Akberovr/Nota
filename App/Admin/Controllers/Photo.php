@@ -17,9 +17,10 @@ class Photo extends \App\Controllers\Authenticated
     /**
      *Show the index page
      *
-     *@return void
+     * @return void
      */
-    public function showAction(){
+    public function showAction()
+    {
 
         View::renderTemplate("Photos/index.html");
 
@@ -31,9 +32,10 @@ class Photo extends \App\Controllers\Authenticated
      * @return void
      */
 
-    public function addAction(){
+    public function addAction()
+    {
 
-       View::renderTemplate("Photos/index.html");
+        View::renderTemplate("Photos/index.html");
 
     }
 
@@ -43,26 +45,32 @@ class Photo extends \App\Controllers\Authenticated
      * @return void
      */
 
-    public function createAction(){
+    public function createAction()
+    {
+
 
         $photo = new PhotoModel($_POST);
 
         $photo->setFile($_FILES['file_upload']);
 
-         if($photo->save()){
+           if($photo->save()){
 
-             Flash::addMessage("Success Photo Uploaded" );
+                 Flash::addMessage("Success Photo Uploaded" );
 
-             $this->redirect('/admin/photo/show');
+                 $this->redirect('/admin/photo/show');
 
          }else{
 
-             $this->redirect('/admin/photo/show');
+               $message = join(",", $photo->errors);
 
-             Flash::addMessage("Some problem",Flash::WARNING);
+               Flash::addMessage($message, Flash::WARNING);
 
-         }
+               $this->redirect('/admin/photo/add');
+
+
+          }
+
     }
-
-
 }
+
+
