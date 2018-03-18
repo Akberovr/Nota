@@ -157,14 +157,7 @@ class City extends \Core\Model {
                 }
              }
 
-                 
-                // 
-   
-                // INNER JOIN city_translation  as ct
-                // ON c.id = ct.city_id
-                // INNER JOIN city_contact_translation as cct
-                // ON cc.contact_id = cct.contact_id
-                // WHERE c.id = 6     
+  
 
 
 
