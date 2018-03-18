@@ -51,4 +51,10 @@ class Config {
 
      const SECRET_KEY = 'R5UCU0HU4tb3YRjCRoOQIvXXchp1yXPC';
 
+    /**
+     * Images path
+     * @var string
+     */
+
+    const IMAGES =  "C:\\xampp\\htdocs\\Nota" ."\\". "public" ."\\". "images" ."\\";
 }
