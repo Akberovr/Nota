@@ -12,7 +12,16 @@ namespace Core;
 use PDO;
 use App\Config;
 
-abstract class Model{
+class Model{
+
+
+    /**
+     * Error messages
+     *
+     * @var array
+     */
+
+    public $errors = [];
 
     /**
      * Get the PDO database connection
@@ -35,5 +44,9 @@ abstract class Model{
         }
 
         return $db;
+    }
+
+    public function getErrors(){
+        return $this->errors;
     }
 }

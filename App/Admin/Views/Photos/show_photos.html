@@ -11,21 +11,24 @@
     </tr>
     </thead>
     <tbody>
+
+    {% for photo in photos %}
     <tr>
-        <td>1</td>
-        <td><img class='img-responsive' width='130px'src="../../images/gallery/07.jpg" alt="">
+
+        <td>{{photo.media_id}}</td>
+        <td><img class='img-responsive'  width='130px'src="../../images/gallery/{{photo.media_filename}}" alt="">
             <div class="action_links">
-                <a href="">Delete</a>
+                <a href="/admin/photo/delete/{{photo.media_id}}">Delete</a>
                 <a href="">Edit</a>
                 <a href="/gallery/photos">View</a>
             </div>
         </td>
-        <td>awawdawd</td>
-        <td>wsdawdawd</td>
-        <td>adawdawd</td>
+        <td>{{photo.media_title}}</td>
+        <td>{{photo.media_filename}}</td>
+        <td>{{photo.media_size}}</td>
         <td><a href="">Comments</a></td>
     </tr>
-
+    {% endfor %}
     </tbody>
 
 

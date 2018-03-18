@@ -22,7 +22,12 @@ class Photo extends \App\Controllers\Authenticated
     public function showAction()
     {
 
-        View::renderTemplate("Photos/index.html");
+        $photos = PhotoModel::getPhotos();
+
+        View::renderTemplate("Photos/index.html",[
+            "photos" => PhotoModel::getPhotos(),
+            "round()" => PhotoModel::formatBytes()
+        ]);
 
     }
 
@@ -71,6 +76,26 @@ class Photo extends \App\Controllers\Authenticated
           }
 
     }
+
+
+    public function deleteAction(){
+
+        $id = $this->route_params["id"];
+        $photo = new PhotoModel();
+        if ($photo->deleteById($id)){
+
+            Flash::addMessage("Photo Deleted Succesfully");
+            $this->redirect("/admin/photo/show");
+        }else{
+
+            Flash::addMessage("Problemo",Flash::WARNING);
+            $this->redirect("/admin/photo/show");
+
+        }
+
+    }
+
+
 }
 
 

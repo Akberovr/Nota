@@ -118,7 +118,7 @@ class Photo extends \Core\Model
     }
 
 
-    public function picturePath(){
+    public  function picturePath(){
 
         return $this->upload_directory.'/'.$this->photo_filename;
 
@@ -216,6 +216,81 @@ class Photo extends \Core\Model
 
             return false;
         }
+
+    }
+
+    /**
+     * @return mixed
+     */
+
+    public static function getPhotos(){
+
+        $sql = "SELECT * FROM media";
+
+        $db = static::getDB();
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+
+    /**
+     *  Delete certain Photo from database
+     *  @return void
+     */
+
+    public  function deleteById($id){
+
+        $sql = "DELETE FROM media WHERE media_id = :photo_id ";
+
+        $db = static::getDB();
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindParam(":photo_id",$id,PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        $this->unLink();
+
+    }
+
+
+    /**
+     * @param $size Photo file size
+     * @param int $precision Photo file precision length
+     * @return string
+     */
+    public static function formatBytes($size = null, $precision = 2)
+    {
+        $base = log($size, 1024);
+        $suffixes = array('', 'kB', 'MB', 'GB', 'TB');
+
+        return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
+    }
+
+
+    /**
+     * @return bool
+     */
+
+    private function unLink(){
+
+        $target_path = Config::IMAGES.'gallery'."/".$this->photo_filename;
+
+        if(file_exists($target_path)){
+
+            chmod($target_path,0777);
+            return unlink($target_path) ? true : false;
+
+
+        }
+
 
     }
 
