@@ -30,62 +30,66 @@
             <h3><i class="fa fa-fw fa-dot-circle-o"></i>Foto qalereya</h3>
 
             <!-- image gallery -->
+
             <div class="row gallery">
+                {% for photo in photos %}
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/08.jpg"><img class="group1" src="../images/gallery/08.jpg" title="e-GOV training session" /></a>
+                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/{{photo.media_filename}}"><img class="group1" src="../images/gallery/{{photo.media_filename}}" title="e-GOV training session" /></a>
                 </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/04.jpg"><img class="group1" src="../images/gallery/04.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/01.jpg"><img class="group1" src="../images/gallery/01.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/05.jpg"><img class="group1" src="../images/gallery/05.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/04.jpg"><img class="group1" src="../images/gallery/04.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/01.jpg"><img class="group1" src="../images/gallery/01.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/05.jpg"><img class="group1" src="../images/gallery/05.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                {% endfor %}
             </div>
-            <div class="row gallery">
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/09.jpg"><img class="group1" src="../images/gallery/09.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/12.jpg"><img class="group1" src="../images/gallery/12.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/03.jpg"><img class="group1" src="../images/gallery/03.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/07.jpg"><img class="group1" src="../images/gallery/07.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-            </div>
-            <div class="row gallery">
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/04.jpg"><img class="group1" src="../images/gallery/04.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/08.jpg"><img class="group1" src="../images/gallery/08.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/05.jpg"><img class="group1" src="../images/gallery/05.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/01.jpg"><img class="group1" src="../images/gallery/01.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-            </div>
-            <div class="row gallery">
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/07.jpg"><img class="group1" src="../images/gallery/07.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/03.jpg"><img class="group1" src="../images/gallery/03.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/12.jpg"><img class="group1" src="../images/gallery/12.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <a class="thumbnail" rel="lightbox[group]" href="../images/gallery/09.jpg"><img class="group1" src="../images/gallery/09.jpg" title="e-GOV training session" /></a>
-                </div> <!--end thumb -->
-            </div> <!-- /row -->
+
+            <!--<div class="row gallery">-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/09.jpg"><img class="group1" src="../images/gallery/09.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/12.jpg"><img class="group1" src="../images/gallery/12.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/03.jpg"><img class="group1" src="../images/gallery/03.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/07.jpg"><img class="group1" src="../images/gallery/07.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="row gallery">-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/04.jpg"><img class="group1" src="../images/gallery/04.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/08.jpg"><img class="group1" src="../images/gallery/08.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/05.jpg"><img class="group1" src="../images/gallery/05.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/01.jpg"><img class="group1" src="../images/gallery/01.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="row gallery">-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/07.jpg"><img class="group1" src="../images/gallery/07.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/03.jpg"><img class="group1" src="../images/gallery/03.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/12.jpg"><img class="group1" src="../images/gallery/12.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-6">-->
+                    <!--<a class="thumbnail" rel="lightbox[group]" href="../images/gallery/09.jpg"><img class="group1" src="../images/gallery/09.jpg" title="e-GOV training session" /></a>-->
+                <!--</div> &lt;!&ndash;end thumb &ndash;&gt;-->
+            <!--</div> &lt;!&ndash; /row &ndash;&gt;-->
 
             <nav aria-label="Page navigation"> <!-- pagination -->
                 <ul class="pagination">

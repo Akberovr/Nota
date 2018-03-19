@@ -63,6 +63,10 @@ class City extends \Core\Model {
         }
     }
 
+    /**
+     * @return mixed
+     */
+
     public static function getCity() {
 
         try {

@@ -60,6 +60,7 @@ class View
             $twig->addGlobal('source' , \App\Helper::getURL());
             $twig->addGlobal('lang' , \App\Helper::getLang());
 
+
         }
 
         return $twig->render($template, $args);
