@@ -121,7 +121,7 @@ class Post extends \Core\Model {
 
     public function updatePost($id) {
         try {
-//             $defaultLang = '';
+             $defaultLang = '';
             if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
                 $sql = "UPDATE post SET "
                     . "category_id = :category_id, "
@@ -133,13 +133,15 @@ class Post extends \Core\Model {
                     case $_GET["lang"]:
                         //If the string is en or EN
                         $_SESSION['lang'] = $_GET["lang"];
-                        $sql = "UPDATE post_translation "
-                                . "SET"
-                                . "post_title: post_title, "
-//                                . "category_id = :category_id, "
-                                . "post_body = :post_body "
-                                . "WHERE post_id = :post_id"
-                                . "AND lang_code = '" . $_SESSION["lang"] . "'";
+                        $sql = "UPDATE post_translation , post "
+                                . "SET "
+                                . "post.category_id = :category_id, "
+                                . "post_translation.post_title = :post_title, "
+                                . "post_translation.post_body = :post_body "
+                                . "WHERE post.post_id = :post_id "
+                                . "AND post_translation.lang_code = '". $_SESSION['lang'] ."'";
+                        
+
                     default:
                         //IN ALL OTHER CASES your default langauge code will set
                     
@@ -156,7 +158,7 @@ class Post extends \Core\Model {
             
             $stmt->bindValue(':post_title', $this->post_title, PDO::PARAM_STR);
             $stmt->bindValue(':post_body', $this->post_body, PDO::PARAM_STR); 
-//            $stmt->bindValue(':category_id', $this->category_id, PDO::PARAM_STR);
+            $stmt->bindValue(':category_id', $this->category_id, PDO::PARAM_STR);
             $stmt->bindValue(':post_id',$id, PDO::PARAM_INT);
             
             return $stmt->execute();

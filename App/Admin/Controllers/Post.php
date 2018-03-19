@@ -72,12 +72,15 @@ class Post extends \App\Controllers\Authenticated {
     function updateAction() {
 
          $post = new PostModel($_POST);
-
+         print_r("<pre>");
+          print_r($_POST);
+          print_r("</pre>");
          $id = $this->route_params["id"];
-  
+         
          if($post->updatePost($id)){
           Flash::addMessage("Changes Saved");
-          $this->redirect('/Admin/Post/show');  
+          $this->redirect('/Admin/Post/show'); 
+         
 
         }else{
             echo "Problem";

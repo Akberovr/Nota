@@ -45,7 +45,7 @@ class City extends \Core\Model {
                     . "VALUES(@city_id, :postal_code, :fax, :email, :address);"
                     . "INSERT INTO city_phone_number (city_id, city_phone)"
                     . "VALUES(@city_id, :number);"
-                . "COMMIT;";
+                    . "COMMIT;";
 
 
             $db = static::getDB();
@@ -120,23 +120,23 @@ class City extends \Core\Model {
     public static function findById($id) {
 
         try {
-            
-                 $defaultLang = 'en';
-             if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
-                 
-                   $sql = " SELECT c.id, c.city_name, c.city_info, ct.postal_code, ct.fax, ct.email, ct.address, GROUP_CONCAT(cpn.city_phone SEPARATOR ', ') as phone_number"
-                    . " FROM city `c`"
-                    . " INNER JOIN city_contact `ct` "
-                    . " ON c.id = ct.city_id "
-                    . " INNER JOIN city_phone_number `cpn`"
-                    . " ON c.id = cpn.city_id    "
-                    . " WHERE id = :id ";
-             } else {
-                  switch (strtolower($_GET["lang"])) {
+
+            $defaultLang = 'en';
+            if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
+
+                $sql = " SELECT c.id, c.city_name, c.city_info, ct.postal_code, ct.fax, ct.email, ct.address, GROUP_CONCAT(cpn.city_phone SEPARATOR ', ') as phone_number"
+                        . " FROM city `c`"
+                        . " INNER JOIN city_contact `ct` "
+                        . " ON c.id = ct.city_id "
+                        . " INNER JOIN city_phone_number `cpn`"
+                        . " ON c.id = cpn.city_id    "
+                        . " WHERE id = :id ";
+            } else {
+                switch (strtolower($_GET["lang"])) {
                     case "en":
                         //If the string is en or EN
                         $_SESSION['lang'] = 'en';
-                        
+
                         $sql = "SELECT c.id, ct.city_name, ct.city_info, cc.postal_code, cc.fax, cc.email, cct.address,"
                                 . "GROUP_CONCAT(cpn.city_phone SEPARATOR ', ') as phone_number "
                                 . "FROM city  as c "
@@ -148,16 +148,16 @@ class City extends \Core\Model {
                                 . " ON c.id = cpn.city_id "
                                 . "INNER JOIN city_contact_translation as cct "
                                 . "WHERE cct.lang_code = '" . $_SESSION["lang"] . "' AND ct.lang_code = '" . $_SESSION["lang"] . "' AND c.id = :id ";
-                        
+
                     default:
                         //IN ALL OTHER CASES your default langauge code will set
                         //Invalid languages
                         $_SESSION['lang'] = $defaultLang;
                         break;
                 }
-             }
+            }
 
-  
+
 
 
 
@@ -180,20 +180,41 @@ class City extends \Core\Model {
     }
 
     public function updateCity($id) {
-      
-       
+
+
         try {
-            $sql = "BEGIN;"
-                    . "UPDATE city SET city_name = :name , city_info = :info  WHERE id = :id ;"
-                    . " UPDATE city_contact  SET postal_code = :postal_code  , fax = :fax , email = :email , address = :address WHERE city_id = :id ;"
-                    . " UPDATE city_phone_number  SET city_phone = :number WHERE city_id = :id ;"
-                . " COMMIT;";
-            
+            $defaultLang = '';
+            if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
+                $sql = "BEGIN;"
+                        . "UPDATE city SET city_name = :name , city_info = :info  WHERE id = :id ;"
+                        . " UPDATE city_contact  SET postal_code = :postal_code  , fax = :fax , email = :email , address = :address WHERE city_id = :id ;"
+                        . " UPDATE city_phone_number  SET city_phone = :number WHERE city_id = :id ;"
+                    . " COMMIT;";
+            } else {
+                switch (strtolower($_GET["lang"])) {
+                    case $_GET["lang"]:
+                        //If the string is en or EN
+                        $_SESSION['lang'] = $_GET["lang"];
+                        $sql = "BEGIN;"
+                                . "UPDATE city_translation SET city_name = :name , city_info = :info  WHERE city_translation.city_id = :id AND  city_translation.lang_code = '". $_SESSION['lang'] ."' ;"
+                                . " UPDATE city_contact  SET postal_code = :postal_code  , fax = :fax , email = :email , address = :address WHERE city_id = :id ;"
+                                . " UPDATE city_phone_number  SET city_phone = :number WHERE city_id = :id ;"
+                            . " COMMIT;";
+
+
+                    default:
+                        //IN ALL OTHER CASES your default langauge code will set
+
+                        $_SESSION['lang'] = $defaultLang;
+                        break;
+                }
+            }
+
             $db = static::getDB();
 
             $stmt = $db->prepare($sql);
 
-           
+
             $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
             $stmt->bindValue(':info', $this->info, PDO::PARAM_STR);
             $stmt->bindValue(':postal_code', $this->postal_code, PDO::PARAM_STR);
@@ -201,15 +222,12 @@ class City extends \Core\Model {
             $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
             $stmt->bindValue(':address', $this->address, PDO::PARAM_STR);
             $stmt->bindValue(':number', $this->number, PDO::PARAM_STR);
-            $stmt->bindValue(':id', $id,PDO::PARAM_INT);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
             return $stmt->execute();
-            
-        }catch (Exception $e) {
-            
+        } catch (Exception $e) {
+
             $error = $e->getMessage();
-            
         }
-        
     }
 
     public static function deleteById($id) {
