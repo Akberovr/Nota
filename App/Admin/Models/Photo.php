@@ -9,7 +9,7 @@
 namespace App\Admin\Models;
 
 use PDO;
-use \App\Config;
+use App\Paginate;
 
 class Photo extends \Core\Model
 {
@@ -113,16 +113,8 @@ class Photo extends \Core\Model
 
         }
 
-        return false;
-
     }
 
-
-    public  function picturePath(){
-
-        return $this->upload_directory.'/'.$this->photo_filename;
-
-    }
 
 
     /**
@@ -144,7 +136,9 @@ class Photo extends \Core\Model
 
         }
 
-        $target_path =  Config::IMAGES. "gallery"."/".$this->photo_filename;
+
+        $target_path =  dirname(dirname(dirname(__DIR__)))."\\"."public"."\\"."images"."\\"."gallery"."\\".$this->photo_filename;
+
 
         if (file_exists($target_path)){
 
@@ -168,7 +162,7 @@ class Photo extends \Core\Model
            }
             return false;
        }
-       return false;
+
     }
 
 
@@ -189,10 +183,18 @@ class Photo extends \Core\Model
 
                 $stmt->bindValue(':media_filename', $this->photo_filename, PDO::PARAM_STR);
                 $stmt->bindValue(':media_type', $this->photo_type, PDO::PARAM_STR);
+<<<<<<< HEAD
                 $stmt->bindValue(':media_size', $this->photo_size, PDO::PARAM_INT);
     $stmt->bindValue(':category_id', 1, PDO::PARAM_INT);
 
+=======
+
+                if (empty($this->photo_title)) {
+                    $this->photo_title = "test";
+                }
+>>>>>>> 54fa1a2a112c82dddb6c8d472bfebcfa86ab95f7
                 $stmt->bindValue(':media_title',$this->photo_title,PDO::PARAM_STR);
+                $stmt->bindValue(':media_size', $this->photo_size, PDO::PARAM_INT);
 
                 return $stmt->execute();
             }
@@ -225,7 +227,7 @@ class Photo extends \Core\Model
      * @return mixed
      */
 
-    public static function getPhotos(){
+    public static function findAll(){
 
         $sql = "SELECT * FROM media";
 
@@ -240,13 +242,47 @@ class Photo extends \Core\Model
         return $stmt->fetchAll();
     }
 
+    public static function getPhotos($page,$data_per_page,$class){
+
+        $paginate = new Paginate($page,$data_per_page,$class);
+
+        $sql = "SELECT * FROM media LIMIT {$data_per_page} OFFSET {$paginate->offset()}";
+
+        $db = static::getDB();
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    public function photoById($id){
+
+        $sql = "SELECT * FROM media WHERE media_id = :id";
+
+        $db = static::getDB();
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindParam(":id",$id,PDO::PARAM_INT);
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
 
     /**
      *  Delete certain Photo from database
-     *  @return void
+     *  @return true or false
      */
 
-    public  function deleteById($id){
+    public function deleteById($id ){
+
+        $this->deletePhoto($id);
 
         $sql = "DELETE FROM media WHERE media_id = :photo_id ";
 
@@ -256,9 +292,11 @@ class Photo extends \Core\Model
 
         $stmt->bindParam(":photo_id",$id,PDO::PARAM_INT);
 
+        $stmt->setFetchMode();
+
         $stmt->execute();
 
-        $this->unLink();
+
 
     }
 
@@ -276,24 +314,63 @@ class Photo extends \Core\Model
         return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
     }
 
+    /**
+     * @param int $id
+     * @return bool|string
+     */
+
+    public function picturePath(int $id){
+
+        if(isset($id)){
+
+            $photo = $this->photoById($id);
+
+            return $this->upload_directory.'/'.$photo->media_filename;
+
+        }
+
+    }
 
     /**
      * @return bool
      */
 
-    private function unLink(){
+    private function deletePhoto($id = null){
 
-        $target_path = Config::IMAGES.'gallery'."/".$this->photo_filename;
+        if (isset($id)){
 
+<<<<<<< HEAD
         if(file_exists($target_path)){
             print_r($target_path);
             chmod($target_path,0777);
             return unlink($target_path) ? true : false;
 
+=======
+             $target_path = dirname(dirname(dirname(__DIR__)))."\\"."public"."\\".$this->picturePath($id);
+
+            if(file_exists($target_path)){
+
+                return unlink($target_path) ? true : false;
+
+            }
+
+>>>>>>> 54fa1a2a112c82dddb6c8d472bfebcfa86ab95f7
         }
 
+    }
+
+
+    public static function getPages($page,$data_per_page,$class)
+    {
+
+        $paginate = new Paginate($page,$data_per_page,$class);
+
+        $pages = $paginate->totalPage(Photo::class);
+
+        return $pages;
 
     }
+
 
 
 }

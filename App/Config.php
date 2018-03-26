@@ -56,5 +56,5 @@ class Config {
      * @var string
      */
 
-    const IMAGES =  "/Applications/XAMPP/xamppfiles/htdocs/Nota" ."/". "public" ."/". "images" ."/";
+    const IMAGES =  __DIR__."\\". "public" ."\\". "images" ."\\";
 }

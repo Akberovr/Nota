@@ -8,8 +8,9 @@
 
 namespace App\Admin\Controllers;
 
-use \Core\View;
-use \App\Flash;
+use App\Paginate;
+use Core\View;
+use App\Flash;
 use App\Admin\Models\Photo as PhotoModel;
 
 class Photo extends \App\Controllers\Authenticated
@@ -21,12 +22,12 @@ class Photo extends \App\Controllers\Authenticated
      */
     public function showAction()
     {
-
-        $photos = PhotoModel::getPhotos();
+        $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
         View::renderTemplate("Photos/index.html",[
-            "photos" => PhotoModel::getPhotos(),
-            "round()" => PhotoModel::formatBytes()
+            "photos" => PhotoModel::getPhotos($page,4,PhotoModel::class),
+            "pages"   => PhotoModel::getPages($page,4,PhotoModel::class),
+            "current_page" => $page,
         ]);
 
     }
@@ -56,7 +57,7 @@ class Photo extends \App\Controllers\Authenticated
 
         $photo = new PhotoModel($_POST);
 
-        $photo->setFile($_FILES['file_upload']);
+        $photo->setFile($_FILES['file']);
 
            if($photo->save()){
 
@@ -78,24 +79,30 @@ class Photo extends \App\Controllers\Authenticated
     }
 
 
+    /**
+     * Delete photo from folder and DB
+     *
+     * @return void
+     */
+
     public function deleteAction(){
 
         $id = $this->route_params["id"];
         $photo = new PhotoModel();
-        if ($photo->deleteById($id)){
 
-            Flash::addMessage("Photo Deleted Succesfully");
-            $this->redirect("/admin/photo/show");
-        }else{
+        $photo->deleteById($id);
 
-            Flash::addMessage("Problemo",Flash::WARNING);
+            Flash::addMessage("Photo deleted succesfully");
             $this->redirect("/admin/photo/show");
 
-        }
 
     }
 
 
+
+
+
 }
+
 
 

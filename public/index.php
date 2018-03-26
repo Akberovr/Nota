@@ -44,7 +44,7 @@
 	$router->add('login',['controller'=>'Login','action'=>'new']);
 	$router->add('logout',['controller'=>'Login','action'=>'destroy']);
 	$router->add('signup',['controller'=>'Signup','action'=>'new']);
-	$router->add('news',['controller'=>'News','action'=>'index']);
+	$router->add('post',['controller'=>'Post','action'=>'index']);
 	$router->add('staff',['controller'=>'Staff','action'=>'index']);
 	$router->add('about',['controller'=>'Home','action'=>'about']);
         $router->add('question',['controller'=>'Question','action'=>'index']);
