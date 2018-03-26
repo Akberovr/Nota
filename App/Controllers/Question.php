@@ -9,13 +9,20 @@
 
 namespace App\Controllers;
 use \Core\View;
+use App\Models\Question as QuestionModel;
 
 
 class Question  extends \Core\Controller
 {
     
+    
+     
+    
     public function indexAction() {
-        View::renderTemplate('Question/index.html');
+        $question = QuestionModel::submitQuestion();
+        View::renderTemplate('Question/index.html',$question);
+        
+            
     }
     
     
