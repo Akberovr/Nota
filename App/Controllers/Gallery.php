@@ -20,7 +20,7 @@ class Gallery extends \Core\Controller
 
     public function photosAction(){
 
-        View::renderTemplate('Gallery/photo-gallery.html',["photos" => Photo::getPhotos()]);
+        View::renderTemplate('Gallery/photo-gallery.html',["photos" => Photo::findAll()]);
 
     }
 

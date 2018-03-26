@@ -1,7 +1,14 @@
 
 <h1>Update page</h1>
-<form action='/admin/city/update/{{id}}' method="post" enctype="multipart/form-data" >
-
+ {% if lang == 'az' or lang == null %}
+ 
+    <form action='/admin/city/update/{{id}}' method="post" enctype="multipart/form-data" >
+  
+    {% elseif lang == 'en' %}
+    
+    <form action='/admin/city/update/{{id}}?lang=en' method="post" enctype="multipart/form-data" >
+        
+     {% endif %}
     <div class="form-group">
         <label for="inputName">City Name</label>
         <input value="{{city.city_name}}" type="text" class="form-control" name="name" required >

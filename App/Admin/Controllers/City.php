@@ -106,9 +106,6 @@ class City extends \App\Controllers\Authenticated {
         Flash::addMessage("City deleted", Flash::SUCCESS);
         $this->redirect('/Admin/City/show');
 
-        if ($_GET) {
-            print_r($id);
-        }
     }
 
 }

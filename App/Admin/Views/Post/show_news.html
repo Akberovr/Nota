@@ -1,0 +1,52 @@
+
+
+
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Category</th>
+            <th>Title</th>       
+            <th>Body</th>
+            <th>Date</th>       
+            <th>Image</th>
+ 
+            <th colspan="2"> Modify</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+       
+            {% for posts in post %}
+            <tr>
+            <td>{{posts.post_id}}</td>
+            
+
+            <td>{{posts.category_name}}</td>
+            <td>{{posts.post_title}}</td>
+            <td>{{posts.post_body}}</td>
+            <td>{{posts.date}}</td>
+            <td>{{posts.image}}</td>
+             {% if lang == 'az' or lang == null %}
+
+                <td><a href="get/{{posts.post_id}}" class="btn btn-info" value="" >Update</a> </td >
+ 
+             {% elseif lang == 'en' %}
+
+                 <td><a href="get/{{posts.post_id}}?lang=en" class="btn btn-info" value="" >Update</a> </td >
+
+             {% endif %}
+            <td ><a href="delete/{{posts.post_id}}" class="btn btn-danger" value="" >Delete</a> </td>
+<!--            <td> <a href="get/{{posts.post_id}}" class="btn btn-info" value="" >Update</a> </td >-->
+            
+            </tr>
+            {% endfor %}
+            
+
+
+
+    </tbody>
+</table>
