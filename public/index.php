@@ -47,6 +47,9 @@
 	$router->add('post',['controller'=>'Post','action'=>'index']);
 	$router->add('staff',['controller'=>'Staff','action'=>'index']);
 	$router->add('about',['controller'=>'Home','action'=>'about']);
+        $router->add('question',['controller'=>'Question','action'=>'index']);
+        $router->add('register',['controller'=>'Register','action'=>'index']);
+        $router->add('resource',['controller'=>'Resource','action'=>'index']);
 	$router->add('gallery/photos',['controller'=>'Gallery','action'=>'photos']);
 	$router->add('{controller}/{action}');
 	$router->add('{controller}/{id:\d+}/{action}');
