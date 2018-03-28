@@ -136,7 +136,9 @@ class Photo extends \Core\Model
 
         }
 
+
         $target_path =  dirname(dirname(dirname(__DIR__)))."\\"."public"."\\"."images"."\\"."gallery"."\\".$this->photo_filename;
+
 
         if (file_exists($target_path)){
 
@@ -174,17 +176,23 @@ class Photo extends \Core\Model
 
             if (empty($this->errors)){
 
-                $sql = "INSERT INTO media (media_filename, media_type, media_size,media_title) VALUES (:media_filename, :media_type, :media_size,:media_title)";
+                $sql = "INSERT INTO media (media_filename,category_id,media_type, media_size,media_title) VALUES (:media_filename, :category_id,:media_type, :media_size,:media_title)";
 
                 $db = static::getDB();
                 $stmt = $db->prepare($sql);
 
                 $stmt->bindValue(':media_filename', $this->photo_filename, PDO::PARAM_STR);
                 $stmt->bindValue(':media_type', $this->photo_type, PDO::PARAM_STR);
+<<<<<<< HEAD
+                $stmt->bindValue(':media_size', $this->photo_size, PDO::PARAM_INT);
+    $stmt->bindValue(':category_id', 1, PDO::PARAM_INT);
+
+=======
 
                 if (empty($this->photo_title)) {
                     $this->photo_title = "test";
                 }
+>>>>>>> 54fa1a2a112c82dddb6c8d472bfebcfa86ab95f7
                 $stmt->bindValue(':media_title',$this->photo_title,PDO::PARAM_STR);
                 $stmt->bindValue(':media_size', $this->photo_size, PDO::PARAM_INT);
 
@@ -331,6 +339,13 @@ class Photo extends \Core\Model
 
         if (isset($id)){
 
+<<<<<<< HEAD
+        if(file_exists($target_path)){
+            print_r($target_path);
+            chmod($target_path,0777);
+            return unlink($target_path) ? true : false;
+
+=======
              $target_path = dirname(dirname(dirname(__DIR__)))."\\"."public"."\\".$this->picturePath($id);
 
             if(file_exists($target_path)){
@@ -339,6 +354,7 @@ class Photo extends \Core\Model
 
             }
 
+>>>>>>> 54fa1a2a112c82dddb6c8d472bfebcfa86ab95f7
         }
 
     }
