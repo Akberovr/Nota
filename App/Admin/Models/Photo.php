@@ -183,16 +183,15 @@ class Photo extends \Core\Model
 
                 $stmt->bindValue(':media_filename', $this->photo_filename, PDO::PARAM_STR);
                 $stmt->bindValue(':media_type', $this->photo_type, PDO::PARAM_STR);
-<<<<<<< HEAD
-                $stmt->bindValue(':media_size', $this->photo_size, PDO::PARAM_INT);
-    $stmt->bindValue(':category_id', 1, PDO::PARAM_INT);
 
-=======
+                $stmt->bindValue(':media_size', $this->photo_size, PDO::PARAM_INT);
+                $stmt->bindValue(':category_id', 1, PDO::PARAM_INT);
+
 
                 if (empty($this->photo_title)) {
                     $this->photo_title = "test";
                 }
->>>>>>> 54fa1a2a112c82dddb6c8d472bfebcfa86ab95f7
+
                 $stmt->bindValue(':media_title',$this->photo_title,PDO::PARAM_STR);
                 $stmt->bindValue(':media_size', $this->photo_size, PDO::PARAM_INT);
 
@@ -280,13 +279,14 @@ class Photo extends \Core\Model
      *  @return true or false
      */
 
-    public function deleteById($id ){
+    public function deleteById($id){
 
         $this->deletePhoto($id);
 
         $sql = "DELETE FROM media WHERE media_id = :photo_id ";
 
         $db = static::getDB();
+
 
         $stmt = $db->prepare($sql);
 
@@ -328,7 +328,7 @@ class Photo extends \Core\Model
             return $this->upload_directory.'/'.$photo->media_filename;
 
         }
-
+       return false;
     }
 
     /**
@@ -339,13 +339,6 @@ class Photo extends \Core\Model
 
         if (isset($id)){
 
-<<<<<<< HEAD
-        if(file_exists($target_path)){
-            print_r($target_path);
-            chmod($target_path,0777);
-            return unlink($target_path) ? true : false;
-
-=======
              $target_path = dirname(dirname(dirname(__DIR__)))."\\"."public"."\\".$this->picturePath($id);
 
             if(file_exists($target_path)){
@@ -354,11 +347,18 @@ class Photo extends \Core\Model
 
             }
 
->>>>>>> 54fa1a2a112c82dddb6c8d472bfebcfa86ab95f7
-        }
 
+        }
+        return false;
     }
 
+
+    /**
+     * @param $page number of pages
+     * @param $data_per_page
+     * @param $class Class that need to be paginated
+     * @return float
+     */
 
     public static function getPages($page,$data_per_page,$class)
     {

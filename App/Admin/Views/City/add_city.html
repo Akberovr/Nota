@@ -6,7 +6,10 @@
 
     <div class="form-group">
         <label for="inputInfo">City info </label>
-        <textarea value="" class="form-control" id="" cols="30" rows="10"  name="info" required></textarea>
+        <textarea name="info"></textarea>
+        <script>
+            CKEDITOR.replace( 'info' );
+        </script>
     </div>
     <div class="form-group">
         <label for="intputPostalCode">Postal Code</label>

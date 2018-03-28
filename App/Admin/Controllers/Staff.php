@@ -7,7 +7,13 @@
  */
 
 namespace App\Admin\Controllers;
+
+use App\Flash;
 use \Core\View;
+use App\Paginate;
+use App\Admin\Models\Photo;
+use App\Admin\Models\Staff as ModelStaff;
+
 
 class Staff extends \App\Controllers\Authenticated
 {
@@ -19,7 +25,7 @@ class Staff extends \App\Controllers\Authenticated
 
     public function showAction(){
 
-        View::renderTemplate("Staff/photo-gallery.html");
+        View::renderTemplate("Staff/index.html");
 
     }
 
@@ -29,7 +35,7 @@ class Staff extends \App\Controllers\Authenticated
      */
     public function addAction(){
 
-        View::renderTemplate("Staff/photo-gallery.html");
+        View::renderTemplate("Staff/index.html");
 
     }
 
@@ -39,7 +45,27 @@ class Staff extends \App\Controllers\Authenticated
      */
     public function editAction(){
 
-        View::renderTemplate("Staff/photo-gallery.html");
+        View::renderTemplate("Staff/index.html");
+
+    }
+
+    /**
+     * Create a new staff member
+     *
+     * @return void
+     */
+    public function createAction(){
+
+        if (ModelStaff::save()){
+
+            Flash::addMessage("Success");
+            $this->redirect("/admin/staff/add");
+
+        }else{
+
+            Flash::addMessage("Something went wrong brother/sister",Flash::WARNING);
+            $this->redirect("/admin/staff/add");
+        }
 
     }
 }
