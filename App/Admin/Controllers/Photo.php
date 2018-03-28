@@ -8,7 +8,6 @@
 
 namespace App\Admin\Controllers;
 
-use App\Paginate;
 use Core\View;
 use App\Flash;
 use App\Admin\Models\Photo as PhotoModel;

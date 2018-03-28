@@ -272,13 +272,14 @@ class Photo extends \Core\Model
      *  @return true or false
      */
 
-    public function deleteById($id ){
+    public function deleteById($id){
 
         $this->deletePhoto($id);
 
         $sql = "DELETE FROM media WHERE media_id = :photo_id ";
 
         $db = static::getDB();
+
 
         $stmt = $db->prepare($sql);
 
@@ -343,6 +344,13 @@ class Photo extends \Core\Model
 
     }
 
+
+    /**
+     * @param $page number of pages
+     * @param $data_per_page
+     * @param $class Class that need to be paginated
+     * @return float
+     */
 
     public static function getPages($page,$data_per_page,$class)
     {
