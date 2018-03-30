@@ -85,9 +85,17 @@
                             <li>
                                 <a href="/admin/post/category">Add Category</a>
                             </li>
+                            
+                            {% if lang is defined %}
+                            
                             <li>
-                                <a href="/admin/post/show">View Post</a>
+                                
+                                <a href="/admin/post/show?lang=lang">View Post</a>
                             </li>
+                            {% else %}
+                                <a href="/admin/post/show">View Post</a>
+                            {% endif %}
+
                             <li>
                                 <a href="/admin/post/add">Add Post</a>
                             </li>
