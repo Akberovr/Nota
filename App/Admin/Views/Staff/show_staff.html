@@ -1,3 +1,7 @@
+{% for error in errors %}
+{{error}}
+{% endfor %}
+
 <table class="table table-bordered table-hover">
     <thead>
     <tr>
@@ -6,19 +10,33 @@
         <th>Position</th>
         <th>Image</th>
         <th>E-mail</th>
-
-
     </tr>
     </thead>
+
     <tbody>
-    <tr>
+        {% for member in staff %}
 
-        <td>1</td>
-        <td><a href="">Elshan Akbarov</a></td>
-        <td>CEO & Founder</td>
-        <td style=" width:130px "><img class='img-responsive'  width='130px'src="../../images/gallery/04.jpg" alt="">
-        <td>elshanakbarov@gmail.com</td>
+            <tr>
+                <td> {{ member.id }} </td>
+                <td>
+                    <a href="/staff/{{member.id}}">
+                        {{member.name}} {{member.surname}}
+                    </a>
+                </td>
 
-    </tr>
+                <td> {{ member.position_category_id }} </td>
+
+                <td style="width: 80px">
+                    <img class="img-responsive img-thumbnail" height="60px!important" width='75px'src="../../images/staff/{{member.photo}}" alt="">
+                </td>
+
+                <td style="width: 150px"> {{ member.email }} </td>
+
+                <td><a href="/admin/staff/edit/{{member.id}}">Edit</a></td>
+                <td><a href="/admin/staff/delete/{{member.id}}">Delete</a></td>
+            </tr>
+
+        {% endfor %}
     </tbody>
+
 </table>

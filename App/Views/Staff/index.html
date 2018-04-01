@@ -29,66 +29,25 @@
         <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
             <h3><i class="fa fa-fw fa-dot-circle-o"></i>Komandamız</h3>
 
+            {% for member in members %}
+
             <div class="col-md-6">
+                <a href="/staff/{{member.id}}">
                 <div class="card">
-                    <img src="images/staff/staff_0.jpg" alt="Card image cap">
+                    <img src="images/staff/{{member.photo}}" alt="Card image cap">
                     <div>
-                        <h4 class="highlighted">RAUF CABBAROV</h4>
-                        <p class="highlighted">icraçı direktor</p>
-                        <p>rauf[at]e-training.az</p>
+                        <h4 class="highlighted">{{member.name}} {{member.surname}}</h4>
+                        <p class="highlighted">{{member.position_category_id}}</p>
+                        <p>{{member.email}}</p>
                     </div>
                 </div>
+                </a>
+
             </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="images/staff/staff_3.jpg" alt="Card image cap">
-                    <div>
-                        <h4 class="highlighted">GÜNAY MƏMMƏDOVA</h4>
-                        <p class="highlighted">koordinator</p>
-                        <p>gunay[at]e-training.az</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="images/staff/staff_4.jpg" alt="Card image cap">
-                    <div>
-                        <h4 class="highlighted">ZAKİR İBRAHİMOV</h4>
-                        <p class="highlighted">koordinator</p>
-                        <p>zakir[at]e-training.az</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="images/staff/staff_1.jpg" alt="Card image cap">
-                    <div>
-                        <h4 class="highlighted">AYAZ KƏRİMOV</h4>
-                        <p class="highlighted">dizayner</p>
-                        <p>ayaz[at]e-training.az</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="images/staff/staff_2.jpg" alt="Card image cap">
-                    <div>
-                        <h4 class="highlighted">AYDAN HACILI</h4>
-                        <p class="highlighted">maliyyəçi</p>
-                        <p>aydan[at]e-training.az</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="images/staff/staff_5.jpg" alt="Card image cap">
-                    <div>
-                        <h4 class="highlighted">RƏŞAD MƏMMƏDOV</h4>
-                        <p class="highlighted">İT menecer</p>
-                        <p>rashad[at]e-training.az</p>
-                    </div>
-                </div>
-            </div>
+
+            {% endfor %}
+
+
 
         </div> <!-- end of section -->
 
