@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "includes/header.html" %}
+
+<body>
+<!-- Fixed navbar -->
+{% include "includes/navigation.html" %}
+<!-- end of navbar -->
+
+<!-- Head BAR -->
+{% include "includes/jumbotron_logo.html" %}
+<!-- End of Head BAR -->
+
+<div class="container-fluid nav-path">
+    <div class="container">
+        <div class="col-sm-12 col-xs-12"><!-- content section -->
+            <ol class="breadcrumb">
+                <li><a href="#">Ana Səhifə</a></li>
+                <li><a href="#">Mərkəz</a></li>
+                <li class="active">Komandamız</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT: About -->
+<div class="container">
+    <div class="row content">
+        <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
+            <h3><i class="fa fa-fw fa-dot-circle-o"></i>Komandamız</h3>
+            <img class="staff-image" src="../images/staff/{{member.photo}}" alt="">
+            <h4 class="highlighted"><b>{{member.name}} {{member.surname}}</b></h4>
+
+            {% if member.position_category_id == 1 %}
+            <p class="highlighted">Müəllim</p>
+            {% elseif member.position_category_id == 2 %}
+            <p class="highlighted">İcraçı Direktor</p>
+            {% elseif member.position_category_id == 3 %}
+            <p class="highlighted">Koordinator</p>
+            {% elseif member.position_category_id == 4 %}
+            <p class="highlighted">Dizayner</p>
+            {% elseif member.position_category_id == 5 %}
+            <p class="highlighted">Maliyyəçi</p>
+            {% elseif member.position_category_id == 6 %}
+            <p class="highlighted">İT Menecer</p>
+            {% endif %}
+
+            <p><i class="fa fa-fw fa-envelope"></i> {{member.email}}/ <a  target="_blank" href="{{member.facebook}}"><i class="fa fa-fw fa-facebook"></i></a> <a  target="_blank" href="{{member.linked_in}}"><i class="fa fa-fw fa-linkedin"></i></a></p>
+            <hr>
+            <p>{{member.about}}</p>
+
+        </div> <!-- end of section -->
+        {% include "includes/sidebar_center.html" %}
+
+    </div>
+</div>
+<!-- closing CONTENT -->
+
+<!-- Footer -->
+{% include "includes/footer.html" %}
+<script>
+    $(document).ready(function() {
+        $("#news-slider").owlCarousel({
+            items : 2,
+            itemsDesktop:[1199,2],
+            itemsDesktopSmall:[980,2],
+            itemsMobile : [700,1],
+            pagination:false,
+            navigation:true,
+            navigationText:["",""],
+            autoPlay:true
+        });
+        $("a").tooltip(); // for tooltips
+
+        // Colorbox Call
+        $(document).ready(function(){
+            $("[rel^='lightbox']").prettyPhoto();
+        });
+
+    });
+</script>
+</body>
+</html>

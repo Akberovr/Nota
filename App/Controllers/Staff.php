@@ -7,7 +7,10 @@
  */
 
 namespace App\Controllers;
+
 use \Core\View;
+use App\Admin\Models\Staff as ModelStaff;
+
 
 class Staff extends \Core\Controller
 {
@@ -20,8 +23,16 @@ class Staff extends \Core\Controller
 
     public function indexAction(){
 
-        View::renderTemplate('Staff/index.html');
+        View::renderTemplate('Staff/index.html',[
+            "members" => ModelStaff::findAll()
+        ]);
 
+    }
+
+    public function showAction(){
+        View::renderTemplate('Staff/about_staff.html',[
+            "member" => ModelStaff::findById($this->route_params["id"])
+        ]);
     }
 
 }

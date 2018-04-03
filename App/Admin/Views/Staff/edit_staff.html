@@ -1,39 +1,59 @@
-<form action="" method="post" enctype="multipart/form-data">
+<form action="/admin/staff/update/{{member.id}}" method="post" enctype="multipart/form-data">
     <div class="form-group">
-        <label for="title">Post Title</label>
-        <input value="" type="text" class="form-control" name="post_title">
+        <label for="title">Name</label>
+        <input value="{{member.name}}" type="text" class="form-control" name="name" >
     </div>
 
     <div class="form-group">
-        <label for="title">Post Author</label>
-        <input value="" type="text" class="form-control" name="post_author">
-    </div>
-
-    <div class="form-group">
-        <label for="title">Post Status</label>
-        <input value="" type="text" class="form-control" name="post_status">
-    </div>
-
-    <div class="form-group">
-        <label for="post_image">Post Image</label>
-        <input  type="file"  name="post_image">
-        <img  width="100" src="" alt="" />
+        <label for="title">Surname</label>
+        <input value="{{member.surname}}" type="text" class="form-control" name="surname" >
     </div>
 
 
+
     <div class="form-group">
-        <label for="title">Post Tags</label>
-        <input value="" type="text" class="form-control" name="post_tags">
+        <label for="">Position</label> <br>
+        <select class="selectpicker" name="position_category_id" required >
+
+            <option value="" required></option>
+
+            {% for category in categories %}
+
+            <option value="{{category.category_id}}">{{category.category_name}}</option>
+
+            {% endfor %}
+
+        </select>
+    </div>
+    <div class="form-group ">
+        <label for="post_image">Image</label >
+        <input  type="file"  name="photo" required> <br>
+        <img  class="img-responsive img-thumbnail" width="100" src="../../../images/staff/{{member.photo}}" alt="" />
+    </div>
+    <div class="form-group ">
+        <label for="title">Email</label>
+        <input  value="{{member.email}}" type="text" class="form-control" name="email" >
+    </div>
+    <div class="form-group">
+        <label for="title">Facebook (Optional)</label>
+        <input  value="{{member.facebook}}" type="text" class="form-control" name="facebook">
+    </div>
+    <div class="form-group">
+        <label for="title">Linked in (Optional)</label>
+        <input value="{{member.linked_in}}" type="text" class="form-control" name="linked_in">
     </div>
 
     <div class="form-group">
-        <label for="title">Post Content</label>
-        <textarea value="" class="form-control" id="" cols="30" rows="10"  name="post_content"></textarea>
+        <label for="title">About</label>
+        <textarea name="about" >{{member.about}}</textarea>
+        <script>
+            CKEDITOR.replace( 'about' );
+        </script>
     </div>
 
 
     <div class="form-group">
-        <input type="submit" class="btn-btn-primary" name="update" value="Submit">
+        <button href="/admin/staff/update" class="btn btn-primary" type="submit">Add Stuff</button>
     </div>
 
 </form>

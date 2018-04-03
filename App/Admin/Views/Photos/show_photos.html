@@ -23,31 +23,26 @@
     </ul>
 </nav>
 <table class="table table-hover table-responsive">
-
     <thead>
-
-    <tr>
-        <th>Id</th>
-        <th>Photo</th>
-        <th>Photo Title</th>
-        <th>File name</th>
-        <th>Size</th>
-    </tr>
+        <tr>
+            <th>Id</th>
+            <th>Photo</th>
+            <th>Photo Title</th>
+            <th>File name</th>
+            <th>Size</th>
+        </tr>
     </thead>
     <tbody>
-
     {% for photo in photos %}
     <tr>
-
-        <td>{{photo.media_id}}</td>
-        <td><img class='img-responsive'  width='130px'src="../../images/gallery/{{photo.media_filename}}" alt="">
-            <div class="action_links">
-                <a href="/admin/photo/delete/{{photo.media_id}}">Delete</a>
-            </div>
+        <td>{{ photo.media_id }}</td>
+        <td>
+            <img class='img-responsive'  width='130px'src="../../images/gallery/{{photo.media_filename}}" alt="">
         </td>
-        <td>{{photo.media_title}}</td>
-        <td>{{photo.media_filename}}</td>
-        <td>{{photo.media_size}}</td>
+        <td>{{ photo.media_title }}</td>
+        <td>{{ photo.media_filename }}</td>
+        <td>{{ photo.media_size }}</td>
+        <td style="width: 70px"><a  class="btn btn-danger"  href="/admin/photo/delete/{{photo.media_id}}">Delete</a></td>
     </tr>
     {% endfor %}
     </tbody>

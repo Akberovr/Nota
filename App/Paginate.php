@@ -38,7 +38,7 @@ class Paginate
      * @param $class Class name which paginated
      */
 
-    public function __construct($page = 1 , $data_per_page = 4,$class)
+    public function __construct($page = 1 ,$data_per_page ,$class)
     {
         $this->current_page  = (int)$page;
         $this->data_per_page = (int) $data_per_page;

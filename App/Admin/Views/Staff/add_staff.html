@@ -1,35 +1,35 @@
-<form action="" method="post" enctype="multipart/form-data">
+<form action="/admin/staff/create" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="title">Name</label>
-        <input value="" type="text" class="form-control" name="name" required>
+        <input value="" type="text" class="form-control" name="name" >
     </div>
 
     <div class="form-group">
         <label for="title">Surname</label>
-        <input value="" type="text" class="form-control" name="surname" required>
+        <input value="" type="text" class="form-control" name="surname" >
     </div>
 
 
 
     <div class="form-group">
         <label for="">Position</label> <br>
-        <select class="selectpicker" name="post_category_id" required>
-            <option value="">CEO</option>
-            <option value="">Manager</option>
-            <option value="">IT Manager</option>
-            <option value="">Designer</option>
-            <option value="">Cordinator</option>
+        <select class="selectpicker" name="position_category_id" >
+            {% for category in categories %}
+
+            <option value="{{category.category_id}}">{{category.category_name}}</option>
+
+            {% endfor %}
         </select>
     </div>
 
     <div class="form-group">
         <label for="post_image">Image</label >
-        <input  type="file"  name="post_image" required>
+        <input  type="file"  name="photo" required>
         <img  width="100" src="" alt="" />
     </div>
     <div class="form-group">
         <label for="title">Email</label>
-        <input  value="" type="text" class="form-control" name="email" required>
+        <input  value="" type="text" class="form-control" name="email" >
     </div>
     <div class="form-group">
         <label for="title">Facebook (Optional)</label>
@@ -42,7 +42,7 @@
 
     <div class="form-group">
         <label for="title">About</label>
-        <textarea name="about" required></textarea>
+        <textarea name="about" ></textarea>
         <script>
             CKEDITOR.replace( 'about' );
         </script>

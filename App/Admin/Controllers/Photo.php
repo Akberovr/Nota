@@ -89,10 +89,18 @@ class Photo extends \App\Controllers\Authenticated
         $id = $this->route_params["id"];
         $photo = new PhotoModel();
 
-        $photo->deleteById($id);
+       if ($photo->deleteById($id)){
 
-            Flash::addMessage("Photo deleted succesfully");
-            $this->redirect("/admin/photo/show");
+           Flash::addMessage("Photo deleted succesfully");
+           $this->redirect("/admin/photo/show");
+
+       }else{
+
+           Flash::addMessage("Photo Could not been delete",Flash::WARNING);
+           $this->redirect("/admin/photo/show");
+
+       }
+
 
 
     }
