@@ -9,7 +9,7 @@
 namespace App\Admin\Models;
 
 use PDO;
-use App\Admin\Models\Photo;
+use App\Paginate;
 
 
 class Staff extends \Core\Model
@@ -136,7 +136,7 @@ class Staff extends \Core\Model
      * @return mixed
      */
 
-    public static function  findAll(){
+    public static function findAll(){
 
         $sql = "SELECT * FROM staff";
 
@@ -150,6 +150,30 @@ class Staff extends \Core\Model
 
        return $stmt->fetchAll();
 
+    }
+
+    /**
+     * @param $page
+     * @param $data_per_page
+     * @param $class
+     * @return array
+     */
+
+    public static function getStaff($page,$data_per_page,$class){
+
+        $paginate = new Paginate($page,$data_per_page,$class);
+
+        $sql = "SELECT * FROM staff LIMIT {$data_per_page} OFFSET {$paginate->offset()}";
+
+        $db = static::getDB();
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
     }
 
     /**
@@ -263,6 +287,25 @@ class Staff extends \Core\Model
 
         }
         return false;
+    }
+
+
+    /**
+     * @param $page number of pages
+     * @param $data_per_page
+     * @param $class Class that need to be paginated
+     * @return float
+     */
+
+    public static function getPages($page,$data_per_page,$class)
+    {
+
+        $paginate = new Paginate($page,$data_per_page,$class);
+
+        $pages = $paginate->totalPage(Staff::class);
+
+        return $pages;
+
     }
 
 }

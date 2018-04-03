@@ -38,13 +38,11 @@
         <td>{{ photo.media_id }}</td>
         <td>
             <img class='img-responsive'  width='130px'src="../../images/gallery/{{photo.media_filename}}" alt="">
-            <div class="action_links">
-                <a href="/admin/photo/delete/{{photo.media_id}}">Delete</a>
-            </div>
         </td>
         <td>{{ photo.media_title }}</td>
         <td>{{ photo.media_filename }}</td>
         <td>{{ photo.media_size }}</td>
+        <td style="width: 70px"><a  class="btn btn-danger"  href="/admin/photo/delete/{{photo.media_id}}">Delete</a></td>
     </tr>
     {% endfor %}
     </tbody>

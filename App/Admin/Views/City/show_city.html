@@ -1,19 +1,16 @@
-<table class="table table-bordered table-hover">
+<table class="table table-hover table-responsive">
     <thead>
         <tr>
             <th>Id</th>
             <th>City name</th>
-            <th>City info</th> 
             <th>Address</th>
-            <th colspan="2">Modify</th>
         </tr>
     </thead>
     <tbody>
         {% for cities in city %}
          <tr>
             <td>{{cities.id}}</td>
-            <td>{{cities.city_name}}</td>
-            <td>{{cities.city_info}}</td>  
+            <td><a href="/">{{cities.city_name}}</a></td>
             <td>{{cities.address}}</td>
           {% if lang == 'az' or lang == null %}
 

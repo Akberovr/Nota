@@ -37,7 +37,21 @@
                     <img src="images/staff/{{member.photo}}" alt="Card image cap">
                     <div>
                         <h4 class="highlighted">{{member.name}} {{member.surname}}</h4>
-                        <p class="highlighted">{{member.position_category_id}}</p>
+
+                        {% if member.position_category_id == 1 %}
+                        <p class="highlighted">Müəllim</p>
+                        {% elseif member.position_category_id == 2 %}
+                        <p class="highlighted">İcraçı Direktor</p>
+                        {% elseif member.position_category_id == 3 %}
+                        <p class="highlighted">Koordinator</p>
+                        {% elseif member.position_category_id == 4 %}
+                        <p class="highlighted">Dizayner</p>
+                        {% elseif member.position_category_id == 5 %}
+                        <p class="highlighted">Maliyyəçi</p>
+                        {% elseif member.position_category_id == 6 %}
+                        <p class="highlighted">İT Menecer</p>
+                        {% endif %}
+
                         <p>{{member.email}}</p>
                     </div>
                 </div>

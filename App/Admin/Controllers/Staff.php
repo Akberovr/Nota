@@ -24,8 +24,12 @@ class Staff extends \App\Controllers\Authenticated
 
     public function showAction(){
 
+        $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+
         View::renderTemplate("Staff/index.html",[
-           'staff' => ModelStaff::findAll(),
+            'staff'        => ModelStaff::getStaff($page,5,ModelStaff::class),
+            "pages"        => ModelStaff::getPages($page,5,ModelStaff::class),
+            "current_page" => $page,
         ]);
 
     }

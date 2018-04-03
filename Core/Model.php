@@ -10,7 +10,9 @@
 namespace Core;
 
 use PDO;
+
 use App\Config;
+use App\Paginate;
 
 class Model{
 
@@ -69,4 +71,6 @@ class Model{
     public function getErrors(){
         return $this->errors;
     }
+
+
 }
