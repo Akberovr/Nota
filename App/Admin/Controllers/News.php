@@ -8,10 +8,11 @@
 
 namespace App\Admin\Controllers;
 
-use Core\Flash;
+use App\Flash;
 use Core\View;
 use App\Paginate;
 use App\Admin\Models\News as ModelNews;
+use Carbon\Carbon;
 
 class News extends \App\Controllers\Authenticated
 {
@@ -30,7 +31,7 @@ class News extends \App\Controllers\Authenticated
 
             "news"         => ModelNews::getNews($page,5,ModelNews::class),
             "pages"        => ModelNews::getPages($page,5,ModelNews::class),
-            "current_page" => $page
+            "current_page" => $page,
 
         ]);
 
@@ -68,7 +69,17 @@ class News extends \App\Controllers\Authenticated
 
     public function deleteAction(){
 
-        //Delete
+        if (ModelNews::deleteById($this->route_params["id"])){
+
+            Flash::addMessage("News Deleted Succesfully");
+            $this->redirect("/admin/news/show");
+
+        }else{
+
+            Flash::addMessage("News Couldn't be deleted",Flash::WARNING);
+            $this->redirect("/admin/news/show");
+
+        }
 
     }
 
@@ -80,7 +91,21 @@ class News extends \App\Controllers\Authenticated
 
     public function createAction(){
 
-        // Create new news HTTP POST method
+        $news = new ModelNews($_POST);
+
+        $news->setFile($_FILES['photo']);
+
+        if ($news->save('create')){
+
+            Flash::addMessage("News Added Succesfully");
+            $this->redirect("/admin/news/show");
+
+        }else{
+
+            Flash::addMessage("News couldn't be added",Flash::WARNING);
+            $this->redirect("/admin/news/show");
+
+        }
 
     }
 

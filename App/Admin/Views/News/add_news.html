@@ -1,4 +1,4 @@
-<form action="" method="post" enctype="multipart/form-data">
+<form action="/admin/news/create" method="post" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="title">Title</label>
@@ -6,8 +6,8 @@
     </div>
 
     <div class="form-group">
-        <label for="">Position</label> <br>
-        <select class="selectpicker" name="position_category_id" >
+        <label for="">News Status</label> <br>
+        <select class="selectpicker" name="status" >
             <option value="draft">Post Status</option>
             <option value="published">Published</option>
             <option value="draft">Draft</option>
@@ -20,8 +20,8 @@
     </div>
 
     <div class="form-group">
-        <label for="post_image">Post Image</label>
-        <input  type="file"  name="post_image">
+        <label for="photo">News Image</label>
+        <input  type="file"  name="photo">
         <img  width="100" src="" alt="" />
     </div>
 
@@ -34,7 +34,7 @@
     </div>
 
     <div class="form-group">
-        <button href="/admin/news/create" class="btn btn-primary" type="submit">Add Stuff</button>
+        <button  class="btn btn-primary" type="submit">Add News</button>
     </div>
 
 </form>

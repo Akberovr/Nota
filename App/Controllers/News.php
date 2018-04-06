@@ -28,4 +28,21 @@ class News extends \Core\Controller
 
     }
 
+    /**
+     * Show the specific news page
+     *
+     * @return void
+     */
+
+    public function showAction(){
+
+        View::renderTemplate('News/index.html',[
+            "member" => ModelNews::findById($this->route_params["id"])
+        ]);
+
+    }
+
+
+
+
 }

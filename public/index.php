@@ -1,12 +1,20 @@
 <?php
 
-ob_start();
+	ob_start();
 
-/**Twig*/
+
+	/**
+	 * Azerbaijan/Baku time zone
+	 */
+
+	date_default_timezone_set('Asia/Baku');
+
+
+	/**Twig*/
 
 	require dirname(__DIR__) . '/vendor/autoload.php';
 
-/**Autoloader*/
+	/**Autoloader*/
 
 	spl_autoload_register(function($class){
 
@@ -47,7 +55,9 @@ ob_start();
 	$router->add('logout',['controller'=>'Login','action'=>'destroy']);
 	$router->add('signup',['controller'=>'Signup','action'=>'new']);
 	$router->add('news',['controller'=>'News','action'=>'index']);
+	$router->add('news/{id:\d+}',['controller'=>'News','action'=>'show']);
 	$router->add('staff',['controller'=>'Staff','action'=>'index']);
+	$router->add('staff/{id:\d+}',['controller'=>'Staff','action'=>'show']);
 	$router->add('staff/{id:\d+}',['controller'=>'Staff','action'=>'show']);
 	$router->add('about',['controller'=>'Home','action'=>'about']);
 	$router->add('question',['controller'=>'Question','action'=>'index']);

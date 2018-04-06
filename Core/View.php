@@ -8,6 +8,8 @@
 
 namespace Core;
 
+use  Twig\Extensions;
+
 
 class View
 {
@@ -59,6 +61,8 @@ class View
             $twig->addGlobal('flash_messages', \App\Flash::getMessage());
             $twig->addGlobal('source' , \App\Helper::getURL());
             $twig->addGlobal('lang' , \App\Helper::getLang());
+
+
 
 
         }

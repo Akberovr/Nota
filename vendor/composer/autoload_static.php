@@ -7,9 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInitf3a9dfd208ab0f5e6021e2c4615e3ec5
 {
     public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'ddc0a4d7e61c0286f0f8593b1903e894' => __DIR__ . '/..' . '/clue/stream-filter/src/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
@@ -18,11 +18,13 @@ class ComposerStaticInitf3a9dfd208ab0f5e6021e2c4615e3ec5
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
+            'Twig\\Extensions\\' => 16,
             'Twig\\' => 5,
         ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\Translation\\' => 30,
         ),
         'P' => 
         array (
@@ -46,6 +48,7 @@ class ComposerStaticInitf3a9dfd208ab0f5e6021e2c4615e3ec5
         array (
             'Core\\' => 5,
             'Clue\\StreamFilter\\' => 18,
+            'Carbon\\' => 7,
         ),
         'A' => 
         array (
@@ -54,6 +57,10 @@ class ComposerStaticInitf3a9dfd208ab0f5e6021e2c4615e3ec5
     );
 
     public static $prefixDirsPsr4 = array (
+        'Twig\\Extensions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/extensions/src',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -61,6 +68,10 @@ class ComposerStaticInitf3a9dfd208ab0f5e6021e2c4615e3ec5
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -107,6 +118,10 @@ class ComposerStaticInitf3a9dfd208ab0f5e6021e2c4615e3ec5
         array (
             0 => __DIR__ . '/..' . '/clue/stream-filter/src',
         ),
+        'Carbon\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/App',
@@ -116,6 +131,10 @@ class ComposerStaticInitf3a9dfd208ab0f5e6021e2c4615e3ec5
     public static $prefixesPsr0 = array (
         'T' => 
         array (
+            'Twig_Extensions_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/extensions/lib',
+            ),
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
