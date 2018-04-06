@@ -13,11 +13,20 @@
 
                 {% if page == current_page %}
 
-                <li class="page-item active"><a class="page-link " href="/admin/staff/show?page={{page}}">{{page}}</a></li>
+
+                    {% if lang %}
+                         <li class="page-item active"><a class="page-link " href="/admin/staff/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+                    {% else %}
+                         <li class="page-item active"><a class="page-link " href="/admin/staff/show?page={{page}}">{{page}}</a></li>
+                    {% endif %}
 
                 {% else %}
 
-                <li class="page-item"><a class="page-link " href="/admin/staff/show?page={{page}}">{{page}}</a></li>
+                    {% if lang %}
+                        <li class="page-item"><a class="page-link " href="/admin/staff/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+                    {% else %}
+                         <li class="page-item"><a class="page-link " href="/admin/staff/show?page={{page}}">{{page}}</a></li>
+                    {% endif %}
 
                 {% endif %}
 
@@ -28,19 +37,22 @@
     </ul>
 </nav>
 
-<table class="table table-hover table-responsive">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Image</th>
-        <th>E-mail</th>
-    </tr>
-    </thead>
 
-    <tbody>
-        {% for member in staff %}
+<div class="form-group ">
+    <div class="container-fluid">
+        <table class="table-responsive-sm  table-striped table table-hover table-responsive">
+            <thead class="table-responsive-sm">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Image</th>
+                <th>E-mail</th>
+            </tr>
+            </thead>
+
+            <tbody class="table-responsive-sm">
+            {% for member in staff %}
 
             <tr>
                 <td style="width: 50px"> {{ member.id }} </td>
@@ -51,17 +63,17 @@
                 </td>
 
                 {% if member.position_category_id == 1 %}
-                     <td style="width: 150px">Müəllim</td>
+                <td style="width: 150px">Müəllim</td>
                 {% elseif member.position_category_id == 2 %}
-                    <td style="width: 150px">İcraçı Direktor</td>
+                <td style="width: 150px">İcraçı Direktor</td>
                 {% elseif member.position_category_id == 3 %}
-                    <td style="width: 150px">Koordinator</td>
+                <td style="width: 150px">Koordinator</td>
                 {% elseif member.position_category_id == 4 %}
-                    <td style="width: 150px">Dizayner</td>
+                <td style="width: 150px">Dizayner</td>
                 {% elseif member.position_category_id == 5 %}
-                    <td style="width: 150px">Maliyyəçi</td>
+                <td style="width: 150px">Maliyyəçi</td>
                 {% elseif member.position_category_id == 6 %}
-                    <td style="width: 150px">İT Menecer</td>
+                <td style="width: 150px">İT Menecer</td>
                 {% endif %}
                 <td style="width: 80px">
                     <img class="img-responsive img-thumbnail" height="60px!important" width='75px'src="../../images/staff/{{member.photo}}" alt="">
@@ -73,7 +85,12 @@
                 <td style="width: 70px"><a  class="btn btn-danger"  href="/admin/staff/delete/{{member.id}}">Delete</a></td>
             </tr>
 
-        {% endfor %}
-    </tbody>
+            {% endfor %}
+            </tbody>
 
-</table>
+        </table>
+
+    </div>
+
+
+</div>

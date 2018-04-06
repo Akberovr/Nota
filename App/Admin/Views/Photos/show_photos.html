@@ -8,13 +8,21 @@
 
             {% if page == current_page %}
 
-                <li class="page-item active"><a class="page-link " href="/admin/photo/show?page={{page}}">{{page}}</a></li>
+                {% if lang %}
+                    <li class="page-item active"><a class="page-link " href="/admin/photo/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+                {% else %}
+                     <li class="page-item active"><a class="page-link " href="/admin/photo/show?page={{page}}">{{page}}</a></li>
+                {% endif %}
 
-            {% else %}
+             {% else %}
 
-                <li class="page-item"><a class="page-link " href="/admin/photo/show?page={{page}}">{{page}}</a></li>
+                {% if lang %}
+                    <li class="page-item"><a class="page-link " href="/admin/photo/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+                {% else %}
+                    <li class="page-item"><a class="page-link " href="/admin/photo/show?page={{page}}">{{page}}</a></li>
+                {% endif %}
 
-            {% endif %}
+        {% endif %}
 
         {% endfor %}
 
@@ -35,14 +43,14 @@
     <tbody>
     {% for photo in photos %}
     <tr>
-        <td>{{ photo.media_id }}</td>
-        <td>
+        <td style="width: 50px">{{ photo.media_id }}</td>
+        <td style="width: 150px">
             <img class='img-responsive'  width='130px'src="../../images/gallery/{{photo.media_filename}}" alt="">
         </td>
-        <td>{{ photo.media_title }}</td>
-        <td>{{ photo.media_filename }}</td>
-        <td>{{ photo.media_size }}</td>
-        <td style="width: 70px"><a  class="btn btn-danger"  href="/admin/photo/delete/{{photo.media_id}}">Delete</a></td>
+        <td style="width: 150px">{{ photo.media_title }}</td>
+        <td style="width: 150px">{{ photo.media_filename }}</td>
+        <td style="width: 150px">{{ photo.media_size }}</td>
+        <td  style="width: 50px"><a  class="btn btn-danger"  href="/admin/photo/delete/{{photo.media_id}}">Delete</a></td>
     </tr>
     {% endfor %}
     </tbody>

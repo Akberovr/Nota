@@ -7,19 +7,19 @@
 
         {% if source == "show" %}
 
-            {% include "Post/show_news.html" %}
+            {% include "News/show_news.html" %}
 
         {% elseif source == "add" %}
 
-            {% include "Post/add_news.html" %}
+            {% include "News/add_news.html" %}
 
         {% elseif source == "get" %}
 
-            {% include "Post/edit_news.html" %}
+            {% include "News/edit_news.html" %}
 
         {% else %}
 
-            {% include "Post/show_news.html" %}
+            {% include "News/show_news.html" %}
 
         {% endif %}
 

@@ -22,12 +22,8 @@ class Post extends \App\Controllers\Authenticated {
      */
     public function showAction() {
 
-        $post = PostModel::getPost();
+        View::renderTemplate("Post/index.html");
 
-
-        View::renderTemplate("Post/index.html", [
-            'post' => $post
-        ]);
     }
 
     
@@ -79,7 +75,7 @@ class Post extends \App\Controllers\Authenticated {
          
          if($post->updatePost($id)){
           Flash::addMessage("Changes Saved");
-          $this->redirect('/Admin/Post/show'); 
+          $this->redirect('/Admin/Post/show');
          
 
         }else{
@@ -97,7 +93,7 @@ class Post extends \App\Controllers\Authenticated {
         $id = $this->route_params["id"];
         $post = PostModel::deleteById($id);
 
-        Flash::addMessage("News deleted", Flash::SUCCESS);
+        Flash::addMessage("Post deleted", Flash::SUCCESS);
         $this->redirect('/Admin/Post/show');
 
         if ($_GET) {

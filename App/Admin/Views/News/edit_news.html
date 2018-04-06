@@ -18,14 +18,23 @@
     </div>
 
 
-    <div class="form-group">
-        <select class="selectpicker" data-live-search="true" name="category_id" >
-            {% for category in postCategory %}
-            <option data-tokens="ketchup mustard"  name="category_id" value="{{category.category_id}}">{{category.category_name}}</option>
-            {% endfor %}
-        </select>
+        <div class="form-group">
+            <label for="">Category</label> <br>
+            <select class="selectpicker" name="position_category_id" required >
 
-    </div>
+                <option value="" required></option>
+
+                {% for category in postCategory %}
+
+                <option value="{{category.category_id}}">{{category.category_name}}</option>
+
+                {% endfor %}
+
+            </select>
+        </div>
+
+
+
 <!--    <div class="form-group">
         <label for="post_image">Post Image</label>
         <input  type="file"  name="post_image" value="">

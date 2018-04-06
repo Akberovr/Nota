@@ -7,7 +7,10 @@
  */
 
 namespace App\Controllers;
+
 use \Core\View;
+use \App\Admin\Models\News as ModelNews;
+
 
 class News extends \Core\Controller
 {
@@ -21,7 +24,7 @@ class News extends \Core\Controller
 
     public function indexAction(){
 
-        View::renderTemplate('News/index.html');
+        View::renderTemplate('News/index.html',["news" => ModelNews::findAll()]);
 
     }
 

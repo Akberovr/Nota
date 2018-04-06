@@ -26,39 +26,27 @@
 <!-- CONTENT: About -->
 <div class="container">
     <div class="row content">
+
         <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
             <h3><i class="fa fa-fw fa-dot-circle-o"></i>Xəbərlər</h3>
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="news-img-container">
-                        <img src="images/news/news3.jpg">
-                    </div>
-                    <span class="news-time">16 FEV, 2018</span><p class="news-head"><a href="#"> Şəbəkə İnzibatçılığı üzrə təlimlərə start verilir!</a></p>
-                    <p>Elektron Hökumət Təlim-Tədris Mərkəzində Şəbəkə İnzibatçılığı üzrə təlimlərə start verilir...</p>
-                    <p>&nbsp;</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="news-img-container">
-                        <img src="images/news/news6.jpg">
-                    </div>
-                    <span class="news-time">16 FEV, 2018</span><p class="news-head"><a href="#">Verilənlər Bazası üzrə proqramçı olmaq istəyənlərin nəzərinə!</a></p>
-                    <p>Gələcək karyeralarını Verilənlər Bazasının proqramlaşdırması sahəsi üzrə qurmaq istəyənlər üçün...</p>
-                    <p>&nbsp;</p>
-                </div>
+
+                {% for post in news %}
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="news-img-container">
+                                <img src="images/news/{{post.image}}">
+                            </div>
+                            <span class="news-time">{{post.date}}</span><p class="news-head"><a href="#"> {{post.title}}</a></p>
+                            <p>Elektron Hökumət Təlim-Tədris Mərkəzində Şəbəkə İnzibatçılığı üzrə təlimlərə start verilir...</p>
+                            <p>&nbsp;</p>
+                        </div>
+
+                {% endfor %}
 
             </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="news-img-container">
-                        <img src="images/news/news7.jpg">
-                    </div>
-                    <span class="news-time">25 YAN, 2018</span><p class="news-head"><a href="#">Kompüter dizaynı və qrafikası üzrə yeni təlimlərə start verilir!</a></p>
-                    <p>Mərkəzimizdə 2D dizayn və qrafika üzrə təlimlərə start verilir. Mərkəzdə kompüter dizaynı və qrafikasının...</p>
-                    <p>&nbsp;</p>
-                </div>
-            </div>
+
+
             <nav aria-label="Page navigation"> <!-- pagination -->
                 <ul class="pagination">
                     <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>

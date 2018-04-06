@@ -1,0 +1,40 @@
+<form action="" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input value="" type="text" class="form-control" name="title">
+    </div>
+
+    <div class="form-group">
+        <label for="">Position</label> <br>
+        <select class="selectpicker" name="position_category_id" >
+            <option value="draft">Post Status</option>
+            <option value="published">Published</option>
+            <option value="draft">Draft</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Tags</label>
+        <input value="" type="text" class="form-control" name="tags">
+    </div>
+
+    <div class="form-group">
+        <label for="post_image">Post Image</label>
+        <input  type="file"  name="post_image">
+        <img  width="100" src="" alt="" />
+    </div>
+
+    <div class="form-group">
+        <label for="title">About</label>
+        <textarea name="content" ></textarea>
+        <script>
+            CKEDITOR.replace( 'content' );
+        </script>
+    </div>
+
+    <div class="form-group">
+        <button href="/admin/news/create" class="btn btn-primary" type="submit">Add Stuff</button>
+    </div>
+
+</form>
