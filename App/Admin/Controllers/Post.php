@@ -54,8 +54,10 @@ class Post extends \App\Controllers\Authenticated {
      * @return void
      */
     public function addAction() {
-
-        View::renderTemplate("Post/index.html");
+        $postCategory = PostModel::getPostCategoty();
+        View::renderTemplate("Post/index.html",[
+             'postCategory'=> $postCategory
+        ]);
     }
 
     /**

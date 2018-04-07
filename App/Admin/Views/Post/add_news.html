@@ -22,8 +22,12 @@
 
 
     <div class="form-group">
-        <label for="title">Post Tags</label>
-        <input value="" type="text" class="form-control" name="post_tags">
+        <select class="selectpicker" data-live-search="true" name="category_id" >
+            {% for category in postCategory %}
+            <option data-tokens="ketchup mustard"  name="category_id" value="{{category.category_id}}">{{category.category_name}}</option>
+            {% endfor %}
+        </select>
+
     </div>
 
     <div class="form-group">
