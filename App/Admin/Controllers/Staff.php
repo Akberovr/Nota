@@ -19,16 +19,17 @@ class Staff extends \App\Controllers\Authenticated
     /**
      *Show the index page
      *
-     *@return void
+     * @return void
      */
 
-    public function showAction(){
+    public function showAction()
+    {
 
         $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
-        View::renderTemplate("Staff/index.html",[
-            'staff'        => ModelStaff::getStaff($page,5,ModelStaff::class),
-            "pages"        => ModelStaff::getPages($page,5,ModelStaff::class),
+        View::renderTemplate("Staff/index.html", [
+            'staff' => ModelStaff::getStaff($page, 5, ModelStaff::class),
+            "pages" => ModelStaff::getPages($page, 5, ModelStaff::class),
             "current_page" => $page,
         ]);
 
@@ -38,9 +39,10 @@ class Staff extends \App\Controllers\Authenticated
      * Add a new Staff
      * @return void
      */
-    public function addAction(){
+    public function addAction()
+    {
 
-        View::renderTemplate("Staff/index.html",[
+        View::renderTemplate("Staff/index.html", [
             "categories" => Job::findAll()
         ]);
 
@@ -52,20 +54,21 @@ class Staff extends \App\Controllers\Authenticated
      *
      * @return void
      */
-    public function createAction(){
+    public function createAction()
+    {
 
         $staff = new ModelStaff($_POST);
 
         $staff->setFile($_FILES['photo']);
 
-        if ($staff->save('create')){
+        if ($staff->save('create')) {
 
             Flash::addMessage("Success");
             $this->redirect("/admin/staff/show");
 
-        }else{
+        } else {
 
-            Flash::addMessage("Something went wrong",Flash::WARNING);
+            Flash::addMessage("Something went wrong", Flash::WARNING);
             $this->redirect("/admin/staff/add");
         }
 
@@ -76,34 +79,36 @@ class Staff extends \App\Controllers\Authenticated
      * Shows edit staff page and fetch staff info
      * @return void
      */
-    public function editAction(){
+    public function editAction()
+    {
 
-        View::renderTemplate("Staff/index.html",[
-            "member"     => ModelStaff::findById($this->route_params["id"]),
+        View::renderTemplate("Staff/index.html", [
+            "member" => ModelStaff::findById($this->route_params["id"]),
             "categories" => Job::findAll()
         ]);
 
     }
 
-    public function updateAction(){
+    public function updateAction()
+    {
 
-         $staff = new ModelStaff($_POST);
+        $staff = new ModelStaff($_POST);
 
-         $staff->setFile($_FILES['photo']);
+        $staff->setFile($_FILES['photo']);
 
-         $id = $this->route_params["id"];
+        $id = $this->route_params["id"];
 
-        if ($staff->save('update' ,$id)){
+        if ($staff->save('update', $id)) {
 
             Flash::addMessage("Changes Saved");
 
             $this->redirect("/admin/staff/show");
 
-        }else{
+        } else {
 
             $message = join(",", $staff->errors);
 
-            Flash::addMessage("Problem " . $message,Flash::WARNING);
+            Flash::addMessage("Problem " . $message, Flash::WARNING);
 
             $this->redirect("/admin/staff/show");
 
@@ -117,26 +122,22 @@ class Staff extends \App\Controllers\Authenticated
      * @return True if staff deleted, False otherwise
      */
 
-    public function deleteAction(){
+    public function deleteAction()
+    {
 
-        if(ModelStaff::deleteById($this->route_params["id"])){
+        if (ModelStaff::deleteById($this->route_params["id"])) {
 
             Flash::addMessage("User Deleted Succesfully");
             $this->redirect("/admin/staff/show");
 
-        }else{
+        } else {
 
-            Flash::addMessage("User didn't deleted" , Flash::WARNING);
+            Flash::addMessage("User didn't deleted", Flash::WARNING);
             $this->redirect("/admin/staff/show");
 
         }
 
     }
-
-
-
-
-
 
 
 }

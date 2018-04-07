@@ -13,35 +13,38 @@ use \Core\View;
 use App\Flash;
 use App\Admin\Models\Post as PostModel;
 
-class Post extends \App\Controllers\Authenticated {
+class Post extends \App\Controllers\Authenticated
+{
 
     /**
      * Show  index page and retrieve all news
      *
      * @return void
      */
-    public function showAction() {
+    public function showAction()
+    {
 
         View::renderTemplate("Post/index.html");
 
     }
 
-    
-     /**
+
+    /**
      * Show  particular post and retrieve all news
      */
-    public function getAction() {
+    public function getAction()
+    {
         $id = $this->route_params["id"];
 
         $post = PostModel::findById($id);
-        
+
         $postCategory = PostModel::getPostCategoty();
 
         View::renderTemplate("Post/index.html", [
             'post' => $post,
-            'postCategory'=> $postCategory,
+            'postCategory' => $postCategory,
             'id' => $this->route_params['id']
-            
+
         ]);
     }
 
@@ -49,7 +52,8 @@ class Post extends \App\Controllers\Authenticated {
      * Add a new Post
      * @return void
      */
-    public function addAction() {
+    public function addAction()
+    {
 
         View::renderTemplate("Post/index.html");
     }
@@ -58,37 +62,39 @@ class Post extends \App\Controllers\Authenticated {
      * Edit the Post
      * @return void
      */
-    public function editAction() {
+    public function editAction()
+    {
 
         View::renderTemplate("Post/index.html");
     }
-    
-    
-    
-    function updateAction() {
 
-         $post = new PostModel($_POST);
-         print_r("<pre>");
-          print_r($_POST);
-          print_r("</pre>");
-         $id = $this->route_params["id"];
-         
-         if($post->updatePost($id)){
-          Flash::addMessage("Changes Saved");
-          $this->redirect('/Admin/Post/show');
-         
 
-        }else{
+    function updateAction()
+    {
+
+        $post = new PostModel($_POST);
+        print_r("<pre>");
+        print_r($_POST);
+        print_r("</pre>");
+        $id = $this->route_params["id"];
+
+        if ($post->updatePost($id)) {
+            Flash::addMessage("Changes Saved");
+            $this->redirect('/Admin/Post/show');
+
+
+        } else {
             echo "Problem";
         }
-        
+
     }
-    
-        /**
+
+    /**
      * Delete the Post
      * @return boolean
      */
-    public function deleteAction() {
+    public function deleteAction()
+    {
 
         $id = $this->route_params["id"];
         $post = PostModel::deleteById($id);

@@ -7,16 +7,18 @@
  */
 
 namespace App\Admin\Controllers;
+
 use \Core\View;
 
-class Home extends  \App\Controllers\Authenticated
+class Home extends \App\Controllers\Authenticated
 {
     /**
      *Show the index page
      *
-     *@return void
+     * @return void
      */
-    public function showAction(){
+    public function showAction()
+    {
 
         View::renderTemplate("Home/index.html");
 

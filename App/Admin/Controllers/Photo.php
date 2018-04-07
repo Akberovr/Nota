@@ -23,9 +23,9 @@ class Photo extends \App\Controllers\Authenticated
     {
         $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
-        View::renderTemplate("Photos/index.html",[
-            "photos" => PhotoModel::getPhotos($page,4,PhotoModel::class),
-            "pages"   => PhotoModel::getPages($page,4,PhotoModel::class),
+        View::renderTemplate("Photos/index.html", [
+            "photos" => PhotoModel::getPhotos($page, 4, PhotoModel::class),
+            "pages" => PhotoModel::getPages($page, 4, PhotoModel::class),
             "current_page" => $page,
         ]);
 
@@ -58,22 +58,22 @@ class Photo extends \App\Controllers\Authenticated
 
         $photo->setFile($_FILES['file']);
 
-           if($photo->save()){
+        if ($photo->save()) {
 
-                 Flash::addMessage("Success Photo Uploaded" );
+            Flash::addMessage("Success Photo Uploaded");
 
-                 $this->redirect('/admin/photo/show');
+            $this->redirect('/admin/photo/show');
 
-         }else{
+        } else {
 
-               $message = join(",", $photo->errors);
+            $message = join(",", $photo->errors);
 
-               Flash::addMessage($message, Flash::WARNING);
+            Flash::addMessage($message, Flash::WARNING);
 
-               $this->redirect('/admin/photo/add');
+            $this->redirect('/admin/photo/add');
 
 
-          }
+        }
 
     }
 
@@ -84,29 +84,26 @@ class Photo extends \App\Controllers\Authenticated
      * @return void
      */
 
-    public function deleteAction(){
+    public function deleteAction()
+    {
 
         $id = $this->route_params["id"];
         $photo = new PhotoModel();
 
-       if ($photo->deleteById($id)){
+        if ($photo->deleteById($id)) {
 
-           Flash::addMessage("Photo deleted succesfully");
-           $this->redirect("/admin/photo/show");
+            Flash::addMessage("Photo deleted succesfully");
+            $this->redirect("/admin/photo/show");
 
-       }else{
+        } else {
 
-           Flash::addMessage("Photo Could not been delete",Flash::WARNING);
-           $this->redirect("/admin/photo/show");
+            Flash::addMessage("Photo Could not been delete", Flash::WARNING);
+            $this->redirect("/admin/photo/show");
 
-       }
-
+        }
 
 
     }
-
-
-
 
 
 }

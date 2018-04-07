@@ -20,17 +20,18 @@ class News extends \App\Controllers\Authenticated
     /**
      *Show the index page
      *
-     *@return void
+     * @return void
      */
 
-    public function showAction(){
+    public function showAction()
+    {
 
-        $page = (isset($_GET['page'])) ? $_GET["page"]  : 1 ;
+        $page = (isset($_GET['page'])) ? $_GET["page"] : 1;
 
-        View::renderTemplate("news/index.html",[
+        View::renderTemplate("news/index.html", [
 
-            "news"         => ModelNews::getNews($page,5,ModelNews::class),
-            "pages"        => ModelNews::getPages($page,5,ModelNews::class),
+            "news" => ModelNews::getNews($page, 5, ModelNews::class),
+            "pages" => ModelNews::getPages($page, 5, ModelNews::class),
             "current_page" => $page,
 
         ]);
@@ -42,7 +43,8 @@ class News extends \App\Controllers\Authenticated
      * @return void
      */
 
-    public function addAction(){
+    public function addAction()
+    {
 
         View::renderTemplate("News/index.html");
 
@@ -55,7 +57,8 @@ class News extends \App\Controllers\Authenticated
      * @return void
      */
 
-    public function editAction(){
+    public function editAction()
+    {
 
         View::renderTemplate("news/index.html");
 
@@ -67,16 +70,17 @@ class News extends \App\Controllers\Authenticated
      * @return void
      */
 
-    public function deleteAction(){
+    public function deleteAction()
+    {
 
-        if (ModelNews::deleteById($this->route_params["id"])){
+        if (ModelNews::deleteById($this->route_params["id"])) {
 
             Flash::addMessage("News Deleted Succesfully");
             $this->redirect("/admin/news/show");
 
-        }else{
+        } else {
 
-            Flash::addMessage("News Couldn't be deleted",Flash::WARNING);
+            Flash::addMessage("News Couldn't be deleted", Flash::WARNING);
             $this->redirect("/admin/news/show");
 
         }
@@ -89,20 +93,21 @@ class News extends \App\Controllers\Authenticated
      * @return true if succesfull , false otherwise
      */
 
-    public function createAction(){
+    public function createAction()
+    {
 
         $news = new ModelNews($_POST);
 
         $news->setFile($_FILES['photo']);
 
-        if ($news->save('create')){
+        if ($news->save('create')) {
 
             Flash::addMessage("News Added Succesfully");
             $this->redirect("/admin/news/show");
 
-        }else{
+        } else {
 
-            Flash::addMessage("News couldn't be added",Flash::WARNING);
+            Flash::addMessage("News couldn't be added", Flash::WARNING);
             $this->redirect("/admin/news/show");
 
         }
@@ -115,7 +120,8 @@ class News extends \App\Controllers\Authenticated
      * @return true if succesfull ,else otherwise
      */
 
-    public function updateAction(){
+    public function updateAction()
+    {
 
         // Update news via HTTP GET method
 
