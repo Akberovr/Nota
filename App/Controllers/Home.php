@@ -1,43 +1,36 @@
-<?php 
+<?php
 
-	
-	namespace App\Controllers;
-	use \Core\View;
-	use \App\Auth;
-	use \App\Mail;
+namespace App\Controllers;
 
+use \Core\View;
+use \App\Auth;
+use \App\Mail;
+use App\Models\City as CityModel;
 
-	class Home extends \Core\Controller{
+class Home extends \Core\Controller {
 
+    /**
+     * Show the index page
+     *
+     * @return void
+     */
+    public function indexAction() {
 
-		/**
-		 *Show the index page
-		 *
-		 *@return void
-		*/
+        View::renderTemplate('Home/index.html');
+    }
 
-		public function indexAction(){
+    /**
+     * Show the about page
+     *
+     * @return void
+     */
+    public function aboutAction() {
+        $city = CityModel::getCity();
+        View::renderTemplate('Home/about.html', [
+            'city' => $city
+        ]);
+    }
 
-			View::renderTemplate('Home/index.html');
+}
 
-		}
-
-        /**
-         *Show the about page
-         *
-         *@return void
-         */
-
-        public function aboutAction(){
-
-            View::renderTemplate('Home/about.html');
-
-        }
-
-
-	}
-
-
-
-
- ?>
+?>

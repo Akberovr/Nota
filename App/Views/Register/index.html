@@ -17,43 +17,47 @@
                 <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
                     <h3><i class="fa fa-fw fa-dot-circle-o"></i>İlkin qeydiyyat</h3>
                     <div class="row">
-                        <div class="col-md-6 forms">
-                            <input type="text" placeholder="Adınız" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="col-md-6 forms">
-                            <input type="text" placeholder="Soyadınız" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="col-md-6 forms">
-                            <input type="text" placeholder="Telefon nömrəsi" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="col-md-6 forms">
-                            <input type="text" placeholder="Email" aria-describedby="basic-addon1">   
-                        </div>
-                        <div class="col-md-6 forms">
-                            <span class="custom-dropdown-box">
-                                <select name="dep">
-                                    <option>İstiqaməti seçin</option>
-                                    <option>Elektron Hökumət</option>
-                                    <option>Kompüter bilikləri və ofis proqramları</option>
-                                    <option>İT-nin əsasları</option>
-                                    <option>Şəbəkə və sistem inzibatçılığı</option>
-                                    <option>Qrafik dizayn</option>
-                                    <option>Proqramlaşdırma və kodlaşdırma</option>
-                                    <option>Biznes və menecment</option>
-                                    <option>Fərdi inkişaf</option>
-                                </select>
-                            </span>   
-                        </div>
-                        <div class="col-md-6 forms">
-                            <span class="custom-dropdown-box">
-                                <select name="cname">
-                                    <option>Kursu seçin</option>
-                                </select>
-                            </span>   
-                        </div>
-                        <div class="col-md-6 forms">
-                            <input type="submit" name="send" value="QEYDİYYAT">  
-                        </div>
+                        <form target="_self" method="POST" enctype="multipart/form-data">
+                            <div class="col-md-6 forms">
+                                <input id="first_name" type="text" name="first_name" placeholder="Adınız" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col-md-6 forms">
+                                <input id="last_name" name="last_name" type="text" placeholder="Soyadınız" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col-md-6 forms">
+                                <input id="number" name="number" type="text" placeholder="Telefon nömrəsi" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col-md-6 forms">
+                                <input id="email" name="email" type="text" placeholder="Email" aria-describedby="basic-addon1">   
+                            </div>
+                            <div class="col-md-6 forms">
+                                <span class="custom-dropdown-box">
+                                    <select id="category" name="category">
+                                        <option>İstiqaməti seçin</option>
+                                        <option>Elektron Hökumət</option>
+                                        <option>Kompüter bilikləri və ofis proqramları</option>
+                                        <option>İT-nin əsasları</option>
+                                        <option>Şəbəkə və sistem inzibatçılığı</option>
+                                        <option>Qrafik dizayn</option>
+                                        <option>Proqramlaşdırma və kodlaşdırma</option>
+                                        <option>Biznes və menecment</option>
+                                        <option>Fərdi inkişaf</option>
+                                    </select>
+                                </span>   
+                            </div>
+                            <div class="col-md-6 forms">
+                                <span class="custom-dropdown-box">
+                                    <select id="course" name="course">
+                                        <option>Kursu seçin</option>
+                                    </select>
+                                </span>   
+                            </div>
+                            <div class="col-md-6 forms">
+                                <input type="button" name="submit" value="QEYDİYYAT" onClick="submit_form()">  
+                                 
+                            </div>
+
+                        </form>      
                     </div>		  				 	 	 
                 </div> <!-- end of section -->
 
@@ -85,6 +89,7 @@
         <!--    <script src="js/bootstrap.min.js"></script>-->
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/register.js"></script>
         <script>
             $(document).ready(function () {
 

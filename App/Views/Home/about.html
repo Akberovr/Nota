@@ -68,22 +68,11 @@
             <div class="side-nav-inside">
                 <ul>
                     <h4>OFİSLƏRİMİZ</h4>
-                    <li class="active"><i class="fa fa-long-arrow-right"></i> Bakı</li>
-                    <li><a href="#">Gəncə</a></li>
-                    <li><a href="#">Naxçıvan</a></li>
-                    <li><a href="#">Sumqayıt</a></li>
-                    <li><a href="#">Mingəçevir</a></li>
-                    <li><a href="#">Lənkəran</a></li>
-                    <li><a href="#">Qazax</a></li>
-                    <li><a href="#">İmişli</a></li>
-                    <li><a href="#">Qəbələ</a></li>
-                    <li><a href="#">Göyçay</a></li>
-                    <li><a href="#">Şirvan</a></li>
-                    <li><a href="#">Şamaxı</a></li>
-                    <li><a href="#">Şəki</a></li>
-                    <li><a href="#">Qusar</a></li>
-                    <li><a href="#">Bərdə</a></li>
-                    <li><a href="#">Zaqatala</a></li>
+                     {% for cities in city %}
+                    
+                    <li class="" ><i class="fa fa-long-arrow-right"></i> {{cities.city_name}}</li>
+
+                     {% endfor %}
                 </ul>
             </div>
         </div>
