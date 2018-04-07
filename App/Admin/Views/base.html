@@ -42,7 +42,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="javascript:" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-desktop"></i> Training <i class="fa fa-fw fa-caret-down"></i></a>
@@ -58,65 +58,96 @@
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="glyphicon glyphicon-film"></i> Gallery <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo4" class="collapse">
+
+                            {% if lang %}
+                            <li >
+                                <a href="/admin/photo/show?lang={{lang}}">Show Photos</a>
+                            </li>
+                            <li>
+                                <a href="/admin/video/show?lang={{lang}}">Show Videos</a>
+                            </li>
+                            {% else %}
                             <li >
                                 <a href="/admin/photo/show">Show Photos</a>
                             </li>
                             <li>
                                 <a href="/admin/video/show">Show Videos</a>
                             </li>
+
+                            {% endif %}
                         </ul>
                     </li>
 
                     <li>
                         <a href="javascript:" data-toggle="collapse" data-target="#demo3"><i class="fa fa-group"></i> Staff <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo3" class="collapse">
+
+                            {% if lang %}
+                                <li>
+                                    <a href="/admin/staff/show?lang={{lang}}">Members</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/staff/add?lang={{lang}}">Add Member</a>
+                                </li>
+                            {% else %}
                             <li>
                                 <a href="/admin/staff/show">Members</a>
                             </li>
                             <li>
                                 <a href="/admin/staff/add">Add Member</a>
                             </li>
+                            {% endif %}
+
                         </ul>
                     </li>
-<!--                    <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                    </li>
-                    <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                    </li>-->
+
 
                     <li>
-                        <a href="javascript:" data-toggle="collapse" data-target="#demo2"><i class="fa fa-newspaper-o"></i> Post <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo2"><i class="fa fa-newspaper-o"></i> News <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo2" class="collapse">
+
+                           {% if lang %}
                             <li>
-                                <a href="/admin/post/category">Add Category</a>
+                                <a href="/admin/news/show?lang={{lang}}">View News</a>
                             </li>
 
                             {% if lang is defined %}
 
                             <li>
-
-                                <a href="/admin/post/show">View Post</a>
+                                <a href="/admin/news/add?lang={{lang}}">Add News</a>
                             </li>
                             {% else %}
-                            <a href="/admin/post/show">View Post</a>
-                            {% endif %}
-
                             <li>
-                                <a href="/admin/post/add">Add Post</a>
+                                <a href="/admin/news/show">View News</a>
                             </li>
+                            <li>
+                                <a href="/admin/news/add">Add News</a>
+                            </li>
+
+                            {% endif %}
                         </ul>
                     </li>
 
                     <li>
                         <a href="javascript:" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-home"></i> City <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
+
+                            {% if lang %}
+                            <li>
+                                <a href="/admin/city/show?lang={{lang}}">View City</a>
+                            </li>
+                            <li>
+                                <a href="/admin/city/add?lang={{lang}}">Add City</a>
+                            </li>
+
+                            {% else %}
                             <li>
                                 <a href="/admin/city/show">View City</a>
                             </li>
                             <li>
                                 <a href="/admin/city/add">Add City</a>
                             </li>
+                            {% endif %}
                         </ul>
                     </li>
 
@@ -144,7 +175,7 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="/admin">Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-file"></i> Blank Page

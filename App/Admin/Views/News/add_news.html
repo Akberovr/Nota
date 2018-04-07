@@ -1,0 +1,40 @@
+<form action="/admin/news/create" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input value="" type="text" class="form-control" name="title">
+    </div>
+
+    <div class="form-group">
+        <label for="">News Status</label> <br>
+        <select class="selectpicker" name="status" >
+            <option value="draft">Post Status</option>
+            <option value="published">Published</option>
+            <option value="draft">Draft</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Tags</label>
+        <input value="" type="text" class="form-control" name="tags">
+    </div>
+
+    <div class="form-group">
+        <label for="photo">News Image</label>
+        <input  type="file"  name="photo">
+        <img  width="100" src="" alt="" />
+    </div>
+
+    <div class="form-group">
+        <label for="title">About</label>
+        <textarea name="content" ></textarea>
+        <script>
+            CKEDITOR.replace( 'content' );
+        </script>
+    </div>
+
+    <div class="form-group">
+        <button  class="btn btn-primary" type="submit">Add News</button>
+    </div>
+
+</form>

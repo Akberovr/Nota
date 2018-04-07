@@ -9,19 +9,19 @@
     <tbody>
         {% for cities in city %}
          <tr>
-            <td>{{cities.id}}</td>
-            <td><a href="/">{{cities.city_name}}</a></td>
-            <td>{{cities.address}}</td>
+            <td style="width: 50px">{{cities.id}}</td>
+            <td style="width: 150px"><a href="/">{{cities.city_name}}</a></td>
+            <td style="width: 150px">{{cities.address}}</td>
           {% if lang == 'az' or lang == null %}
 
-                <td><a href="get/{{cities.id}}" class="btn btn-info" value="" >Update</a> </td >
+                <td style="width: 150px"><a href="get/{{cities.id}}" class="btn btn-info" value="" >Update</a> </td >
  
              {% elseif lang == 'en' %}
 
-                 <td><a href="get/{{cities.id}}?lang=en" class="btn btn-info" value="" >Update</a> </td >
+                 <td style="width: 150px"><a href="get/{{cities.id}}?lang=en" class="btn btn-info" value="" >Update</a> </td >
 
              {% endif %}
-            <td ><a href="delete/{{cities.id}}" class="btn btn-danger" value="" >Delete</a> </td>
+            <td style="width: 150px"><a href="delete/{{cities.id}}" class="btn btn-danger" value="" >Delete</a> </td>
 <!--             <td> <a href="get/{{cities.id}}" class="btn btn-info" value="" >Update</a> </td >-->
           </tr> 
          {% endfor %}

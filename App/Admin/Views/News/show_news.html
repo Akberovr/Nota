@@ -1,0 +1,85 @@
+{% for error in errors %}
+{{error}}
+{% endfor %}
+
+<a class="btn btn-primary" href="/admin/news/add">Add News</a>
+<nav aria-label="..." class="pull-right">
+    <ul class="pagination">
+
+        {% if pages > 1 %}
+
+             {% for page in 1..pages %}
+
+                 {% if page == current_page %}
+
+                        {% if lang %}
+                             <li class="page-item active"><a class="page-link " href="/admin/news/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+                        {% else %}
+                             <li class="page-item active"><a class="page-link " href="/admin/news/show?page={{page}}">{{page}}</a></li>
+                        {% endif %}
+
+                {% else %}
+
+                        {% if lang %}
+                             <li class="page-item"><a class="page-link " href="/admin/news/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+                        {% else %}
+                            <li class="page-item"><a class="page-link " href="/admin/news/show?page={{page}}">{{page}}</a></li>
+                        {% endif %}
+
+                {% endif %}
+
+            {% endfor %}
+
+        {% endif %}
+
+    </ul>
+</nav>
+
+<table class="table-responsive-sm  table-striped table table-hover table-responsive">
+    <thead class="table-responsive-sm">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Date</th>       
+            <th>Image</th>
+            <th>Tags</th>
+            <th>Views</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for post in news %}
+
+            <tr>
+            <td style="width: 30px">{{post.id}}</td>
+            <td style="width: 170px">{{post.title}}</td>
+            <td style="width: 70px">{{post.status}}</td>
+            <td style="width: 100px">{{ post.date|date("d/m/y")}}</td>
+            <td style="width: 90px">
+                <img src="../../images/news/{{post.image}}" class="img-responsive img-thumbnail" height="70px!important" width='90px' src="" alt="">
+            </td>
+                <td style="width: 100px">{{post.tags}}</td>
+                <td style="width: 70px">{{post.views}}</td>
+
+                {% if lang == 'az' or lang == null %}
+
+                <td style="width: 100px"><a href="/news/{{post.id}}" class="btn btn-success" value="" >View News</a> </td >
+                <td style="width: 80px"><a href="/admin/news/edit/{{post.id}}" class="btn btn-info" value="" >Update</a> </td >
+
+
+                {% elseif lang == 'en' %}
+
+                <td style="width: 100px"><a href="/news/{{post.id}}?lang=en" class="btn btn-success" value="" >View News</a> </td >
+                <td style="width: 80px"><a href="/admin/news/edit/{{post.id}}?lang=en" class="btn btn-info" value="" >Update</a> </td >
+
+             {% endif %}
+
+                <td style="width: 100px" ><a href="/admin/news/delete/{{post.id}}" class="btn btn-danger" value="" >Delete</a> </td>
+
+            </tr>
+
+    {% endfor %}
+
+    </tbody>
+</table>

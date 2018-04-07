@@ -97,14 +97,13 @@ class Staff extends \Core\Model
             return false;
         }
 
-
     }
 
 
     /**
      * Insert Staff and Staff details to the Database
      *
-     * @return boolean  True if the photo was saved, false otherwise
+     * @return boolean  True if the staff was saved, false otherwise
      */
 
 

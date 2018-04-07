@@ -7,7 +7,10 @@
  */
 
 namespace App\Controllers;
+
 use \Core\View;
+use \App\Admin\Models\News as ModelNews;
+
 
 class News extends \Core\Controller
 {
@@ -21,8 +24,25 @@ class News extends \Core\Controller
 
     public function indexAction(){
 
-        View::renderTemplate('News/index.html');
+        View::renderTemplate('News/index.html',["news" => ModelNews::findAll()]);
 
     }
+
+    /**
+     * Show the specific news page
+     *
+     * @return void
+     */
+
+    public function showAction(){
+
+        View::renderTemplate('News/index.html',[
+            "member" => ModelNews::findById($this->route_params["id"])
+        ]);
+
+    }
+
+
+
 
 }

@@ -34,8 +34,8 @@ class Mail
            $mail->Host = 'ssl://smtp.gmail.com';
            $mail->Port = '465';
            $mail->SMTPAuth = true;
-           $mail->Username = 'eakberov14@gmail.com';
-           $mail->Password = 'aelshan2469694n';
+           $mail->Username = '';
+           $mail->Password = '';
            $mail->SMTPSecure = 'ssl';
            $mail->From = 'eakberov14@gmail.com';
            $mail->FromName = 'KinomanTV';
