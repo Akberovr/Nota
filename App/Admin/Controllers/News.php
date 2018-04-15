@@ -57,7 +57,9 @@ class News extends \App\Controllers\Authenticated
 
     public function editAction(){
 
-        View::renderTemplate("news/index.html");
+        View::renderTemplate("News/index.html",[
+            "news" => ModelNews::findById($this->route_params["id"])
+        ]);
 
     }
 
@@ -112,13 +114,30 @@ class News extends \App\Controllers\Authenticated
     /**
      * Update specific news
      *
-     * @return true if succesfull ,else otherwise
+     * @return true if successful ,else otherwise
      */
 
     public function updateAction(){
 
-        // Update news via HTTP GET method
+        
+        $news = new ModelNews($_POST);
+        
+        $news->setFile($_FILES['image']);
 
+        
+        if ($news->save('update',$this->route_params["id"])) {
+            
+            Flash::addMessage("News updated succesfully");
+            $this->redirect("/admin/news/show");
+            
+        }else{
+            
+            Flash::addMessage("Photo couldn't be updated", Flash::WARNING);
+            $this->redirect("/admin/news/show");
+
+        }
+        
+        
     }
 
 }

@@ -76,6 +76,6 @@
 	$url = $_SERVER['QUERY_STRING'] ;
 
 
-	$router->dispatch($url);
+	$router->dispatch(trim($url,'/'));
 
 ?>

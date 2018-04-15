@@ -1,47 +1,40 @@
+<form action="/admin/news/update/{{news.id}}" method="post" enctype="multipart/form-data">
 
- {% if lang == 'az' or lang == null %}
-<form action="/admin/post/update/{{id}}" method="post" enctype="multipart/form-data">
-    
-    {% elseif lang == 'en' %}
-    
-    <form action="/admin/post/update/{{id}}?lang=en" method="post" enctype="multipart/form-data">
-          {% endif %}
     <div class="form-group">
-        <label for="title">Post Title</label>
-        <input value="{{post.post_title}}" type="text" class="form-control" name="post_title">
+        <label for="title">Title</label>
+        <input value="{{news.title}}" type="text" class="form-control" name="title">
     </div>
 
-
     <div class="form-group">
-        <label for="Body">Post Body</label>
-        <textarea value="" class="form-control" id="" cols="30" rows="10"  name="post_body">{{post.post_body}}</textarea>
+        <label for="">News Status</label> <br>
+        <select class="selectpicker" name="status" >
+            <option value="draft">Post Status</option>
+            <option value="published">Published</option>
+            <option value="draft">Draft</option>
+        </select>
     </div>
 
-
-        <div class="form-group">
-            <label for="">Category</label> <br>
-            <select class="selectpicker" name="position_category_id" required >
-
-                <option value="" required></option>
-
-                {% for category in postCategory %}
-
-                <option value="{{category.category_id}}">{{category.category_name}}</option>
-
-                {% endfor %}
-
-            </select>
-        </div>
-
-
-
-<!--    <div class="form-group">
-        <label for="post_image">Post Image</label>
-        <input  type="file"  name="post_image" value="">
-        <img  width="100" src="{{post.image}}" alt="" />
-    </div>-->
     <div class="form-group">
-        <button class="btn btn-primary" type="submit">Update</button>
+        <label for="title">Tags</label>
+        <input value="{{news.tags}}" type="text" class="form-control" name="tags">
+    </div>
+
+    <div class="form-group ">
+        <label for="post_image">Image</label >
+        <input  type="file"  name="image" required> <br>
+        <img  class="img-responsive img-thumbnail" width="100" src="../../../images/news/{{news.image}}" alt="" />
+    </div>
+
+    <div class="form-group">
+        <label for="title">Content</label>
+        <textarea name="content" >{{news.content}}</textarea>
+        <script>
+            CKEDITOR.replace( 'content' );
+        </script>
+    </div>
+
+    <div class="form-group">
+        <button  class="btn btn-primary" type="submit">Edit News</button>
     </div>
 
 </form>

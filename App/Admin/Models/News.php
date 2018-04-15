@@ -99,6 +99,14 @@ class News extends \Core\Model
 
     }
 
+    
+    /**
+     * 
+     * @param type $id News id 
+     * @return mixed
+     */
+    
+    
     public static function findById($id){
 
         $sql = "SELECT * FROM news WHERE id = :id ";
@@ -143,28 +151,6 @@ class News extends \Core\Model
     }
 
 
-    /**
-     * @param $method News method which implemented when save method called
-     * @param null $id
-     * @return bool
-     */
-
-    public function save($method,$id = null){
-
-        $target_path =  dirname(dirname(dirname(__DIR__)))."\\"."public"."\\"."images"."\\"."news"."\\".$this->photo_filename;
-
-        if (move_uploaded_file($this->tmp_path,$target_path)){
-
-            if($this->$method($id)){
-
-                unset($this->tmp_path);
-                return true;
-
-            }
-            return false;
-        }
-
-    }
 
     /**
      * Insert News and News details to the Database
@@ -191,27 +177,35 @@ class News extends \Core\Model
         return $stmt->execute();
 
     }
-
-
+    
     /**
-     * @param $page number of pages
-     * @param $data_per_page
-     * @param $class Class that need to be paginated
-     * @return float
+     * @param $id
+     * @return bool
      */
 
-    public static function getPages($page,$data_per_page,$class)
-    {
+    public static function deletePhoto($id){
 
-        $paginate = new Paginate($page,$data_per_page,$class);
+        if (isset($id)){
 
-        $pages = $paginate->totalPage(News::class);
+            $target_path = dirname(dirname(dirname(__DIR__)))."//"."public"."//".static::picturePath($id);
 
-        return $pages;
+            if(file_exists($target_path)){
 
+                return unlink($target_path) ? true : false;
+
+            }
+
+        }
+        return false;
     }
 
-
+    
+    
+    /**
+     * 
+     * @param type $id News id
+     * @return boolean
+     */
 
     public static function deleteById($id){
 
@@ -232,28 +226,76 @@ class News extends \Core\Model
         return false;
 
     }
+    
+        
+    
+    
+    
+    public function update($id){
+        
+           
+        $sql = "UPDATE news SET title = :title,status = :status,tags = :tags, image = :image,content = :content WHERE id = :id";
+        
+        $db = static::getDB();
 
+        $stmt = $db->prepare($sql);
+        
+        $stmt->bindValue(':title', $this->title,PDO::PARAM_STR);
+        $stmt->bindValue(':status',$this->status,PDO::PARAM_STR);
+        $stmt->bindValue(':tags', $this->tags,PDO::PARAM_STR);
+        $stmt->bindValue(':image',$this->photo_filename,PDO::PARAM_STR);
+        $stmt->bindValue(':content',$this->content,PDO::PARAM_STR);
+        $stmt->bindParam(':id',$id,PDO::PARAM_INT);
+        
+        
+        return $stmt->execute();
+    }
+
+
+    
     /**
-     * @param $id
+     * @param $method News method which implemented when save method called
+     * @param null $id
      * @return bool
      */
 
-    public static function deletePhoto($id){
+    public function save($method,$id = null){
 
-        if (isset($id)){
+        $target_path =  dirname(dirname(dirname(__DIR__)))."//"."public"."//"."images"."//"."news"."//".$this->photo_filename;
 
-            $target_path = dirname(dirname(dirname(__DIR__)))."\\"."public"."\\".static::picturePath($id);
+        if (move_uploaded_file($this->tmp_path,$target_path)){
 
-            if(file_exists($target_path)){
+            if($this->$method($id)){
 
-                return unlink($target_path) ? true : false;
+                unset($this->tmp_path);
+                return true;
 
             }
-
+            return false;
         }
-        return false;
+
     }
 
+    
+    /**
+     * @param $page number of pages
+     * @param $data_per_page
+     * @param $class Class that need to be paginated
+     * @return float
+     */
+
+    public static function getPages($page,$data_per_page,$class)
+    {
+
+        $paginate = new Paginate($page,$data_per_page,$class);
+
+        $pages = $paginate->totalPage(News::class);
+
+        return $pages;
+
+    }
+
+    
     /**
      * @param int $id ID of the staff's photo
      * @return bool|string
@@ -272,6 +314,8 @@ class News extends \Core\Model
     }
 
 
+    
+    
 
 
 

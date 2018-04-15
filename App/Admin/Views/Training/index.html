@@ -1,27 +1,25 @@
 {% extends 'base.html' %}
 
-
-{% block subheading %} News {% endblock %}
+{% block subheading %} Training {% endblock %}
 
 {% block context %}
 
-        {% if source == "show" %}
+        {% if source == "add" %}
 
-            {% include "Training/show_training.html" %}
-
-        {% elseif source == "add" %}
-
-            {% include "Training/add_training.html" %}
-
+              {% include "Training/add_training.html" %}
+            
         {% elseif source == "get" %}
+        
+            {% include "Training/edit_training.html" %}            
 
-            {% include "Training/edit_training.html" %}
+        {% elseif source == "show" %}
+         {% include "Training/show_training.html" %}
+         
 
         {% else %}
 
             {% include "Training/show_training.html" %}
 
         {% endif %}
-
 
 {% endblock %}
