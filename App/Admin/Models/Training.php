@@ -67,7 +67,7 @@ class Training extends \Core\Model {
             }else {
                 switch (strtolower($_GET["lang"])) {
                     case $_GET["lang"]:
-                          $_SESSION['lang'] = 'en';       
+                          $_SESSION['lang'] = $_GET["lang"];       
                                $sql = "SELECT tt.training_name,tc.training_cat_name,t.training_apply_date,t.training_duration,t.training_hours,t.training_applicant
                                 FROM trainings t
                                 INNER JOIN trainings_translation tt
