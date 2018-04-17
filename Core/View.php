@@ -85,7 +85,7 @@ class View
 
                     if (preg_match('/^admin/i' , $params["folder"])){
 
-                        $view = "/App/".$params["folder"]."/Views";
+                        $view = "/App/Admin/Views";
                         return $view;
 
 

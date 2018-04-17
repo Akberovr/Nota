@@ -22,7 +22,7 @@ class Password extends \Core\Controller
 
     public function forgotAction(){
         // Renders password/forgot.html, page of Password Controller
-        View::renderTemplate('password/forgot.html');
+        View::renderTemplate('Password/forgot.html');
     }
 
     /**

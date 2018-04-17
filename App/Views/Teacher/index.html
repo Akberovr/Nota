@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "includes/header.html" %}
+
+    <body>
+        <!-- Fixed navbar -->
+        {% include "includes/navigation.html" %}
+        <!-- end of navbar -->
+        {% include "includes/jumbotron_logo.html" %}
+        <!-- Head BAR -->
+
+        <!-- End of Head BAR -->
+
+        <!-- CONTENT: About -->
+        <div class="container">
+            <div class="row content">
+                <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
+                    <h3><i class="fa fa-fw fa-dot-circle-o"></i>İlkin qeydiyyat</h3>
+                    <div class="row">
+                        <form id="uploadForm" action="https://script.google.com/macros/s/AKfycbwptWcwILiVlrwRcZAn7UfU-bcpEEq8J_sSD4ABR47FvErfleY/exec" method="POST">
+                            <input type="hidden" value="" name="fileContent" id="fileContent">
+                            <input type="hidden" value="" name="filename" id="filename">
+                            <div class="col-md-6 forms">
+                                <input id="first_name" type="text" name="name" placeholder="Adınız" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col-md-6 forms">
+                                <input id="last_name" name="surname" type="text" placeholder="Soyadınız" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col-md-6 forms">
+                                <input id="email" name="email" type="text" placeholder="Email" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="col-md-6 forms">
+                                <input id="contact" name="contact" type="text" placeholder="Telefon nömrəsi" aria-describedby="basic-addon1">   
+                            </div>
+
+
+                        </form>  
+                        <div class="col-md-6 forms">
+                            <input required id="attach" name="attach" type="file"/>
+                        </div>
+                        <div class="col-md-6 forms">
+                            <input value="Submit" type="button" onclick="UploadFile();" />
+                        </div>
+                    </div>		  				 	 	 
+                </div> <!-- end of section -->
+
+                <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section --> 
+                    <div class="side-nav-inside"> 				
+                        <ul>
+                            <h4>QEYDİYYAT</h4>
+                            <li class="active"><i class="fa fa-long-arrow-right"></i> İlkin qeydiyyat</li>
+                            <li><a href="#">Sual ver</a></li>
+                            <li><a href="#">Zəng edək</a></li>
+                            <li><a href="#">Təlimçi ol</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- closing CONTENT -->
+
+
+
+        <!-- FOOTER -->
+
+        {% include "includes/footer.html" %}
+        <!-- ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="jquery/jquery.min.js"></script>
+        <script src="jquery/main.js"></script>
+        <script>window.jQuery || document.write('<script src="jquery/jquery.min.js"><\/script>')</script>
+        <!--    <script src="js/bootstrap.min.js"></script>-->
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+
+
+                                function UploadFile() {
+                                    var reader = new FileReader();
+                                    var file = document.getElementById('attach').files[0];
+                                    reader.onload = function () {
+                                        document.getElementById('fileContent').value = reader.result;
+                                        document.getElementById('filename').value = file.name;
+                                        document.getElementById('uploadForm').submit();
+                                    }
+                                    reader.readAsDataURL(file);
+                                }
+
+                                $(document).ready(function () {
+
+                                    $("a").tooltip(); // for tooltips
+
+                                    // dependent select options
+                                    $department = $("select[name='dep']");
+                                    $cname = $("select[name='cname']");
+
+                                    $department.change(function () {
+
+                                        if ($(this).val() == "Elektron Hökumət") {
+                                            $("select[name='cname'] option").remove();
+                                            $("<option>Sahibkarlar və mühasiblər üçün e-hökumət</option>").appendTo($cname);
+                                            $("<option>Elektron hökumətin əsasları</option>").appendTo($cname);
+                                        }
+
+                                        if ($(this).val() == "Kompüter bilikləri və ofis proqramları") {
+                                            $("select[name='cname'] option").remove();
+                                            $("<option>Ümumi kompüter hazırlığı</option>").appendTo($cname);
+                                            $("<option>Microsoft Office proqramları</option>").appendTo($cname);
+                                            $("<option>Peşəkar Microsoft Excel</option>").appendTo($cname);
+                                            $("<option>1C proqramı</option>").appendTo($cname);
+                                            $("<option>Microsoft Project</option>").appendTo($cname);
+                                        }
+
+                                        if ($(this).val() == "İT-nin əsasları") {
+                                            $("select[name='cname'] option").remove();
+                                            $("<option>İT texnikliyi</option>").appendTo($cname);
+                                            $("<option>İT təhlükəsizliyinin əsasları</option>").appendTo($cname);
+                                        }
+
+                                        if ($(this).val() == "Şəbəkə və sistem inzibatçılığı") {
+                                            $("select[name='cname'] option").remove();
+                                            $("<option>Şəbəkə inzibatçılığının əsasları</option>").appendTo($cname);
+                                            $("<option>Peşəkar şəbəkə inzibatçılığı</option>").appendTo($cname);
+                                            $("<option>Sistem inzibatçılığının əsasları</option>").appendTo($cname);
+                                        }
+
+                                        if ($(this).val() == "Qrafik dizayn") {
+                                            $("select[name='cname'] option").remove();
+                                            $("<option>2D qrafika</option>").appendTo($cname);
+                                            $("<option>3D qrafika</option>").appendTo($cname);
+                                        }
+
+                                        if ($(this).val() == "Proqramlaşdırma və kodlaşdırma") {
+                                            $("select[name='cname'] option").remove();
+                                            $("<option>Veb layihələrin hazırlanması</option>").appendTo($cname);
+                                            $("<option>Java proqramlaşdırma</option>").appendTo($cname);
+                                            $("<option>Python proqramlaşdırma</option>").appendTo($cname);
+                                            $("<option>C++ proqramlaşdırma</option>").appendTo($cname);
+                                            $("<option>Uşaqlar üçün Scratch proqramlaşdırma</option>").appendTo($cname);
+                                        }
+
+                                        if ($(this).val() == "Biznes və menecment") {
+                                            $("select[name='cname'] option").remove();
+                                            $("<option>Rəqəmli marketinq</option>").appendTo($cname);
+                                            $("<option>Layihələrin idarəedilməsi</option>").appendTo($cname);
+                                            $("<option>Peşəkar insan resursları</option>").appendTo($cname);
+                                        }
+
+                                        if ($(this).val() == "Fərdi inkişaf") {
+                                            $("select[name='cname'] option").remove();
+                                            $("<option>Danışıq ingilis dili</option>").appendTo($cname);
+                                            $("<option>Ümumi ingilis dili</option>").appendTo($cname);
+                                            $("<option>Rus dili</option>").appendTo($cname);
+                                            $("<option>Yumşaq bacarıqlar</option>").appendTo($cname);
+                                            $("<option>Dövlət qulluğuna hazırlıq</option>").appendTo($cname);
+                                            $("<option>Magistratura hazırlığı</option>").appendTo($cname);
+                                        }
+
+                                        if ($(this).val() == "İstiqaməti seçin") {
+                                            $("select[name='cname'] option").remove();
+                                            $("<option>Kursu seçin</option>").appendTo($cname);
+                                        }
+
+                                    });
+
+                                });
+        </script>
+    </body>
+</html>

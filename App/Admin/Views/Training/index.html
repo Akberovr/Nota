@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block subheading %} News {% endblock %}
+
+{% block context %}
+
+        {% if source == "show" %}
+
+            {% include "Training/show_training.html" %}
+
+        {% elseif source == "add" %}
+
+            {% include "Training/add_training.html" %}
+
+        {% elseif source == "get" %}
+
+            {% include "Training/edit_training.html" %}
+
+        {% else %}
+
+            {% include "Training/show_training.html" %}
+
+        {% endif %}
+
+
+{% endblock %}
