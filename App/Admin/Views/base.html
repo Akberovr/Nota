@@ -83,12 +83,12 @@
                         <ul id="demo3" class="collapse">
 
                             {% if lang %}
-                                <li>
-                                    <a href="/admin/staff/show?lang={{lang}}">Members</a>
-                                </li>
-                                <li>
-                                    <a href="/admin/staff/add?lang={{lang}}">Add Member</a>
-                                </li>
+                            <li>
+                                <a href="/admin/staff/show?lang={{lang}}">Members</a>
+                            </li>
+                            <li>
+                                <a href="/admin/staff/add?lang={{lang}}">Add Member</a>
+                            </li>
                             {% else %}
                             <li>
                                 <a href="/admin/staff/show">Members</a>
@@ -106,10 +106,15 @@
                         <a href="javascript:" data-toggle="collapse" data-target="#demo2"><i class="fa fa-newspaper-o"></i> News <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo2" class="collapse">
 
-                           {% if lang %}
+                            {% if lang %}
                             <li>
                                 <a href="/admin/news/show?lang={{lang}}">View News</a>
                             </li>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8be994065fbb1af1103da686088a40d64146cd17
                             <li>
                                 <a href="/admin/news/add?lang={{lang}}">Add News</a>
                             </li>
@@ -144,7 +149,7 @@
                             <li>
                                 <a href="/admin/city/add">Add City</a>
                             </li>
-                            {% endif %}
+                            {% endif %} 
                         </ul>
                     </li>
 

@@ -1,16 +1,90 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+{% for error in errors %}
+{{error}}
+{% endfor %}
+
+<a class="btn btn-primary" href="/admin/training/add">Add Training</a>
+<nav aria-label="..." class="pull-right">
+    <ul class="pagination">
+
+        {% if pages > 1 %}
+
+        {% for page in 1..pages %}
+
+        {% if page == current_page %}
+
+        {% if lang %}
+        <li class="page-item active"><a class="page-link " href="/admin/training/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+        {% else %}
+        <li class="page-item active"><a class="page-link " href="/admin/training/show?page={{page}}">{{page}}</a></li>
+        {% endif %}
+
+        {% else %}
+
+        {% if lang %}
+        <li class="page-item"><a class="page-link " href="/admin/training/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link " href="/admin/training/show?page={{page}}">{{page}}</a></li>
+        {% endif %}
+
+        {% endif %}
+
+        {% endfor %}
+
+        {% endif %}
+
+    </ul>
+</nav>
+
+<table class="table-responsive-sm  table-striped table table-hover table-responsive">
+    <thead class="table-responsive-sm">
+        <tr>
+            <th>Id</th>
+            <th>Training name</th>
+            <th>Category</th>
+            <th>Hours</th>       
+            <th>Applicant</th>
+
+            <th>Views</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for training in trainings %}
+
+
+        <tr>
+            <td style="width: 30px">{{training.training_id}}</td>
+            <td style="width: 170px">{{training.training_name}}</td>
+              {% if lang == 'az' or lang == null %}
+               <td style="width: 100px">{{training.training_cat_id}}</td>
+              {% elseif lang == 'en' %}
+             <td style="width: 100px">{{training.training_cat_name}}</td>
+             {% endif %}
+            <td style="width: 100px">{{training.training_hours}}</td>
+            <td style="width: 100px">{{training.training_applicant}}</td>
+            
+            
+
+
+            <td style="width: 70px"></td>
+
+            {% if lang == 'az' or lang == null %}
+
+            <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
+            <td style="width: 80px"><a href="" class="btn btn-info" value="" >Update</a> </td >
+
+
+            {% elseif lang == 'en' %}
+
+            <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
+            <td style="width: 80px"><a href="" class="btn btn-info" value="" >Update</a> </td >
+
+            {% endif %}
+
+            <td style="width: 100px" ><a href="/admin/training/delete" class="btn btn-danger" value="" >Delete</a> </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+</table>
