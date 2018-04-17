@@ -8,8 +8,9 @@
 
 namespace App\Controllers;
 
-use \Core\View;
-use \App\Admin\Models\News as ModelNews;
+use Core\View;
+use App\Paginate;
+use App\Admin\Models\News as ModelNews;
 
 
 class News extends \Core\Controller
@@ -24,7 +25,15 @@ class News extends \Core\Controller
 
     public function indexAction(){
 
-        View::renderTemplate('News/index.html',["news" => ModelNews::findAll()]);
+        $page = isset($_GET["page"]) ? $_GET["page"] : 1 ;
+        
+        View::renderTemplate('News/index.html',[
+            
+            "news"    => ModelNews::getNews($page,4, ModelNews::class),
+            "pages"   => ModelNews::getPages($page,5,ModelNews::class),
+            "current_page" => $page
+                
+        ]);
 
     }
 

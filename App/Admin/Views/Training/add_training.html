@@ -1,0 +1,99 @@
+
+{% for error in errors %}
+{{error}}
+{% endfor %}
+
+<a class="btn btn-primary" href="/admin/training/add">Add Training</a>
+
+
+
+<nav aria-label="..." class="pull-right">
+    <ul class="pagination">
+
+        {% if pages > 1 %}
+
+        {% for page in 1..pages %}
+
+        {% if page == current_page %}
+
+
+        {% if lang %}
+        <li class="page-item active"><a class="page-link " href="/admin/training/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+        {% else %}
+        <li class="page-item active"><a class="page-link " href="/admin/training/show?page={{page}}">{{page}}</a></li>
+        {% endif %}
+
+        {% else %}
+
+        {% if lang %}
+        <li class="page-item"><a class="page-link " href="/admin/training/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link " href="/admin/training/show?page={{page}}">{{page}}</a></li>
+        {% endif %}
+
+        {% endif %}
+
+        {% endfor %}
+
+        {% endif %}
+
+    </ul>
+</nav>
+<form action="/admin/training/create" method="post" >
+
+    <div class="form-group">
+        <label for="Name">Training Name</label>
+        <input value="" type="text" class="form-control" name="training_name">
+    </div>
+
+    <div class="form-group">
+        <label for="">Training Category</label> <br>
+        <select class="selectpicker" name="category_id" >
+
+            {% for category in trainingCategory %}
+            <option data-tokens="ketchup mustard"  name="category_id" value="{{category.training_category_id}}">{{category.training_cat_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class=" form-group demo">
+        <label for="daterange">Registration range</label>
+        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+        <input type="text" class="form-control" name="training_apply_date" id="daterange">
+
+    </div>
+    <div class=" form-group demo">
+        <label for="daterange">Course duration </label>
+        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+        <input type="text" class="form-control" name="training_duration" id="daterange">
+
+    </div>
+    <div class="form-group">
+        <label for="training_hours">Training Hours</label>
+        <input value="" type="number" class="form-control" name="training_hours">
+    </div>
+    <div class="form-group">
+        <label for="training_applicant">Training Applicant</label>
+        <input value="" type="number" class="form-control" name="training_applicant">
+    </div>
+    <div class="form-group">
+        <button  class="btn btn-primary" type="submit">Add News</button>
+    </div>
+
+</form>
+<script>
+    $(document).ready(function () {
+        $('input[name="training_apply_date"] , input[name="training_duration"]').daterangepicker(
+                {
+                    locale: {
+                        format: 'YYYY/MM/DD'
+                    },
+                    startDate: '2013/01/01',
+                    endDate: '2013/12/31'
+                },
+                function (start, end, label) {
+                    alert("A new date range was chosen: " + start.format('YYYY/MM/DD') + ' to ' + end.format('YYYY/MM/DD'));
+                });
+    });
+
+</script>
