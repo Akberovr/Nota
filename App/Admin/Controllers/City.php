@@ -20,9 +20,9 @@ class City extends \App\Controllers\Authenticated {
      *
      * @return void
      */
-    
-    
-    
+
+
+
     public function showAction() {
 
         $city = CityModel::getCity();

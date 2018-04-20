@@ -33,6 +33,18 @@
 
                 {% for post in news %}
 
+<<<<<<< HEAD
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="news-img-container">
+                        <img src="images/news/{{post.image}}">
+                    </div>
+                    <span><i class="fa fa-eye"> </i> {{post.views}}</span>
+                    <span class="news-time">{{post.date|date("d-m-y")}}</span>
+                    <p class="news-head"><a href="/news/{{post.id}}"> {{post.title}}</a></p>
+                    <p>Elektron Hökumət Təlim-Tədris Mərkəzində Şəbəkə İnzibatçılığı üzrə təlimlərə start verilir...</p>
+                    <p>&nbsp;</p>
+                </div>
+=======
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="news-img-container">
                                 <img src="images/news/{{post.image}}">
@@ -42,6 +54,7 @@
                             <p>Elektron Hökumət Təlim-Tədris Mərkəzində Şəbəkə İnzibatçılığı üzrə təlimlərə start verilir...</p>
                             <p>&nbsp;</p>
                         </div>
+>>>>>>> 8be994065fbb1af1103da686088a40d64146cd17
 
                 {% endfor %}
 
@@ -50,6 +63,16 @@
 
             <nav aria-label="Page navigation"> <!-- pagination -->
                 <ul class="pagination">
+<<<<<<< HEAD
+                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                    </li>
+                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+=======
                     
                     
                     
@@ -86,6 +109,7 @@
                     
                     
 
+>>>>>>> 8be994065fbb1af1103da686088a40d64146cd17
                 </ul>
             </nav> <!-- closing pagination -->
         </div> <!-- end of section -->
@@ -115,21 +139,21 @@
 <script src="js/jquery.prettyPhoto.js"></script>
 <script src="js/main.js"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#news-slider").owlCarousel({
-            items : 2,
-            itemsDesktop:[1199,2],
-            itemsDesktopSmall:[980,2],
-            itemsMobile : [700,1],
-            pagination:false,
-            navigation:true,
-            navigationText:["",""],
-            autoPlay:true
+            items: 2,
+            itemsDesktop: [1199, 2],
+            itemsDesktopSmall: [980, 2],
+            itemsMobile: [700, 1],
+            pagination: false,
+            navigation: true,
+            navigationText: ["", ""],
+            autoPlay: true
         });
         $("a").tooltip(); // for tooltips
 
         // Colorbox Call
-        $(document).ready(function(){
+        $(document).ready(function () {
             $("[rel^='lightbox']").prettyPhoto();
         });
 

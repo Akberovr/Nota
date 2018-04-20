@@ -19,10 +19,11 @@ class Job extends \App\Controllers\Authenticated
     /**
      *Show the index page
      *
-     *@return void
+     * @return void
      */
 
-    public function showAction(){
+    public function showAction()
+    {
 
         View::renderTemplate();
 
@@ -32,7 +33,8 @@ class Job extends \App\Controllers\Authenticated
      * Add a new Job
      * @return void
      */
-    public function addAction(){
+    public function addAction()
+    {
 
         View::renderTemplate();
 
@@ -42,7 +44,8 @@ class Job extends \App\Controllers\Authenticated
      * Edit the Job
      * @return void
      */
-    public function editAction(){
+    public function editAction()
+    {
 
         View::renderTemplate();
 
@@ -54,7 +57,8 @@ class Job extends \App\Controllers\Authenticated
      *
      * @return void
      */
-    public function createAction(){
+    public function createAction()
+    {
 
     }
 }
