@@ -10,9 +10,9 @@ class Training extends \App\Controllers\Authenticated {
 
     public function showAction() {
 
-       
-         $page = isset($_GET["page"]) ? $_GET["page"] : 1;
-         
+
+        $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+
         View::renderTemplate("Training/index.html", [
             'trainingCategory' => TrainingModel::getTrainingCategory(),
             'trainings' => TrainingModel::getTraining($page, 5, TrainingModel::class),
@@ -23,10 +23,9 @@ class Training extends \App\Controllers\Authenticated {
 
     public function addAction() {
 
-        $trainingCategory = TrainingModel::getTrainingCategory();
-
         View::renderTemplate("Training/index.html", [
-            'trainingCategory' => $trainingCategory,
+            'trainingCategory' => TrainingModel::getTrainingCategory(),
+            'trainingNames' => TrainingModel::findAll()
         ]);
     }
 
@@ -34,10 +33,31 @@ class Training extends \App\Controllers\Authenticated {
         $training = new TrainingModel($_POST);
 
         if ($training->create()) {
-            
+
             Flash::addMessage("Training Added Succesfully");
             $this->redirect("/admin/training/show");
+        } else {
+            Flash::addMessage("There is an error occured");
+            $this->redirect("/admin/training/show");
+        }
+    }
 
+    public function langAction() {
+        
+        View::renderTemplate("Training/index.html", [
+            'trainings' => TrainingModel::findById($this->route_params["id"]),
+            'languages' => TrainingModel::getLingualInfo(),
+            
+        ]);
+    }
+
+    public function translateAction() {
+
+        $translate = new TrainingModel($_POST);
+
+        if ($translate->translate($this->route_params["id"])) {
+            Flash::addMessage("Translated  Succesfully");
+            $this->redirect("/admin/training/show");
         } else {
             Flash::addMessage("There is an error occured");
             $this->redirect("/admin/training/show");

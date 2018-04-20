@@ -2,6 +2,7 @@
 {{error}}
 {% endfor %}
 
+
 <a class="btn btn-primary" href="/admin/training/add">Add Training</a>
 <nav aria-label="..." class="pull-right">
     <ul class="pagination">
@@ -66,6 +67,8 @@
 
 
             <td style="width: 70px"></td>
+            
+            <td style="width: 100px" ><a href="/admin/training/lang/{{training.training_id}}" class="btn btn-warning" value="" >Lang</a> </td>
 
             {% if lang == 'az' or lang == null %}
 
@@ -79,7 +82,7 @@
             <td style="width: 80px"><a href="" class="btn btn-info" value="" >Update</a> </td >
 
             {% endif %}
-
+            
             <td style="width: 100px" ><a href="/admin/training/delete" class="btn btn-danger" value="" >Delete</a> </td>
 
         </tr>
