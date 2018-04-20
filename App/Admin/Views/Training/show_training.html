@@ -73,17 +73,17 @@
             {% if lang == 'az' or lang == null %}
 
             <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
-            <td style="width: 80px"><a href="" class="btn btn-info" value="" >Update</a> </td >
+            <td style="width: 80px"><a href="get/{{training.training_id}}" class="btn btn-info" value="" >Update</a> </td >
 
 
             {% elseif lang == 'en' %}
 
             <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
-            <td style="width: 80px"><a href="" class="btn btn-info" value="" >Update</a> </td >
+           <td style="width: 80px"><a href="get/{{training.training_id}}?lang=en" class="btn btn-info" value="" >Update</a> </td >
 
             {% endif %}
             
-            <td style="width: 100px" ><a href="/admin/training/delete" class="btn btn-danger" value="" >Delete</a> </td>
+            <td style="width: 100px" ><a href="/admin/training/delete/{{training.training_id}}" class="btn btn-danger" value="" >Delete</a> </td>
 
         </tr>
 

@@ -18,25 +18,12 @@ class Training extends \Core\Model {
 
         try {
 
-            $defaultLang = '';
 
-            if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
 
-                $sql = "INSERT INTO trainings (training_name,training_cat_id, "
-                        . "training_apply_date , training_duration,training_hours,training_applicant)"
-                        . "VALUES (:name,:category_id,:training_apply_date,:training_duration,:training_hours,:training_applicant) ";
-            } else {
-                switch (strtolower($_GET["lang"])) {
-                    case $_GET["lang"]:
-                        $_SESSION['lang'] = $_GET["lang"];
-                        $sql;
-                    default:
-                        //IN ALL OTHER CASES your default langauge code will set
-                        //Invalid languages
-                        $_SESSION['lang'] = $defaultLang;
-                        break;
-                }
-            }
+            $sql = "INSERT INTO trainings (training_name,training_cat_id, "
+                    . "training_apply_date , training_duration,training_hours,training_applicant)"
+                    . "VALUES (:name,:category_id,:training_apply_date,:training_duration,:training_hours,:training_applicant) ";
+
 
             $db = static::getDB();
 
@@ -55,9 +42,65 @@ class Training extends \Core\Model {
         }
     }
 
+    public function update($id) {
+
+
+        try {
+
+            $defaultLang = '';
+
+            if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
+
+                $sql = "UPDATE trainings SET training_name = :training_name,training_cat_id = :category_id, training_apply_date = :apply_date"
+                        . " , training_duration = :duration , training_hours = :hours,training_applicant = :applicant "
+                        . " WHERE training_id = :training_id";
+
+
+                $db = static::getDB();
+
+                $stmt = $db->prepare($sql);
+
+                $stmt->bindValue(':training_name', $this->training_name, PDO::PARAM_STR);
+                $stmt->bindValue(':category_id', $this->category_id, PDO::PARAM_INT);
+                $stmt->bindValue(':apply_date', $this->training_apply_date, PDO::PARAM_STR);
+                $stmt->bindValue(':duration', $this->training_duration, PDO::PARAM_STR);
+                $stmt->bindValue(':hours', $this->training_hours, PDO::PARAM_INT);
+                $stmt->bindValue(':applicant', $this->training_applicant, PDO::PARAM_INT);
+                $stmt->bindParam(':training_id', $id, PDO::PARAM_INT);
+//                
+            } else {
+                switch (strtolower($_GET["lang"])) {
+                    case $_GET["lang"]:
+                        $_SESSION['lang'] = $_GET["lang"];
+                        $sql = "UPDATE trainings_translation set lang_code = :lang_code,training_name = :name WHERE training_id = :training_id";
+
+                        $db = static::getDB();
+
+                        $stmt = $db->prepare($sql);
+
+                        $stmt->bindValue(':training_name', $this->training_name, PDO::PARAM_INT);
+                        $stmt->bindValue(':lang_code', $this->lang_code, PDO::PARAM_STR);
+                        $stmt->bindParam(':training_id', $id, PDO::PARAM_INT);
+                    default:
+                        //IN ALL OTHER CASES your default langauge code will set
+                        //Invalid languages
+                        $_SESSION['lang'] = $defaultLang;
+                        break;
+                }
+            }
+            $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            $error = $e->getMessage();
+        }
+    }
+
     public static function findAll() {
 
-         $sql = "SELECT * FROM trainings";
+        $sql = "SELECT * FROM trainings";
 
 
         $db = static::getDB();
@@ -72,7 +115,25 @@ class Training extends \Core\Model {
     }
 
     public static function findById($id) {
-        $sql = "SELECT * FROM trainings WHERE training_id = :id ";
+
+        $defaultLang = '';
+
+        if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
+
+            $sql = "SELECT * FROM trainings WHERE training_id = :id ";
+        } else {
+            switch (strtolower($_GET["lang"])) {
+                case $_GET["lang"]:
+                    //If the string is another language
+                    $_SESSION['lang'] = $_GET["lang"];
+                    $sql = "SELECT * FROM trainings_translation WHERE training_id = :id AND lang_code =  '" . $_SESSION["lang"] . "'";
+                default:
+                    //IN ALL OTHER CASES your default langauge code will set
+
+                    $_SESSION['lang'] = $defaultLang;
+                    break;
+            }
+        }
 
         $db = static::getDB();
 
@@ -80,11 +141,26 @@ class Training extends \Core\Model {
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
-        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+        $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
 
         $stmt->execute();
 
         return $stmt->fetch();
+    }
+
+    public static function deleteById($id) {
+        try {
+
+            $sql = "DELETE  FROM  trainings WHERE training_id =  :id ";
+
+            $db = static::getDB();
+
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (Exception $e) {
+            $error = $e->getMessage();
+        }
     }
 
     public static function getTraining($page, $data_per_page, $class) {
@@ -102,7 +178,7 @@ class Training extends \Core\Model {
                 switch (strtolower($_GET["lang"])) {
                     case $_GET["lang"]:
                         $_SESSION['lang'] = $_GET["lang"];
-                        $sql = "SELECT tt.training_name,tc.training_cat_name,t.training_apply_date,t.training_duration,t.training_hours,t.training_applicant
+                        $sql = "SELECT tt.training_id,tt.training_name,tc.training_cat_name,t.training_apply_date,t.training_duration,t.training_hours,t.training_applicant
                                 FROM trainings t
                                 INNER JOIN trainings_translation tt
                                 ON t.training_id = tt.training_id
@@ -200,24 +276,23 @@ class Training extends \Core\Model {
         }
     }
 
-    public  function translate($id) {
+    public function translate($id) {
         try {
-            
+
             $sql = "INSERT INTO trainings_translation "
                     . "(training_id,lang_code,training_name) "
                     . "VALUES "
                     . "($id,:lang_code,:name)";
 
-           $db = static::getDB();
+            $db = static::getDB();
 
             $stmt = $db->prepare($sql);
-            
+
             $stmt->bindValue(':lang_code', $this->lang_code, PDO::PARAM_STR);
             $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
 
 
             return $stmt->execute();
-            
         } catch (Exception $e) {
             $error = $e->getMessage();
         }

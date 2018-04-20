@@ -21,12 +21,11 @@ class Training extends \App\Controllers\Authenticated {
         ]);
     }
 
-    public function addAction() {
-
+    public function addAction() {   
         View::renderTemplate("Training/index.html", [
             'trainingCategory' => TrainingModel::getTrainingCategory(),
-            'trainingNames' => TrainingModel::findAll()
         ]);
+        
     }
 
     public function createAction() {
@@ -40,6 +39,43 @@ class Training extends \App\Controllers\Authenticated {
             Flash::addMessage("There is an error occured");
             $this->redirect("/admin/training/show");
         }
+    }
+    
+    public function getAction() {
+         View::renderTemplate("Training/index.html", [
+            'training' => TrainingModel::findById($this->route_params["id"]),
+            'trainingCategory' => TrainingModel::getTrainingCategory(),
+//            'lang' => TrainingModel::getLingualInfo(),
+        ]);
+    }
+    
+    public function updateAction() {
+        $training = new TrainingModel($_POST);
+        
+
+        
+         if ($training->update($this->route_params["id"])) {
+            Flash::addMessage("Updated  Succesfully");
+            $this->redirect("/admin/training/show");
+         }else {
+            Flash::addMessage("There is an error occured");
+            $this->redirect("/admin/training/show");
+        }
+    }
+    
+    
+        public function deleteAction() {
+
+        $id = $this->route_params["id"];
+        $post = TrainingModel::deleteById($id);
+        if ($post){
+        Flash::addMessage("Training deleted", Flash::SUCCESS);
+        $this->redirect('/Admin/Training/show');
+        }else{
+             Flash::addMessage("Training deleted", Flash::SUCCESS);
+             $this->redirect('/Admin/Training/show');
+        }
+       
     }
 
     public function langAction() {
