@@ -45,14 +45,15 @@ class Training extends \App\Controllers\Authenticated {
          View::renderTemplate("Training/index.html", [
             'training' => TrainingModel::findById($this->route_params["id"]),
             'trainingCategory' => TrainingModel::getTrainingCategory(),
-//            'lang' => TrainingModel::getLingualInfo(),
+            'languages' => TrainingModel::getLingualInfo(),
         ]);
     }
     
     public function updateAction() {
         $training = new TrainingModel($_POST);
-        
-
+        print_r("<pre>");
+        print_r($training);
+        print_r("</pre>");
         
          if ($training->update($this->route_params["id"])) {
             Flash::addMessage("Updated  Succesfully");
@@ -90,7 +91,10 @@ class Training extends \App\Controllers\Authenticated {
     public function translateAction() {
 
         $translate = new TrainingModel($_POST);
-
+        
+        print_r("<pre>");
+        print_r($translate);
+        print_r("</pre>");
         if ($translate->translate($this->route_params["id"])) {
             Flash::addMessage("Translated  Succesfully");
             $this->redirect("/admin/training/show");

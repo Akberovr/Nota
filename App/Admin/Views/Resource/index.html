@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block subheading %} Resource {% endblock %}
+
+{% block context %}
+
+        {% if source == "add" %}
+
+              {% include "Resource/add_resource.html" %}
+            
+        {% elseif source == "get" %}
+        
+            {% include "Resource/edit_resource.html" %}            
+
+        {% elseif source == "show" %}
+        
+         {% include "Resource/show_resource.html" %}
+         
+        {% elseif source == "lang" %}
+         {% include "Resource/lang_resource.html" %}
+         
+        {% else %}
+
+            {% include "Resource/show_resource.html" %}
+
+        {% endif %}
+
+{% endblock %}

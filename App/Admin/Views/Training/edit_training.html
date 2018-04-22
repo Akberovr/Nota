@@ -1,11 +1,24 @@
-<form action="/admin/training/update/{{training.training_id}}" method="post" >
 
+ {% if lang == 'az' or lang == null %}
+<form action="/admin/training/update/{{training.training_id}}" method="post" >
+    
+ {% elseif lang == 'en' %}
+ 
+ 
+ <form action="/admin/training/update/{{training.training_id}}?lang=en" method="post" >
+   
+  {% endif %}
+  
+  
     <div class="form-group">
         <label for="training_name">Training Name</label>
         <input  type="text" class="form-control" name="training_name" value="{{training.training_name}}">
     </div>
 
-    <div class="form-group">
+
+    {% if lang == 'az' or lang == null %}
+    
+     <div class="form-group">
         <label for="">Training Category</label> <br>
         <select class="selectpicker" name="category_id"  id="category_id">
 
@@ -14,7 +27,6 @@
             {% endfor %}
         </select>
     </div>
-    {% if lang == 'az' or lang == null %}
     <div class=" form-group demo">
         <label for="daterange">Registration range</label>
         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
@@ -44,15 +56,15 @@
 
     {% elseif lang == 'en' %}
 
-    <div class="form-group">
-        <label for="lang_code">Language</label> <br>
-        <select class="selectpicker" name="lang_code" id="lang_code">
-            {% for  languages in lang %}
-            <option data-tokens="ketchup mustard"  name="lang_code" value="{{languages.lang_code}}">{{languages.lang_name}}</option>
-            {% endfor %}
-        </select>
-    </div>
-    
+            <div class="form-group">
+                  <label for="lang_code">Language</label> <br>
+                  <select class="selectpicker" name="lang_code" id="lang_code">
+                      {% for  language in languages %}
+                      <option data-tokens="ketchup mustard"  name="lang_code" value="{{language.lang_code}}">{{language.lang_name}}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+
     
     {% endif %}
     <div class="form-group">

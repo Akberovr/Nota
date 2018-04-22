@@ -51,8 +51,7 @@ class Training extends \Core\Model {
 
             if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
 
-                $sql = "UPDATE trainings SET training_name = :training_name,training_cat_id = :category_id, training_apply_date = :apply_date"
-                        . " , training_duration = :duration , training_hours = :hours,training_applicant = :applicant "
+                $sql = "UPDATE trainings SET training_name = :training_name "
                         . " WHERE training_id = :training_id";
 
 
@@ -70,17 +69,26 @@ class Training extends \Core\Model {
 //                
             } else {
                 switch (strtolower($_GET["lang"])) {
+                    
+                    
                     case $_GET["lang"]:
                         $_SESSION['lang'] = $_GET["lang"];
-                        $sql = "UPDATE trainings_translation set lang_code = :lang_code,training_name = :name WHERE training_id = :training_id";
+                        
+                        $sql = " UPDATE trainings_translation SET "
+                                . "lang_code = :lang_code , training_name = :training_name "
+                                . " WHERE training_id = :training_id AND  lang_code = '". $_SESSION['lang'] ."'";
+                        
 
                         $db = static::getDB();
 
                         $stmt = $db->prepare($sql);
-
-                        $stmt->bindValue(':training_name', $this->training_name, PDO::PARAM_INT);
+                        
                         $stmt->bindValue(':lang_code', $this->lang_code, PDO::PARAM_STR);
+                        $stmt->bindValue(':training_name', $this->training_name, PDO::PARAM_STR);
                         $stmt->bindParam(':training_id', $id, PDO::PARAM_INT);
+                        
+                        
+                        
                     default:
                         //IN ALL OTHER CASES your default langauge code will set
                         //Invalid languages
@@ -88,11 +96,11 @@ class Training extends \Core\Model {
                         break;
                 }
             }
-            $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
+          
 
-            $stmt->execute();
+           return $stmt->execute();
 
-            return $stmt->fetchAll();
+            
         } catch (Exception $e) {
             $error = $e->getMessage();
         }

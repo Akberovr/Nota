@@ -54,7 +54,7 @@
 
         <tr>
             <td style="width: 30px">{{training.training_id}}</td>
-            <td style="width: 170px">{{training.training_name}}</td>
+            <td style="width: 170px" "><a href="/admin/resource/show/{{training.training_id}}">{{training.training_name}}</a></td>
               {% if lang == 'az' or lang == null %}
                <td style="width: 100px">{{training.training_cat_id}}</td>
               {% elseif lang == 'en' %}
@@ -73,13 +73,13 @@
             {% if lang == 'az' or lang == null %}
 
             <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
-            <td style="width: 80px"><a href="get/{{training.training_id}}" class="btn btn-info" value="" >Update</a> </td >
+            <td style="width: 80px"><a href="get/{{training.training_id}}" class="btn btn-info" value="" >Edit</a> </td >
 
 
             {% elseif lang == 'en' %}
 
             <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
-           <td style="width: 80px"><a href="get/{{training.training_id}}?lang=en" class="btn btn-info" value="" >Update</a> </td >
+           <td style="width: 80px"><a href="get/{{training.training_id}}?lang=en" class="btn btn-info" value="" >Edit</a> </td >
 
             {% endif %}
             
