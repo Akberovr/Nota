@@ -2,6 +2,7 @@
 {{error}}
 {% endfor %}
 
+
 <a class="btn btn-primary" href="/admin/training/add">Add Training</a>
 <nav aria-label="..." class="pull-right">
     <ul class="pagination">
@@ -53,7 +54,7 @@
 
         <tr>
             <td style="width: 30px">{{training.training_id}}</td>
-            <td style="width: 170px">{{training.training_name}}</td>
+            <td style="width: 170px" "><a href="/admin/resource/show/{{training.training_id}}">{{training.training_name}}</a></td>
               {% if lang == 'az' or lang == null %}
                <td style="width: 100px">{{training.training_cat_id}}</td>
               {% elseif lang == 'en' %}
@@ -66,21 +67,23 @@
 
 
             <td style="width: 70px"></td>
+            
+            <td style="width: 100px" ><a href="/admin/training/lang/{{training.training_id}}" class="btn btn-warning" value="" >Lang</a> </td>
 
             {% if lang == 'az' or lang == null %}
 
             <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
-            <td style="width: 80px"><a href="" class="btn btn-info" value="" >Update</a> </td >
+            <td style="width: 80px"><a href="get/{{training.training_id}}" class="btn btn-info" value="" >Edit</a> </td >
 
 
             {% elseif lang == 'en' %}
 
             <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
-            <td style="width: 80px"><a href="" class="btn btn-info" value="" >Update</a> </td >
+           <td style="width: 80px"><a href="get/{{training.training_id}}?lang=en" class="btn btn-info" value="" >Edit</a> </td >
 
             {% endif %}
-
-            <td style="width: 100px" ><a href="/admin/training/delete" class="btn btn-danger" value="" >Delete</a> </td>
+            
+            <td style="width: 100px" ><a href="/admin/training/delete/{{training.training_id}}" class="btn btn-danger" value="" >Delete</a> </td>
 
         </tr>
 

@@ -70,9 +70,7 @@ class Post extends \App\Controllers\Authenticated {
     function updateAction() {
 
          $post = new PostModel($_POST);
-         print_r("<pre>");
-          print_r($_POST);
-          print_r("</pre>");
+         
          $id = $this->route_params["id"];
          
          if($post->updatePost($id)){
@@ -98,9 +96,7 @@ class Post extends \App\Controllers\Authenticated {
         Flash::addMessage("Post deleted", Flash::SUCCESS);
         $this->redirect('/Admin/Post/show');
 
-        if ($_GET) {
-            print_r($id);
-        }
+       
     }
 
 }

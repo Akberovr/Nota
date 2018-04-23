@@ -1,0 +1,38 @@
+
+<a class="btn btn-primary" href="/admin/training/show" style="margin-bottom: 60px">Show trainings</a>
+
+
+
+
+
+<form action="/admin/training/translate/{{trainings.training_id}}" method="post" >
+
+    <div class=" form-group demo">
+        <label for="original">Original Training name</label>
+        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+        <input type="text" class="form-control" name="original" id="original" value="{{trainings.training_name}}">
+    </div>
+
+    <div class="form-group">
+        <label for="lang_code">Language</label> <br>
+        <select class="selectpicker" name="lang_code" id="lang_code">
+            {% for lang in languages %}
+            <option data-tokens="ketchup mustard"  name="lang_code" value="{{lang.lang_code}}">{{lang.lang_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class=" form-group demo">
+        <label for="name">Training name</label>
+        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+        <input type="text" class="form-control" name="name" id="name">
+    </div>
+
+
+
+    <div class="form-group">
+
+        <button  class="btn btn-primary" type="submit" style="margin-top:20px">Translate</button>
+
+    </div>
+
+</form>

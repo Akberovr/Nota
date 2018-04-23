@@ -46,15 +46,17 @@
         <input value="" type="text" class="form-control" name="training_name">
     </div>
 
+
     <div class="form-group">
         <label for="">Training Category</label> <br>
-        <select class="selectpicker" name="category_id" >
+        <select class="selectpicker" name="category_id"  id="category_id">
 
             {% for category in trainingCategory %}
             <option data-tokens="ketchup mustard"  name="category_id" value="{{category.training_category_id}}">{{category.training_cat_name}}</option>
             {% endfor %}
         </select>
     </div>
+
 
     <div class=" form-group demo">
         <label for="daterange">Registration range</label>
@@ -76,6 +78,8 @@
         <label for="training_applicant">Training Applicant</label>
         <input value="" type="number" class="form-control" name="training_applicant">
     </div>
+
+
     <div class="form-group">
         <button  class="btn btn-primary" type="submit">Add News</button>
     </div>
@@ -95,5 +99,6 @@
                     alert("A new date range was chosen: " + start.format('YYYY/MM/DD') + ' to ' + end.format('YYYY/MM/DD'));
                 });
     });
+
 
 </script>

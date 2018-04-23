@@ -22,12 +22,22 @@ class Helper
         $url = $_SERVER['QUERY_STRING'];
 
         $urlString = explode("/" , $url);
-
+        
         if (count($urlString) == 3 || count($urlString) == 4) {
+            
+            if (isset($_GET["lang"])) {
+                
+                $urlString = explode("&", $urlString[2]);
+                return $urlString[0];
+            }
+            
             return $urlString[2];
+            
         }else{
+            
             $urlString[2] = null;
             return $urlString[2];
+            
        }
 
     }

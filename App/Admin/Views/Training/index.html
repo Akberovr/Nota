@@ -13,9 +13,13 @@
             {% include "Training/edit_training.html" %}            
 
         {% elseif source == "show" %}
+        
          {% include "Training/show_training.html" %}
          
-
+        {% elseif source == "lang" %}
+        
+         {% include "Training/lang_training.html" %}
+         
         {% else %}
 
             {% include "Training/show_training.html" %}

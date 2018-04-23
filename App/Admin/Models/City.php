@@ -227,6 +227,7 @@ class City extends \Core\Model {
             $stmt->bindValue(':address', $this->address, PDO::PARAM_STR);
             $stmt->bindValue(':number', $this->number, PDO::PARAM_STR);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            
             return $stmt->execute();
         } catch (Exception $e) {
 
