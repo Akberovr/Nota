@@ -51,7 +51,12 @@ class Training extends \Core\Model {
 
             if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
 
-                $sql = "UPDATE trainings SET training_name = :training_name "
+                $sql = "UPDATE trainings SET training_name = :training_name,"
+                        . "training_cat_id = :category_id,"
+                        . "training_apply_date = :apply_date, "
+                        . " training_duration = :duration,"
+                        . "training_hours = :hours, "
+                        . "training_applicant = :applicant "
                         . " WHERE training_id = :training_id";
 
 
@@ -63,7 +68,7 @@ class Training extends \Core\Model {
                 $stmt->bindValue(':category_id', $this->category_id, PDO::PARAM_INT);
                 $stmt->bindValue(':apply_date', $this->training_apply_date, PDO::PARAM_STR);
                 $stmt->bindValue(':duration', $this->training_duration, PDO::PARAM_STR);
-                $stmt->bindValue(':hours', $this->training_hours, PDO::PARAM_INT);
+                $stmt->bindValue(':hours', $this->training_hours, PDO::PARAM_STR);
                 $stmt->bindValue(':applicant', $this->training_applicant, PDO::PARAM_INT);
                 $stmt->bindParam(':training_id', $id, PDO::PARAM_INT);
 //                

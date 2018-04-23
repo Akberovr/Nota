@@ -2,15 +2,12 @@
 <a class="btn btn-primary" href="/admin/training/show" style="margin-bottom: 60px">Show trainings</a>
 
 
-
-<h1>{{resources.material_id}}</h1>
-
-<form action="/admin/resource/translate/{{resources.material_id}}" method="post" >
+<form action="/admin/resource/update/{{resources.material_id}}" method="post" >
 
     <div class=" form-group demo">
-        <label for="original">Original Title</label>
+        <label for="Title">Title</label>
         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-        <input type="text" class="form-control" name="original" id="original" value="{{resources.material_title}}">
+        <input type="text" class="form-control" name="Title" id="Title" value="{{resources.material_title}}">
     </div>
 
     <div class="form-group">
@@ -22,9 +19,9 @@
         </select>
     </div>
     <div class=" form-group demo">
-        <label for="title">Title</label>
+        <label for="Link">Media Link</label>
         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-        <input type="text" class="form-control" name="title" id="title">
+        <input type="text" class="form-control" name="Link" id="Link">
     </div>
 
         <div class="form-group">
@@ -39,7 +36,7 @@
 
     <div class="form-group">
 
-        <button  class="btn btn-primary" type="submit" style="margin-top:20px">Translate</button>
+        <button  class="btn btn-primary" type="submit" style="margin-top:20px">Update</button>
 
     </div>
 

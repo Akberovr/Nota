@@ -3,7 +3,7 @@
 {% endfor %}
 
 
-<a class="btn btn-primary" href="/admin/resource/add">Add Resource</a>
+
 <nav aria-label="..." class="pull-right">
     <ul class="pagination">
 
@@ -36,15 +36,21 @@
     </ul>
 </nav>
 
+
+
+
 <table class="table-responsive-sm  table-striped table table-hover table-responsive">
     <thead class="table-responsive-sm">
         <tr>
+            {% if lang == 'az' or lang == null %}
             <th>Id</th>
-
+            {% endif %}
             <th>Resource title</th>
             <th>Training</th>
             <th>Resource</th>
-            <th>Video</th>       
+            {% if lang == 'az' or lang == null %}
+            <th>Video</th>    
+            {% endif %}
             <th>View</th>
 
 
@@ -52,39 +58,50 @@
     </thead>
     <tbody>
 
-
-        {% for resource in resources %}
-        <tr>
-
-            <td style="width: 100px">{{resource.training_id}}</td>
-            <td style="width: 170px"><a href=""></a>{{resource.material_title}}</td>
-            <td style="width: 30px">{{resource.material_id}}</td>
-            <td style="width: 100px">
-               <iframe width="220" height="150" src="{{resource.media}}"></iframe>
-            </td>
-            <td style="width: 100px"></td>
-            <td style="width: 70px"></td>
-
-            <td style="width: 100px" ><a href="/admin/resource/lang/{{resource.training_id}}" class="btn btn-warning" value="" >Lang</a> </td>
-
-            {% if lang == 'az' or lang == null %}
-
-            <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
-            <td style="width: 80px"><a href="" class="btn btn-info" value="" >Edit</a> </td >
+    <a class="btn btn-primary" href="/admin/resource/add/{{resource_id.training_id}}">Add Resource</a>
+    {% for resource in resources %}
 
 
-            {% elseif lang == 'en' %}
+    <tr>
+        {% if lang == 'az' or lang == null %}
 
-            <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
-            <td style="width: 80px"><a href="" class="btn btn-info" value="" >Edit</a> </td >
+        <td style="width: 100px">{{resource.training_id}}</td>
+        {% endif %}
 
-            {% endif %}
+        <td style="width: 170px"><a href=""></a>{{resource.material_title}}</td>
+        <td style="width: 30px">{{resource.material_id}}</td>
+        <td style="width: 30px">{{resource.material_body}}</td>
+        {% if lang == 'az' or lang == null %}
+        <td style="width: 100px">
+            <iframe width="220" height="150" src="{{resource.media}}"></iframe>
+        </td>
+        {% elseif lang == 'en' %}
 
-            <td style="width: 100px" ><a href="" class="btn btn-danger" value="" >Delete</a> </td>
+        {% endif %}
+        <td style="width: 100px"></td>
+        <td style="width: 70px"></td>
+        {% if lang == 'az' or lang == null %}
+        <td style="width: 100px" ><a href="/admin/resource/lang/{{resource.material_id}}" class="btn btn-warning" value="" >Lang</a> </td>
+        {% endif %}
 
-        </tr>
-        {% endfor %}
+        {% if lang == 'az' or lang == null %}
+
+        <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
+        <td style="width: 80px"><a href="/admin/resource/get/{{resource.material_id}}" class="btn btn-info" value="" >Edit</a> </td >
 
 
-    </tbody>
+        {% elseif lang == 'en' %}
+
+        <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
+        <td style="width: 80px"><a href="/admin/resource/get/{{training.training_id}}?lang=en" class="btn btn-info" value="" >Edit</a> </td >
+
+        {% endif %}
+
+        <td style="width: 100px" ><a href="" class="btn btn-danger" value="" >Delete</a> </td>
+
+    </tr>
+    {% endfor %}
+
+
+</tbody>
 </table>
