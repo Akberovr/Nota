@@ -63,8 +63,6 @@ class View
             $twig->addGlobal('lang' , \App\Helper::getLang());
 
 
-
-
         }
 
         return $twig->render($template, $args);

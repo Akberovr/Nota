@@ -13,7 +13,7 @@ class Helper
 {
 
     /**
-     * Gets the route parametrs
+     * Gets the route parameters
      * @return String
     */
 
@@ -24,13 +24,26 @@ class Helper
         $urlString = explode("/" , $url);
         
         if (count($urlString) == 3 || count($urlString) == 4) {
-            
+
+            if (isset($_GET["tab"] , $_GET["lang"])){
+
+                $urlString = explode("=", $urlString[2]);
+                return $urlString[2];
+
+            } elseif (!isset($_GET["lang"]) && isset($_GET["tab"])){
+
+                $urlString = explode("=", $urlString[2]);
+                return $urlString[1];
+
+            }
+
             if (isset($_GET["lang"])) {
-                
+
                 $urlString = explode("&", $urlString[2]);
                 return $urlString[0];
+
             }
-            
+
             return $urlString[2];
             
         }else{
