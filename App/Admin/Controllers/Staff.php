@@ -17,7 +17,7 @@ use App\Admin\Models\Staff as ModelStaff;
 class Staff extends \App\Controllers\Authenticated
 {
     /**
-     *Show the index page
+     *Shows the index page
      *
      * @return void
      */

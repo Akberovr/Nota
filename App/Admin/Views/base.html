@@ -56,7 +56,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:" data-toggle="collapse" data-target="#demo12"><i class="fa fa-fw fa-desktop"></i> Resource <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo12"><i class="glyphicon glyphicon-download-alt"></i> Resource <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo12" class="collapse">
                             <li>
                                 <a href="/admin/resource/add">Add Resources</a>
@@ -158,6 +158,28 @@
                                 <a href="/admin/city/add">Add City</a>
                             </li>
                             {% endif %} 
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo5"><i class="glyphicon glyphicon-cog"></i> Settings <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo5" class="collapse">
+
+                            {% if lang %}
+                            <li>
+                                <a href="/admin/settings/slider?lang={{lang}}">Slider</a>
+                            </li>
+                            <li>
+                                <a href="/admin/settings/footer?lang={{lang}}">Footer</a>
+                            </li>
+
+                            {% else %}
+                            <li>
+                                <a href="/admin/settings/slider">Slider</a>
+                            </li>
+                            <li>
+                                <a href="/admin/settings/footer">Footer</a>
+                            </li>
+                            {% endif %}
                         </ul>
                     </li>
 
