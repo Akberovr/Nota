@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block subheading %} Settings {% endblock %}
+
+{% block context %}
+
+        {% if source == "slider" %}
+
+            {% include "Settings/Slider/slider.html" %}
+
+        {% elseif source == "footer" %}
+
+             {% include "Settings/Footer/footer.html" %}
+
+        {% elseif source == "slider&add" %}
+
+              {% include "Settings/Slider/add.html" %}
+
+        {% elseif source == "footer&add" %}
+
+            {% include "Settings/Footer/add.html" %}
+
+        {% else %}
+            {{source}}
+        {% endif %}
+
+
+{% endblock %}
