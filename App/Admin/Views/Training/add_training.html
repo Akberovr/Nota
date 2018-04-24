@@ -3,42 +3,6 @@
 {{error}}
 {% endfor %}
 
-<a class="btn btn-primary" href="/admin/training/add">Add Training</a>
-
-
-
-<nav aria-label="..." class="pull-right">
-    <ul class="pagination">
-
-        {% if pages > 1 %}
-
-        {% for page in 1..pages %}
-
-        {% if page == current_page %}
-
-
-        {% if lang %}
-        <li class="page-item active"><a class="page-link " href="/admin/training/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
-        {% else %}
-        <li class="page-item active"><a class="page-link " href="/admin/training/show?page={{page}}">{{page}}</a></li>
-        {% endif %}
-
-        {% else %}
-
-        {% if lang %}
-        <li class="page-item"><a class="page-link " href="/admin/training/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
-        {% else %}
-        <li class="page-item"><a class="page-link " href="/admin/training/show?page={{page}}">{{page}}</a></li>
-        {% endif %}
-
-        {% endif %}
-
-        {% endfor %}
-
-        {% endif %}
-
-    </ul>
-</nav>
 <form action="/admin/training/create" method="post" >
 
     <div class="form-group">
