@@ -1,10 +1,35 @@
 
-<div class="container">
+    <div class="col-lg-4">
+        <ul class="list group">
+            <li class="list-group-item"><a href="/admin/settings/list?tab=footer&section=socials">Socials</a></li>
+            <li class="list-group-item"><a href="/admin/settings/list?tab=footer&section=statuses">Statuses</a></li>
+            <li class="list-group-item"><a href="/admin/settings/list?tab=footer&section=links">Links</a></li>
+            <li class="list-group-item"><a href="/admin/settings/list?tab=footer&section=contact">Contact</a></li>
+        </ul>
+
+    </div>
 
     <div class="col-lg-8">
-        <li><a href="/admin/settings/list?tab=footer&section=links">Links</a></li>
-        <li><a href="/admin/settings/list?tab=footer&section=companents">Companents</a></li>
-        <li><a href="">Banners</a></li>
-        <li><a href="">Contact</a></li>
-    </div>     
-</div>
+
+        {% if source == "socials" %}
+
+            {% include "Settings/Footer/socials.html" %}
+
+        {% elseif source == "statuses" %}
+
+            {% include "Settings/Footer/statuses.html" %}
+
+        {% elseif source == "links" %}
+
+            {% include "Settings/Footer/links.html" %}
+
+        {% elseif source == "contact" %}
+
+            {% include "Settings/Footer/contact.html" %}
+
+        {% endif %}
+
+    </div>
+
+
+
