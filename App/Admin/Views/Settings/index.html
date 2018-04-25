@@ -18,10 +18,12 @@
 
         {% elseif source == "footer&add" %}
 
-            {% include "Settings/Footer/add.html" %}   
+            {% include "Settings/Footer/add.html" %}
 
         {% else %}
-            {{source}}
+
+            {% include "Settings/Footer/footer.html" %}
+
         {% endif %}
 
 

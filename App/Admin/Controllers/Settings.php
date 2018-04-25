@@ -8,7 +8,9 @@
 
 namespace App\Admin\Controllers;
 
-use \Core\View;
+use App\Flash;
+use Core\View;
+use App\Admin\Models\Setting as ModelSetting;
 
 class Settings extends \App\Controllers\Authenticated
 {
@@ -24,33 +26,32 @@ class Settings extends \App\Controllers\Authenticated
 
         View::renderTemplate('Settings/index.html');
 
+
     }
-
-    /**
-     * Shows the slider page
-     *
-     * @return void
-     */
-
 
     public function slider()
     {
 
-        View::renderTemplate("Settings/index.html");
+        View::renderTemplate('Settings/index.html');
 
     }
 
     /**
-     * Shows the footer page
+     * Adds new info to the related settings
      *
-     * @return void
+     * @returns void
      */
 
-
-    public function footer()
+    public function add ()
     {
+        if (isset($_GET["tab"],$_GET["section"])){
 
-        View::renderTemplate("Settings/index.html");
+
+        }
+
+        Flash::addMessage("Please Select so me category to set",Flash::WARNING);
+
+        $this->redirect('/admin/settings/list');
 
     }
 
