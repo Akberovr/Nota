@@ -25,12 +25,27 @@ class Helper
         
         if (count($urlString) == 3 || count($urlString) == 4) {
 
-            if (isset($_GET["tab"] , $_GET["lang"])){
+            if (isset($_GET["lang"] , $_GET["tab"]) && !isset($_GET["section"])){
 
                 $urlString = explode("=", $urlString[2]);
                 return $urlString[2];
 
-            } elseif (!isset($_GET["lang"]) && isset($_GET["tab"])){
+            }
+            elseif (isset($_GET["lang"] ,$_GET["tab"] , $_GET["section"])) {
+
+                $urlString = explode("=", $urlString[2]);
+                return $urlString[3];
+
+              }
+
+            elseif (isset($_GET["tab"],$_GET["section"])) {
+                
+                $urlString = explode("=", $urlString[2]);
+                return $urlString[2];
+
+            }
+
+            elseif (!isset($_GET["lang"]) && isset($_GET["tab"])){
 
                 $urlString = explode("=", $urlString[2]);
                 return $urlString[1];
