@@ -74,16 +74,18 @@
 
             <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
             <td style="width: 80px"><a href="get/{{training.training_id}}" class="btn btn-info" value="" >Edit</a> </td >
+             <td style="width: 100px" ><a href="/admin/training/delete/{{training.training_id}}" class="btn btn-danger" value="" >Delete</a> </td>
 
 
             {% elseif lang == 'en' %}
 
             <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
            <td style="width: 80px"><a href="get/{{training.training_id}}?lang=en" class="btn btn-info" value="" >Edit</a> </td >
+            <td style="width: 100px" ><a href="/admin/training/delete/{{training.id}}?lang=en" class="btn btn-danger" value="" >Delete</a> </td>
 
             {% endif %}
             
-            <td style="width: 100px" ><a href="/admin/training/delete/{{training.training_id}}" class="btn btn-danger" value="" >Delete</a> </td>
+           
 
         </tr>
 

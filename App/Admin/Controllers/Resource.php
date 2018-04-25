@@ -19,13 +19,14 @@ class Resource extends \App\Controllers\Authenticated {
             'resources' => ResourceModel::getResource($this->route_params["id"], $page, 5, ResourceModel::class),
             'pages' => ResourceModel::getPages($page, 5, ResourceModel::class),
             'current_page' => $page,
-            'resource_id' => ResourceModel::findById($this->route_params["id"]),
+            'resource_id' => TrainingModel::findById($this->route_params["id"]),
         ]);
     }
 
     public function addAction() {
         View::renderTemplate("Resource/index.html", [
             'resources' => ResourceModel::findById($this->route_params["id"]),
+            'resource_id' => TrainingModel::findById($this->route_params["id"]),
         ]);
     }
 
@@ -36,10 +37,10 @@ class Resource extends \App\Controllers\Authenticated {
         if ($resource->create($this->route_params["id"])) {
 
             Flash::addMessage("Resource Added Succesfully");
-            $this->redirect("/admin/resource/show" . $id);
+            $this->redirect("/admin/resource/show/" . $id);
         } else {
             Flash::addMessage("There is an error occured");
-            $this->redirect("/admin/resource/show" . $id);
+            $this->redirect("/admin/resource/show/" . $id);
         }
     }
 
@@ -47,7 +48,32 @@ class Resource extends \App\Controllers\Authenticated {
         View::renderTemplate("Resource/index.html", [
             'resources' => ResourceModel::findById($this->route_params["id"]),
             'languages' => TrainingModel::getLingualInfo(),
+            
         ]);
+    }
+
+    public function updateAction() {
+        $resource = new ResourceModel($_POST);
+        print_r("<pre>");
+        print_r($resource);
+        print_r("</pre>");
+
+        if ($resource->update($this->route_params["id"])) {
+            Flash::addMessage("Updated  Succesfully");
+            $this->redirect("/admin/training/show");
+        } else {
+            Flash::addMessage("There is an error occured");
+            $this->redirect("/admin/training/show");
+        }
+    }
+
+    public function deleteAction() {
+
+        $id = $this->route_params["id"];
+        $post = ResourceModel::deleteById($id);
+        
+            Flash::addMessage("Resource deleted", Flash::SUCCESS);
+            $this->redirect('/Admin/Training/show');
     }
 
     public function langAction() {
@@ -55,10 +81,13 @@ class Resource extends \App\Controllers\Authenticated {
         View::renderTemplate("Resource/index.html", [
             'resources' => ResourceModel::findById($this->route_params["id"]),
             'languages' => TrainingModel::getLingualInfo(),
+            'training' => ResourceModel::findTrainingId($this->route_params["id"]),
+                
         ]);
     }
 
-    public function translateAction() {
+    public
+            function translateAction() {
 
         $translate = new ResourceModel($_POST);
 

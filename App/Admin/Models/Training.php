@@ -163,8 +163,28 @@ class Training extends \Core\Model {
 
     public static function deleteById($id) {
         try {
+            
+             $defaultLang = '';
 
-            $sql = "DELETE  FROM  trainings WHERE training_id =  :id ";
+            if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
+                $sql = "DELETE  FROM  trainings WHERE training_id =  :id ";
+            }else {
+                switch (strtolower($_GET["lang"])) {
+
+                    case $_GET["lang"]:
+                        $_SESSION['lang'] = $_GET["lang"];
+
+                        $sql = "DELETE  FROM  trainings_translation WHERE id =  :id  AND  lang_code = '" . $_SESSION['lang'] . "'";
+
+                    default:
+                        //IN ALL OTHER CASES your default langauge code will set
+                        //Invalid languages
+                        $_SESSION['lang'] = $defaultLang;
+                        break;
+                }
+            }
+
+            
 
             $db = static::getDB();
 
@@ -191,7 +211,7 @@ class Training extends \Core\Model {
                 switch (strtolower($_GET["lang"])) {
                     case $_GET["lang"]:
                         $_SESSION['lang'] = $_GET["lang"];
-                        $sql = "SELECT tt.training_id,tt.training_name,tc.training_cat_name,t.training_apply_date,t.training_duration,t.training_hours,t.training_applicant
+                        $sql = "SELECT tt.id,tt.training_id,tt.training_name,tc.training_cat_name,t.training_apply_date,t.training_duration,t.training_hours,t.training_applicant
                                 FROM trainings t
                                 INNER JOIN trainings_translation tt
                                 ON t.training_id = tt.training_id

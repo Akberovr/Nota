@@ -26,12 +26,17 @@
         <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
         <input type="text" class="form-control" name="title" id="title">
     </div>
+    <div class=" form-group demo">
+        
+        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+        <input type="hidden" class="form-control" name="training_id" id="training_id" value="{{resources.training_id}}">
+    </div>
 
-        <div class="form-group">
+    <div class="form-group">
         <label for="body">Resource</label>
         <textarea name="body" ></textarea>
         <script>
-            CKEDITOR.replace( 'body' );
+            CKEDITOR.replace('body');
         </script>
     </div>
 

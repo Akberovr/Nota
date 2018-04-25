@@ -2,42 +2,50 @@
 <a class="btn btn-primary" href="/admin/training/show" style="margin-bottom: 60px">Show trainings</a>
 
 
+{% if lang == 'az' or lang == null %}
+
 <form action="/admin/resource/update/{{resources.material_id}}" method="post" >
 
-    <div class=" form-group demo">
-        <label for="Title">Title</label>
-        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-        <input type="text" class="form-control" name="Title" id="Title" value="{{resources.material_title}}">
-    </div>
+    {% elseif lang == 'en' %}
+    <form action="/admin/resource/update/{{resources.material_id}}?lang=en" method="post" >     
 
-    <div class="form-group">
-        <label for="lang_code">Language</label> <br>
-        <select class="selectpicker" name="lang_code" id="lang_code">
-            {% for lang in languages %}
-            <option data-tokens="ketchup mustard"  name="lang_code" value="{{lang.lang_code}}">{{lang.lang_name}}</option>
-            {% endfor %}
-        </select>
-    </div>
-    <div class=" form-group demo">
-        <label for="Link">Media Link</label>
-        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-        <input type="text" class="form-control" name="Link" id="Link">
-    </div>
+        {% endif %}
+
+        <div class=" form-group demo">
+            <label for="title">Title</label>
+            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+            <input type="text" class="form-control" name="title" id="title" value="{{resources.material_title}}">
+        </div>
 
         <div class="form-group">
-        <label for="body">Resource</label>
-        <textarea name="body" ></textarea>
-        <script>
-            CKEDITOR.replace( 'body' );
-        </script>
-    </div>
+            <label for="lang_code">Language</label> <br>
+            <select class="selectpicker" name="lang_code" id="lang_code">
+                {% for lang in languages %}
+                <option data-tokens="ketchup mustard"  name="lang_code" value="{{lang.lang_code}}">{{lang.lang_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% if lang == 'az' or lang == null %}
+        <div class=" form-group demo">
+            <label for="media">Media link</label>
+            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+            <input type="text" class="form-control" name="media" id="media" value="{{resources.media}}">
+        </div>
+  {% endif %}
+        <div class="form-group">
+            <label for="body">Resource</label>
+            <textarea name="body" ></textarea>
+            <script>
+                CKEDITOR.replace('body');
+            </script>
+        </div>
 
 
 
-    <div class="form-group">
+        <div class="form-group">
 
-        <button  class="btn btn-primary" type="submit" style="margin-top:20px">Update</button>
+            <button  class="btn btn-primary" type="submit" style="margin-top:20px">Update</button>
 
-    </div>
+        </div>
 
-</form>
+    </form>

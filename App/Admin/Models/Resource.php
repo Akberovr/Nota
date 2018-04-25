@@ -42,7 +42,6 @@ class Resource extends \Core\Model {
 
     public function update($id) {
 
-
         try {
 
             $defaultLang = '';
@@ -50,10 +49,10 @@ class Resource extends \Core\Model {
             if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
 
                 $sql = "UPDATE training_material "
-                        . "SET"
+                        . "SET "
                         . "material_title = :title, "
                         . "material_body = :body, "
-                        . "media = :media"
+                        . " media = :media "
                         . "WHERE material_id = :id";
 
 
@@ -63,8 +62,7 @@ class Resource extends \Core\Model {
                 $stmt->bindValue(':title', $this->title, PDO::PARAM_STR);
                 $stmt->bindValue(':body', $this->body, PDO::PARAM_STR);
                 $stmt->bindValue(':media', $this->media, PDO::PARAM_STR);
-                $stmt->bindParam(':id', $id,PDO::PARAM_INT);
-//                
+                $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             } else {
                 switch (strtolower($_GET["lang"])) {
 
@@ -72,11 +70,11 @@ class Resource extends \Core\Model {
                     case $_GET["lang"]:
                         $_SESSION['lang'] = $_GET["lang"];
 
-                        $sql = "UPDATE material_translation"
-                                . "SET"
-                                . "lang_code = :lang_code, "
-                                . "material_title = :title, "
-                                . "material_body = :body "
+                        $sql = "UPDATE material_translation "
+                                . " SET "
+                                . " lang_code = :lang_code, "
+                                . " material_title = :title, "
+                                . " material_body = :body "
                                 . "  WHERE material_id = :id AND  lang_code = '" . $_SESSION['lang'] . "'";
 
 
@@ -87,7 +85,7 @@ class Resource extends \Core\Model {
                         $stmt->bindValue(':lang_code', $this->lang_code, PDO::PARAM_STR);
                         $stmt->bindValue(':title', $this->title, PDO::PARAM_STR);
                         $stmt->bindValue(':body', $this->body, PDO::PARAM_STR);
-                        $stmt->bindParam(':training_id', $id, PDO::PARAM_INT);
+                        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
 
 
@@ -101,6 +99,43 @@ class Resource extends \Core\Model {
 
 
             return $stmt->execute();
+        } catch (Exception $e) {
+            $error = $e->getMessage();
+        }
+    }
+
+    public static function deleteById($id) {
+
+
+
+        try {
+
+            $defaultLang = '';
+
+            if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
+                $sql = "DELETE  FROM  training_material WHERE training_id =  :id ";
+            } else {
+                switch (strtolower($_GET["lang"])) {
+
+                    case $_GET["lang"]:
+                        $_SESSION['lang'] = $_GET["lang"];
+
+                        $sql = "DELETE  FROM  trainings_translation WHERE id =  :id  AND  lang_code = '" . $_SESSION['lang'] . "'";
+
+                    default:
+                        //IN ALL OTHER CASES your default langauge code will set
+                        //Invalid languages
+                        $_SESSION['lang'] = $defaultLang;
+                        break;
+                }
+            }
+
+
+            $db = static::getDB();
+
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
         } catch (Exception $e) {
             $error = $e->getMessage();
         }
@@ -137,7 +172,7 @@ class Resource extends \Core\Model {
                 case $_GET["lang"]:
                     //If the string is another language
                     $_SESSION['lang'] = $_GET["lang"];
-                    $sql = "SELECT * FROM material_translation WHERE material_id = :id AND lang_code =  '" . $_SESSION["lang"] . "'";
+                    $sql = "SELECT * FROM material_translation WHERE training_id = :id AND lang_code =  '" . $_SESSION["lang"] . "'";
                 default:
                     //IN ALL OTHER CASES your default langauge code will set
 
@@ -196,20 +231,37 @@ class Resource extends \Core\Model {
         return $stmt->fetch();
     }
 
-    public function translate($id) {
+    public static function findTrainingId($id) {
         try {
-
-            $sql = "INSERT INTO material_translation "
-                    . "(material_id,lang_code,material_title,material_body) "
-                    . "VALUES "
-                    . "($id,:lang_code,:title,:body)";
+            $sql = "SELECT training_id FROM training_material WHERE material_id = :id";
 
             $db = static::getDB();
 
             $stmt = $db->prepare($sql);
 
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+            return $stmt->execute();
+        } catch (Exception $e) {
+            
+        }
+    }
+
+    public function translate($id) {
+        try {
+
+            $sql = "INSERT INTO material_translation "
+                    . "(material_id,training_id,lang_code,material_title,material_body) "
+                    . "VALUES "
+                    . "($id,:training_id,:lang_code,:title,:body)";
+
+            $db = static::getDB();
+
+            $stmt = $db->prepare($sql);
+            $stmt->bindValue(':training_id', $this->training_id, PDO::PARAM_INT);
             $stmt->bindValue(':lang_code', $this->lang_code, PDO::PARAM_STR);
             $stmt->bindValue(':title', $this->title, PDO::PARAM_STR);
+            $stmt->bindValue(':body', $this->body, PDO::PARAM_STR);
             $stmt->bindValue(':body', $this->body, PDO::PARAM_STR);
 
 
