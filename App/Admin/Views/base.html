@@ -166,18 +166,18 @@
 
                             {% if lang %}
                             <li>
-                                <a href="/admin/settings/slider?lang={{lang}}">Slider</a>
+                                <a href="/admin/settings/list?lang={{lang}}&tab=slider">Slider</a>
                             </li>
                             <li>
-                                <a href="/admin/settings/footer?lang={{lang}}">Footer</a>
+                                <a href="/admin/settings/list?lang={{lang}}&tab=footer">Footer</a>
                             </li>
 
                             {% else %}
                             <li>
-                                <a href="/admin/settings/slider">Slider</a>
+                                <a href="/admin/settings/list?tab=slider">Slider</a>
                             </li>
                             <li>
-                                <a href="/admin/settings/footer">Footer</a>
+                                <a href="/admin/settings/list?tab=footer">Footer</a>
                             </li>
                             {% endif %}
                         </ul>
