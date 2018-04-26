@@ -28,7 +28,7 @@ class News extends \App\Controllers\Authenticated
 
         $page = (isset($_GET['page'])) ? $_GET["page"] : 1;
 
-        View::renderTemplate("news/index.html", [
+        View::renderTemplate("News/index.html", [
 
             "news" => ModelNews::getNews($page, 5, ModelNews::class),
             "pages" => ModelNews::getPages($page, 5, ModelNews::class),

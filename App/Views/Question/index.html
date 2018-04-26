@@ -32,27 +32,30 @@
                         <form target="_self" method="POST" enctype="multipart/form-data">
                             <div class="col-md-6 forms">
                                 <input id="first_name" name="first_name" type="text" placeholder="Adınız" aria-describedby="basic-addon1"  
-                                       aria-label="first_name" dir="auto" data-initial-dir="auto" data-initial-value>
+                                       aria-label="first_name" dir="auto" data-initial-dir="auto" data-initial-value required>
                             </div>
                             <div class="col-md-6 forms">
                                 <input id="last_name"  type="text" placeholder="Soyadınız" aria-describedby="basic-addon1" name="last_name"
-                                       aria-label="last_name" dir="auto" data-initial-dir="auto" data-initial-value>
+                                       aria-label="last_name" dir="auto" data-initial-dir="auto" data-initial-value required>
                             </div>
 
                             <div class="col-md-6 forms">
                                 <input id="email"  type="email" name="email" placeholder="Email" aria-describedby="basic-addon1"  aria-label="Email"
-                                       dir="auto" data-initial-dir="auto" data-initial-value>
+                                       dir="auto" data-initial-dir="auto" data-initial-value required>
                             </div>
                             <div class="col-md-6 forms">
                                 <input  id="number"  type="text" placeholder="Number" aria-describedby="basic-addon1" name="number" aria-label="Phone number"
-                                        dir="auto" data-initial-dir="auto" data-initial-value >   
+                                        dir="auto" data-initial-dir="auto" data-initial-value required >   
                             </div>
                             <div class="col-md-12 forms">
                                 <textarea id="question"  placeholder="Suallarınızı daxil edin..." name="question" aria-label="Your question here"
                                           dir="auto" data-initial-dir="auto" data-initial-value></textarea>   
                             </div>
                             <div class="col-md-6 forms">
-                                <input id="submit" name="submit" type="button" class="form_button" value="Submit" onClick="submit_form()">
+                                <input id="submit" name="submit" type="button" class="form_button" value="Submit" onClick="submit_form()" required>
+                                
+                                <span id="success_message" class="text-success"></span>
+                                <span id="error_message" class="text-danger"></span>
                             </div>
                         </form>
                         
