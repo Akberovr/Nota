@@ -118,7 +118,7 @@ class Photo extends \Core\Model
         }
 
 
-        $target_path =  dirname(dirname(dirname(__DIR__)))."\\"."public"."\\"."images"."\\"."gallery"."\\".$this->photo_filename;
+        $target_path =  dirname(dirname(dirname(__DIR__)))."/"."public"."/"."images"."/"."gallery"."/".$this->photo_filename;
 
 
         if (file_exists($target_path)){
@@ -323,7 +323,7 @@ class Photo extends \Core\Model
 
         if (isset($id)){
 
-             $target_path = dirname(dirname(dirname(__DIR__)))."\\"."public"."\\".$this->picturePath($id);
+             $target_path = dirname(dirname(dirname(__DIR__)))."/"."public"."/".$this->picturePath($id);
 
             if(file_exists($target_path)){
 

@@ -84,7 +84,7 @@ class Staff extends \Core\Model
 
     public function save($method,$id = null){
 
-        $target_path =  dirname(dirname(dirname(__DIR__)))."\\"."public"."\\"."images"."\\"."staff"."\\".$this->photo_filename;
+        $target_path =  dirname(dirname(dirname(__DIR__)))."/"."public"."/"."images"."/"."staff"."/".$this->photo_filename;
 
         if (move_uploaded_file($this->tmp_path,$target_path)){
 

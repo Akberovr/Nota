@@ -27,7 +27,15 @@ class Home extends \Core\Controller {
     public function aboutAction() {
         $city = CityModel::getCity();
         View::renderTemplate('Home/about.html', [
-            'city' => $city
+            'city' => $city,
+        ]);
+    }
+
+    public function showAction() {
+        $city = CityModel::getCity();
+        View::renderTemplate('Home/about.html', [
+            'city' => $city,
+            'city_info' => CityModel::getCityInfo($this->route_params["id"]),
         ]);
     }
 

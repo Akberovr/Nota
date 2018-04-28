@@ -4,7 +4,7 @@
 
 {% block context %}
 
-        {% if source == "slider" %}
+        {% if source == "slider" or source == "slider&create" %}
 
             {% include "Settings/Slider/slider.html" %}
 
@@ -16,13 +16,10 @@
 
               {% include "Settings/Slider/add.html" %}
 
+
         {% elseif source == "footer&add" %}
 
             {% include "Settings/Footer/add.html" %}
-
-        {% else %}
-
-            {% include "Settings/Footer/footer.html" %}
 
         {% endif %}
 

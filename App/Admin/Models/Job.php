@@ -31,9 +31,7 @@ class Job extends \Core\Model
     }
 
 
-    public function save(){
 
-    }
 
     /**
      * @return mixed

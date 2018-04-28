@@ -17,12 +17,6 @@ use \App\Flash;
 class User extends \Core\Model
 {
 
-    /**
-     * Error messages
-     *
-     * @var array
-     */
-    public $errors = [];
 
 
 
@@ -45,7 +39,8 @@ class User extends \Core\Model
      *
      * @return boolean  True if the user was saved, false otherwise
      */
-    public function save()
+
+     public function saveUser()
     {
         $this->validate();
 

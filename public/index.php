@@ -60,6 +60,7 @@
 	$router->add('staff/{id:\d+}',['controller'=>'Staff','action'=>'show']);
 	$router->add('staff/{id:\d+}',['controller'=>'Staff','action'=>'show']);
 	$router->add('about',['controller'=>'Home','action'=>'about']);
+	$router->add('about/{id:\d+}',['controller'=>'Home','action'=>'show']);
 	$router->add('question',['controller'=>'Question','action'=>'index']);
 	$router->add('register',['controller'=>'Register','action'=>'index']);
 	$router->add('teacher',['controller'=>'teacher','action'=>'index']);
