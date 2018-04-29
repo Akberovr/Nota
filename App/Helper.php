@@ -85,4 +85,32 @@ class Helper
 
     }
 
+    /**
+     * @param $str
+     * @return string
+     */
+
+    public static function sefLink ($str)
+    {
+        // converts upper to lower
+        $str = mb_strtolower($str,'UTF-8');
+
+        // replace characters
+        $str = str_replace(
+            ['ı','ə','ğ','ö','ü','ç','ş'],
+            ['i','e','g','o','u','c','s'] ,
+            $str
+        );
+
+        // replace chars with '-' other than digits and strings
+        $str = preg_replace('/[^a-z0-9]/','-',$str );
+
+        // replace more '-' with single '-'
+        $str = preg_replace('/-+/','-',$str);
+
+        // trims '-' at the start and end of the string
+        return trim($str,'-');
+
+    }
+
 }

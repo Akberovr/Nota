@@ -9,6 +9,7 @@
 namespace App\Admin\Models;
 
 use PDO;
+use App\Helper;
 use App\Paginate;
 
 
@@ -110,20 +111,20 @@ class Staff extends \Core\Model
     private function create(){
 
 
-            $sql = "INSERT INTO staff (position_category_id,name,surname,email,about,photo,facebook,linked_in) ";
-            $sql .= "VALUES (:position_category_id,:name,:surname,:email,:about,:photo,:facebook,:linked_in) ";
+            $sql = "INSERT INTO staff (position_category_id,name,email,about,photo,facebook,linked_in,url) ";
+            $sql .= "VALUES (:position_category_id,:name,:email,:about,:photo,:facebook,:linked_in,:url) ";
 
             $db = static::getDB();
             $stmt = $db->prepare($sql);
 
             $stmt->bindValue(':position_category_id' , $this->position_category_id,PDO::PARAM_INT);
             $stmt->bindValue(':name',$this->name,PDO::PARAM_STR);
-            $stmt->bindValue(':surname',$this->surname,PDO::PARAM_STR);
             $stmt->bindValue(':email',$this->email,PDO::PARAM_STR);
             $stmt->bindValue(':about',$this->about,PDO::PARAM_STR);
             $stmt->bindValue(':photo',$this->photo_filename,PDO::PARAM_STR);
             $stmt->bindValue(':facebook',$this->facebook,PDO::PARAM_STR);
             $stmt->bindValue(':linked_in',$this->linked_in,PDO::PARAM_STR);
+            $stmt->bindValue(':url',Helper::sefLink($this->name),PDO::PARAM_STR);
 
             return $stmt->execute();
 
@@ -193,14 +194,31 @@ class Staff extends \Core\Model
 
         return $stmt->fetch();
     }
+    /**
+     * @param $url
+     * @return mixed
+     */
 
+    public static function findByUrl($url){
+
+        $sql = "SELECT * FROM staff WHERE url = :url ";
+
+        $db = static::getDB();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':url', $url, PDO::PARAM_STR);
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
     /**
      *
      */
 
     public function update($id){
 
-        $sql = "UPDATE staff SET name = :name ,surname = :surname , position_category_id = :position_category_id , photo = :photo , email = :email, ";
+        $sql = "UPDATE staff SET name = :name ,position_category_id = :position_category_id , photo = :photo , email = :email, url = :url, ";
         $sql .= "facebook = :facebook , linked_in = :linked_in , about = :about WHERE id = :id";
 
         $db = static::getDB();
@@ -208,10 +226,10 @@ class Staff extends \Core\Model
         $stmt = $db->prepare($sql);
 
         $stmt->bindValue(":name" , $this->name,PDO::PARAM_STR);
-        $stmt->bindValue(":surname",$this->surname,PDO::PARAM_STR);
         $stmt->bindValue(":position_category_id",$this->position_category_id,PDO::PARAM_INT);
         $stmt->bindValue(":photo",$this->photo_filename,PDO::PARAM_STR);
         $stmt->bindValue(":email",$this->email,PDO::PARAM_STR);
+        $stmt->bindValue(":url",Helper::sefLink($this->name),PDO::PARAM_STR);
         $stmt->bindValue(":facebook",$this->facebook,PDO::PARAM_STR);
         $stmt->bindValue(":linked_in",$this->linked_in,PDO::PARAM_STR);
         $stmt->bindValue(":about",$this->about,PDO::PARAM_STR);

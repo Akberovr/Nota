@@ -10,6 +10,7 @@ namespace App\Admin\Models;
 
 use PDO;
 use App\Paginate;
+use App\Helper;
 use Carbon\Carbon;
 
 class News extends \Core\Model
@@ -105,8 +106,7 @@ class News extends \Core\Model
      * @param type $id News id 
      * @return mixed
      */
-    
-    
+
     public static function findById($id){
 
         $sql = "SELECT * FROM news WHERE id = :id ";
@@ -116,6 +116,29 @@ class News extends \Core\Model
         $stmt = $db->prepare($sql);
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetch();
+
+    }
+
+    /**
+     * @param $title
+     * @return mixed
+     */
+
+    public static function findByUrl($url){
+
+        $sql = "SELECT * FROM news WHERE url = :url ";
+
+        $db = static::getDB();
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindParam(':url', $url, PDO::PARAM_STR);
 
         $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
 
@@ -161,7 +184,7 @@ class News extends \Core\Model
     public function create(){
 
 
-        $sql = "INSERT INTO news (title,status,tags,image,content,date) VALUES (:title,:status,:tags,:image,:content,:date) ";
+        $sql = "INSERT INTO news (title,status,tags,url,image,content,date) VALUES (:title,:status,:tags,:url,:image,:content,:date) ";
 
         $db = static::getDB();
 
@@ -170,12 +193,12 @@ class News extends \Core\Model
         $stmt->bindValue(':title' , $this->title,PDO::PARAM_STR);
         $stmt->bindValue(':status',$this->status,PDO::PARAM_STR);
         $stmt->bindValue(':tags' , $this->tags,PDO::PARAM_STR);
+        $stmt->bindValue(':url' , Helper::sefLink($this->title),PDO::PARAM_STR);
         $stmt->bindValue('image',$this->photo_filename,PDO::PARAM_STR);
         $stmt->bindValue(':content',$this->content,PDO::PARAM_STR);
         $stmt->bindValue(':date',Carbon::now(),PDO::PARAM_STR);
 
         return $stmt->execute();
-
     }
     
     /**
@@ -314,7 +337,20 @@ class News extends \Core\Model
     }
 
 
-    
+    public static function newsView($url)
+    {
+
+        $sql = "UPDATE news SET views = views + 1 WHERE url = :url";
+
+        $db = static::getDB();
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindValue(':url', $url,PDO::PARAM_STR);
+
+        return $stmt->execute();
+
+    }
     
 
 

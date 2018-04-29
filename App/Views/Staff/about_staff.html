@@ -47,7 +47,7 @@
 
             <p><i class="fa fa-fw fa-envelope"></i> {{member.email}}/ <a  target="_blank" href="{{member.facebook}}"><i class="fa fa-fw fa-facebook"></i></a> <a  target="_blank" href="{{member.linked_in}}"><i class="fa fa-fw fa-linkedin"></i></a></p>
             <hr>
-            <p>{{member.about}}</p>
+            <p>{{member.about|raw}}</p>
 
         </div> <!-- end of section -->
         {% include "includes/sidebar_center.html" %}
