@@ -38,7 +38,7 @@
                                 <img src="images/news/{{post.image}}">
                             </div>
                             <span><i class="fa fa-eye"> </i> {{post.views}}</span>
-                            <span class="news-time">{{post.date|date('d/m/y')}}</span><p class="news-head"><a href="/news/{{post.id}}"> {{post.title}}</a></p>
+                            <span class="news-time">{{post.date|date('d/m/y')}}</span><p class="news-head"><a href="/news/{{post.url}}"> {{post.title}}</a></p>
                             <p>Elektron Hökumət Təlim-Tədris Mərkəzində Şəbəkə İnzibatçılığı üzrə təlimlərə start verilir...</p>
                             <p>&nbsp;</p>
                         </div>
@@ -52,9 +52,13 @@
             <nav aria-label="Page navigation"> <!-- pagination -->
                 <ul class="pagination">
 
+                    {% if current_page <= 1 %}
+                        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                     {% else %}
+                        <li><a href="/news?page={{current_page-1}}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    {% endif %}
 
-                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
- 
+
                     {% if pages > 1 %}
 
                          {% for page in 1..pages %}
@@ -82,8 +86,9 @@
 
                     {% endif %}
 
-                    <li><a href="/news?page={{current_page+1}}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-                    
+                    {% if current_page < pages %}
+                        <li><a href="/news?page={{current_page+1}}"aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                    {% endif %}
                     
 
                 </ul>

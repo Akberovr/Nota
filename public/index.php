@@ -55,10 +55,9 @@
 	$router->add('logout',['controller'=>'Login','action'=>'destroy']);
 	$router->add('signup',['controller'=>'Signup','action'=>'new']);
 	$router->add('news',['controller'=>'News','action'=>'index']);
-	$router->add('news/{id:\d+}',['controller'=>'News','action'=>'show']);
+	$router->add('news/{title:[a-z0-9-]+}',['controller'=>'News','action'=>'show']);
 	$router->add('staff',['controller'=>'Staff','action'=>'index']);
-	$router->add('staff/{id:\d+}',['controller'=>'Staff','action'=>'show']);
-	$router->add('staff/{id:\d+}',['controller'=>'Staff','action'=>'show']);
+	$router->add('staff/{title:[a-z0-9-]+}',['controller'=>'Staff','action'=>'show']);
 	$router->add('about',['controller'=>'Home','action'=>'about']);
 	$router->add('about/{id:\d+}',['controller'=>'Home','action'=>'show']);
 	$router->add('question',['controller'=>'Question','action'=>'index']);
