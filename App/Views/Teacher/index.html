@@ -17,7 +17,7 @@
                 <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
                     <h3><i class="fa fa-fw fa-dot-circle-o"></i>İlkin qeydiyyat</h3>
                     <div class="row">
-                        <form id="uploadForm" action="https://script.google.com/macros/s/AKfycbwptWcwILiVlrwRcZAn7UfU-bcpEEq8J_sSD4ABR47FvErfleY/exec" method="POST">
+                        <form id="uploadForm" action="https://script.google.com/macros/s/AKfycbwptWcwILiVlrwRcZAn7UfU-bcpEEq8J_sSD4ABR47FvErfleY/exec" method="POST" onSubmit="return checkAnswer();">
                             <input type="hidden" value="" name="fileContent" id="fileContent">
                             <input type="hidden" value="" name="filename" id="filename">
                             <div class="col-md-6 forms">
@@ -76,15 +76,27 @@
         <script>
 
 
+                                function checkAnswer() {
+                                    var response = document.getElementById('attach').value;
+
+                                }
+
                                 function UploadFile() {
                                     var reader = new FileReader();
                                     var file = document.getElementById('attach').files[0];
+
+
                                     reader.onload = function () {
                                         document.getElementById('fileContent').value = reader.result;
                                         document.getElementById('filename').value = file.name;
                                         document.getElementById('uploadForm').submit();
+
                                     }
+
+
                                     reader.readAsDataURL(file);
+
+
                                 }
 
                                 $(document).ready(function () {
