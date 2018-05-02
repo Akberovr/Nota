@@ -31,7 +31,7 @@ class Staff extends \Core\Controller
 
     public function showAction(){
         View::renderTemplate('Staff/about_staff.html',[
-            "member" => ModelStaff::findById($this->route_params["id"])
+            "member" => ModelStaff::findByUrl($this->route_params["title"])
         ]);
     }
 
