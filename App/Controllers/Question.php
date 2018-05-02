@@ -22,6 +22,7 @@ class Question extends \Core\Controller {
         if (empty($_GET['code'])) {
             // Authorization Link
             $authorization = "https://accounts.google.com/o/oauth2/auth?redirect_uri=$redirect&client_id=$client_id&response_type=code&scope=https://www.googleapis.com/auth/spreadsheets&approval_prompt=force&access_type=offline";
+
         } else {
             // Authorization
             $code = $_GET['code'];
@@ -41,9 +42,11 @@ class Question extends \Core\Controller {
             $status_code = @curl_getinfo($ch, CURLINFO_HTTP_CODE);
             @curl_close($ch);
             $array = json_decode($response);
+
         }
 
         View::renderTemplate('Question/index.html');
+
     }
 
 }

@@ -27,7 +27,21 @@
         <li class="page-item"><a class="page-link " href="/admin/resource/show?page={{page}}">{{page}}</a></li>
         {% endif %}
 
+
+
+
+
+
+
+
         {% endif %}
+
+
+
+
+
+
+
 
         {% endfor %}
 
@@ -64,12 +78,14 @@
 
     <tr>
         {% if lang == 'az' or lang == null %}
-
-        <td style="width: 100px">{{resource.training_id}}</td>
+        
+        <td style="width: 30px">{{resource.material_id}}</td>
+       
+        
         {% endif %}
 
         <td style="width: 170px"><a href=""></a>{{resource.material_title}}</td>
-        <td style="width: 30px">{{resource.material_id}}</td>
+         <td style="width: 100px">{{resource.training_id}}</td>
         <td style="width: 30px">{{resource.material_body}}</td>
         {% if lang == 'az' or lang == null %}
         <td style="width: 100px">
@@ -93,12 +109,18 @@
         {% elseif lang == 'en' %}
 
         <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
-        <td style="width: 80px"><a href="/admin/resource/get/{{training.training_id}}?lang=en" class="btn btn-info" value="" >Edit</a> </td >
+        <td style="width: 80px"><a href="/admin/resource/get/{{resource.material_id}}?lang=en" class="btn btn-info" value="" >Edit</a> </td >
 
         {% endif %}
 
-        <td style="width: 100px" ><a href="" class="btn btn-danger" value="" >Delete</a> </td>
+        {% if lang == 'az' or lang == null %}
 
+        <td style="width: 100px" ><a href="/admin/resource/delete/{{resource.material_id}}" class="btn btn-danger" value="" >Delete</a> </td>
+
+        {% elseif lang == 'en' %}
+
+        <td style="width: 100px" ><a href="/admin/resource/delete/{{resource.id}}?lang=en" class="btn btn-danger" value="" >Delete</a> </td>
+        {% endif %}
     </tr>
     {% endfor %}
 

@@ -9,6 +9,7 @@
 namespace App\Admin\Controllers;
 
 use App\Flash;
+use Core\Model;
 use Core\View;
 use App\Admin\Models\Setting as ModelSetting;
 
@@ -33,6 +34,18 @@ class Settings extends \App\Controllers\Authenticated
     {
 
         View::renderTemplate('Settings/index.html');
+
+        if(isset($_GET["create"])){
+
+
+            $photo = new PhotoModel($_POST);
+
+            $photo->setFile($_FILES['file']);
+
+
+
+
+        }
 
     }
 

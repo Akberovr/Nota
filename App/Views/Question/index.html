@@ -29,30 +29,33 @@
                 <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
                     <h3><i class="fa fa-fw fa-dot-circle-o"></i>Sual ver</h3>
                     <div class="row">
-                        <form target="_self" method="POST" enctype="multipart/form-data">
+                        <form target="_self"  enctype="multipart/form-data" id="submit_form">
                             <div class="col-md-6 forms">
                                 <input id="first_name" name="first_name" type="text" placeholder="Adınız" aria-describedby="basic-addon1"  
-                                       aria-label="first_name" dir="auto" data-initial-dir="auto" data-initial-value>
+                                       aria-label="first_name" dir="auto" data-initial-dir="auto" data-initial-value required>
                             </div>
                             <div class="col-md-6 forms">
                                 <input id="last_name"  type="text" placeholder="Soyadınız" aria-describedby="basic-addon1" name="last_name"
-                                       aria-label="last_name" dir="auto" data-initial-dir="auto" data-initial-value>
+                                       aria-label="last_name" dir="auto" data-initial-dir="auto" data-initial-value required>
                             </div>
 
                             <div class="col-md-6 forms">
                                 <input id="email"  type="email" name="email" placeholder="Email" aria-describedby="basic-addon1"  aria-label="Email"
-                                       dir="auto" data-initial-dir="auto" data-initial-value>
+                                       dir="auto" data-initial-dir="auto" data-initial-value required>
                             </div>
                             <div class="col-md-6 forms">
                                 <input  id="number"  type="text" placeholder="Number" aria-describedby="basic-addon1" name="number" aria-label="Phone number"
-                                        dir="auto" data-initial-dir="auto" data-initial-value >   
+                                        dir="auto" data-initial-dir="auto" data-initial-value required >   
                             </div>
                             <div class="col-md-12 forms">
                                 <textarea id="question"  placeholder="Suallarınızı daxil edin..." name="question" aria-label="Your question here"
                                           dir="auto" data-initial-dir="auto" data-initial-value></textarea>   
                             </div>
                             <div class="col-md-6 forms">
-                                <input id="submit" name="submit" type="button" class="form_button" value="Submit" onClick="submit_form()">
+                                <input id="submit" name="submit" type="submit" class="form_button" value="Submit" onClick="submit_form()" required>
+                                
+                                <span id="success_message" class="text-success"></span>
+                                <span id="error_message" class="text-danger"></span>
                             </div>
                         </form>
                         
@@ -91,5 +94,49 @@
         <script src="js/jquery.prettyPhoto.js"></script>
         <script src="js/main.js"></script>
         <script src="js/askQuestion.js"></script>
+        <script
+                src="http://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+
+
+        <script>
+
+
+            $(document).ready(function(){
+                $('#submit').click(function(){
+                    var name = $('#first_name').val();
+                    var last_name = $('last_name').val();
+                    var email = $('email').val();
+                    var number = $('number').val();
+                    var question = $('question').val();
+                    if(name == '' || last_name == '' || email == '' || number == '' || question == '')
+                    {
+                        $('#error_message').html("BÃ¼tÃ¼n qutular doldurulmalÄ±dÄ±r!")
+                    }else{
+                        $('#success_message').html("SualÄ±nÄ±z qeyd olundu!");
+
+                        // $.ajax({
+                        //     url:"",
+                        //     method:"POST",
+                        //     data:{
+                        //         name:name,
+                        //         last_name:last_name,
+                        //         email:email,
+                        //         number:number,
+                        //         question:question
+                        //     },success:function (data) {
+                        //         $("form").trigger("reset");
+                        //         $("#success_message").fadeIn().html(data);
+                        //         setTimeOut(function () {
+                        //             $("#success_message").fadeOut('slow');
+                        //         },2000)
+                        //     }
+                        // })
+                    }
+                });
+            });
+
+        </script>>
     </body>
 </html>

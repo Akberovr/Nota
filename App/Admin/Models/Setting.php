@@ -47,4 +47,15 @@ class Setting extends \Core\Model
 
     }
 
+    public static function create(){
+
+
+
+
+
+
+    }
+
+
+
 }
