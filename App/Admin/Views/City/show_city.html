@@ -1,3 +1,6 @@
+{% for error in errors %}
+{{error}}
+{% endfor %}
 <table class="table table-hover table-responsive">
     <thead>
         <tr>
@@ -14,14 +17,16 @@
             <td style="width: 150px">{{cities.address}}</td>
           {% if lang == 'az' or lang == null %}
 
-                <td style="width: 150px"><a href="get/{{cities.id}}" class="btn btn-info" value="" >Update</a> </td >
- 
+             <td style="width: 80px"><a href="addPhoto/{{cities.id}}" class="btn btn-info" value="" >Add Photo</a> </td >
+             <td style="width: 80px"><a href="get/{{cities.id}}" class="btn btn-warning"value="" >Update</a> </td >
+
              {% elseif lang == 'en' %}
 
-                 <td style="width: 150px"><a href="get/{{cities.id}}?lang=en" class="btn btn-info" value="" >Update</a> </td >
+             <td style="width: 150px"><a href="addPhoto/{{cities.id}}?lang=en" class="btn btn-info" value="" >Add Photo</a> </td >
+             <td style="width: 150px"><a href="get/{{cities.id}}?lang=en" class="btn btn-warning" value="" >Update</a> </td >
 
              {% endif %}
-            <td style="width: 150px"><a href="delete/{{cities.id}}" class="btn btn-danger" value="" >Delete</a> </td>
+             <td style="width: 100px" ><a href="delete/{{cities.id}}" class="btn btn-danger" value="" >Delete</a> </td>
 <!--             <td> <a href="get/{{cities.id}}" class="btn btn-info" value="" >Update</a> </td >-->
           </tr> 
          {% endfor %}

@@ -1,9 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 {% include "includes/header.html" %}
-
 <body>
 <!-- Fixed navbar -->
 {% include "includes/navigation.html"  %}
@@ -40,7 +38,7 @@
                 <div class="brief">
                     <h4><i class="fa fa-fw fa-info-circle" aria-hidden="true"></i>MƏRKƏZ HAQQINDA</h4>
                     <p>Əhalinin, dövlət qulluqçularının və dövlət müəssisələrində çalışan işçilərin informasiya texnologiyalarından istifadə sahəsində hazırlıq səviyyələrinin artırılması və elektron idarəçilik üzrə bacarıqların inkişaf etdirilməsi məqsədi ilə Azərbaycan respublikasının Nazirlər Kabinetinin 17 dekabr 2015-ci il tarixli 389 saylı Qərarı ilə Rabitə və Yüksək Texnologiyalar Nazirliyinin tabeliyində "E-Hökumət Təlim-Tədris Mərkəzi" MMC yaradılmışdır. Mərkəz 15 avqust 2016-cı ildə dövlət qeydiyyatına alınmış... </p>
-                    <a href="#">Davamı...</a><p>&nbsp;</p>
+                    <a href="about.html">Davamı...</a><p>&nbsp;</p>
                     <hr>
                 </div>
 
@@ -49,43 +47,39 @@
                 <!-- end of carousel -->
 
             </div>
-
-            
             {% include "includes/regional_map.html" %}
+<!-- closing ABOUT eGOV center -->
 
-            <!-- closing ABOUT eGOV center -->
-
-            <!-- ANNOUNCE slider owl -->
+<!-- ANNOUNCE slider owl -->
             {% include "includes/news_slider.html"%}
-            <!-- end of ANNOUNCE slider -->
+<!-- end of ANNOUNCE slider -->
 
-            <!-- Post/Events Section -->
+<!-- News/Events Section -->
             {% include "includes/events.html"%}
 
-            <!-- URL Banners -->
+<!-- URL Banners -->
             {% include "includes/url_banners.html" %}
 
-            <!-- Footer -->
+<!-- FOOTER -->
             {% include "includes/footer.html" %}
 
-            <script>
-                $(document).ready(function() {
-                    $("#news-slider").owlCarousel({
-                        items : 2,
-                        itemsDesktop:[1199,2],
-                        itemsDesktopSmall:[980,2],
-                        itemsMobile : [700,1],
-                        pagination:false,
-                        navigation:true,
-                        navigationText:["",""],
-                        autoPlay:true
-                    });
-                    $("a").tooltip(); // for tooltips
-                    $('#LogoCarousel').carousel({ // for logo carousel
-                        interval: 6000
-                    })
-                });
-            </script>
-
+<script>
+    $(document).ready(function() {
+        $("#news-slider").owlCarousel({
+            items : 2,
+            itemsDesktop:[1199,2],
+            itemsDesktopSmall:[980,2],
+            itemsMobile : [700,1],
+            pagination:false,
+            navigation:true,
+            navigationText:["",""],
+            autoPlay:true
+        });
+        $("a").tooltip(); // for tooltips
+        $('#LogoCarousel').carousel({ // for logo carousel
+            interval: 6000
+        })
+    });
+</script>
 </body>
 </html>

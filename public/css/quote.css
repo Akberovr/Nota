@@ -57,12 +57,12 @@
     background-color: #1f7e84;
 }
 .item blockquote {
-	width: 100% !important;
+    width: 100% !important;
     border-left: none;
     margin: 0;
     font-size: 14px;
     font-weight: normal;
-	font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 .item blockquote p:before {
     content: "\f10d";

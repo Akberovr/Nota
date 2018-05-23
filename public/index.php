@@ -55,6 +55,11 @@
 	$router->add('logout',['controller'=>'Login','action'=>'destroy']);
 	$router->add('signup',['controller'=>'Signup','action'=>'new']);
 	$router->add('news',['controller'=>'News','action'=>'index']);
+	$router->add('courses',['controller'=>'Course','action'=>'index']);
+	$router->add('course',['controller'=>'Course','action'=>'course']);
+	$router->add('partners',['controller'=>'Partner','action'=>'index']);
+	$router->add('instructors',['controller'=>'Instructors','action'=>'index']);
+	$router->add('documents',['controller'=>'Document','action'=>'index']);
 	$router->add('news/{title:[a-z0-9-]+}',['controller'=>'News','action'=>'show']);
 	$router->add('staff',['controller'=>'Staff','action'=>'index']);
 	$router->add('staff/{title:[a-z0-9-]+}',['controller'=>'Staff','action'=>'show']);

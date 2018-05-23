@@ -48,7 +48,7 @@ class Photo extends \Core\Model
      * @var array $valid_types eligible file types allowed
      */
 
-    public $valid_types = ["jpg","png","jpeg"];
+    public $valid_types = ["jpg","png","jpeg","PNG","JPG"];
 
 
 
@@ -222,6 +222,13 @@ class Photo extends \Core\Model
         return $stmt->fetchAll();
     }
 
+    /**
+     * @param $page
+     * @param $data_per_page
+     * @param $class
+     * @return array
+     */
+
     public static function getPhotos($page,$data_per_page,$class){
 
         $paginate = new Paginate($page,$data_per_page,$class);
@@ -238,6 +245,11 @@ class Photo extends \Core\Model
 
         return $stmt->fetchAll();
     }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
 
     public function photoById($id){
 

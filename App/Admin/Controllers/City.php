@@ -11,6 +11,7 @@ namespace App\Admin\Controllers;
 
 use \Core\View;
 use App\Flash;
+use App\Helper;
 use App\Admin\Models\City as CityModel;
 
 class City extends \App\Controllers\Authenticated {
@@ -56,9 +57,13 @@ class City extends \App\Controllers\Authenticated {
         $city = new CityModel($_POST);
 
         if($city->save()){
+
+            Flash::addMessage("City Added Succefully!");
             $this->redirect('/Admin/City/show');
+
         }else{
-            echo "Problem";
+            Flash::addMessage("City Couldn't Added Succefully!",Flash::WARNING);
+            $this->redirect('/Admin/City/show');
         }
 
 
@@ -109,6 +114,13 @@ class City extends \App\Controllers\Authenticated {
         Flash::addMessage("City deleted", Flash::SUCCESS);
         $this->redirect('/Admin/City/show');
 
+    }
+    
+    public function addPhoto ()
+    {
+    
+        
+    
     }
 
 }

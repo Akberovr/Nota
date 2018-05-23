@@ -113,4 +113,42 @@ class Helper
 
     }
 
+    /**
+     * @param $files
+     * @return array|null
+     */
+
+    public static function multiplePhoto($files)
+    {
+
+        if (!empty($files)){
+
+            foreach ($files["name"] as $key => $value){
+
+                return [
+                    "name"     => $files["name"],
+                    "tmp_name" => $files["tmp_name"]
+                ];
+
+            }
+
+        }
+
+        return null;
+    }
+
+
+    /**
+     * Helper function for pre print_r
+     * @param $data
+     */
+    public static function print($data)
+    {
+
+        print_r("<pre>");
+        print_r($data);
+        print_r("</pre>");
+
+    }
+
 }
