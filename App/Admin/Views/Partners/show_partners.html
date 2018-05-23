@@ -1,0 +1,44 @@
+{% for error in errors %}
+{{error}}
+{% endfor %}
+
+<a class="btn btn-primary" href="/admin/partner/add">Add Partner</a>
+
+<table class="table-responsive-sm  table-striped table table-hover table-responsive">
+    <thead class="table-responsive-sm">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Image</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    {% for partner in partners %}
+    <tr>
+        <td style="width: 40px">{{partner.id}}</td>
+        <td style="width: 150px">{{partner.name}}</td>
+        <td style="width: 150px">
+            <img src="../../images/partners/{{partner.file}}" class="img-responsive img-thumbnail" height="60px!important" width='150px' src="" alt="">
+        </td>
+
+        {% if lang == 'az' or lang == null %}
+
+        <td style="width: 100px"><a href="/partners" class="btn btn-success" value="" >View Partner</a> </td >
+
+        {% elseif lang == 'en' %}
+
+        <td style="width: 100px"><a href="/partners/?lang=en" class="btn btn-success" value="" >View News</a> </td >
+
+        {% endif %}
+
+        <td style="width: 100px" ><a href="/admin/partner/delete/{{partner.id}}" class="btn btn-danger" value="" >Delete</a> </td>
+
+    </tr>
+    {% endfor %}
+
+
+
+    </tbody>
+</table>
