@@ -31,15 +31,8 @@
 
                     <p class="highlighted"></p>
                     {% if  city_info.id != NULL %}
-                    <h3><i class="fa fa-fw fa-dot-circle-o"></i>{{city_info.city_name}}</h3>
-                    <p>{{city_info.city_info}}</p>
-                    <ul class="">
-                        <li class="">Poçt kodu: {{city_info.postal_code}}</li>
-                        <li class="">Faks: {{city_info.fax}}</li>
-                        <li class="">Email: {{city_info.email}}</li>
-                        <li class="">Ünvan: {{city_info.address}}</li>
-                        <li class="">Nömrə: {{city_info.city_phone}}</li>
-                    </ul>
+                    <h3><i class="fa fa-fw fa-dot-circle-o"></i>{{city_info.city_name|raw}}</h3>
+                    <p>{{city_info.city_info|raw}}</p>
                     {% else %}
 
                     <h3><i class="fa fa-fw fa-dot-circle-o"></i>Haqqımızda</h3>
@@ -48,53 +41,34 @@
                     <p>Ölkə üzrə ümumilikdə “Elektron Hökumət” Təlim-Tədris mərkəzlərinin sayı on səkkizdir (18). Elektron Hökumət Təlim-Tədris Mərkəzinin əsas idarəetmə mərkəzi Bakı şəhərində yerləşir. Bakı Elektron Hökumət Təlim-Tədris Mərkəzi Bakı Telekommunikasiya Qovşağının Şərifzadə küçəsi 75 ünvanında yerləşən inzibati binasının 3-cü mərtəbəsində yerləşir. Mərkəz 3 tədris otağı, Studio, bir müəllim və bir server otağından ibarətdir. İki tədris otağının hər biri 20 nəfər təlimçi üçün nəzərdə tutulmuş müasir tipli personal kompüterlərlə təmin edilib. Hər bir kompüter UPS qurğulara qoşulub və İnternetə çıxışı təmin edilib. Digər bir otaq 11 nəfər təlimçi üçün nəzərdə tutulmuş mühazirə otağıdır. Bütün otaqlarda tədris prosesində effektivliyi təmin etmək məqsədilə elektron lövhələr yerləşdirilib. Müəllim masaları personal kompüterlərlə və periferiya qurğuları ilə təmin edilib. Bununla yanaşı hər bir otaq texnologiyaların son nailiyyətlərini özündə birləşdirən lövhəni idarəedən elektron idarəetmə panelli tribuna ilə təmin edilib. Mərkəzdə video çəkilişlərin təşkili üçün müasir texnoloji avadanlıqlarla təmin edilmiş Studio yaradılıb. Studio xromokey və idarəetmə otağından ibarətdir. Həmçinin, Bakı və regionlarda yerləşən mərkəzlər arasında real zaman rejimində dərslərin təşkili üçün telekonfrans sistemi yaradılıb. Bunun üçün mərkəzlər zəruri avadanlıqlarla və proqram təminatı ilə təmin edilib.</p>
 
                     {% endif %}
+
                     <div class="row gallery">
+                        {% for photo in photos %}
                         <div class="col-md-3 col-sm-6 col-xs-6">
-                            <a class="thumbnail" rel="lightbox[group]" href="images/gallery/08.jpg"><img class="group1" src="images/gallery/08.jpg" title="e-GOV training session" /></a>
+                            <a class="thumbnail" rel="lightbox[group]" href="../../images/city/{{photo.city_image}}"><img class="group1" src="../../images/city/{{photo.city_image}}" title="e-GOV training session" /></a>
                         </div> <!--end thumb -->
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <a class="thumbnail" rel="lightbox[group]" href="images/gallery/04.jpg"><img class="group1" src="images/gallery/04.jpg" title="e-GOV training session" /></a>
-                        </div> <!--end thumb -->
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <a class="thumbnail" rel="lightbox[group]" href="images/gallery/01.jpg"><img class="group1" src="images/gallery/01.jpg" title="e-GOV training session" /></a>
-                        </div> <!--end thumb -->
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <a class="thumbnail" rel="lightbox[group]" href="images/gallery/05.jpg"><img class="group1" src="images/gallery/05.jpg" title="e-GOV training session" /></a>
-                        </div> <!--end thumb -->
+                        {% endfor %}
                     </div>
-                    <div class="row gallery">
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <a class="thumbnail" rel="lightbox[group]" href="images/gallery/09.jpg"><img class="group1" src="images/gallery/09.jpg" title="e-GOV training session" /></a>
-                        </div> <!--end thumb -->
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <a class="thumbnail" rel="lightbox[group]" href="images/gallery/12.jpg"><img class="group1" src="images/gallery/12.jpg" title="e-GOV training session" /></a>
-                        </div> <!--end thumb -->
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <a class="thumbnail" rel="lightbox[group]" href="images/gallery/03.jpg"><img class="group1" src="images/gallery/03.jpg" title="e-GOV training session" /></a>
-                        </div> <!--end thumb -->
-                        <div class="col-md-3 col-sm-6 col-xs-6">
-                            <a class="thumbnail" rel="lightbox[group]" href="images/gallery/07.jpg"><img class="group1" src="images/gallery/07.jpg" title="e-GOV training session" /></a>
-                        </div> <!--end thumb -->
-                    </div> <!-- /row -->
 
                 </div> <!-- end of section -->
-
                 <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section -->
                     <div class="side-nav-inside">
                         <ul>
-                            <h4>OFİSLƏRİMİZ</h4>
-                            {% for cities in city %}
+                            <h4>ŞƏBƏKƏMİZ</h4>
 
-                            <li class="" >
-                                <i class="fa fa-long-arrow-right">
-                                    <a href="/about/{{cities.id}}">{{cities.city_name}}</a>
-                                </i>
-                            </li>
+                            {% for city in cities %}
+
+                                {% if route_name == city.city_sef_link  %}
+                                    <li class="active"><i class="fa fa-long-arrow-right"></i>{{city.city_name}}</li>
+                                {% else %}
+                                    <li><a href="/about/{{city.city_sef_link}}/{{city.id}}">{{city.city_name}}</a></li>
+                                {% endif %}
 
                             {% endfor %}
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
         <!-- closing CONTENT -->
@@ -102,9 +76,9 @@
         <!-- FOOTER -->
         {% include "includes/footer.html" %}
 
-        <script src="js/plugins.js"></script>
-        <script src="js/jquery.prettyPhoto.js"></script>
-        <script src="js/main.js"></script>
+        <script src="../js/plugins.js"></script>
+        <script src="../js/jquery.prettyPhoto.js"></script>
+        <script src="../js/main.js"></script>
         <script>
 $(document).ready(function () {
     $("#news-slider").owlCarousel({

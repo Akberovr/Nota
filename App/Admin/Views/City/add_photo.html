@@ -1,0 +1,27 @@
+<div class="col-md-6">
+
+    <form action="/admin/city/addImages/{{id}}" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+
+            <input type="file" name="file" value="" >
+
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success">Add Photo</button>
+        </div>
+
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-lg-12" >
+        <form class="dropzone" id="uploads"action="/admin/city/addImages/{{id}}"></form>
+    </div>
+
+</div>
+
+<div id="msg">
+
+</div>
