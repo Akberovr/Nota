@@ -2,56 +2,30 @@
     <div class="row">
         <div class="col-md-12">
             <div id="news-slider" class="owl-carousel">
-                <div class="post-slide"> <!-- event 1 -->
-                    <div class="post-date">
-                        <span class="date">22</span>
-                        <span class="month">fev</span>
-                    </div>
-                    <div class="post-content">
-                        <img src="images/announces/announce_1.png" alt="">
-                        <h3 class="post-title">
-                            <a href="#">E-İMZA ÜZRƏ TƏLİMLƏR</a>
-                        </h3>
-                        <p class="post-description">
-                            E-İmza üzrə təlimlərə 20% güzəşt. Tələsin, kompaniyadan yararlanmaq üçün bizimlə əlaqə saxlayın...
-                        </p>
-                    </div>
-                </div>
 
-                <div class="post-slide"> <!-- event 2 -->
-                    <div class="post-date">
-                        <span class="date">17</span>
-                        <span class="month">fev</span>
-                    </div>
-                    <div class="post-content">
-                        <img src="images/announces/announce_2.png" alt="">
-                        <h3 class="post-title">
-                            <a href="#">YENİ AUTOCAD TƏLİMİ</a>
-                        </h3>
-                        <p class="post-description">
-                            e-GOV təlimləri ilə peşəkar mütəxəssis olun! Karyeranızın və peşəkarlığınızın...
-                        </p>
-                    </div>
-                </div>
+                {% for event in events %}
 
-                <div class="post-slide"> <!-- event 3 -->
-                    <div class="post-date">
-                        <span class="date">15</span>
-                        <span class="month">fev</span>
+                    <div class="post-slide"> <!-- event 1 -->
+                        <div class="post-date">
+                            <span class="date">{{event.date|date("j")}}</span>
+                            <span class="month">{{event.date|date("F")}}</span>
+                        </div>
+                        <div class="post-content">
+                            <img src="images/posts/{{event.image}}" alt="">
+                            <h3 class="post-title">
+                                <a href="/event/{{event.url}}">{{event.post_title|upper}}</a>
+                            </h3>
+                            <p class="post-description">
+                                        {{event.post_body|slice(0,100)|raw}}
+                            </p>
+                        </div>
                     </div>
-                    <div class="post-content">
-                        <img src="images/announces/announce_3.png" alt="">
-                        <h3 class="post-title">
-                            <a href="#">İNGİLİS DİLİ ÜZRƏ TƏLİMLƏRƏ 50%-DƏK ENDİRİM</a>
-                        </h3>
-                        <p class="post-description">
-                            10 Noyabrda E-GOV-da “Robotların quraşdırılması və proqramlaşdırılması” mövzusunda ödənişsiz master-klass keçiriləcək...
-                        </p>
-                    </div>
-                </div>
+
+                {% endfor %}
+
             </div>
             <div class="row"><div class="col-md-12"><!-- readall container and button-->
-                <div class="readall_container"><a id="readall" href="events.html">DİGƏR TƏDBİRLƏR</a></div>
+                <div class="readall_container"><a id="readall" href="/events">DİGƏR TƏDBİRLƏR</a></div>
             </div></div>
         </div>
     </div>

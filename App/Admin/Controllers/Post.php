@@ -22,7 +22,9 @@ class Post extends \App\Controllers\Authenticated {
      */
     public function showAction() {
 
-        View::renderTemplate("Post/index.html");
+        View::renderTemplate("Post/index.html",[
+            "posts" => PostModel::getPost()
+        ]);
 
     }
 
@@ -31,6 +33,7 @@ class Post extends \App\Controllers\Authenticated {
      * Show  particular post and retrieve all news
      */
     public function getAction() {
+
         $id = $this->route_params["id"];
 
         $post = PostModel::findById($id);
@@ -55,6 +58,35 @@ class Post extends \App\Controllers\Authenticated {
              'postCategory'=> $postCategory
         ]);
     }
+
+    /**
+     * Create Post
+     *
+     * @return true if succesfull , false otherwise
+     */
+
+    public function createAction()
+    {
+
+        $post = new PostModel($_POST);
+
+        $post->setFile($_FILES['post_image']);
+
+        if ($post->save('create')) {
+
+            Flash::addMessage("Post Added Succesfully");
+            $this->redirect("/admin/post/show");
+
+        } else {
+
+            Flash::addMessage("Post couldn't be added", Flash::WARNING);
+            $this->redirect("/admin/post/show");
+
+        }
+
+    }
+
+
 
     /**
      * Edit the Post

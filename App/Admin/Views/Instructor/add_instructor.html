@@ -1,0 +1,38 @@
+<form action="/admin/instructor/create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="title">Full Name</label>
+        <input value="" type="text" class="form-control" name="name" >
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="">Field</label> <br>
+        <input type="text" name="field" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="post_image">Image</label >
+        <input  type="file"  name="photo" required>
+        <img  width="100" src="" alt="" />
+    </div>
+    <div class="form-group">
+        <label for="title">Email</label>
+        <input  value="" type="text" class="form-control" name="email" >
+    </div>
+
+
+    <div class="form-group">
+        <label for="title">About</label>
+        <textarea name="about" ></textarea>
+        <script>
+            CKEDITOR.replace( 'about' );
+        </script>
+    </div>
+
+
+    <div class="form-group">
+        <button href="/admin/staff/create" class="btn btn-primary" type="submit">Add Instructor</button>
+    </div>
+
+</form>

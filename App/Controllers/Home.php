@@ -6,8 +6,12 @@ use App\Helper;
 use \Core\View;
 use \App\Auth;
 use \App\Mail;
+
+use App\Admin\Models\Partner as AdminPartner;
 use App\Models\City as CityModel;
 use App\Admin\Models\City as AdminCity;
+use App\Admin\Models\Post as AdminPost;
+use App\Admin\Models\News as AdminNews;
 use App\Models\Home as ModelHome;
 use App\Models\Feedback as FeedbackModel;
 use App\Models\Navigation as NavigationModel;
@@ -21,10 +25,15 @@ class Home extends \Core\Controller {
      * @return void
      */
     public function indexAction() {
-      
+
         View::renderTemplate('Home/index.html',[
-             "feedback" =>  FeedbackModel::getFeedback(),
-            "navigation" => NavigationModel::getCategory(),
+            "partners" => AdminPartner::findAll(),
+            "announces"   => AdminPost::getAnnounces(),
+            "events"       => AdminPost::getEvents(),
+            "news"       => AdminNews::findAll(),
+            "feedback" =>  FeedbackModel::getFeedback(),
+           "navigation" => NavigationModel::getCategory()
+
         ]);
     }
 
