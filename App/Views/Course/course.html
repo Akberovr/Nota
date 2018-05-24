@@ -1,108 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
-{% include "includes/header.html" %}
-<body>
-<!-- Fixed navbar -->
-{% include "includes/navigation.html"  %}
-<!-- end of navbar -->
+    <body>
+        {% include "includes/header.html" %}
+    <body>
+        <!-- Fixed navbar -->
+        {% include "includes/navigation.html"  %}
+        <!-- end of navbar -->
 
-<!-- Head BAR -->
-{% include "includes/jumbotron_logo.html" %}
+        <!-- Head BAR -->
+        {% include "includes/jumbotron_logo.html" %}
 
-<!-- End of Head BAR -->
+        <!-- End of Head BAR -->
 
-<div class="container-fluid nav-path">
-    <div class="container">
-        <div class="col-sm-12 col-xs-12"><!-- content section -->
-            <ol class="breadcrumb">
-                <li><a href="#">Ana Səhifə</a></li>
-                <li><a href="#">Təlimlər</a></li>
-                <li><a href="#">Proqramlaşdırma və kodlaşdırma</a></li>
-                <li class="active">Veb layihələrin hazırlanması</li>
-            </ol>
-        </div>
-    </div>
-</div>
+        <div class="container-fluid nav-path">
+            <div class="container">
+                <div class="col-sm-12 col-xs-12"><!-- content section -->
+                    <ol class="breadcrumb">
+                        <li><a href="#">Ana Səhifə</a></li>
+                        <li><a href="#">Təlimlər</a></li>
+                      
+                        {% for crs in  course %}
+                        <li class="active">{{crs.training_name}}</li>
+                 
+                        {% endfor %}
 
-<!-- CONTENT: About -->
-<div class="container">
-    <div class="row content">
-        <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h3><i class="fa fa-fw fa-dot-circle-o"></i>Veb layihələrin hazırlanması</h3>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12 course">
-                    <p class="info1"><b>Kursun müddəti</b></p>
-                    <p class="sel-description"><b>5 AY</b></p>
-                    <p class="sel-description"><b>450 SAAT</b></p>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12 course">
-                    <p class="info2"><b>Kursun vaxtı</b></p>
-                    <p class="sel-description">B.E. <b>18:00 - 19:30</b></p>
-                    <p class="sel-description">C.A. <b>18:00 - 19:30</b></p>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12 course">
-                    <p class="info3"><b>Təlimçi</b></p>
-                    <img src="images/staff/staff_1.jpg">
-                    <p><b>Vahid Osmanov</b><br>proqramçı</p>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12 course">
-                    <p class="info4"><b>Kursun proqramı</b></p>
-                    <a class="pdf" href="#"><h1><i class="fa fa-fw fa-file-pdf-o" aria-hidden="true"></i></h1></a>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <hr>
-                    <p><span class="info5"><b>Kim iştirak edə bilər?</span></b></p>
-                    <p>Universitet tələbələri və maraqlanan hər kəs...</p>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <p><span class="info5"><b>Kursun məqsədi nədir?</b></span></p>
-                    <p> Məqsəd qrafik və veb dizayn sahələrində karyeraya başlamaq istəyən və fəaliyyət göstərən insanları sektorun ehtiyaclarına uyğun peşəkar olaraq yetişdirməkdir. Eyni zamanda praktika üzərində qurulmuş təhsil modeli ilə tələbələri beynəlxalq sertifikatlara hazırlayaraq, onlara beynəlxalq səviyyəli mütəxəssis adı qazandırmaq ən əsas məqsədlərimizdəndir.</p>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <p><span class="info5"><b> Tədris proqramı:</b></span>
-                    </p>
-                    <ul>
-                        <li class="darkbg">İnternet dizayn və proqramlaşdırma sahəsində ümumi təsəvvür;</li>
-                        <li class="darkbg">HTML və müasir HTML 5 skript dilləri ilə işləyə bilmə bacarıqları;</li>
-                        <li class="darkbg">CSS və müasir CSS 3 haqqında fundamental biliklər;</li>
-                        <li class="darkbg">CSS stillərin veb səhifələrə tətbiq olunması və HTML şablonların yaradılması;</li>
-                        <li class="darkbg">Veb səhifələrin axtarış robotlarında asan indeksləşdirilə bilməsi üçün meta teqlərlə işləmə bacarıqları;</li>
-                        <li class="darkbg">Bootstrap texnologiyasının tətbiqi ilə sadə statik veb-səhifələrin yaradılması;</li>
-                        <li class="darkbg">Worpress əsasında sadə saytların yaradılması.</li>
-                    </ul>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <p><span class="info5"><b> Sertifikatlar:</b></span>
-                    </p>
-                    <ul>
-                        <li class="silverbg">Adobe Illustrator ACA (Adobe Certified Associate);</li>
-                        <li class="silverbg">Adobe Photoshop ACA (Adobe Certified Associate);</li>
-                        <li class="silverbg">Adobe InDesign ACA (Adobe Certified Associate)</li>
-                    </ul>
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <p><span class="info5"><b> İş sahələri:</b></span>
-                    </p>
-                    <ul>
-                        <li class="silverbg">Reklam şirkətləri;</li>
-                        <li class="silverbg">Qrafik dizayn studiyaları;</li>
-                        <li class="silverbg">Veb dizayn şirkətləri;</li>
-                        <li class="silverbg">Qəzet və jurnal redaksiyaları;</li>
-                        <li class="silverbg">Şirkətlərin marketing və reklam bölmələrində;</li>
-                        <li class="silverbg">Şirkətlərin online tədris bölmələrində;</li>
-                        <li class="silverbg">Freelancer olaraq çalışmaq (sərbəst).</li>
-                    </ul>
-                </div>
-                <div class="centralize">
-                    <p>&nbsp;</p>
-                    <a type="button" class="btn btn-default btn-md">QEYDİYYAT</a>&nbsp;
-                    <a type="button" class="btn btn-default btn-md">SUAL VER / ZƏNG EDƏK</a>
+                    </ol>
                 </div>
             </div>
-        </div> <!-- end of section -->
+        </div>
+
+        <!-- CONTENT: About -->
+        <div class="container">
+            <div class="row content">
+                <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            {% for crs in  course %}
+                            <h3><i class="fa fa-fw fa-dot-circle-o"></i>{{crs.training_name}}</h3>
+                          
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 course">
+                            <p class="info1"><b>Kursun müddəti</b></p>
+                            <p class="sel-description"><b>{{crs.training_duration}}</b></p>
+                            
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 course">
+                            <p class="info2"><b>Kursun vaxtı</b></p>
+                            <p class="sel-description"> <b>{{crs.training_hours}} SAAT</b></p>
+                            
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 course">
+                            <p class="info3"><b>İştrakçı sayı</b></p>
+                           
+                            <p><b>{{crs.training_applicant}}</b><br></p>
+                        </div>
+               
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <hr>
+                            <p><span class="info5"><b>Kim iştirak edə bilər?</span></b></p>
+                            <p>{{crs.info | raw}}</p>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <p><span class="info5"><b>Kursun məqsədi nədir?</b></span></p>
+                            <p>{{crs.description | raw}}</p>
+                        </div>
+                        
+                          {% endfor %}
+                       
+                        <div class="centralize">
+                            <p>&nbsp;</p>
+                            <a type="button" class="btn btn-default btn-md" href="/register">QEYDİYYAT</a>&nbsp;
+                            <a type="button" class="btn btn-default btn-md" href="/question">SUAL VER / ZƏNG EDƏK</a>
+                        </div>
+                    </div>
+                </div> <!-- end of section -->
 
         <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section -->
             <div class="side-nav-inside">
@@ -116,40 +87,40 @@
                 </ul>
             </div>
         </div>
-    </div>
-</div>
-<!-- closing CONTENT -->
+            </div>
+        </div>
+        <!-- closing CONTENT -->
 
-<!-- FOOTER -->
+        <!-- FOOTER -->
 
-<!-- ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+        <!-- ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
 
-{% include "includes/footer.html" %}
+        {% include "includes/footer.html" %}
 
-<script src="js/plugins.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/main.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#news-slider").owlCarousel({
-            items : 2,
-            itemsDesktop:[1199,2],
-            itemsDesktopSmall:[980,2],
-            itemsMobile : [700,1],
-            pagination:false,
-            navigation:true,
-            navigationText:["",""],
-            autoPlay:true
-        });
-        $("a").tooltip(); // for tooltips
-
-        // Colorbox Call
-        $(document).ready(function(){
-            $("[rel^='lightbox']").prettyPhoto();
-        });
-
+        <script src="js/plugins.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+$(document).ready(function () {
+    $("#news-slider").owlCarousel({
+        items: 2,
+        itemsDesktop: [1199, 2],
+        itemsDesktopSmall: [980, 2],
+        itemsMobile: [700, 1],
+        pagination: false,
+        navigation: true,
+        navigationText: ["", ""],
+        autoPlay: true
     });
-</script>
-</body>
+    $("a").tooltip(); // for tooltips
+
+    // Colorbox Call
+    $(document).ready(function () {
+        $("[rel^='lightbox']").prettyPhoto();
+    });
+
+});
+        </script>
+    </body>
 </html>

@@ -43,11 +43,9 @@ class City extends \Core\Model {
 
             return $stmt->fetch();
 
-<<<<<<< HEAD
+
            
-        } catch (Exception $ex) {
-             $error = $e->getMessage();
-        }
+
     }
     
         public static  function getAboutInfo() {
@@ -69,8 +67,7 @@ class City extends \Core\Model {
         } catch (Exception $ex) {
              $error = $e->getMessage();
         }
-=======
->>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
+
     }
 
 }

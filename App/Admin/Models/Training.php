@@ -2,6 +2,7 @@
 
 namespace App\Admin\Models;
 
+use App\Helper;
 use PDO;
 use App\Paginate;
 

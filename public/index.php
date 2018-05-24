@@ -55,8 +55,8 @@
 	$router->add('logout',['controller'=>'Login','action'=>'destroy']);
 	$router->add('signup',['controller'=>'Signup','action'=>'new']);
 	$router->add('news',['controller'=>'News','action'=>'index']);
-	$router->add('courses',['controller'=>'Course','action'=>'index']);
-	$router->add('course',['controller'=>'Course','action'=>'course']);
+	$router->add('course/{id:\d+}',['controller'=>'Course','action'=>'course']);
+	$router->add('courses/{name:[a-z0-9-]+}/{id:\d+}',['controller'=>'Course','action'=>'index']);
 	$router->add('partners',['controller'=>'Partner','action'=>'index']);
 	$router->add('instructors',['controller'=>'Instructors','action'=>'index']);
 	$router->add('documents',['controller'=>'Document','action'=>'index']);

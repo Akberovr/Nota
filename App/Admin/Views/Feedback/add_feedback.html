@@ -1,0 +1,28 @@
+<form action="/admin/feedback/create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="name">Full Name</label>
+        <input value="" type="text" class="form-control" name="name" >
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="photo">Image</label >
+        <input  type="file"  name="photo" required>
+        <img  width="100" src="" alt="" />
+    </div>
+
+    <div class="form-group">
+        <label for="feed">Feedback</label>
+        <textarea name="feed" ></textarea>
+        <script>
+            CKEDITOR.replace( 'feed' );
+        </script>
+    </div>
+
+
+    <div class="form-group">
+        <button href="/admin/feedback/create" class="btn btn-primary" type="submit">Add Feedback</button>
+    </div>
+
+</form>

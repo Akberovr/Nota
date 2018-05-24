@@ -36,8 +36,8 @@
                     {% else %}
 
                     <h3><i class="fa fa-fw fa-dot-circle-o"></i>Haqqımızda</h3>
-                    <p class="highlighted">{{about.info}}</p>
-                    <p>{{about.description}}</p>
+                    <p class="highlighted">{{about.info | raw}}</p>
+                    <p>{{about.description | raw}}</p>
 
                     {% endif %}
 

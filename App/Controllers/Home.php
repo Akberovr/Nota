@@ -9,6 +9,9 @@ use \App\Mail;
 use App\Models\City as CityModel;
 use App\Admin\Models\City as AdminCity;
 use App\Models\Home as ModelHome;
+use App\Models\Feedback as FeedbackModel;
+use App\Models\Navigation as NavigationModel;
+use App\Models\Training as TrainingModel;
 
 class Home extends \Core\Controller {
 
@@ -18,8 +21,11 @@ class Home extends \Core\Controller {
      * @return void
      */
     public function indexAction() {
-
-        View::renderTemplate('Home/index.html');
+      
+        View::renderTemplate('Home/index.html',[
+             "feedback" =>  FeedbackModel::getFeedback(),
+            "navigation" => NavigationModel::getCategory(),
+        ]);
     }
 
     /**
@@ -31,12 +37,9 @@ class Home extends \Core\Controller {
         $city = CityModel::getCity();
          $about = CityModel::getAboutInfo();
         View::renderTemplate('Home/about.html', [
-<<<<<<< HEAD
-            'city' => $city,
             'about' => $about,
-=======
             'cities' => $city,
->>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
+
         ]);
     }
 

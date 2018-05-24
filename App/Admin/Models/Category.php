@@ -2,6 +2,8 @@
 
 namespace App\Admin\Models;
 
+
+use App\Helper;
 use PDO;
 use App\Paginate;
 
@@ -41,12 +43,14 @@ class Category extends \Core\Model {
 
     public function create() {
         try {
-            $sql = "INSERT INTO training_category (training_cat_name)"
-                    . " VALUES (:name) ";
+            $sql = "INSERT INTO training_category (training_cat_name,cn_sef)"
+                    . " VALUES (:name,:cn_sef) ";
             $db = static::getDB();
             $stmt = $db->prepare($sql);
 
             $stmt->bindValue(':name', $this->category_name, PDO::PARAM_STR);
+            $stmt->bindValue(':cn_sef', Helper::sefLink($this->category_name), PDO::PARAM_STR);
+            
             return $stmt->execute();
         } catch (Exception $e) {
             $error = $e->getMessage();
