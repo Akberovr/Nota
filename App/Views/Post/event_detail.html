@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 {% include "includes/header.html" %}
+
 <body>
 <!-- Fixed navbar -->
-{% include "includes/navigation.html"  %}
+{% include "includes/navigation.html" %}
 <!-- end of navbar -->
 
 <!-- Head BAR -->
 {% include "includes/jumbotron_logo.html" %}
-
 <!-- End of Head BAR -->
 
 <div class="container-fluid nav-path">
@@ -17,8 +16,8 @@
         <div class="col-sm-12 col-xs-12"><!-- content section -->
             <ol class="breadcrumb">
                 <li><a href="/">Ana Səhifə</a></li>
-                <li><a href="">Mərkəz</a></li>
-                <li class="active">Komandamız</li>
+                <li><a href="">Yeniliklər</a></li>
+                <li class="active">News</li>
             </ol>
         </div>
     </div>
@@ -28,52 +27,33 @@
 <div class="container">
     <div class="row content">
         <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
-            <h3><i class="fa fa-fw fa-dot-circle-o"></i>Müəllimlər</h3>
-            {% for instructor in instructors %}
+            <h3><span class="event-time">{{member.date|date("j F")}}</span> {{member.post_title|upper}}</h3>
+            <div class="row">
+                <div class="col-md-12 event-inside">
 
-            <div class="col-md-6">
-
-                <div class="card">
-                    <img src="images/instructors/{{instructor.photo}}" alt="Card image cap">
-
-                    <div>
-                        <a href="/instructor/{{instructor.id}}">
-                            <h4 class="highlighted">{{instructor.name|upper}}</h4>
-                            <p class="highlighted">{{instructor.field}}</p>
-                            <p>{{instructor.email}}</p>
-                        </a>
+                    <img src="../images/posts/{{member.image}}"><p>{{member.post_body|raw}}</p>
+                    <div class="centralize">
+                        <a href="/register" type="button" class="btn btn-default btn-md">TƏDBIRƏ QEYDİYYAT</a>
                     </div>
-                </div>
-
-            </div>
-
-            {% endfor %}
-
-
-
+                </div></div>
 
         </div> <!-- end of section -->
 
         <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section -->
             <div class="side-nav-inside">
                 <ul>
-                    <h4>MƏRKƏZ</h4>
-                    <li><a href="/about">Haqqımızda</a></li>
-                    <li><a href="/network">Şəbəkəmiz</a></li>
-                    <li><a href="/staff">Komandamız</a></li>
-                    <li class="active"><i class="fa fa-long-arrow-right"></i>Müəllimlərimiz</a></li>
-                    <li><a href="/partners">Tərəfdaşlar</a></li>
-                    <li><a href="/documents">Sənədlər</a></li>
+                    <h4>YENİLİKLƏR</h4>
+                    <li class="active"><i class="fa fa-long-arrow-right"></i> Xəbərlər</a></li>
+                    <li><a href="/announces">Elanlar</a></li>
+                    <li><a href="/events">Tədbirlər</li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
 <!-- closing CONTENT -->
-
-<!-- FOOTER -->
-
 {% include "includes/footer.html" %}
+
 <script src="js/plugins.js"></script>
 <script src="js/jquery.prettyPhoto.js"></script>
 <script src="js/main.js"></script>

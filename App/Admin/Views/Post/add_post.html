@@ -1,0 +1,35 @@
+<form action="/admin/post/create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="title">Post Title</label>
+        <input value="" type="text" class="form-control" name="post_title">
+    </div>
+
+
+    <div class="form-group">
+        <label for="post_image">Post Image</label>
+        <input  type="file"  name="post_image">
+    </div>
+
+
+    <div class="form-group">
+        <select class="selectpicker" data-live-search="true" name="category_id" >
+            {% for category in postCategory %}
+            <option data-tokens="ketchup mustard"  value="{{category.category_id}}">{{category.category_name}}</option>
+            {% endfor %}
+        </select>
+
+    </div>
+
+    <div class="form-group">
+        <label for="title">About</label>
+        <textarea name="post_body" ></textarea>
+        <script>
+            CKEDITOR.replace( 'post_body' );
+        </script>
+    </div>
+
+    <div class="form-group">
+        <button  class="btn btn-primary" type="submit">Add News</button>
+    </div>
+
+</form>

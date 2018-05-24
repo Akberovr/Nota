@@ -59,8 +59,15 @@
 	$router->add('course',['controller'=>'Course','action'=>'course']);
 	$router->add('partners',['controller'=>'Partner','action'=>'index']);
 	$router->add('instructors',['controller'=>'Instructors','action'=>'index']);
+	$router->add('instructor/{id:\d+}',['controller'=>'Instructors','action'=>'show']);
 	$router->add('documents',['controller'=>'Document','action'=>'index']);
 	$router->add('news/{title:[a-z0-9-]+}',['controller'=>'News','action'=>'show']);
+	$router->add('announce/{title:[a-z0-9-]+}',['controller'=>'Post','action'=>'announce']);
+	$router->add('event/{title:[a-z0-9-]+}',['controller'=>'Post','action'=>'event']);
+	$router->add('article/{title:[a-z0-9-]+}',['controller'=>'Post','action'=>'article']);
+	$router->add('announces',['controller'=>'Post','action'=>'announces']);
+	$router->add('events',['controller'=>'Post','action'=>'events']);
+	$router->add('articles',['controller'=>'Post','action'=>'articles']);
 	$router->add('staff',['controller'=>'Staff','action'=>'index']);
 	$router->add('staff/{title:[a-z0-9-]+}',['controller'=>'Staff','action'=>'show']);
 	$router->add('about',['controller'=>'Home','action'=>'about']);
@@ -70,7 +77,7 @@
 	$router->add('register',['controller'=>'Register','action'=>'index']);
 	$router->add('teacher',['controller'=>'teacher','action'=>'index']);
 	$router->add('resource',['controller'=>'Resource','action'=>'index']);
-	$router->add('gallery/photos',['controller'=>'Gallery','action'=>'photos']);
+	$router->add('photo-gallery',['controller'=>'Gallery','action'=>'photos']);
 	$router->add('{controller}/{action}');
 	$router->add('{controller}/{id:\d+}/{action}');
 	$router->add('password/reset/{token:[\da-f]+}',['controller'=>'Password','action'=>'reset']);

@@ -45,7 +45,7 @@ class News extends \Core\Controller
 
     public function showAction(){
 
-        View::renderTemplate('News/index.html',[
+        View::renderTemplate('News/details.html',[
             "member" => ModelNews::findByUrl($this->route_params["title"])
         ]);
 

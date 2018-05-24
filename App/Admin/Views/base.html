@@ -93,6 +93,29 @@
                     </li>
 
                     <li>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo12"><i class="glyphicon glyphicon-blackboard"></i> Instructors <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo12" class="collapse">
+
+                            {% if lang %}
+                            <li>
+                                <a href="/admin/instructor/show?lang={{lang}}">Show instructors</a>
+                            </li>
+                            <li>
+                                <a href="/admin/instructor/add?lang={{lang}}">Add instructors</a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="/admin/instructor/show">Show instructors</a>
+                            </li>
+                            <li>
+                                <a href="/admin/instructor/add">Add instructors</a>
+                            </li>
+                            {% endif %}
+
+                        </ul>
+                    </li>
+
+                    <li>
                         <a href="javascript:" data-toggle="collapse" data-target="#demo3"><i class="fa fa-group"></i> Staff <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo3" class="collapse">
 
@@ -133,6 +156,28 @@
                             </li>
                             <li>
                                 <a href="/admin/news/add">Add News</a>
+                            </li>
+
+                            {% endif %}
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo14"><i class="glyphicon glyphicon-pencil"></i> Post <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo14" class="collapse">
+
+                            {% if lang %}
+                            <li>
+                                <a href="/admin/post/show?lang={{lang}}">View Post</a>
+                            </li>
+                            <li>
+                                <a href="/admin/post/add?lang={{lang}}">Add Post</a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="/admin/post/show">View Post</a>
+                            </li>
+                            <li>
+                                <a href="/admin/post/add">Add Post</a>
                             </li>
 
                             {% endif %}

@@ -11,53 +11,37 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="event"><!-- EVENT panel -->
                         <div class="row">
+                            {% for announce in announces|slice(0,4) %}
                             <div class="col-md-6 col-sm-12 col-xs-12 sep"><!--col-1 -->
-                                <div class="sp"><span>15</span> <br>FEV</div>
-                                <p><a href="#">Şəbəkə İnzibatçılığı üzrə təlimlərə start verilir!</a></p>
-                                <p>Elektron Hökumət Təlim-Tədris Mərkəzində Şəbəkə İnzibatçılığı üzrə təlimlərə start verilir...</p>
+                                <div class="sp"><span>{{announce.date|date("j")}}</span> <br>{{announce.date|date("F")}}</div>
+                                <p><a href="#">{{announce.post_title}}</a></p>
+                                <p>{{announce.post_body|slice(0,200)|raw}}..</p>
                             </div>
-                            <div class="col-md-6 col-sm-12 col-xs-12 sep"><!--col-2 -->
-                                <div class="sp"><span>08</span> <br>FEV</div>
-                                <p><a href="#">“Gənclər üçün Elektron Hökumət” müsabiqəsinin qalibləri mükafatlandırılıb</a></p>
-                                <p>“Azərbaycan Respublikasında informasiya cəmiyyətinin inkişafına dair Milli Strategiyanın...</p>
-                            </div>
-                        </div>
-                        <div class="row"><!-- second row -->
-                            <div class="col-md-6 col-sm-12 col-xs-12 sep"><!--col-1 -->
-                                <div class="sp"><span>30</span> <br>YAN</div>
-                                <p><a href="#">Kompüter dizaynı və qrafikası üzrə yeni təlimlərə start verilir!</a></p>
-                                <p>Mərkəzimizdə 2D dizayn və qrafika üzrə təlimlərə start verilir. Mərkəzdə kompüter dizaynı və qrafikasının...</p>
-                            </div>
-                            <div class="col-md-6 col-sm-12 col-xs-12 sep"><!--col-2 -->
-                                <div class="sp"><span>28</span> <br>YAN</div>
-                                <p><a href="#">Verilənlər Bazası üzrə proqramçı olmaq istəyənlərin nəzərinə!</a></p>
-                                <p>Gələcək karyeralarını Verilənlər Bazasının proqramlaşdırması sahəsi üzrə qurmaq istəyənlər üçün Mərkəzimizdə Oracle Verilənlər...</p>
-                            </div>
+                            {% endfor %}
+
                         </div>
                         <div class="row"><!-- all events button -->
                             <div class="col-md-12 col-sm-12 col-xs-12"><!--col-1 -->
                                 <p>&nbsp;</p>
-                                <div class="readall_container"><a id="readall" href="news.html">DİGƏR ELANLAR</a></div>
+                                <div class="readall_container"><a id="readall" href="/announces">DİGƏR ELANLAR</a></div>
                             </div>
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="news"><!-- NEWS tab -->
                         <div class="row"><!-- first row -->
+                            {% for post in news|slice(0,2) %}
                             <div class="col-md-6 col-sm-12 col-xs-12 sep"><!--col-1 -->
-                                <div class="sp"><span>30</span> <br>YAN</div>
-                                <p><a href="#">Kompüter dizaynı və qrafikası üzrə yeni təlimlərə start verilir!</a></p>
-                                <p>Mərkəzimizdə 2D dizayn və qrafika üzrə təlimlərə start verilir. Mərkəzdə kompüter dizaynı və qrafikasının müxtəlif istiqamətləri üzrə ixtisaslaşmış təlimlər keçiriləcək...</p>
+                                <div class="sp"><span>{{post.date|date("j")}}</span> <br>{{post.date|date("F")}}</div>
+                                <p><a href="#">{{post.title|upper}}</a></p>
+                                <p>{{post.content|slice(0,200)|raw}}...</p>
                             </div>
-                            <div class="col-md-6 col-sm-12 col-xs-12 sep"><!--col-2 -->
-                                <div class="sp"><span>28</span> <br>YAN</div>
-                                <p><a href="#">Verilənlər Bazası üzrə proqramçı olmaq istəyənlərin nəzərinə!</a></p>
-                                <p>Gələcək karyeralarını Verilənlər Bazasının proqramlaşdırması sahəsi üzrə qurmaq istəyənlər üçün Mərkəzimizdə Oracle Verilənlər...</p>
-                            </div>
+                            {% endfor %}
+
                         </div>
                         <div class="row"><!-- all events button -->
                             <div class="col-md-12 col-sm-12 col-xs-12"><!--col-1 -->
                                 <p>&nbsp;</p>
-                                <div class="readall_container"><a id="readall" href="news.html">DİGƏR XƏBƏRLƏR</a></div>
+                                <div class="readall_container"><a id="readall" href="/news">DİGƏR XƏBƏRLƏR</a></div>
                             </div>
                         </div>
                     </div>

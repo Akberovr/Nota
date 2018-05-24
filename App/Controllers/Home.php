@@ -6,8 +6,12 @@ use App\Helper;
 use \Core\View;
 use \App\Auth;
 use \App\Mail;
+
+use App\Admin\Models\Partner as AdminPartner;
 use App\Models\City as CityModel;
 use App\Admin\Models\City as AdminCity;
+use App\Admin\Models\Post as AdminPost;
+use App\Admin\Models\News as AdminNews;
 use App\Models\Home as ModelHome;
 
 class Home extends \Core\Controller {
@@ -19,7 +23,12 @@ class Home extends \Core\Controller {
      */
     public function indexAction() {
 
-        View::renderTemplate('Home/index.html');
+        View::renderTemplate('Home/index.html',[
+            "partners" => AdminPartner::findAll(),
+            "announces"   => AdminPost::getAnnounces(),
+            "events"       => AdminPost::getEvents(),
+            "news"       => AdminNews::findAll()
+        ]);
     }
 
     /**

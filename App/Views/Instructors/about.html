@@ -4,7 +4,7 @@
 
 <body>
 <!-- Fixed navbar -->
-{% include "includes/navigation.html"  %}
+{% include "includes/navigation.html" %}
 <!-- end of navbar -->
 
 <!-- Head BAR -->
@@ -17,7 +17,7 @@
             <ol class="breadcrumb">
                 <li><a href="/">Ana Səhifə</a></li>
                 <li><a href="">Mərkəz</a></li>
-                <li class="active">Tərəfdaşlar</li>
+                <li class="active">Komandamız</li>
             </ol>
         </div>
     </div>
@@ -27,36 +27,25 @@
 <div class="container">
     <div class="row content">
         <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
-            <h3><i class="fa fa-fw fa-dot-circle-o"></i>Tərəfdaşlar</h3>
+            <h3><i class="fa fa-fw fa-dot-circle-o"></i>Komandamız</h3>
+            <img class="staff-image" src="../images/instructors/{{instructor.photo}}" alt="">
+            <h4 class="highlighted"><b>{{instructor.name|upper}} </b></h4>
 
-            {% for partner in partners %}
-            <div class="col-md-6">
-                <a href=""><div class="kurs partner">
-                    <img src="images/partners/{{partner.file}}">
-                    <p>{{partner.name|upper}}</p>
-                </div></a>
-            </div>
-            {% endfor %}
+
+            <p class="highlighted">{{instructor.field}}</p>
+
+            <p><i class="fa fa-fw fa-envelope"></i> {{instructor.email}}</p>
+            <hr>
+            <p>{{instructor.about|raw}}</p>
+
         </div> <!-- end of section -->
+        {% include "includes/sidebar_center.html" %}
 
-        <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section -->
-            <div class="side-nav-inside">
-                <ul>
-                    <h4>MƏRKƏZ</h4>
-                    <li><a href="/about">Haqqımızda</a></li>
-                    <li><a href="/network">Şəbəkəmiz</a></li>
-                    <li><a href="/staff">Komandamız</a></li>
-                    <li><a href="/instructors">Müəllimlərimiz</a></li>
-                    <li class="active"><i class="fa fa-long-arrow-right"></i>Tərəfdaşlar</a></li>
-                    <li><a href="/documents">Sənədlər</a></li>
-                </ul>
-            </div>
-        </div>
     </div>
 </div>
 <!-- closing CONTENT -->
 
-<!-- FOOTER -->
+<!-- Footer -->
 <div class="container-fluid footer">
     <div class="container">
         <div class="row">
@@ -91,17 +80,17 @@
 
 <!-- ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="jquery/jquery.min.js"></script>
-<script src="jquery/main.js"></script>
-<script src="js/map.js"></script>
-<script>window.jQuery || document.write('<script src="jquery/jquery.min.js"><\/script>')</script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../../jquery/jquery.min.js"></script>
+<script src="../../jquery/main.js"></script>
+<script src="../../js/map.js"></script>
+<script>window.jQuery || document.write('<script src="../../jquery/jquery.min.js"><\/script>')</script>
+<script src="../../js/bootstrap.min.js"></script>
 <!-- owl carousel: event slider -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 
-<script src="js/plugins.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/main.js"></script>
+<script src="../../js/plugins.js"></script>
+<script src="../../js/jquery.prettyPhoto.js"></script>
+<script src="../../js/main.js"></script>
 <script>
     $(document).ready(function() {
         $("#news-slider").owlCarousel({

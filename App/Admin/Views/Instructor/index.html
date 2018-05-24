@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block subheading %} News {% endblock %}
+
+{% block context %}
+
+    {% if source == "show" %}
+
+        {% include "Instructor/show_instructors.html" %}
+
+    {% elseif source == "add" %}
+
+        {% include "Instructor/add_instructor.html" %}
+
+    {% elseif source == "edit" %}
+
+        {% include "Instructor/edit_instructor.html" %}
+
+    {% else %}
+
+        {% include "Instructor/show_instructors.html" %}
+
+    {% endif %}
+
+
+{% endblock %}

@@ -9,19 +9,73 @@
 namespace App\Admin\Models;
 
 use PDO;
-use \Core\View;
-use \App\Flash;
+use App\Helper;
+use Carbon\Carbon;
 
 class Post extends \Core\Model {
-    
-    
-    
-    
-        public function __construct($data = []) {
-            foreach ($data as $key => $value) {
-                $this->$key = $value;
-            };
-         }
+
+
+    /**
+     * @var $upload_directory directory for upload photos
+     */
+
+    public static $upload_directory = 'images/posts';
+
+    /**
+     * @var $photo_filename name of the file
+     */
+
+    public $photo_filename;
+
+    /**
+     * @var $tmp_path temporary path of file
+     */
+
+    public $tmp_path;
+
+
+    /**
+     * Class constructor
+     *
+     * @param array $data  Initial property values
+     *
+     * @return void
+     */
+
+    public function __construct($data = [])
+    {
+        foreach ($data as $key => $value) {
+            $this->$key = $value;
+        }
+
+    }
+
+    /**
+     * Sets file and checks whether empty errors or not
+     *
+     *  @return true or false
+     */
+
+    public function setFile($file){
+
+        if (empty($file) || !$file || !is_array($file)) {
+
+            $this->errors[] = "No file was uploaded";
+            return false;
+
+        }elseif($file['error'] != 0){
+
+            $this->errors[] = $this->upload_errors_array[$file['error']];
+            return false;
+
+        }else{
+
+            $this->photo_filename = basename($file['name']);
+            $this->tmp_path       = $file['tmp_name'];
+
+        }
+    }
+
 
     /*
      * retrieving all news from database and  data acccording  to them.
@@ -119,6 +173,31 @@ class Post extends \Core\Model {
         }
     }
 
+    /**
+     * Insert News and News details to the Database
+     *
+     * @return boolean  True if the news was saved, false otherwise
+     */
+
+    public function create(){
+
+        $sql = "INSERT INTO post (category_id,date,image,post_title,post_body,url) VALUES (:category_id,:date,:image,:post_title,:post_body,:url) ";
+
+        $db = static::getDB();
+
+        $stmt =  $db->prepare($sql);
+
+        $stmt->bindValue(':category_id' , $this->category_id,PDO::PARAM_INT);
+        $stmt->bindValue(':date',Carbon::now(),PDO::PARAM_STR);
+        $stmt->bindValue('image',$this->photo_filename,PDO::PARAM_STR);
+        $stmt->bindValue(':post_title',$this->post_title,PDO::PARAM_STR);
+        $stmt->bindValue(':post_body',$this->post_body,PDO::PARAM_STR);
+        $stmt->bindValue(':url' , Helper::sefLink($this->post_title),PDO::PARAM_STR);
+
+        return $stmt->execute();
+    }
+
+
     public function updatePost($id) {
         try {
              $defaultLang = '';
@@ -206,5 +285,102 @@ class Post extends \Core\Model {
             $error = $e->getMessage();
         }
     }
+
+
+    /**
+     * @param $method Post method which implemented when save method called
+     * @param null $id
+     * @return bool
+     */
+
+    public function save($method,$id = null){
+
+        $target_path =  dirname(dirname(dirname(__DIR__)))."//"."public"."//"."images"."//"."posts"."//".$this->photo_filename;
+
+        if (move_uploaded_file($this->tmp_path,$target_path)){
+
+            if($this->$method($id)){
+
+                unset($this->tmp_path);
+                return true;
+
+            }
+            return false;
+        }
+
+    }
+
+    public static function getAnnounces ()
+    {
+
+        $db = static::getDB();
+
+        $sql = "SELECT * FROM post WHERE category_id = 2";
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+
+    }
+    public static function getEvents ()
+    {
+
+        $db = static::getDB();
+
+        $sql = "SELECT * FROM post WHERE category_id = 3";
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+
+    }
+    public static function getArticles ()
+    {
+
+        $db = static::getDB();
+
+        $sql = "SELECT * FROM post WHERE category_id = 4";
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+
+    }
+
+    /**
+     * @param $title
+     * @return mixed
+     */
+
+    public static function findByUrl($url){
+
+        $sql = "SELECT * FROM post WHERE url = :url ";
+
+        $db = static::getDB();
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindParam(':url', $url, PDO::PARAM_STR);
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetch();
+
+    }
+
 
 }

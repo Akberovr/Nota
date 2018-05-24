@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block subheading %} News {% endblock %}
+
+{% block context %}
+
+    {% if source == "show" %}
+
+        {% include "Post/show_posts.html" %}
+
+    {% elseif source == "add" %}
+
+        {% include "Post/add_post.html" %}
+
+    {% elseif source == "edit" %}
+
+        {% include "Post/edit_post.html" %}
+
+    {% else %}
+
+        {% include "Post/show_post.html" %}
+
+    {% endif %}
+
+
+{% endblock %}
