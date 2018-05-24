@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5863102-4c90-41f5-ae9b-f56a2c728ee0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/App/Admin/Controllers/Partner.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Admin/Models/Partner.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Admin/Views/Partners/add_partner.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Admin/Views/Partners/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Admin/Views/Partners/show_partners.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Admin/Views/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Admin/Views/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/Home/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/includes/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/includes/regional_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/regional_map.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/clue/stream-filter/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -71,8 +65,8 @@
       <file leaf-file-name="Partner.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/Partner.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+            <state relative-caret-position="1200">
+              <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
               <folding>
                 <element signature="e#122#136#0#PHP" expanded="true" />
               </folding>
@@ -80,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show_partners.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show_partners.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Admin/Views/Partners/show_partners.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="528">
               <caret line="22" column="108" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
@@ -94,19 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show_news.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Admin/Views/News/show_news.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-288">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Partner.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Admin/Models/Partner.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
+            <state relative-caret-position="4152">
               <caret line="178" column="34" selection-start-line="178" selection-start-column="34" selection-end-line="178" selection-end-column="34" />
             </state>
           </provider>
@@ -124,8 +109,44 @@
       <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Admin/Models/News.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="328" column="23" lean-forward="true" selection-start-line="328" selection-start-column="23" selection-end-line="328" selection-end-column="23" />
+            <state relative-caret-position="7680">
+              <caret line="328" column="23" selection-start-line="328" selection-start-column="23" selection-end-line="328" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Views/Home/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jumbotron_logo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navigation.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Views/includes/navigation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2736">
+              <caret line="114" column="21" lean-forward="true" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="regional_map.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App/Views/includes/regional_map.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="239" column="10" lean-forward="true" selection-start-line="239" selection-start-column="10" selection-end-line="239" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -133,35 +154,8 @@
       <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/News.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="87" column="9" lean-forward="true" selection-start-line="77" selection-start-column="8" selection-end-line="87" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Photo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Admin/Models/Photo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1519">
-              <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="City.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Admin/Models/City.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_partner.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Admin/Views/Partners/add_partner.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="38" lean-forward="true" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+            <state relative-caret-position="1872">
+              <caret line="87" column="9" selection-start-line="77" selection-start-column="8" selection-end-line="87" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -186,6 +180,8 @@
       <find>city_info</find>
       <find>staff</find>
       <find>partners</find>
+      <find>logo_left</find>
+      <find>qeydiyy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,7 +192,6 @@
       <list>
         <option value="$PROJECT_DIR$/App/Admin/Models/Photo.php" />
         <option value="$PROJECT_DIR$/App/Admin/Views/Photos/add_photo.html" />
-        <option value="$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html" />
         <option value="$PROJECT_DIR$/public/css/event_slider.css" />
         <option value="$PROJECT_DIR$/public/css/gallery-main.css" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
@@ -205,7 +200,6 @@
         <option value="$PROJECT_DIR$/App/Views/includes/carousel_slider.html" />
         <option value="$PROJECT_DIR$/App/Views/includes/training_courses.html" />
         <option value="$PROJECT_DIR$/App/Views/includes/testimonials.html" />
-        <option value="$PROJECT_DIR$/App/Views/includes/regional_map.html" />
         <option value="$PROJECT_DIR$/App/Views/includes/news_slider.html" />
         <option value="$PROJECT_DIR$/App/Views/includes/events.html" />
         <option value="$PROJECT_DIR$/App/Views/includes/url_banners.html" />
@@ -215,7 +209,6 @@
         <option value="$PROJECT_DIR$/App/Views/Documents/index.html" />
         <option value="$PROJECT_DIR$/App/Views/Partners/index.html" />
         <option value="$PROJECT_DIR$/App/Views/Instructors/index.html" />
-        <option value="$PROJECT_DIR$/App/Views/includes/navigation.html" />
         <option value="$PROJECT_DIR$/App/Controllers/Instructor.php" />
         <option value="$PROJECT_DIR$/App/Controllers/Instructors.php" />
         <option value="$PROJECT_DIR$/App/Views/Staff/index.html" />
@@ -245,6 +238,9 @@
         <option value="$PROJECT_DIR$/App/Admin/Models/Partner.php" />
         <option value="$PROJECT_DIR$/App/Admin/Views/base.html" />
         <option value="$PROJECT_DIR$/App/Admin/Views/Partners/show_partners.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/navigation.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/regional_map.html" />
       </list>
     </option>
   </component>
@@ -296,7 +292,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,27 +308,27 @@
               <item name="Nota" type="b2602c69:ProjectViewProjectNode" />
               <item name="Nota" type="462c0819:PsiDirectoryNode" />
               <item name="App" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Nota" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Nota" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="Views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Nota" type="b2602c69:ProjectViewProjectNode" />
               <item name="Nota" type="462c0819:PsiDirectoryNode" />
               <item name="App" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="Views" type="462c0819:PsiDirectoryNode" />
-              <item name="Partners" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nota" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nota" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,7 +450,8 @@
       <workItem from="1527055285517" duration="249000" />
       <workItem from="1527057013116" duration="497000" />
       <workItem from="1527058481151" duration="395000" />
-      <workItem from="1527058988216" duration="21765000" />
+      <workItem from="1527058988216" duration="22083000" />
+      <workItem from="1527176512231" duration="1597000" />
     </task>
     <task id="LOCAL-00001" summary="Photo Model and Controller is on progress">
       <created>1521046986471</created>
@@ -523,29 +519,29 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="644360000" />
+    <option name="totallyTimeSpent" value="646275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992248" visible="true" weight="0.18305598" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992248" visible="true" weight="0.1860817" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.47761193" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.503125" side_tool="true" weight="0.45426357" />
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.4775194" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" sideWeight="0.5007752" side_tool="true" weight="0.4977307" />
       <window_info id="Terminal" order="3" sideWeight="0.4992248" weight="0.4977307" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="REST Client" order="11" weight="0.4432836" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="9" sideWeight="0.496875" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32868218" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -556,25 +552,25 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23524962" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.47761193" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32477534" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.4775194" />
       <window_info anchor="bottom" id="REST Client" order="12" weight="0.4432836" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32477534" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="9" sideWeight="0.496875" visible="true" weight="0.32937366" />
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
       <window_info id="Terminal" order="3" weight="0.4977307" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.4775194" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.503125" side_tool="true" weight="0.45426357" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32868218" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,10 +606,24 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/App/Views/includes/url_banners.html">
+    <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        <state relative-caret-position="2088">
+          <caret line="87" column="9" lean-forward="true" selection-start-line="77" selection-start-column="8" selection-end-line="87" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Models/Photo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5232">
+          <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -621,13 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Views/Home/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="45" column="58" lean-forward="true" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -656,16 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="58" column="43" lean-forward="true" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-          <folding>
-            <element signature="e#15512#15518#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Views/includes/navigation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -732,18 +725,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/city/376244287_image.PNG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/Photo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="92" column="28" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="28" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Views/Signup/new.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Admin/Views/City/add_city.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -766,16 +753,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/city/319081202_image.PNG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Views/Staff/about_staff.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="45" />
-          <folding>
-            <element signature="e#2794#2800#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,9 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="e#35#50#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -835,9 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#121#136#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -906,39 +881,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Admin/Models/Photo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1519">
-          <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
+        <state relative-caret-position="5088">
+          <caret line="218" selection-start-line="218" selection-end-line="218" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/baners/mhm.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Admin/Views/News/show_news.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="792">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="87" column="9" lean-forward="true" selection-start-line="77" selection-start-column="8" selection-end-line="87" selection-end-column="9" />
+        <state relative-caret-position="1872">
+          <caret line="87" column="9" selection-start-line="77" selection-start-column="8" selection-end-line="87" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Admin/Models/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="328" column="23" lean-forward="true" selection-start-line="328" selection-start-column="23" selection-end-line="328" selection-end-column="23" />
+        <state relative-caret-position="7680">
+          <caret line="328" column="23" selection-start-line="328" selection-start-column="23" selection-end-line="328" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/Partner.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+        <state relative-caret-position="1200">
+          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
           <folding>
             <element signature="e#122#136#0#PHP" expanded="true" />
           </folding>
@@ -947,7 +919,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Admin/Models/Partner.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
+        <state relative-caret-position="4152">
           <caret line="178" column="34" selection-start-line="178" selection-start-column="34" selection-end-line="178" selection-end-column="34" />
         </state>
       </provider>
@@ -961,13 +933,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Admin/Views/Partners/show_partners.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
+        <state relative-caret-position="528">
           <caret line="22" column="108" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Home/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/includes/navigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2736">
+          <caret line="114" column="21" lean-forward="true" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/includes/regional_map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="239" column="10" lean-forward="true" selection-start-line="239" selection-start-column="10" selection-end-line="239" selection-end-column="10" />
         </state>
       </provider>
     </entry>
