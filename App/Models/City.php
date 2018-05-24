@@ -46,7 +46,28 @@ class City extends \Core\Model {
 
             return $stmt->fetch();
 
-           return $stmt->fetch();
+           
+        } catch (Exception $ex) {
+             $error = $e->getMessage();
+        }
+    }
+    
+        public static  function getAboutInfo() {
+            
+         try {
+             
+          $sql = "SELECT * FROM about WHERE id = 1";
+
+             $db = static::getDB();
+
+            $stmt = $db->prepare($sql);
+
+            $stmt->execute();
+
+            return $stmt->fetch();
+           
+
+           
         } catch (Exception $ex) {
              $error = $e->getMessage();
         }

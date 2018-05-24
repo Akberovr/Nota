@@ -1,0 +1,40 @@
+
+ {% if lang == 'az' or lang == null %}
+<form action="/admin/category/update/{{trainingCategory.training_category_id}}" method="post" >
+    
+ {% elseif lang == 'en' %}
+ 
+ 
+ <form action="/admin/category/update/{{trainingCategory.training_category_id}}?lang=en" method="post" >
+   
+  {% endif %}
+  
+  
+    <div class="form-group">
+        <label for="category_name">Category Name</label>
+        <input  type="text" class="form-control" name="category_name" value="{{trainingCategory.training_cat_name}}">
+    </div>
+
+
+<!--    {% if lang == 'az' or lang == null %}
+    
+    
+
+
+    {% elseif lang == 'en' %}
+
+            <div class="form-group">
+                  <label for="lang_code">Language</label> <br>
+                  <select class="selectpicker" name="lang_code" id="lang_code">
+                      {% for  language in languages %}
+                      <option data-tokens="ketchup mustard"  name="lang_code" value="{{language.lang_code}}">{{language.lang_name}}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+
+    
+    {% endif %}-->
+    <div class="form-group">
+        <button  class="btn btn-primary" type="submit">Update Category</button>
+    </div>
+</form>

@@ -40,6 +40,7 @@ class Training extends \App\Controllers\Authenticated {
             $this->redirect("/admin/training/show");
         }
     }
+
     
     public function getAction() {
          View::renderTemplate("Training/index.html", [

@@ -1,0 +1,90 @@
+{% for error in errors %}
+{{error}}
+{% endfor %}
+
+
+<a class="btn btn-primary" href="/admin/category/add">Add Category</a>
+<nav aria-label="..." class="pull-right">
+    <ul class="pagination">
+
+        {% if pages > 1 %}
+
+        {% for page in 1..pages %}
+
+        {% if page == current_page %}
+
+        {% if lang %}
+        <li class="page-item active"><a class="page-link " href="/admin/category/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+        {% else %}
+        <li class="page-item active"><a class="page-link " href="/admin/category/show?page={{page}}">{{page}}</a></li>
+        {% endif %}
+
+        {% else %}
+
+        {% if lang %}
+        <li class="page-item"><a class="page-link " href="/admin/category/show?lang={{lang}}&page={{page}}">{{page}}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link " href="/admin/category/show?page={{page}}">{{page}}</a></li>
+        {% endif %}
+
+        {% endif %}
+
+        {% endfor %}
+
+        {% endif %}
+
+    </ul>
+</nav>
+
+<table class="table-responsive-sm  table-striped table table-hover table-responsive">
+    <thead class="table-responsive-sm">
+        <tr>
+            <th>Id</th>
+            <th>Category name</th>
+
+        </tr>
+    </thead>
+    
+        {% for category in trainingCategory %}
+
+
+        <tr>
+               <td style="width: 100px">{{category.training_category_id}}</td>
+            <td style="width: 170px" "><a href="/admin/category/show/{{category.training_category_id}}">{{category.training_cat_name}}</a></td>
+<!--              {% if lang == 'az' or lang == null %}-->
+            
+<!--              {% elseif lang == 'en' %}-->
+           
+<!--             {% endif %}
+            -->
+            
+            
+
+
+            <td style="width: 70px"></td>
+            
+<!--            <td style="width: 100px" ><a href="/admin/training/lang/{{training.training_id}}" class="btn btn-warning" value="" >Lang</a> </td>-->
+
+            {% if lang == 'az' or lang == null %}
+
+<!--            <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >-->
+            <td style="width: 80px"><a href="/admin/category/get/{{category.training_category_id}}" class="btn btn-info" value="" >Edit</a> </td >
+             <td style="width: 100px" ><a href="/admin/category/delete/{{category.training_category_id}}" class="btn btn-danger" value="" >Delete</a> </td>
+
+
+            {% elseif lang == 'en' %}
+
+            <td style="width: 100px"><a href="" class="btn btn-success" value="" >View Training</a> </td >
+           <td style="width: 80px"><a href="/admin/category/get/{{category.training_category_id}}?lang=en" class="btn btn-info" value="" >Edit</a> </td >
+            <td style="width: 100px" ><a href="/admin/training/delete/{{training.id}}?lang=en" class="btn btn-danger" value="" >Delete</a> </td>
+
+            {% endif %}
+            
+           
+
+        </tr>
+
+        {% endfor %}
+
+    
+</table>

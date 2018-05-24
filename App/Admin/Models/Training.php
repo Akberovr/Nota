@@ -21,8 +21,8 @@ class Training extends \Core\Model {
 
 
             $sql = "INSERT INTO trainings (training_name,training_cat_id, "
-                    . "training_apply_date , training_duration,training_hours,training_applicant)"
-                    . "VALUES (:name,:category_id,:training_apply_date,:training_duration,:training_hours,:training_applicant) ";
+                    . "  training_duration,training_hours,training_applicant,info,description)"
+                    . "VALUES (:name,:category_id,:training_duration,:training_hours,:training_applicant,:info,:desc) ";
 
 
             $db = static::getDB();
@@ -31,10 +31,11 @@ class Training extends \Core\Model {
 
             $stmt->bindValue(':name', $this->training_name, PDO::PARAM_STR);
             $stmt->bindValue(':category_id', $this->category_id, PDO::PARAM_INT);
-            $stmt->bindValue(':training_apply_date', $this->training_apply_date, PDO::PARAM_STR);
             $stmt->bindValue(':training_duration', $this->training_duration, PDO::PARAM_STR);
             $stmt->bindValue(':training_hours', $this->training_hours, PDO::PARAM_STR);
             $stmt->bindValue(':training_applicant', $this->training_applicant, PDO::PARAM_STR);
+            $stmt->bindValue(':info', $this->info, PDO::PARAM_STR);
+            $stmt->bindValue(':desc', $this->desc, PDO::PARAM_STR);
 
             return $stmt->execute();
         } catch (Exception $e) {
@@ -53,10 +54,11 @@ class Training extends \Core\Model {
 
                 $sql = "UPDATE trainings SET training_name = :training_name,"
                         . "training_cat_id = :category_id,"
-                        . "training_apply_date = :apply_date, "
                         . " training_duration = :duration,"
                         . "training_hours = :hours, "
-                        . "training_applicant = :applicant "
+                        . "training_applicant = :applicant, "
+                        . "info = :info, "
+                        . " description = :desc "
                         . " WHERE training_id = :training_id";
 
 
@@ -66,10 +68,11 @@ class Training extends \Core\Model {
 
                 $stmt->bindValue(':training_name', $this->training_name, PDO::PARAM_STR);
                 $stmt->bindValue(':category_id', $this->category_id, PDO::PARAM_INT);
-                $stmt->bindValue(':apply_date', $this->training_apply_date, PDO::PARAM_STR);
                 $stmt->bindValue(':duration', $this->training_duration, PDO::PARAM_STR);
                 $stmt->bindValue(':hours', $this->training_hours, PDO::PARAM_STR);
                 $stmt->bindValue(':applicant', $this->training_applicant, PDO::PARAM_INT);
+                $stmt->bindValue(':info', $this->info, PDO::PARAM_STR);
+                $stmt->bindValue(':desc', $this->desc, PDO::PARAM_STR);
                 $stmt->bindParam(':training_id', $id, PDO::PARAM_INT);
 //                
             } else {
@@ -211,7 +214,7 @@ class Training extends \Core\Model {
                 switch (strtolower($_GET["lang"])) {
                     case $_GET["lang"]:
                         $_SESSION['lang'] = $_GET["lang"];
-                        $sql = "SELECT tt.id,tt.training_id,tt.training_name,tc.training_cat_name,t.training_apply_date,t.training_duration,t.training_hours,t.training_applicant
+                        $sql = "SELECT tt.id,tt.training_id,tt.training_name,tc.training_cat_name,t.training_duration,t.training_hours,t.training_applicant
                                 FROM trainings t
                                 INNER JOIN trainings_translation tt
                                 ON t.training_id = tt.training_id

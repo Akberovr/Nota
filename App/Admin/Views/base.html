@@ -49,12 +49,40 @@
                     <li>
                         <a href="javascript:" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-desktop"></i> Training <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo1" class="collapse">
+
+                            <!--                            <li>
+                                                            <a href="/admin/training/add">Add Training</a>
+                                                        </li>-->
+                            <li>
+                                <a href="/admin/category/show">Training Category</a>
+                            </li>    
                             <li>
                                 <a href="/admin/training/show">View Trainings</a>
                             </li>
                             <li>
-                                <a href="/admin/training/add">Add Training</a>
+                                <a href="/admin/category/show">Certificate</a>
                             </li>
+                            <li>
+                                <a href="/admin/category/show">Area</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo9"><i class="glyphicon glyphicon-home"></i> About <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo9" class="collapse">
+
+                            {% if lang %}
+                           
+                            <li>
+                                <a href="/admin/about/get?lang={{lang}}">About</a>
+                            </li>
+
+                            {% else %}
+
+                            <li>
+                                <a href="/admin/about/get">About</a>
+                            </li>
+                            {% endif %} 
                         </ul>
                     </li>
                     <li>
@@ -139,6 +167,7 @@
                                 <a href="/admin/city/add?lang={{lang}}">Add City</a>
                             </li>
 
+
                             {% else %}
                             <li>
                                 <a href="/admin/city/show">View City</a>
@@ -209,21 +238,21 @@
 
                     </div>
 
-                <!-- /.row -->
+                    <!-- /.row -->
 
-            </div>
+                </div>
                 {% block context %}
                 {% endblock %}
 
-            <!-- /.container-fluid -->
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- /#page-wrapper -->
 
         </div>
-        <!-- /#page-wrapper -->
-
-    </div>
 
 
-    <!-- /#wrapper -->
+        <!-- /#wrapper -->
 
 
 </body>

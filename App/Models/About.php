@@ -11,27 +11,15 @@ namespace App\Controllers;
 use \Core\View;
 use App\Models\City as CityModel;
 
-class City extends \Core\Controller {
-
-    public function indexAction() {
-        $city = CityModel::getCity();
-    }
+class About extends \Core\Controller {
 
     public function showAction() {
-        
+
         $city = CityModel::getCityInfo($this->route_params["id"]);
         print_r($city);
         View::renderTemplate('Home/about.html', [
             "city" => $city,
         ]);
     }
-    
-    public function aboutAction() {
-         $about = CityModel::getAboutInfo();
-         View::renderTemplate('Home/about.html', [
-            "about" => $about,
-        ]);
-    }
-    
 
 }

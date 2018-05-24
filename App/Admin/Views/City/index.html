@@ -12,6 +12,10 @@
         
             {% include "City/edit_city.html" %}            
 
+        {% elseif source == "about" %}
+        
+          {% include "City/about.html" %}   
+          
         {% elseif source == "add" %}
 
             {% include "City/add_city.html" %}
