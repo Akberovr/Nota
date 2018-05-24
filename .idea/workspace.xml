@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ChangeListManager">
     <list default="true" id="015ba012-b369-426d-b06e-8c66dd0cd137" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/App/Admin/Views/Partners/add_partner.html" description="&#10;    &lt;div class=&quot;form-group&quot;&gt;&#10;        &lt;label for=&quot;..." line="6" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e5863102-4c90-41f5-ae9b-f56a2c728ee0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/App/Admin/Controllers/Partner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Admin/Models/Partner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Admin/Views/Partners/add_partner.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Admin/Views/Partners/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Admin/Views/Partners/show_partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Admin/Views/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Admin/Views/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/header.html" afterDir="false" />
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
     </list>
     <ignored path="$PROJECT_DIR$/vendor/clue/stream-filter/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -37,12 +55,213 @@
   <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf />
+=======
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="phpprog" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Partner.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/Partner.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+              <folding>
+                <element signature="e#122#136#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_partners.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App/Admin/Views/Partners/show_partners.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="22" column="108" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
+              <folding>
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_news.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Admin/Views/News/show_news.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-288">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Partner.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Admin/Models/Partner.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="295">
+              <caret line="178" column="34" selection-start-line="178" selection-start-column="34" selection-end-line="178" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Admin/Views/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="12" selection-start-line="12" selection-end-line="17" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Admin/Models/News.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-75">
+              <caret line="328" column="23" lean-forward="true" selection-start-line="328" selection-start-column="23" selection-end-line="328" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/News.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="87" column="9" lean-forward="true" selection-start-line="77" selection-start-column="8" selection-end-line="87" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Photo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Admin/Models/Photo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1519">
+              <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="City.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Admin/Models/City.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_partner.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Admin/Views/Partners/add_partner.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="3" column="38" lean-forward="true" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ba</find>
+      <find>se</find>
+      <find>search</find>
+      <find>sea</find>
+      <find>ad</find>
+      <find>save</find>
+      <find>create</find>
+      <find>add</find>
+      <find>Haqq</find>
+      <find>test</find>
+      <find>haqqi</find>
+      <find>delete</find>
+      <find>haqqo</find>
+      <find>city_info</find>
+      <find>staff</find>
+      <find>partners</find>
+    </findStrings>
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/App/Admin/Models/Photo.php" />
+        <option value="$PROJECT_DIR$/App/Admin/Views/Photos/add_photo.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html" />
+        <option value="$PROJECT_DIR$/public/css/event_slider.css" />
+        <option value="$PROJECT_DIR$/public/css/gallery-main.css" />
+        <option value="$PROJECT_DIR$/public/css/main.css" />
+        <option value="$PROJECT_DIR$/public/css/owl.carousel.min.css" />
+        <option value="$PROJECT_DIR$/public/css/quote.css" />
+        <option value="$PROJECT_DIR$/App/Views/includes/carousel_slider.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/training_courses.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/testimonials.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/regional_map.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/news_slider.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/events.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/url_banners.html" />
+        <option value="$PROJECT_DIR$/App/Views/Home/index.html" />
+        <option value="$PROJECT_DIR$/App/Controllers/Partner.php" />
+        <option value="$PROJECT_DIR$/App/Controllers/Document.php" />
+        <option value="$PROJECT_DIR$/App/Views/Documents/index.html" />
+        <option value="$PROJECT_DIR$/App/Views/Partners/index.html" />
+        <option value="$PROJECT_DIR$/App/Views/Instructors/index.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/navigation.html" />
+        <option value="$PROJECT_DIR$/App/Controllers/Instructor.php" />
+        <option value="$PROJECT_DIR$/App/Controllers/Instructors.php" />
+        <option value="$PROJECT_DIR$/App/Views/Staff/index.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/sidebar_center.html" />
+        <option value="$PROJECT_DIR$/App/Views/Staff/about_staff.html" />
+        <option value="$PROJECT_DIR$/App/Controllers/Course.php" />
+        <option value="$PROJECT_DIR$/App/Views/Course/courses.html" />
+        <option value="$PROJECT_DIR$/App/Views/Course/course.html" />
+        <option value="$PROJECT_DIR$/App/Admin/Views/City/add_city.html" />
+        <option value="$PROJECT_DIR$/App/Admin/Views/City/index.html" />
+        <option value="$PROJECT_DIR$/App/Admin/Views/City/add_photo.html" />
+        <option value="$PROJECT_DIR$/App/Controllers/City.php" />
+        <option value="$PROJECT_DIR$/App/Admin/Views/City/edit_city.html" />
+        <option value="$PROJECT_DIR$/App/Helper.php" />
+        <option value="$PROJECT_DIR$/App/Admin/Models/City.php" />
+        <option value="$PROJECT_DIR$/App/Models/City.php" />
+        <option value="$PROJECT_DIR$/App/Controllers/Home.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/App/Admin/Views/City/show_city.html" />
+        <option value="$PROJECT_DIR$/App/Admin/Controllers/City.php" />
+        <option value="$PROJECT_DIR$/App/Views/includes/header.html" />
+        <option value="$PROJECT_DIR$/App/Views/includes/footer.html" />
+        <option value="$PROJECT_DIR$/App/Views/Home/about.html" />
+        <option value="$PROJECT_DIR$/App/Admin/Views/Partners/index.html" />
+        <option value="$PROJECT_DIR$/App/Admin/Views/Partners/add_partner.html" />
+        <option value="$PROJECT_DIR$/App/Admin/Controllers/Partner.php" />
+        <option value="$PROJECT_DIR$/App/Admin/Models/Partner.php" />
+        <option value="$PROJECT_DIR$/App/Admin/Views/base.html" />
+        <option value="$PROJECT_DIR$/App/Admin/Views/Partners/show_partners.html" />
+      </list>
+    </option>
+  </component>
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
@@ -54,7 +273,11 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
+<<<<<<< HEAD
       <path value="C:/xampp/htdocs/phpprog" />
+=======
+      <path value="$PROJECT_DIR$/../phpprog" />
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -80,19 +303,77 @@
       <path value="$PROJECT_DIR$/vendor/twig/extensions" />
     </include_path>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="7" />
+    <option name="width" value="1296" />
+    <option name="height" value="743" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
+<<<<<<< HEAD
     <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="works&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/Nota/.idea/workspace.xml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+=======
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Nota" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nota" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nota" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nota" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nota" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nota" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nota" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nota" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nota" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Nota" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="Partners" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="index&#9;FILE&#9;file://C:/xampp/htdocs/Nota/public/index.php&#10;index.&#9;FILE&#9;file://C:/xampp/htdocs/Nota/public/index.php&#10;ind&#9;FILE&#9;file://C:/xampp/htdocs/Nota/public/index.php&#10;index.php&#9;FILE&#9;file://C:/xampp/htdocs/Nota/public/index.php&#10;add_city&#9;FILE&#9;file://C:/xampp/htdocs/Nota/App/Admin/Views/City/add_city.html&#10;city&#9;FILE&#9;file://C:/xampp/htdocs/Nota/App/Admin/Controllers/City.php&#10;helper&#9;FILE&#9;file://C:/xampp/htdocs/Nota/App/Helper.php&#10;add_pho&#9;FILE&#9;file://C:/xampp/htdocs/Nota/App/Admin/Views/Photos/add_photo.html&#10;add&#9;FILE&#9;file://C:/xampp/htdocs/Nota/App/Admin/Views/City/add_city.html&#10;add_news&#9;FILE&#9;file://C:/xampp/htdocs/Nota/App/Admin/Views/News/add_news.html&#10;City&#9;FILE&#9;file://C:/xampp/htdocs/Nota/App/Admin/Models/City.php&#10;footer&#9;FILE&#9;file://C:/xampp/htdocs/Nota/App/Admin/Views/footer.html&#10;admin/city&#9;null&#9;null&#10;home&#9;FILE&#9;file://C:/xampp/htdocs/Nota/App/Models/Home.php&#10;index.p&#9;FILE&#9;file://C:/xampp/htdocs/Nota/public/index.php" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="DDL Data Source" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -106,11 +387,25 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="RunManager">
+    <configuration name="Nota" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.Nota" />
+      </list>
+    </recent_temporary>
+  </component>
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="015ba012-b369-426d-b06e-8c66dd0cd137" name="Default" comment="" />
       <created>1525252136142</created>
       <option name="number" value="Default" />
@@ -118,10 +413,163 @@
       <updated>1525252136142</updated>
       <workItem from="1525252142518" duration="275000" />
       <workItem from="1526722041444" duration="454000" />
+=======
+      <changelist id="e5863102-4c90-41f5-ae9b-f56a2c728ee0" name="Default" comment="" />
+      <created>1513684785294</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1513684785294</updated>
+      <workItem from="1513684786789" duration="14824000" />
+      <workItem from="1514388041103" duration="8920000" />
+      <workItem from="1514560621851" duration="10458000" />
+      <workItem from="1514653117193" duration="7299000" />
+      <workItem from="1514808345128" duration="7700000" />
+      <workItem from="1514887214048" duration="2366000" />
+      <workItem from="1515074893736" duration="7370000" />
+      <workItem from="1515175885293" duration="2074000" />
+      <workItem from="1515254730742" duration="9617000" />
+      <workItem from="1515403354575" duration="10327000" />
+      <workItem from="1515438853705" duration="703000" />
+      <workItem from="1515516782190" duration="1060000" />
+      <workItem from="1515867433123" duration="7343000" />
+      <workItem from="1516013178532" duration="13379000" />
+      <workItem from="1516717359876" duration="264000" />
+      <workItem from="1517066937511" duration="4202000" />
+      <workItem from="1517309829499" duration="3297000" />
+      <workItem from="1517414988748" duration="10451000" />
+      <workItem from="1517561715096" duration="25552000" />
+      <workItem from="1517652230483" duration="17816000" />
+      <workItem from="1517823802470" duration="19979000" />
+      <workItem from="1517905039285" duration="81000" />
+      <workItem from="1517912158501" duration="15307000" />
+      <workItem from="1518013282922" duration="10132000" />
+      <workItem from="1518082337575" duration="7455000" />
+      <workItem from="1518096095798" duration="9500000" />
+      <workItem from="1518183347734" duration="922000" />
+      <workItem from="1518600776572" duration="16895000" />
+      <workItem from="1518780073441" duration="11865000" />
+      <workItem from="1518951325099" duration="512000" />
+      <workItem from="1519208319847" duration="13381000" />
+      <workItem from="1519236621244" duration="1259000" />
+      <workItem from="1519638862470" duration="12678000" />
+      <workItem from="1519655433062" duration="8000" />
+      <workItem from="1519818407515" duration="3203000" />
+      <workItem from="1519891447106" duration="1580000" />
+      <workItem from="1519975508755" duration="14301000" />
+      <workItem from="1520070291029" duration="8760000" />
+      <workItem from="1520272276954" duration="2636000" />
+      <workItem from="1520411270134" duration="11296000" />
+      <workItem from="1520584535465" duration="4465000" />
+      <workItem from="1520756539183" duration="3772000" />
+      <workItem from="1520772300784" duration="7919000" />
+      <workItem from="1521013291806" duration="21207000" />
+      <workItem from="1521109958902" duration="47000" />
+      <workItem from="1521214549637" duration="4662000" />
+      <workItem from="1521282260086" duration="14532000" />
+      <workItem from="1521374856459" duration="9778000" />
+      <workItem from="1521969358109" duration="16476000" />
+      <workItem from="1522064157476" duration="10742000" />
+      <workItem from="1522224288171" duration="15253000" />
+      <workItem from="1522313326053" duration="21065000" />
+      <workItem from="1522487507330" duration="68000" />
+      <workItem from="1522488018898" duration="210000" />
+      <workItem from="1522488400590" duration="126000" />
+      <workItem from="1522505819417" duration="9438000" />
+      <workItem from="1522515821070" duration="6910000" />
+      <workItem from="1522765331122" duration="15091000" />
+      <workItem from="1522915451818" duration="713000" />
+      <workItem from="1523001189214" duration="19514000" />
+      <workItem from="1523023780648" duration="5886000" />
+      <workItem from="1523096075704" duration="664000" />
+      <workItem from="1523100587835" duration="90000" />
+      <workItem from="1523111295098" duration="2201000" />
+      <workItem from="1523601485728" duration="5550000" />
+      <workItem from="1523977432778" duration="2150000" />
+      <workItem from="1524238557659" duration="36000" />
+      <workItem from="1524486824147" duration="9285000" />
+      <workItem from="1524556159660" duration="4686000" />
+      <workItem from="1524646404965" duration="12468000" />
+      <workItem from="1524728750611" duration="4599000" />
+      <workItem from="1524765616847" duration="457000" />
+      <workItem from="1524995442122" duration="16638000" />
+      <workItem from="1525347250201" duration="495000" />
+      <workItem from="1525675376884" duration="20323000" />
+      <workItem from="1525787494451" duration="20000" />
+      <workItem from="1526831986912" duration="4631000" />
+      <workItem from="1526884858871" duration="9561000" />
+      <workItem from="1527055285517" duration="249000" />
+      <workItem from="1527057013116" duration="497000" />
+      <workItem from="1527058481151" duration="395000" />
+      <workItem from="1527058988216" duration="21765000" />
+    </task>
+    <task id="LOCAL-00001" summary="Photo Model and Controller is on progress">
+      <created>1521046986471</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1521046986471</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Helper method which handles returning lang parametr's value">
+      <created>1521047268112</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1521047268112</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lang parametr added end of the link and information msgs added">
+      <created>1521048047226</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1521048047226</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Photo view folder and files">
+      <created>1521048583539</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1521048583539</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Bug on update city method was fixed">
+      <created>1521217593989</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1521217593989</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Photo Class is on progress. Add Photo method is available">
+      <created>1521303090758</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1521303090758</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Photo class finished">
+      <created>1522228082118</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1522228082118</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Settings m v c is on progress">
+      <created>1524559717053</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1524559717053</updated>
+    </task>
+    <task id="LOCAL-00009" summary="issue related URL fixed on function \App\Helper::getURL">
+      <created>1524559917252</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1524559917252</updated>
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="729000" />
   </component>
   <component name="ToolWindowManager">
@@ -137,21 +585,470 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+=======
+    <option name="totallyTimeSpent" value="644360000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992248" visible="true" weight="0.18305598" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.47761193" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.503125" side_tool="true" weight="0.45426357" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.4775194" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" sideWeight="0.5007752" side_tool="true" weight="0.4977307" />
+      <window_info id="Terminal" order="3" sideWeight="0.4992248" weight="0.4977307" />
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+<<<<<<< HEAD
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
+=======
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="REST Client" order="11" weight="0.4432836" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="9" sideWeight="0.496875" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32868218" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32477534" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23524962" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.47761193" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32477534" />
+      <window_info anchor="bottom" id="REST Client" order="12" weight="0.4432836" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="9" sideWeight="0.496875" visible="true" weight="0.32937366" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
+      <window_info id="Terminal" order="3" weight="0.4977307" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.4775194" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.503125" side_tool="true" weight="0.45426357" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32868218" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/App/Views/includes/url_banners.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/includes/testimonials.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Home/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="45" column="58" lean-forward="true" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/Partner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/Document.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Documents/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Partners/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="58" column="43" lean-forward="true" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+          <folding>
+            <element signature="e#15512#15518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/includes/navigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/Instructors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Instructors/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="110" column="35" lean-forward="true" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Staff/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/includes/sidebar_center.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Course/courses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="87" column="36" lean-forward="true" selection-start-line="87" selection-end-line="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/Photos/add_photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/City/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/City/add_photo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Course/course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/city/376244287_image.PNG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/Photo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="92" column="28" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Signup/new.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/City/add_city.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" selection-start-line="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/City/edit_city.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/Course.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/city/319081202_image.PNG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Staff/about_staff.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="45" />
+          <folding>
+            <element signature="e#2794#2800#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="92" column="34" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/City.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Models/City.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-267">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/Home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="e#35#50#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="66" column="62" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/City/show_city.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Paginate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/City.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#121#136#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/includes/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/includes/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Views/Home/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/News/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/Home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/News/add_news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="32" selection-end-line="39" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/Partners/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/Partners/add_partner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="38" lean-forward="true" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Models/City.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Models/Photo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1519">
+          <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/baners/mhm.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/News/show_news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="87" column="9" lean-forward="true" selection-start-line="77" selection-start-column="8" selection-end-line="87" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Models/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="328" column="23" lean-forward="true" selection-start-line="328" selection-start-column="23" selection-end-line="328" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Controllers/Partner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+          <folding>
+            <element signature="e#122#136#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Models/Partner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="178" column="34" selection-start-line="178" selection-start-column="34" selection-end-line="178" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" selection-start-line="12" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Admin/Views/Partners/show_partners.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="22" column="108" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
 </project>

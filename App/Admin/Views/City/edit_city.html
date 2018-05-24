@@ -13,11 +13,14 @@
         <label for="inputName">City Name</label>
         <input value="{{city.city_name}}" type="text" class="form-control" name="name" required >
     </div>
+        <div class="form-group">
 
-    <div class="form-group">
-        <label for="inputInfo">City info </label>
-        <textarea  class="form-control" id="" cols="30" rows="10"  name="info" required>{{city.city_info}}</textarea>
-    </div>
+            <label for="info">City info </label>
+            <textarea name="info">{{city.city_info}}</textarea>
+            <script>CKEDITOR.replace( 'info' );</script>
+
+        </div>
+
     <div class="form-group">
         <label for="intputPostalCode">Postal Code</label>
         <input value="{{city.postal_code}}" type="text" class="form-control" name="postal_code" required>

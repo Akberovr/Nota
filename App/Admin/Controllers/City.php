@@ -11,6 +11,7 @@ namespace App\Admin\Controllers;
 
 use \Core\View;
 use App\Flash;
+use App\Helper;
 use App\Admin\Models\City as CityModel;
 
 class City extends \App\Controllers\Authenticated {
@@ -25,10 +26,10 @@ class City extends \App\Controllers\Authenticated {
 
     public function showAction() {
 
-        $city = CityModel::getCity();
-
         View::renderTemplate("City/index.html", [
-            'city' => $city
+
+            'city' => CityModel::getCity()
+
         ]);
     }
 
@@ -58,9 +59,13 @@ class City extends \App\Controllers\Authenticated {
         $city = new CityModel($_POST);
 
         if($city->save()){
+
+            Flash::addMessage("City Added Succefully!");
             $this->redirect('/Admin/City/show');
+
         }else{
-            echo "Problem";
+            Flash::addMessage("City Couldn't Added Succefully!",Flash::WARNING);
+            $this->redirect('/Admin/City/show');
         }
 
 
@@ -104,12 +109,38 @@ class City extends \App\Controllers\Authenticated {
     }
 
     public function deleteAction() {
-
+        $city = new CityModel();
         $id = $this->route_params["id"];
-        $city = CityModel::deleteById($id);
+        $city->deleteById($id);
 
         Flash::addMessage("City deleted", Flash::SUCCESS);
         $this->redirect('/Admin/City/show');
+
+    }
+    
+    public function addPhoto ()
+    {
+        View::renderTemplate("City/index.html",[
+            "id" => $this->route_params["id"]
+        ]);
+
+    }
+
+    public function addImages ()
+    {
+        $city = new CityModel();
+
+        $city->setFile($_FILES["file"]);
+
+        if ($city->create($this->route_params["id"])){
+
+            Flash::addMessage("Added");
+            $this->redirect("/admin/city/show");
+
+        }else{
+            Flash::addMessage("Not Added",Flash::WARNING);
+            $this->redirect("/admin/city/show");
+        }
 
     }
 

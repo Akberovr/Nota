@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block subheading %} Partner {% endblock %}
+
+{% block context %}
+
+    {% if source == "show" %}
+
+        {% include "Partners/show_partners.html" %}
+
+    {% elseif source == "add" %}
+
+        {% include "Partners/add_partner.html" %}
+
+    {% else %}
+
+        {% include "Partners/show_partners.html" %}
+
+{% endif %}
+
+
+{% endblock %}

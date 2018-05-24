@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "includes/header.html" %}
+
+<body>
+<!-- Fixed navbar -->
+{% include "includes/navigation.html"  %}
+<!-- end of navbar -->
+
+<!-- Head BAR -->
+{% include "includes/jumbotron_logo.html" %}
+<!-- End of Head BAR -->
+
+<div class="container-fluid nav-path">
+    <div class="container">
+        <div class="col-sm-12 col-xs-12"><!-- content section -->
+            <ol class="breadcrumb">
+                <li><a href="/">Ana Səhifə</a></li>
+                <li><a href="">Mərkəz</a></li>
+                <li class="active">Tərəfdaşlar</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT: About -->
+<div class="container">
+    <div class="row content">
+        <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
+            <h3><i class="fa fa-fw fa-dot-circle-o"></i>Tərəfdaşlar</h3>
+
+            <div class="col-md-6">
+                <a href="course.html"><div class="kurs partner">
+                    <img src="images/baners/koica.jpg">
+                    <p>KOİCA</p>
+                </div></a>
+            </div>
+            <div class="col-md-6">
+                <a href="course.html"><div class="kurs partner">
+                    <img src="images/baners/mhm.jpg">
+                    <p>MƏLUMAT HESABLAMA MƏRKƏZİ</p>
+                </div></a>
+            </div>
+            <div class="col-md-6">
+                <a href="course.html"><div class="kurs partner">
+                    <img src="images/baners/rytn.jpg">
+                    <p>RABİTƏ VƏ YÜKSƏK TEXNOLOGİYALAR NAZİRLİYİ</p>
+                </div></a>
+            </div>
+            <div class="col-md-6">
+                <a href="course.html"><div class="kurs partner">
+                    <img src="images/baners/sirius.jpg">
+                    <p>SİRİUS SOFT</p>
+                </div></a>
+            </div>
+
+        </div> <!-- end of section -->
+
+        <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section -->
+            <div class="side-nav-inside">
+                <ul>
+                    <h4>MƏRKƏZ</h4>
+                    <li><a href="/about">Haqqımızda</a></li>
+                    <li><a href="/network">Şəbəkəmiz</a></li>
+                    <li><a href="/staff">Komandamız</a></li>
+                    <li><a href="/instructors">Müəllimlərimiz</a></li>
+                    <li class="active"><i class="fa fa-long-arrow-right"></i>Tərəfdaşlar</a></li>
+                    <li><a href="/documents">Sənədlər</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- closing CONTENT -->
+
+<!-- FOOTER -->
+<div class="container-fluid footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="socialfoot"><a href="#"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a></div>
+                <div class="socialfoot"><a href="#"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a></div>
+                <div class="socialfoot"><a href="#"><i class="fa fa-instagram fa-fw" aria-hidden="true"></i></a></div>
+                <div class="socialfoot"><a href="#"><i class="fa fa-youtube fa-fw" aria-hidden="true"></i></a></div>
+                <p>&copy; Elektron Hökumət Təlim Tədris Mərkəzi, 2018</p>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <p>AKADEMİK STATUSLARIMIZ</p>
+                <a href="#"><img class="acad" src="images/status/pearson-vue.jpg"></a>
+                <a href="#"><img class="acad" src="images/status/cisco.jpg"></a>
+                <a href="#"><img class="acad" src="images/status/caap.png"></a>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="footer-row"><a href="#">PORTALA KEÇİD</a></div>
+                <div class="footer-row"><a href="#">QEYDİYYAT</a></div>
+                <div class="footer-row"><a href="#">ƏLAQƏ</a></div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="footer-row">(+99412)505 0313, (+99477)505 0313</div>
+                <div class="footer-row">training[at]mincom.gov.az</div>
+                <div class="footer-row">Koroğlu Rəhimov 70, Bakı</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="jquery/jquery.min.js"></script>
+<script src="jquery/main.js"></script>
+<script src="js/map.js"></script>
+<script>window.jQuery || document.write('<script src="jquery/jquery.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+<!-- owl carousel: event slider -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+<script src="js/plugins.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/main.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#news-slider").owlCarousel({
+            items : 2,
+            itemsDesktop:[1199,2],
+            itemsDesktopSmall:[980,2],
+            itemsMobile : [700,1],
+            pagination:false,
+            navigation:true,
+            navigationText:["",""],
+            autoPlay:true
+        });
+        $("a").tooltip(); // for tooltips
+
+        // Colorbox Call
+        $(document).ready(function(){
+            $("[rel^='lightbox']").prettyPhoto();
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "includes/header.html" %}
+<body>
+<!-- Fixed navbar -->
+{% include "includes/navigation.html"  %}
+<!-- end of navbar -->
+
+<!-- Head BAR -->
+{% include "includes/jumbotron_logo.html" %}
+
+<!-- End of Head BAR -->
+
+<div class="container-fluid nav-path">
+    <div class="container">
+        <div class="col-sm-12 col-xs-12"><!-- content section -->
+            <ol class="breadcrumb">
+                <li><a href="/">Ana Səhifə</a></li>
+                <li><a href="">Mərkəz</a></li>
+                <li class="active">Komandamız</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENT: About -->
+<div class="container">
+    <div class="row content">
+        <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
+            <h3><i class="fa fa-fw fa-dot-circle-o"></i>Komandamız</h3>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="images/staff/staff_0.jpg" alt="Card image cap">
+                    <div>
+                        <a href="about-staff.html">
+                            <h4 class="highlighted">RAUF CABBAROV</h4>
+                            <p class="highlighted">icraçı direktor</p>
+                            <p>rauf[at]e-training.az</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="images/staff/staff_3.jpg" alt="Card image cap">
+                    <div>
+                        <a href="about-staff.html">
+                            <h4 class="highlighted">GÜNAY MƏMMƏDOVA</h4>
+                            <p class="highlighted">koordinator</p>
+                            <p>gunay[at]e-training.az</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="images/staff/staff_4.jpg" alt="Card image cap">
+                    <div>
+                        <a href="about-staff.html">
+                            <h4 class="highlighted">ZAKİR İBRAHİMOV</h4>
+                            <p class="highlighted">koordinator</p>
+                            <p>zakir[at]e-training.az</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="images/staff/staff_1.jpg" alt="Card image cap">
+                    <div>
+                        <a href="about-staff.html">
+                            <h4 class="highlighted">AYAZ KƏRİMOV</h4>
+                            <p class="highlighted">dizayner</p>
+                            <p>ayaz[at]e-training.az</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="images/staff/staff_2.jpg" alt="Card image cap">
+                    <div>
+                        <a href="about-staff.html">
+                            <h4 class="highlighted">AYDAN HACILI</h4>
+                            <p class="highlighted">maliyyəçi</p>
+                            <p>aydan[at]e-training.az</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="images/staff/staff_5.jpg" alt="Card image cap">
+                    <div>
+                        <a href="about-staff.html">
+                            <h4 class="highlighted">RƏŞAD MƏMMƏDOV</h4>
+                            <p class="highlighted">İT menecer</p>
+                            <p>rashad[at]e-training.az</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- end of section -->
+
+        <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section -->
+            <div class="side-nav-inside">
+                <ul>
+                    <h4>MƏRKƏZ</h4>
+                    <li><a href="/about">Haqqımızda</a></li>
+                    <li><a href="/network">Şəbəkəmiz</a></li>
+                    <li><a href="/staff">Komandamız</a></li>
+                    <li class="active"><i class="fa fa-long-arrow-right"></i>Müəllimlərimiz</a></li>
+                    <li><a href="/partners">Tərəfdaşlar</a></li>
+                    <li><a href="/documents">Sənədlər</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- closing CONTENT -->
+
+<!-- FOOTER -->
+
+{% include "includes/footer.html" %}
+<script src="js/plugins.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/main.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#news-slider").owlCarousel({
+            items : 2,
+            itemsDesktop:[1199,2],
+            itemsDesktopSmall:[980,2],
+            itemsMobile : [700,1],
+            pagination:false,
+            navigation:true,
+            navigationText:["",""],
+            autoPlay:true
+        });
+        $("a").tooltip(); // for tooltips
+
+        // Colorbox Call
+        $(document).ready(function(){
+            $("[rel^='lightbox']").prettyPhoto();
+        });
+
+    });
+</script>
+</body>
+</html>

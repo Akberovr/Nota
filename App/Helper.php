@@ -113,4 +113,17 @@ class Helper
 
     }
 
+    /**
+     * Helper function for pre print_r
+     * @param $data
+     */
+    public static function print($data)
+    {
+
+        print_r("<pre>");
+        print_r($data);
+        print_r("</pre>");
+
+    }
+
 }

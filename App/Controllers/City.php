@@ -20,10 +20,8 @@ class City extends \Core\Controller {
     public function showAction() {
         
         $city = CityModel::getCityInfo($this->route_params["id"]);
-        print_r($city);
-        View::renderTemplate('Home/about.html', [
-            "city" => $city,
-        ]);
+
+        View::renderTemplate('Home/about.html');
     }
     
     public function aboutAction() {

@@ -1,44 +1,61 @@
+
 <form action="/admin/city/create" method="post" enctype="multipart/form-data">
+
     <div class="form-group">
-        <label for="inputName">City Name</label>
+
+        <label for="name">City Name</label>
         <input value="" type="text" class="form-control" name="name" required>
+
     </div>
 
     <div class="form-group">
-        <label for="inputInfo">City info </label>
+
+        <label for="info">City info </label>
         <textarea name="info"></textarea>
-        <script>
-            CKEDITOR.replace( 'info' );
-        </script>
+        <script>CKEDITOR.replace( 'info' );</script>
+
     </div>
+
     <div class="form-group">
-        <label for="intputPostalCode">Postal Code</label>
+
+        <label for="postal_code">Postal Code</label>
         <input value="" type="text" class="form-control" name="postal_code" required>
+
     </div>
 
     <div class="form-group">
-        <label for="inputFax">Fax</label>
+
+        <label for="fax">Fax</label>
         <input value="" type="text" class="form-control" name="fax" required>
+
     </div>
 
 
     <div class="form-group">
-        <label for="inputEmail">Email</label>
+
+         <label for="inputEmail">Email</label>
         <input value="" type="email" class="form-control" name="email" required>
+
     </div>
 
     <div class="form-group">
-        <label for="inputAddress">Address</label>
+
+        <label for="address">Address</label>
         <input value="" type="text" class="form-control" name="address" required>
+
     </div>
 
     <div class="form-group">
-        <label for="inputNumber">Phone Number</label>
+
+        <label for="number">Phone Number</label>
         <input value="" type="text" class="form-control" name="number" required>
+
     </div>
 
     <div class="form-group">
+
         <button class="btn btn-primary" type="submit">Sign up</button>
+
     </div>
 
 </form>

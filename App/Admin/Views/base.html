@@ -1,8 +1,8 @@
 
 {% include 'header.html' %}
-{% for error in errors %}
-{{error}}
-{% endfor %}
+    {% for error in errors %}
+    {{error}}
+    {% endfor %}
 <body>
     {% block nav %}
 
@@ -10,12 +10,12 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="lang-buttons">
-                <form action="#" method="GET">
-                    <input type="submit" class="btn btn-primary active" value="en" name="lang">
-                    <input type="submit" class="btn btn-primary active" value="az" name="lang">
-                </form>
-            </div>
+            <!--<div class="lang-buttons">-->
+                <!--<form action="#" method="GET">-->
+                    <!--<input type="submit" class="btn btn-primary active" value="en" name="lang">-->
+                    <!--<input type="submit" class="btn btn-primary active" value="az" name="lang">-->
+                <!--</form>-->
+            <!--</div>-->
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -45,6 +45,18 @@
                 <ul class="nav navbar-nav side-nav">
                     <li>
                         <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo11"><i class="glyphicon glyphicon-lock"></i> Partners <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo11" class="collapse">
+                            <li>
+                                <a href="/admin/partner/show">View Partners</a>
+                            </li>
+                            <li>
+                                <a href="/admin/partner/add">Add Partner</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="javascript:" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-desktop"></i> Training <i class="fa fa-fw fa-caret-down"></i></a>

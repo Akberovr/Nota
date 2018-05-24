@@ -14,7 +14,7 @@ class City extends \Core\Model {
 
     public static function getCity() {
         try {
-            $sql = "SELECT id ,city_name FROM city";
+            $sql = "SELECT id ,city_name,city_sef_link FROM city";
             $db = static::getDB();
 
             $stmt = $db->prepare($sql);
@@ -27,25 +27,23 @@ class City extends \Core\Model {
         }
     }
 
-    public static function getCityInfo($id) {
+    public static function getCityInfo($sefLink) {
 
-        try {
-            $sql = "SELECT c.id,c.city_name,c.city_info,cc.contact_id,cc.postal_code,cc.fax,cc.email,cc.address,cpn.city_phone "
-                    . "FROM city c "
-                    . " INNER JOIN city_contact cc "
-                    . " ON c.id = cc.contact_id "
-                    . " INNER JOIN city_phone_number cpn "
-                    . " ON c.id = cpn.city_id "
-                    . " WHERE c.id = $id ";
+            $sql = "SELECT * FROM city WHERE city_sef_link = :sef_link";
 
             $db = static::getDB();
 
             $stmt = $db->prepare($sql);
+
+            $stmt->bindParam(":sef_link",$sefLink,PDO::PARAM_STR);
+
             $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
+
             $stmt->execute();
 
             return $stmt->fetch();
 
+<<<<<<< HEAD
            
         } catch (Exception $ex) {
              $error = $e->getMessage();
@@ -71,6 +69,8 @@ class City extends \Core\Model {
         } catch (Exception $ex) {
              $error = $e->getMessage();
         }
+=======
+>>>>>>> ce4d15aaad164b5184067531fbd2f5dc42359ff5
     }
 
 }

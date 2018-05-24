@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+
+
 {% block subheading %} City {% endblock %}
 
 {% block context %}
@@ -20,7 +22,9 @@
 
             {% include "City/add_city.html" %}
 
-            {% block message %} Add {% endblock %}
+        {% elseif source == "addPhoto" %}
+
+            {% include "City/add_photo.html" %}
 
         {% else %}
 

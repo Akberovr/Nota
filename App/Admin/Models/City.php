@@ -8,11 +8,31 @@
 
 namespace App\Admin\Models;
 
+use App\Helper;
 use PDO;
 use \Core\View;
 use \App\Flash;
 
 class City extends \Core\Model {
+
+    /**
+     * @var $upload_directory directory for upload photos
+     */
+
+    private $upload_directory = 'images/city';
+
+    /**
+     * @var $photo_filename name of the file
+     */
+
+    private $photo_filename;
+
+    /**
+     * @var $tmp_path temporary path of file
+     */
+
+    private $tmp_path;
+
 
     /**
      * Class constructor
@@ -27,6 +47,14 @@ class City extends \Core\Model {
         };
     }
 
+    public function setFile($file){
+
+            $this->photo_filename = $file["name"];
+            $this->tmp_path       = $file["tmp_name"];
+
+    }
+
+
     /**
      * Save the user model with the current property values
      *
@@ -34,33 +62,67 @@ class City extends \Core\Model {
      */
     public function save() {
 
-        try {
-            //insert operation
+        $sql = "BEGIN;"
+            . "INSERT INTO city (city_name, city_info,city_sef_link)"
+            . "VALUES(:name, :info,:city_sef_link);"
+            . "SET @city_id = LAST_INSERT_ID();"
+            . "INSERT INTO city_contact (city_id, postal_code, fax, email, address)"
+            . "VALUES(@city_id, :postal_code, :fax, :email, :address);"
+            . "INSERT INTO city_phone_number (city_id, city_phone)"
+            . "VALUES(@city_id, :number);"
+            . "COMMIT;";
 
-            $sql = "BEGIN;"
-                    . "INSERT INTO city (city_name, city_info)"
-                    . "VALUES(:name, :info);"
-                    . "SET @city_id = LAST_INSERT_ID();"
-                    . "INSERT INTO city_contact (city_id, postal_code, fax, email, address)"
-                    . "VALUES(@city_id, :postal_code, :fax, :email, :address);"
-                    . "INSERT INTO city_phone_number (city_id, city_phone)"
-                    . "VALUES(@city_id, :number);"
-                    . "COMMIT;";
+        $db = static::getDB();
+        $stmt = $db->prepare($sql);
 
+        $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
+        $stmt->bindValue(':info', $this->info, PDO::PARAM_STR);
+        $stmt->bindValue(':city_sef_link', Helper::sefLink($this->name), PDO::PARAM_STR);
+        $stmt->bindValue(':postal_code', $this->postal_code, PDO::PARAM_STR);
+        $stmt->bindValue(':fax', $this->fax, PDO::PARAM_STR);
+        $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
+        $stmt->bindValue(':address', $this->address, PDO::PARAM_STR);
+        $stmt->bindValue(':number', $this->number, PDO::PARAM_STR);
 
-            $db = static::getDB();
-            $stmt = $db->prepare($sql);
-            $stmt->bindValue(':name', $this->name, PDO::PARAM_STR);
-            $stmt->bindValue(':info', $this->info, PDO::PARAM_STR);
-            $stmt->bindValue(':postal_code', $this->postal_code, PDO::PARAM_STR);
-            $stmt->bindValue(':fax', $this->fax, PDO::PARAM_STR);
-            $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
-            $stmt->bindValue(':address', $this->address, PDO::PARAM_STR);
-            $stmt->bindValue(':number', $this->number, PDO::PARAM_STR);
-            return $stmt->execute();
-        } catch (Exception $e) {
-            $error = $e->getMessage();
-        }
+        return $stmt->execute();
+
+    }
+
+    public function addImages ($id)
+    {
+        $image_name = mt_rand()."_"."image.PNG";
+
+        $this->photo_filename = $image_name;
+
+        $db = static::getDB();
+
+        $sql = "INSERT INTO city_galery(city_id,city_image) VALUES(:city_id,:city_image)";
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindValue(":city_id",$id,PDO::PARAM_INT);
+        $stmt->bindValue(":city_image",$this->photo_filename,PDO::PARAM_STR);
+
+        return $stmt->execute();
+
+    }
+
+    public function create ($id)
+    {
+
+      if ($this->addImages($id)){
+
+          $target_path = dirname(dirname(dirname(__DIR__))) . "//" . "public" . "//" . $this->upload_directory. "//" . $this->photo_filename;
+
+          if (move_uploaded_file($this->tmp_path, $target_path)) {
+
+                  unset($this->tmp_path);
+                  return true;
+
+          }
+        return false;
+      }
+
     }
 
     /**
@@ -235,9 +297,15 @@ class City extends \Core\Model {
         }
     }
 
-    public static function deleteById($id) {
-        try {
-            //delete operation
+    public  function deleteById($id) {
+
+        $iter = count($this->photoById($id));
+
+        for ($i = 0; $i < $iter; $i++){
+
+            $this->deletePhoto($id,$i);
+
+        }
 
             $sql = "DELETE  FROM  city WHERE id =  :id ";
 
@@ -246,9 +314,54 @@ class City extends \Core\Model {
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
-        } catch (Exception $e) {
-            $error = $e->getMessage();
+
+
+    }
+
+    private function deletePhoto($id,$i)
+    {
+
+        $target_path = dirname(dirname(dirname(__DIR__)))."/"."public"."/".$this->picturePath($id,$i);
+
+        if(file_exists($target_path)){
+
+            return unlink($target_path) ? true : false;
+
         }
+
+
+    }
+
+    private function  picturePath($id,$i)
+    {
+        if(isset($id)){
+
+            $photo = $this->photoById($id);
+
+            return $this->upload_directory.'/'.$photo[$i]->city_image;
+
+        }
+        return false;
+
+    }
+
+    public function photoById ($id)
+    {
+
+        $db = static::getDB();
+
+        $sql = "SELECT city_image FROM city_galery WHERE city_id = :city_id";
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindParam(":city_id" ,$id,PDO::PARAM_INT);
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS,get_called_class());
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+
     }
 
 }
