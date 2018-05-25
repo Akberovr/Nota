@@ -8,7 +8,7 @@
                     <div class="post-slide"> <!-- event 1 -->
                         <div class="post-date">
                             <span class="date">{{event.date|date("j")}}</span>
-                            <span class="month">{{event.date|date("F")}}</span>
+                            <span class="month">{{event.date|date("F")|slice(0,3)}}</span>
                         </div>
                         <div class="post-content">
                             <img src="images/posts/{{event.image}}" alt="">

@@ -131,11 +131,10 @@ class Post extends \Core\Model {
      */
 
     public static function findById($id) {
-        try {
             $defaultLang = '';
             if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
 
-                $sql = "SELECT  *   
+                $sql = "SELECT  *
                     FROM post
                     INNER JOIN post_category pc
                     ON post.category_id = pc.category_id
@@ -162,15 +161,14 @@ class Post extends \Core\Model {
             }
             $db = static::getDB();
 
+
             $stmt = $db->prepare($sql);
             $stmt->bindParam('post_id', $id, PDO::PARAM_INT);
             $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
             $stmt->execute();
 
             return $stmt->fetch();
-        } catch (Exception $e) {
-            $error = $e->getMessage();
-        }
+
     }
 
     /**
@@ -198,7 +196,7 @@ class Post extends \Core\Model {
     }
 
 
-    public function updatePost($id) {
+    public function update($id) {
         try {
              $defaultLang = '';
             if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {

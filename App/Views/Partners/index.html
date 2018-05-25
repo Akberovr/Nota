@@ -28,10 +28,10 @@
     <div class="row content">
         <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
             <h3><i class="fa fa-fw fa-dot-circle-o"></i>Tərəfdaşlar</h3>
-
             {% for partner in partners %}
+
             <div class="col-md-6">
-                <a href=""><div class="kurs partner">
+                <a href="{{partner.uri}}"><div class="kurs partner">
                     <img src="images/partners/{{partner.file}}">
                     <p>{{partner.name|upper}}</p>
                 </div></a>

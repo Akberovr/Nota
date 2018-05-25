@@ -10,6 +10,7 @@
 namespace App\Admin\Controllers;
 
 use \Core\View;
+use App\Helper;
 use App\Flash;
 use App\Admin\Models\Post as PostModel;
 
@@ -34,15 +35,10 @@ class Post extends \App\Controllers\Authenticated {
      */
     public function getAction() {
 
-        $id = $this->route_params["id"];
-
-        $post = PostModel::findById($id);
-        
-        $postCategory = PostModel::getPostCategoty();
 
         View::renderTemplate("Post/index.html", [
-            'post' => $post,
-            'postCategory'=> $postCategory,
+            'post' =>PostModel::findById($this->route_params["id"]),
+            'postCategory'=> PostModel::getPostCategoty(),
             'id' => $this->route_params['id']
             
         ]);
@@ -94,28 +90,36 @@ class Post extends \App\Controllers\Authenticated {
      */
     public function editAction() {
 
-        View::renderTemplate("Post/index.html");
+
+        View::renderTemplate("Post/index.html",[
+            "member" => PostModel::findById($this->route_params["id"]),
+            "postCategory"=> PostModel::getPostCategoty(),
+        ]);
     }
     
     
     
     function updateAction() {
 
-         $post = new PostModel($_POST);
-         
-         $id = $this->route_params["id"];
-         
-         if($post->updatePost($id)){
-          Flash::addMessage("Changes Saved");
-          $this->redirect('/Admin/Post/show');
-         
+        $post = new PostModel($_POST);
+
+        $post->setFile($_FILES['post_image']);
+
+        if ($post->save('update',$this->route_params["id"])) {
+
+            Flash::addMessage("Post updated succesfully");
+            $this->redirect("/admin/post/show");
 
         }else{
-            echo "Problem";
+
+            Flash::addMessage("Photo couldn't be updated", Flash::WARNING);
+            $this->redirect("/admin/post/show");
+
         }
-        
+
+
     }
-    
+
         /**
      * Delete the Post
      * @return boolean

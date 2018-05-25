@@ -14,7 +14,7 @@
                             {% for announce in announces|slice(0,4) %}
                             <div class="col-md-6 col-sm-12 col-xs-12 sep"><!--col-1 -->
                                 <div class="sp"><span>{{announce.date|date("j")}}</span> <br>{{announce.date|date("F")}}</div>
-                                <p><a href="#">{{announce.post_title}}</a></p>
+                                <p><a href="/announce/{{announce.url}}">{{announce.post_title}}</a></p>
                                 <p>{{announce.post_body|slice(0,200)|raw}}..</p>
                             </div>
                             {% endfor %}
@@ -32,7 +32,7 @@
                             {% for post in news|slice(0,2) %}
                             <div class="col-md-6 col-sm-12 col-xs-12 sep"><!--col-1 -->
                                 <div class="sp"><span>{{post.date|date("j")}}</span> <br>{{post.date|date("F")}}</div>
-                                <p><a href="#">{{post.title|upper}}</a></p>
+                                <p><a href="/news/{{post.url}}">{{post.title|upper}}</a></p>
                                 <p>{{post.content|slice(0,200)|raw}}...</p>
                             </div>
                             {% endfor %}
