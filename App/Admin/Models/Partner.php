@@ -63,12 +63,13 @@ class Partner extends \Core\Model
     {
         $db = static::getDB();
 
-        $sql = "INSERT INTO partner(name,file) VALUES (:name,:file)";
+        $sql = "INSERT INTO partner(name,file,uri) VALUES (:name,:file,:uri)";
 
         $stmt = $db->prepare($sql);
 
         $stmt->bindValue(':name' , $this->name,PDO::PARAM_STR);
         $stmt->bindValue(':file' , $this->photo_filename,PDO::PARAM_STR);
+        $stmt->bindValue(':uri' , $this->uri,PDO::PARAM_STR);
 
         return $stmt->execute();
 

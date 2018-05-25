@@ -67,13 +67,11 @@
 
         {% if lang == 'az' or lang == null %}
 
-        <td style="width: 100px"><a href="/post/{{post.post_id}}" class="btn btn-success" value="" >View Post</a> </td >
         <td style="width: 80px"><a href="/admin/post/edit/{{post.post_id}}" class="btn btn-info" value="" >Update</a> </td >
 
 
         {% elseif lang == 'en' %}
 
-        <td style="width: 100px"><a href="/post/{{post.post_id}}?lang=en" class="btn btn-success" value="" >View Post</a> </td >
         <td style="width: 80px"><a href="/admin/post/edit/{{post.post_id}}?lang=en" class="btn btn-info" value="" >Update</a> </td >
 
         {% endif %}
