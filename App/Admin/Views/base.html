@@ -1,8 +1,8 @@
 
 {% include 'header.html' %}
-    {% for error in errors %}
-    {{error}}
-    {% endfor %}
+{% for error in errors %}
+{{error}}
+{% endfor %}
 <body>
     {% block nav %}
 
@@ -11,10 +11,10 @@
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!--<div class="lang-buttons">-->
-                <!--<form action="#" method="GET">-->
-                    <!--<input type="submit" class="btn btn-primary active" value="en" name="lang">-->
-                    <!--<input type="submit" class="btn btn-primary active" value="az" name="lang">-->
-                <!--</form>-->
+            <!--<form action="#" method="GET">-->
+            <!--<input type="submit" class="btn btn-primary active" value="en" name="lang">-->
+            <!--<input type="submit" class="btn btn-primary active" value="az" name="lang">-->
+            <!--</form>-->
             <!--</div>-->
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -61,12 +61,40 @@
                     <li>
                         <a href="javascript:" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-desktop"></i> Training <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo1" class="collapse">
+
+                            <!--                            <li>
+                                                            <a href="/admin/training/add">Add Training</a>
+                                                        </li>-->
+                            <li>
+                                <a href="/admin/category/show">Training Category</a>
+                            </li>    
                             <li>
                                 <a href="/admin/training/show">View Trainings</a>
                             </li>
                             <li>
-                                <a href="/admin/training/add">Add Training</a>
+                                <a href="/admin/category/show">Certificate</a>
                             </li>
+                            <li>
+                                <a href="/admin/category/show">Area</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo9"><i class="glyphicon glyphicon-home"></i> About <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo9" class="collapse">
+
+                            {% if lang %}
+
+                            <li>
+                                <a href="/admin/about/get?lang={{lang}}">About</a>
+                            </li>
+
+                            {% else %}
+
+                            <li>
+                                <a href="/admin/about/get">About</a>
+                            </li>
+                            {% endif %} 
                         </ul>
                     </li>
                     <li>
@@ -136,6 +164,28 @@
                             {% endif %}
 
                         </ul>
+                    </li>         
+                    <li>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo77"><i class="fa fa-comments"></i> Feedback <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo77" class="collapse">
+
+                            {% if lang %}
+                            <li>
+                                <a href="/admin/feedback/show?lang={{lang}}">View Feedbacks</a>
+                            </li>
+                            <li>
+                                <a href="/admin/feedback/add?lang={{lang}}">Add Feedbacks</a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="/admin/feedback/show">View Feedbacks</a>
+                            </li>
+                            <li>
+                                <a href="/admin/feedback/add">Add Feedbacks</a>
+                            </li>
+                            {% endif %}
+
+                        </ul>
                     </li>
 
 
@@ -195,6 +245,7 @@
                             <li>
                                 <a href="/admin/city/add?lang={{lang}}">Add City</a>
                             </li>
+
 
                             {% else %}
                             <li>
@@ -266,21 +317,21 @@
 
                     </div>
 
-                <!-- /.row -->
+                    <!-- /.row -->
 
-            </div>
+                </div>
                 {% block context %}
                 {% endblock %}
 
-            <!-- /.container-fluid -->
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- /#page-wrapper -->
 
         </div>
-        <!-- /#page-wrapper -->
-
-    </div>
 
 
-    <!-- /#wrapper -->
+        <!-- /#wrapper -->
 
 
 </body>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block subheading %} Category {% endblock %}
+
+{% block context %}
+
+        {% if source == "add" %}
+
+              {% include "Category/add_category.html" %}
+            
+        {% elseif source == "get" %}
+        
+            {% include "Category/edit_category.html" %}            
+
+        {% elseif source == "show" %}
+        
+         {% include "Category/show_category.html" %}
+         
+        {% elseif source == "lang" %}
+        
+         {% include "Category/lang_category.html" %}
+         
+        {% else %}
+
+            {% include "Category/show_category.html" %}
+
+        {% endif %}
+
+{% endblock %}

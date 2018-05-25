@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+
+{% block subheading %} Feedback {% endblock %}
+
+{% block context %}
+
+        {% if source == "show" %}
+
+            {% include "Feedback/show_feedback.html" %}
+            
+        {% elseif source == "edit" %}
+        
+           {% include "Feedback/edit_feedback.html" %}
+
+          
+        {% elseif source == "add" %}
+
+           {% include "Feedback/add_feedback.html" %}
+
+        {% else %}
+
+            {% include "Feedback/show_feedback.html" %}
+
+        {% endif %}
+
+{% endblock %}
+

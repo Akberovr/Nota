@@ -13,6 +13,9 @@ use App\Admin\Models\City as AdminCity;
 use App\Admin\Models\Post as AdminPost;
 use App\Admin\Models\News as AdminNews;
 use App\Models\Home as ModelHome;
+use App\Models\Feedback as FeedbackModel;
+use App\Models\Navigation as NavigationModel;
+use App\Models\Training as TrainingModel;
 
 class Home extends \Core\Controller {
 
@@ -27,7 +30,10 @@ class Home extends \Core\Controller {
             "partners" => AdminPartner::findAll(),
             "announces"   => AdminPost::getAnnounces(),
             "events"       => AdminPost::getEvents(),
-            "news"       => AdminNews::findAll()
+            "news"       => AdminNews::findAll(),
+            "feedback" =>  FeedbackModel::getFeedback(),
+           "navigation" => NavigationModel::getCategory()
+
         ]);
     }
 
@@ -38,8 +44,12 @@ class Home extends \Core\Controller {
      */
     public function aboutAction() {
         $city = CityModel::getCity();
+         $about = CityModel::getAboutInfo();
         View::renderTemplate('Home/about.html', [
+            'about' => $about,
             'cities' => $city,
+            "navigation" => NavigationModel::getCategory()
+
         ]);
     }
 
@@ -53,6 +63,7 @@ class Home extends \Core\Controller {
             "route_name" => $this->route_params["name"],
             "photos"  =>$adminCity->photoById($this->route_params["id"]),
             'city_info' => CityModel::getCityInfo($this->route_params["name"]),
+            "navigation" => NavigationModel::getCategory()
 
         ]);
     }

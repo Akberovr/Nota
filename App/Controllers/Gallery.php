@@ -8,8 +8,10 @@
 
 namespace App\Controllers;
 use \Core\View;
+use App\Models\Navigation as NavigationModel;
 use \App\Admin\Models\Photo;
 class Gallery extends \Core\Controller
+
 {
 
     /**
@@ -20,7 +22,11 @@ class Gallery extends \Core\Controller
 
     public function photosAction(){
 
-        View::renderTemplate('Gallery/photo-gallery.html',["photos" => Photo::findAll()]);
+        View::renderTemplate('Gallery/photo-gallery.html',
+                [
+                    "photos" => Photo::findAll(),
+                     "navigation" => NavigationModel::getCategory()
+                ]);
 
     }
 

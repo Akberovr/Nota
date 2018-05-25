@@ -2,16 +2,108 @@
 
 namespace App\Admin\Models;
 
+use App\Helper;
 use PDO;
 use App\Paginate;
 
 class Training extends \Core\Model {
 
+    /**
+     * @var $upload_directory directory for upload photos
+     */
+    public static $upload_directory = 'images/training';
+
+    /**
+     * @var $photo_filename name of the file
+     */
+    public $photo_filename;
+
+    /**
+     * @var $tmp_path temporary path of file
+     */
+    public $tmp_path;
+
+    /**
+     * Class constructor
+     *
+     * @param array $data  Initial property values
+     *
+     * @return void
+     */
     public function __construct($data = []) {
 
         foreach ($data as $key => $value) {
             $this->$key = $value;
         }
+    }
+
+    public function setFile($file) {
+
+        if (empty($file) || !$file || !is_array($file)) {
+
+            $this->errors[] = "No file was uploaded";
+            return false;
+        } elseif ($file['error'] != 0) {
+
+            $this->errors[] = $this->upload_errors_array[$file['error']];
+            return false;
+        } else {
+
+            $this->photo_filename = basename($file['name']);
+            $this->tmp_path = $file['tmp_name'];
+        }
+    }
+    
+    
+        public function save($method,$id = null){
+
+        $target_path =  dirname(dirname(dirname(__DIR__)))."/"."public"."/"."images"."/"."training"."/".$this->photo_filename;
+
+        if (move_uploaded_file($this->tmp_path,$target_path)){
+
+            if($this->$method($id)){
+
+                unset($this->tmp_path);
+                return true;
+
+            }
+            return false;
+        }
+
+    }
+    
+        public static function deletePhoto($id){
+
+        if (isset($id)){
+
+            $target_path = dirname(dirname(dirname(__DIR__)))."\\"."public"."\\".static::picturePath($id);
+
+            if(file_exists($target_path)){
+
+                return unlink($target_path) ? true : false;
+
+            }
+
+        }
+        return false;
+    }
+    
+    
+        /**
+     * @param int $id ID of the staff's photo
+     * @return bool|string
+     */
+
+    public static function picturePath(int $id){
+
+        if(isset($id)){
+
+            $training = static::findById($id);
+
+            return static::$upload_directory.'/'.$training->photo;
+
+        }
+        return false;
     }
 
     public function create() {
@@ -21,8 +113,8 @@ class Training extends \Core\Model {
 
 
             $sql = "INSERT INTO trainings (training_name,training_cat_id, "
-                    . "training_apply_date , training_duration,training_hours,training_applicant)"
-                    . "VALUES (:name,:category_id,:training_apply_date,:training_duration,:training_hours,:training_applicant) ";
+                    . "  training_duration,training_hours,training_applicant,info,description ) "
+                    . "VALUES (:name,:category_id,:training_duration,:training_hours,:training_applicant,:info,:desc) ";
 
 
             $db = static::getDB();
@@ -31,10 +123,11 @@ class Training extends \Core\Model {
 
             $stmt->bindValue(':name', $this->training_name, PDO::PARAM_STR);
             $stmt->bindValue(':category_id', $this->category_id, PDO::PARAM_INT);
-            $stmt->bindValue(':training_apply_date', $this->training_apply_date, PDO::PARAM_STR);
             $stmt->bindValue(':training_duration', $this->training_duration, PDO::PARAM_STR);
             $stmt->bindValue(':training_hours', $this->training_hours, PDO::PARAM_STR);
             $stmt->bindValue(':training_applicant', $this->training_applicant, PDO::PARAM_STR);
+            $stmt->bindValue(':info', $this->info, PDO::PARAM_STR);
+            $stmt->bindValue(':desc', $this->desc, PDO::PARAM_STR);
 
             return $stmt->execute();
         } catch (Exception $e) {
@@ -53,10 +146,11 @@ class Training extends \Core\Model {
 
                 $sql = "UPDATE trainings SET training_name = :training_name,"
                         . "training_cat_id = :category_id,"
-                        . "training_apply_date = :apply_date, "
                         . " training_duration = :duration,"
                         . "training_hours = :hours, "
-                        . "training_applicant = :applicant "
+                        . "training_applicant = :applicant, "
+                        . "info = :info, "
+                        . " description = :desc "
                         . " WHERE training_id = :training_id";
 
 
@@ -66,34 +160,35 @@ class Training extends \Core\Model {
 
                 $stmt->bindValue(':training_name', $this->training_name, PDO::PARAM_STR);
                 $stmt->bindValue(':category_id', $this->category_id, PDO::PARAM_INT);
-                $stmt->bindValue(':apply_date', $this->training_apply_date, PDO::PARAM_STR);
                 $stmt->bindValue(':duration', $this->training_duration, PDO::PARAM_STR);
                 $stmt->bindValue(':hours', $this->training_hours, PDO::PARAM_STR);
                 $stmt->bindValue(':applicant', $this->training_applicant, PDO::PARAM_INT);
+                $stmt->bindValue(':info', $this->info, PDO::PARAM_STR);
+                $stmt->bindValue(':desc', $this->desc, PDO::PARAM_STR);
                 $stmt->bindParam(':training_id', $id, PDO::PARAM_INT);
 //                
             } else {
                 switch (strtolower($_GET["lang"])) {
-                    
-                    
+
+
                     case $_GET["lang"]:
                         $_SESSION['lang'] = $_GET["lang"];
-                        
+
                         $sql = " UPDATE trainings_translation SET "
                                 . "lang_code = :lang_code , training_name = :training_name "
-                                . " WHERE training_id = :training_id AND  lang_code = '". $_SESSION['lang'] ."'";
-                        
+                                . " WHERE training_id = :training_id AND  lang_code = '" . $_SESSION['lang'] . "'";
+
 
                         $db = static::getDB();
 
                         $stmt = $db->prepare($sql);
-                        
+
                         $stmt->bindValue(':lang_code', $this->lang_code, PDO::PARAM_STR);
                         $stmt->bindValue(':training_name', $this->training_name, PDO::PARAM_STR);
                         $stmt->bindParam(':training_id', $id, PDO::PARAM_INT);
-                        
-                        
-                        
+
+
+
                     default:
                         //IN ALL OTHER CASES your default langauge code will set
                         //Invalid languages
@@ -101,11 +196,9 @@ class Training extends \Core\Model {
                         break;
                 }
             }
-          
 
-           return $stmt->execute();
 
-            
+            return $stmt->execute();
         } catch (Exception $e) {
             $error = $e->getMessage();
         }
@@ -163,12 +256,12 @@ class Training extends \Core\Model {
 
     public static function deleteById($id) {
         try {
-            
-             $defaultLang = '';
+
+            $defaultLang = '';
 
             if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
                 $sql = "DELETE  FROM  trainings WHERE training_id =  :id ";
-            }else {
+            } else {
                 switch (strtolower($_GET["lang"])) {
 
                     case $_GET["lang"]:
@@ -184,7 +277,7 @@ class Training extends \Core\Model {
                 }
             }
 
-            
+
 
             $db = static::getDB();
 
@@ -211,7 +304,7 @@ class Training extends \Core\Model {
                 switch (strtolower($_GET["lang"])) {
                     case $_GET["lang"]:
                         $_SESSION['lang'] = $_GET["lang"];
-                        $sql = "SELECT tt.id,tt.training_id,tt.training_name,tc.training_cat_name,t.training_apply_date,t.training_duration,t.training_hours,t.training_applicant
+                        $sql = "SELECT tt.id,tt.training_id,tt.training_name,tc.training_cat_name,t.training_duration,t.training_hours,t.training_applicant
                                 FROM trainings t
                                 INNER JOIN trainings_translation tt
                                 ON t.training_id = tt.training_id

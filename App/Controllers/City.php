@@ -23,5 +23,13 @@ class City extends \Core\Controller {
 
         View::renderTemplate('Home/about.html');
     }
+    
+    public function aboutAction() {
+         $about = CityModel::getAboutInfo();
+         View::renderTemplate('Home/about.html', [
+            "about" => $about,
+        ]);
+    }
+    
 
 }

@@ -10,6 +10,7 @@ namespace App\Controllers;
 
 use \Core\View;
 use App\Models\Call as CallModel;
+use App\Models\Navigation as NavigationModel;
 
 class Call extends \Core\Controller {
 
@@ -43,7 +44,9 @@ class Call extends \Core\Controller {
             $array = json_decode($response);
         }
 
-        View::renderTemplate('Call/index.html');
+        View::renderTemplate('Call/index.html',[
+            "navigation" => NavigationModel::getCategory()
+        ]);
     }
 
 }

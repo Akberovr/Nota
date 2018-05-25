@@ -8,14 +8,16 @@
 
 namespace App\Controllers;
 use Core\View;
-
+use App\Models\Navigation as NavigationModel;
 class Document extends \Core\Controller
 {
 
     public function index ()
     {
 
-        view::renderTemplate('Documents/index.html');
+        view::renderTemplate('Documents/index.html',[
+             "navigation" => NavigationModel::getCategory()
+        ]);
 
     }
 

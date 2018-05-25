@@ -10,6 +10,7 @@ namespace App\Controllers;
 
 use \Core\View;
 use App\Admin\Models\Staff as ModelStaff;
+use App\Models\Navigation as NavigationModel;
 
 
 class Staff extends \Core\Controller
@@ -24,14 +25,16 @@ class Staff extends \Core\Controller
     public function indexAction(){
 
         View::renderTemplate('Staff/index.html',[
-            "members" => ModelStaff::findAll()
+            "members" => ModelStaff::findAll(),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
     }
 
     public function showAction(){
         View::renderTemplate('Staff/about_staff.html',[
-            "member" => ModelStaff::findByUrl($this->route_params["title"])
+            "member" => ModelStaff::findByUrl($this->route_params["title"]),
+            "navigation" => NavigationModel::getCategory()
         ]);
     }
 

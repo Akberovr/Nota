@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block subheading %} About {% endblock %}
+
+{% block context %}
+
+        {% if source == "show" %}
+
+            {% include "About/show_city.html" %}
+            
+        {% elseif source == "get" %}
+        
+            {% include "About/edit_about.html" %}            
+
+      
+        {% elseif source == "add" %}
+
+            {% include "About/add_city.html" %}
+
+            {% block message %} Add {% endblock %}
+
+        {% else %}
+
+            {% include "About/show_city.html" %}
+
+        {% endif %}
+
+{% endblock %}
+

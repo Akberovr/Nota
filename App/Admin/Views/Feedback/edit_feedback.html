@@ -1,0 +1,28 @@
+<form action="/admin/feedback/update/{{feedback.id}}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="title">Name</label>
+        <input value="{{feedback.name}}" type="text" class="form-control" name="name" >
+    </div>
+
+
+    <div class="form-group ">
+        <label for="post_image">Image</label >
+        <input  type="file"  name="photo" required> <br>
+        <img  class="img-responsive img-thumbnail" width="100" src="../../../images/feedback/{{feedback.image}}" alt="" />
+    </div>
+    
+
+    <div class="form-group">
+        <label for="feedback">Feedback</label>
+        <textarea name="feedback" >{{feedback.feed}}</textarea>
+        <script>
+            CKEDITOR.replace( 'feedback' );
+        </script>
+    </div>
+
+
+    <div class="form-group">
+        <button href="/admin/feedback/update" class="btn btn-primary" type="submit">Update Feedback</button>
+    </div>
+
+</form>
