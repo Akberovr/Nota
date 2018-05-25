@@ -29,22 +29,18 @@
                     <form class="row">
                         <div class="col-md-6">
                             <span class="custom-dropdown-box">
-                                <select name="dep">
-                                    <option>İstiqaməti seçin</option>
-                                    <option>Elektron Hökumət</option>
-                                    <option>Kompüter bilikləri və ofis proqramları</option>
-                                    <option>İT-nin əsasları</option>
-                                    <option>Şəbəkə və sistem inzibatçılığı</option>
-                                    <option>Qrafik dizayn</option>
-                                    <option>Proqramlaşdırma və kodlaşdırma</option>
-                                    <option>Biznes və menecment</option>
-                                    <option>Fərdi inkişaf</option>
+                                <select name="category" id="category">
+                                    {% for nav in navigation %}
+                                    <option value="{{nav.training_category_id}}">{{nav.training_cat_name}}</option>
+                                    {% endfor %}
+                                   
+                                   
                                 </select>
                             </span>
                         </div>
                         <div class="col-md-6">
                             <span class="custom-dropdown-box">
-                                <select name="cname">
+                                <select name="training" id="training">
                                     <option>Kursu seçin</option>
                                 </select>
                             </span>
@@ -61,8 +57,8 @@
                         <hr>
                         <div class="search-section">
                             </br>
-                            <iframe width="820" height="500" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
+
+                            </iframe>
                             <p><a href="#">1. Usability, Reachability, Accessibility and Web Security Assessment of E-governmental Websites in Azerbaijan Republic</a></p>
                             <p><a href="#">2. Cross site scripting hücumları və onlardan müdafiə</a></p>
                             <p><a href="#">3. Usability, Accessibility Assessment of E-government Websites in Europe</a></p>
@@ -108,88 +104,118 @@
         <script src="jquery/jquery.min.js"></script>
         <script src="jquery/main.js"></script>
         <script>window.jQuery || document.write('<script src="jquery/jquery.min.js"><\/script>')</script>
-<!--        <script src="js/bootstrap.min.js"></script>-->
+        <!--        <script src="js/bootstrap.min.js"></script>-->
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script>
-            $(document).ready(function () {
+$(document).ready(function () {
+    
+    
+    $('#category').change(function() {
+        var category_id = {"training_cat_id" : $('#category').val()};
+        console.log(category_id);
+        
+        $.ajax({
+          type: "POST",
+          data: category_id,
+          url: "<?= base_url() ?>/resource",
 
-                $("a").tooltip(); // for tooltips
+          success: function(data){
 
-                // dependent select options
-                $department = $("select[name='dep']");
-                $cname = $("select[name='cname']");
-
-                $department.change(function () {
-
-                    if ($(this).val() == "Elektron Hökumət") {
-                        $("select[name='cname'] option").remove();
-                        $("<option>Sahibkarlar və mühasiblər üçün e-hökumət</option>").appendTo($cname);
-                        $("<option>Elektron hökumətin əsasları</option>").appendTo($cname);
-                    }
-
-                    if ($(this).val() == "Kompüter bilikləri və ofis proqramları") {
-                        $("select[name='cname'] option").remove();
-                        $("<option>Ümumi kompüter hazırlığı</option>").appendTo($cname);
-                        $("<option>Microsoft Office proqramları</option>").appendTo($cname);
-                        $("<option>Peşəkar Microsoft Excel</option>").appendTo($cname);
-                        $("<option>1C proqramı</option>").appendTo($cname);
-                        $("<option>Microsoft Project</option>").appendTo($cname);
-                    }
-
-                    if ($(this).val() == "İT-nin əsasları") {
-                        $("select[name='cname'] option").remove();
-                        $("<option>İT texnikliyi</option>").appendTo($cname);
-                        $("<option>İT təhlükəsizliyinin əsasları</option>").appendTo($cname);
-                    }
-
-                    if ($(this).val() == "Şəbəkə və sistem inzibatçılığı") {
-                        $("select[name='cname'] option").remove();
-                        $("<option>Şəbəkə inzibatçılığının əsasları</option>").appendTo($cname);
-                        $("<option>Peşəkar şəbəkə inzibatçılığı</option>").appendTo($cname);
-                        $("<option>Sistem inzibatçılığının əsasları</option>").appendTo($cname);
-                    }
-
-                    if ($(this).val() == "Qrafik dizayn") {
-                        $("select[name='cname'] option").remove();
-                        $("<option>2D qrafika</option>").appendTo($cname);
-                        $("<option>3D qrafika</option>").appendTo($cname);
-                    }
-
-                    if ($(this).val() == "Proqramlaşdırma və kodlaşdırma") {
-                        $("select[name='cname'] option").remove();
-                        $("<option>Veb layihələrin hazırlanması</option>").appendTo($cname);
-                        $("<option>Java proqramlaşdırma</option>").appendTo($cname);
-                        $("<option>Python proqramlaşdırma</option>").appendTo($cname);
-                        $("<option>C++ proqramlaşdırma</option>").appendTo($cname);
-                        $("<option>Uşaqlar üçün Scratch proqramlaşdırma</option>").appendTo($cname);
-                    }
-
-                    if ($(this).val() == "Biznes və menecment") {
-                        $("select[name='cname'] option").remove();
-                        $("<option>Rəqəmli marketinq</option>").appendTo($cname);
-                        $("<option>Layihələrin idarəedilməsi</option>").appendTo($cname);
-                        $("<option>Peşəkar insan resursları</option>").appendTo($cname);
-                    }
-
-                    if ($(this).val() == "Fərdi inkişaf") {
-                        $("select[name='cname'] option").remove();
-                        $("<option>Danışıq ingilis dili</option>").appendTo($cname);
-                        $("<option>Ümumi ingilis dili</option>").appendTo($cname);
-                        $("<option>Rus dili</option>").appendTo($cname);
-                        $("<option>Yumşaq bacarıqlar</option>").appendTo($cname);
-                        $("<option>Dövlət qulluğuna hazırlıq</option>").appendTo($cname);
-                        $("<option>Magistratura hazırlığı</option>").appendTo($cname);
-                    }
-
-                    if ($(this).val() == "İstiqaməti seçin") {
-                        $("select[name='cname'] option").remove();
-                        $("<option>Kursu seçin</option>").appendTo($cname);
-                    }
-
-                });
-
+            $.each(data, function(i, data){
+            console.log(data.name);
+            console.log(data.id_type)
             });
+           }
+         });
+        
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+
+    $("a").tooltip(); // for tooltips
+
+    // dependent select options
+    $department = $("select[name='dep']");
+    $cname = $("select[name='cname']");
+
+    $department.change(function () {
+
+        if ($(this).val() == "Elektron Hökumət") {
+            $("select[name='cname'] option").remove();
+            $("<option>Sahibkarlar və mühasiblər üçün e-hökumət</option>").appendTo($cname);
+            $("<option>Elektron hökumətin əsasları</option>").appendTo($cname);
+        }
+
+        if ($(this).val() == "Kompüter bilikləri və ofis proqramları") {
+            $("select[name='cname'] option").remove();
+            $("<option>Ümumi kompüter hazırlığı</option>").appendTo($cname);
+            $("<option>Microsoft Office proqramları</option>").appendTo($cname);
+            $("<option>Peşəkar Microsoft Excel</option>").appendTo($cname);
+            $("<option>1C proqramı</option>").appendTo($cname);
+            $("<option>Microsoft Project</option>").appendTo($cname);
+        }
+
+        if ($(this).val() == "İT-nin əsasları") {
+            $("select[name='cname'] option").remove();
+            $("<option>İT texnikliyi</option>").appendTo($cname);
+            $("<option>İT təhlükəsizliyinin əsasları</option>").appendTo($cname);
+        }
+
+        if ($(this).val() == "Şəbəkə və sistem inzibatçılığı") {
+            $("select[name='cname'] option").remove();
+            $("<option>Şəbəkə inzibatçılığının əsasları</option>").appendTo($cname);
+            $("<option>Peşəkar şəbəkə inzibatçılığı</option>").appendTo($cname);
+            $("<option>Sistem inzibatçılığının əsasları</option>").appendTo($cname);
+        }
+
+        if ($(this).val() == "Qrafik dizayn") {
+            $("select[name='cname'] option").remove();
+            $("<option>2D qrafika</option>").appendTo($cname);
+            $("<option>3D qrafika</option>").appendTo($cname);
+        }
+
+        if ($(this).val() == "Proqramlaşdırma və kodlaşdırma") {
+            $("select[name='cname'] option").remove();
+            $("<option>Veb layihələrin hazırlanması</option>").appendTo($cname);
+            $("<option>Java proqramlaşdırma</option>").appendTo($cname);
+            $("<option>Python proqramlaşdırma</option>").appendTo($cname);
+            $("<option>C++ proqramlaşdırma</option>").appendTo($cname);
+            $("<option>Uşaqlar üçün Scratch proqramlaşdırma</option>").appendTo($cname);
+        }
+
+        if ($(this).val() == "Biznes və menecment") {
+            $("select[name='cname'] option").remove();
+            $("<option>Rəqəmli marketinq</option>").appendTo($cname);
+            $("<option>Layihələrin idarəedilməsi</option>").appendTo($cname);
+            $("<option>Peşəkar insan resursları</option>").appendTo($cname);
+        }
+
+        if ($(this).val() == "Fərdi inkişaf") {
+            $("select[name='cname'] option").remove();
+            $("<option>Danışıq ingilis dili</option>").appendTo($cname);
+            $("<option>Ümumi ingilis dili</option>").appendTo($cname);
+            $("<option>Rus dili</option>").appendTo($cname);
+            $("<option>Yumşaq bacarıqlar</option>").appendTo($cname);
+            $("<option>Dövlət qulluğuna hazırlıq</option>").appendTo($cname);
+            $("<option>Magistratura hazırlığı</option>").appendTo($cname);
+        }
+
+        if ($(this).val() == "İstiqaməti seçin") {
+            $("select[name='cname'] option").remove();
+            $("<option>Kursu seçin</option>").appendTo($cname);
+        }
+
+    });
+
+});
         </script>
 
     </body>

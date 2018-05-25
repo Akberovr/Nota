@@ -8,6 +8,8 @@ namespace App\Controllers;
 
 use \Core\View;
 
+use App\Models\Navigation as NavigationModel;
+
 class Register extends \Core\Controller {
 
     public function indexAction() {
@@ -41,7 +43,9 @@ class Register extends \Core\Controller {
             $array = json_decode($response);
            
         }
-        View::renderTemplate('Register/index.html');
+        View::renderTemplate('Register/index.html',[
+             "navigation" => NavigationModel::getCategory()
+        ]);
     }
 
 }

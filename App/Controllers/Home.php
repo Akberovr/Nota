@@ -48,6 +48,7 @@ class Home extends \Core\Controller {
         View::renderTemplate('Home/about.html', [
             'about' => $about,
             'cities' => $city,
+            "navigation" => NavigationModel::getCategory()
 
         ]);
     }
@@ -62,6 +63,7 @@ class Home extends \Core\Controller {
             "route_name" => $this->route_params["name"],
             "photos"  =>$adminCity->photoById($this->route_params["id"]),
             'city_info' => CityModel::getCityInfo($this->route_params["name"]),
+            "navigation" => NavigationModel::getCategory()
 
         ]);
     }

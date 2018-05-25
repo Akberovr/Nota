@@ -10,6 +10,7 @@ namespace App\Controllers;
 
 use \Core\View;
 use App\Models\Question as QuestionModel;
+use App\Models\Navigation as NavigationModel;
 
 class Question extends \Core\Controller {
 
@@ -45,7 +46,9 @@ class Question extends \Core\Controller {
 
         }
 
-        View::renderTemplate('Question/index.html');
+        View::renderTemplate('Question/index.html',[
+            "navigation" => NavigationModel::getCategory()
+        ]);
 
     }
 

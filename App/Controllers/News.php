@@ -11,6 +11,7 @@ namespace App\Controllers;
 use Core\View;
 use App\Paginate;
 use App\Admin\Models\News as ModelNews;
+use App\Models\Navigation as NavigationModel;
 
 
 class News extends \Core\Controller
@@ -31,7 +32,8 @@ class News extends \Core\Controller
             
             "news"    => ModelNews::getNews($page,4, ModelNews::class),
             "pages"   => ModelNews::getPages($page,5,ModelNews::class),
-            "current_page" => $page
+            "current_page" => $page,
+            "navigation" => NavigationModel::getCategory()
                 
         ]);
 
@@ -46,7 +48,8 @@ class News extends \Core\Controller
     public function showAction(){
 
         View::renderTemplate('News/details.html',[
-            "member" => ModelNews::findByUrl($this->route_params["title"])
+            "member" => ModelNews::findByUrl($this->route_params["title"]),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
         if (isset($this->route_params["title"])){

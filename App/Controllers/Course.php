@@ -10,6 +10,7 @@ namespace App\Controllers;
 use \Core\View;
 
 use App\Models\Course as CourseModel;
+use App\Models\Navigation as NavigationModel;
 
 class Course extends \Core\Controller
 {
@@ -23,6 +24,7 @@ class Course extends \Core\Controller
             'courses' => CourseModel::getTraining($id),
             'category' => CourseModel::getCategoryById($id),
             'trainings' => CourseModel::getCategory(),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
     }
@@ -36,6 +38,7 @@ class Course extends \Core\Controller
         View::renderTemplate('Course/course.html',[
             'course' => CourseModel::getCourseById($id), 
             'filtered' => CourseModel::getCourseByCategory($id),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
     }

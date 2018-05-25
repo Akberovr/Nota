@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row content">
                 <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
-                    <h3><i class="fa fa-fw fa-dot-circle-o"></i>Zəng edək</h3>
+                    <h3><i class="fa fa-fw fa-dot-circle-o"></i>Tədbirə qeydiyyat</h3>
                     <div class="row">
                         <form target="_self"  enctype="multipart/form-data" id="submit_form" >
                             <div class="col-md-6 forms">
@@ -47,9 +47,15 @@
                                 <input  id="number"  type="text" placeholder="Number" aria-describedby="basic-addon1" name="number" aria-label="Phone number"
                                         dir="auto" data-initial-dir="auto" data-initial-value required >   
                             </div>
-                            <div class="col-md-12 forms">
-                                <textarea id="question"  placeholder="Suallarınızı daxil edin..." name="question" aria-label="Your question here"
-                                          dir="auto" data-initial-dir="auto" data-initial-value></textarea>   
+                                                        <div class="col-md-6 forms">
+                                <span class="custom-dropdown-box">
+                                    <select id="category" name="category">
+                                        <option>Moskvada zərgərlik mağazasına basqın edən iki azərbaycanlı tutulub</option>
+                                        <option>Moskvada zərgərlik mağazasına basqın edən iki azərbaycanlı tutulub</option>
+                                        <option>Kompüter bilikləri və ofis proqramları</option>
+                                        
+                                    </select>
+                                </span>   
                             </div>
                             <div class="col-md-6 forms">
                                 <input id="submit" name="submit" type="button" class="form_button" value="Submit" onClick="submit_form()" required>
@@ -67,10 +73,10 @@
                     <div class="side-nav-inside"> 				
                         <ul>
                             <h4>QEYDİYYAT</h4>
-                            <li><a href="#">İlkin qeydiyyat</a></li>
-                            <li class="active"><i class="fa fa-long-arrow-right"></i> Sual ver</li>
-                            <li><a href="#">Zəng edək</a></li>
-                            <li><a href="#">Təlimçi ol</a></li>
+                            <li><a href="register">Təlimə qeydiyyat</a></li>
+                            <li ><a href="question">Sual Ver/ Zəng edək ol</a> </li>
+                            <li ><a href="call"><i class="fa fa-long-arrow-right"></i>  Tədbirə qeydiyyat</a></li>
+                            <li><a href="teacher">Təlimçi ol</a></li>
                         </ul>
                     </div>
                 </div>
@@ -112,7 +118,7 @@
                                             var question = $('question').val();
                                             if (name == '' || last_name == '' || email == '' || number == '' || question == '')
                                             {
-                                                $('#error_message').html("Bütün  qutular doldurulmalıdır!")
+                                                $('#error_message').html("Sorğunuz qeydə alındı!")
                                             } else {
                                                 $('#success_message').html("Sualınız qeyd olundu!");
 

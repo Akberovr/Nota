@@ -9,6 +9,7 @@
 namespace App\Controllers;
 use Core\View;
 use App\Admin\Models\Instructor as AdminInstructor;
+use App\Models\Navigation as NavigationModel;
 
 class Instructors extends \Core\Controller
 {
@@ -17,7 +18,9 @@ class Instructors extends \Core\Controller
     {
 
         View::renderTemplate('Instructors/index.html',[
-            "instructors" => AdminInstructor::getAll()
+            "instructors" => AdminInstructor::getAll(),
+            "navigation" => NavigationModel::getCategory()
+                
         ]);
 
     }
@@ -25,7 +28,8 @@ class Instructors extends \Core\Controller
     {
 
         View::renderTemplate('Instructors/about.html',[
-            "instructor" => AdminInstructor::findById($this->route_params["id"])
+            "instructor" => AdminInstructor::findById($this->route_params["id"]),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
     }

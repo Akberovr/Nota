@@ -8,11 +8,102 @@ use App\Paginate;
 
 class Training extends \Core\Model {
 
+    /**
+     * @var $upload_directory directory for upload photos
+     */
+    public static $upload_directory = 'images/training';
+
+    /**
+     * @var $photo_filename name of the file
+     */
+    public $photo_filename;
+
+    /**
+     * @var $tmp_path temporary path of file
+     */
+    public $tmp_path;
+
+    /**
+     * Class constructor
+     *
+     * @param array $data  Initial property values
+     *
+     * @return void
+     */
     public function __construct($data = []) {
 
         foreach ($data as $key => $value) {
             $this->$key = $value;
         }
+    }
+
+    public function setFile($file) {
+
+        if (empty($file) || !$file || !is_array($file)) {
+
+            $this->errors[] = "No file was uploaded";
+            return false;
+        } elseif ($file['error'] != 0) {
+
+            $this->errors[] = $this->upload_errors_array[$file['error']];
+            return false;
+        } else {
+
+            $this->photo_filename = basename($file['name']);
+            $this->tmp_path = $file['tmp_name'];
+        }
+    }
+    
+    
+        public function save($method,$id = null){
+
+        $target_path =  dirname(dirname(dirname(__DIR__)))."/"."public"."/"."images"."/"."training"."/".$this->photo_filename;
+
+        if (move_uploaded_file($this->tmp_path,$target_path)){
+
+            if($this->$method($id)){
+
+                unset($this->tmp_path);
+                return true;
+
+            }
+            return false;
+        }
+
+    }
+    
+        public static function deletePhoto($id){
+
+        if (isset($id)){
+
+            $target_path = dirname(dirname(dirname(__DIR__)))."\\"."public"."\\".static::picturePath($id);
+
+            if(file_exists($target_path)){
+
+                return unlink($target_path) ? true : false;
+
+            }
+
+        }
+        return false;
+    }
+    
+    
+        /**
+     * @param int $id ID of the staff's photo
+     * @return bool|string
+     */
+
+    public static function picturePath(int $id){
+
+        if(isset($id)){
+
+            $training = static::findById($id);
+
+            return static::$upload_directory.'/'.$training->photo;
+
+        }
+        return false;
     }
 
     public function create() {
@@ -22,7 +113,7 @@ class Training extends \Core\Model {
 
 
             $sql = "INSERT INTO trainings (training_name,training_cat_id, "
-                    . "  training_duration,training_hours,training_applicant,info,description)"
+                    . "  training_duration,training_hours,training_applicant,info,description ) "
                     . "VALUES (:name,:category_id,:training_duration,:training_hours,:training_applicant,:info,:desc) ";
 
 
@@ -78,26 +169,26 @@ class Training extends \Core\Model {
 //                
             } else {
                 switch (strtolower($_GET["lang"])) {
-                    
-                    
+
+
                     case $_GET["lang"]:
                         $_SESSION['lang'] = $_GET["lang"];
-                        
+
                         $sql = " UPDATE trainings_translation SET "
                                 . "lang_code = :lang_code , training_name = :training_name "
-                                . " WHERE training_id = :training_id AND  lang_code = '". $_SESSION['lang'] ."'";
-                        
+                                . " WHERE training_id = :training_id AND  lang_code = '" . $_SESSION['lang'] . "'";
+
 
                         $db = static::getDB();
 
                         $stmt = $db->prepare($sql);
-                        
+
                         $stmt->bindValue(':lang_code', $this->lang_code, PDO::PARAM_STR);
                         $stmt->bindValue(':training_name', $this->training_name, PDO::PARAM_STR);
                         $stmt->bindParam(':training_id', $id, PDO::PARAM_INT);
-                        
-                        
-                        
+
+
+
                     default:
                         //IN ALL OTHER CASES your default langauge code will set
                         //Invalid languages
@@ -105,11 +196,9 @@ class Training extends \Core\Model {
                         break;
                 }
             }
-          
 
-           return $stmt->execute();
 
-            
+            return $stmt->execute();
         } catch (Exception $e) {
             $error = $e->getMessage();
         }
@@ -167,12 +256,12 @@ class Training extends \Core\Model {
 
     public static function deleteById($id) {
         try {
-            
-             $defaultLang = '';
+
+            $defaultLang = '';
 
             if (empty($_GET["lang"]) || $_GET["lang"] == 'az') {
                 $sql = "DELETE  FROM  trainings WHERE training_id =  :id ";
-            }else {
+            } else {
                 switch (strtolower($_GET["lang"])) {
 
                     case $_GET["lang"]:
@@ -188,7 +277,7 @@ class Training extends \Core\Model {
                 }
             }
 
-            
+
 
             $db = static::getDB();
 
