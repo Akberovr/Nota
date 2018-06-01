@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="col-sm-12 col-xs-12"><!-- content section -->
                     <ol class="breadcrumb">
-                        <li><a href="#">Ana Səhifə</a></li>
+                        <li><a href="/">Ana Səhifə</a></li>
                         <li><a href="#">Təlimlər</a></li>
                       
                         {% for crs in  course %}
@@ -64,8 +64,47 @@
                             <p><span class="info5"><b>Kursun məqsədi nədir?</b></span></p>
                             <p>{{crs.description | raw}}</p>
                         </div>
+                        {% endfor %}
+
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <p><span class="info5"><b> Tədris proqramı:</b></span> </p>
+                            {% set arr_size = programs|length %}
+                            {% for i in 0..arr_size - 1   %}
+                            <ul>
+                                <li class="darkbg">{{programs[i] | raw}}</li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+
+
+
+
+
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <p><span class="info5"><b> Sertifikatlar:</b></span>
+                            </p>
+                            {% set arr_size = certificates|length %}
+                            {% for i in 0..arr_size - 1   %}
+                            <ul>
+                                <li class="silverbg">{{certificates[i] | raw}}</li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <p><span class="info5"><b> İş sahələri:</b></span>
+                            </p>
+                            {% set arr_size = fields|length %}
+                            {% for i in 0..arr_size - 1   %}
+                            <ul>
+                                <li class="silverbg">{{fields[i] | raw}}</li>
+                            </ul>
+                            {% endfor %}
+                        </div>
                         
-                          {% endfor %}
+
                        
                         <div class="centralize">
                             <p>&nbsp;</p>

@@ -113,8 +113,8 @@ class Training extends \Core\Model {
 
 
             $sql = "INSERT INTO trainings (training_name,training_cat_id, "
-                    . "  training_duration,training_hours,training_applicant,info,description ) "
-                    . "VALUES (:name,:category_id,:training_duration,:training_hours,:training_applicant,:info,:desc) ";
+                    . "  training_duration,training_hours,training_applicant,info,description,program,field,certificate ) "
+                    . "VALUES (:name,:category_id,:training_duration,:training_hours,:training_applicant,:info,:desc,:program,:field,:certificate) ";
 
 
             $db = static::getDB();
@@ -128,6 +128,9 @@ class Training extends \Core\Model {
             $stmt->bindValue(':training_applicant', $this->training_applicant, PDO::PARAM_STR);
             $stmt->bindValue(':info', $this->info, PDO::PARAM_STR);
             $stmt->bindValue(':desc', $this->desc, PDO::PARAM_STR);
+            $stmt->bindValue(':program', $this->program, PDO::PARAM_STR);
+            $stmt->bindValue(':field', $this->field, PDO::PARAM_STR);
+            $stmt->bindValue(':certificate', $this->certificate, PDO::PARAM_STR);
 
             return $stmt->execute();
         } catch (Exception $e) {

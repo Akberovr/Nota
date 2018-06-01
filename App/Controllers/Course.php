@@ -33,12 +33,33 @@ class Course extends \Core\Controller
     {   
         
         $id = $this->route_params["id"];
-        
+
+        $course = CourseModel::getCourseById($id);
+
+
+//        print_r("<pre>");
+//        print_r($course);
+//        print_r("</pre>");
+
+        $program  = explode(",",$course[0][8]);
+
+
+        $field  = explode(",",$course[0][9]);
+
+     $certificates  = explode(",",$course[0][10]);
+
+
+
+
+
 
         View::renderTemplate('Course/course.html',[
-            'course' => CourseModel::getCourseById($id), 
+            'course' => $course,
             'filtered' => CourseModel::getCourseByCategory($id),
-            "navigation" => NavigationModel::getCategory()
+            "navigation" => NavigationModel::getCategory(),
+            "programs" => $program,
+            "fields" => $field,
+            "certificates" => $certificates,
         ]);
 
     }

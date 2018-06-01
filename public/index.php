@@ -75,6 +75,7 @@
 	$router->add('question',['controller'=>'Question','action'=>'index']);
 	$router->add('call',['controller'=>'Call','action'=>'index']);
 	$router->add('register',['controller'=>'Register','action'=>'index']);
+	$router->add('register/{id:\d+}',['controller'=>'Register','action'=>'getTraining']);
 	$router->add('teacher',['controller'=>'teacher','action'=>'index']);
 	$router->add('resource',['controller'=>'Resource','action'=>'index']);
 	$router->add('photo-gallery',['controller'=>'Gallery','action'=>'photos']);
