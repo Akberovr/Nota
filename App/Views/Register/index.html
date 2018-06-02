@@ -46,13 +46,10 @@
                                 </span>
                     </div>
                     <div class="col-md-6 forms">
+
                                 <span class="custom-dropdown-box">
                                     <select id="course" name="course">
                                         <option selected disabled>Kursu seçin</option>
-                                        <option>Sahibkarlar və mühasiblər üçün e-hökumət</option>
-                                        <option>İT texnikliyi</option>
-                                        <option>İT təhlükəsizliyinin əsasları</option>
-                                        <option>Layihələrin idarəedilməsi</option>
                                     </select>
                                 </span>
                     </div>
@@ -111,16 +108,25 @@
             $.ajax({
                 url:'register/'+ categoryId,
                 method:'POST',
-                dataType:"json",
                 data:'categoryId=' + categoryId,
                 success:function(data) {
 
-                    $('#course').append('<option >' + "hello" + '</option>');
 
-                },
 
+                    $('#course').empty();
+
+                    data = JSON.parse(data);
+                    data.forEach(function (datas) {
+                        $('#course').append('<option>'+ datas.training_name +'</option>')
+                    })
+
+
+
+
+
+                }
             }).done(function (trainings) {
-                console.log("hhh");
+
             })
         })
 

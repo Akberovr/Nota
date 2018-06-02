@@ -2,15 +2,15 @@
 /**
  * Created by PhpStorm.
  * User: akberovr
- * Date: 5/31/18
- * Time: 13:14
+ * Date: 6/2/18
+ * Time: 16:28
  */
 
 namespace App\Models;
 
 use PDO;
 
-class Register extends \Core\Model {
+class Resource extends \Core\Model {
 
 
     public function __construct($data = []) {
@@ -21,11 +21,15 @@ class Register extends \Core\Model {
 
 
 
-    public static function getTraining($id) {
+
+
+
+    public static function getResource($id) {
         try {
 
 
-            $sql = "SELECT training_name,training_id FROM trainings WHERE  training_cat_id = :id";
+            $sql = "SELECT * FROM training_material WHERE training_id = :id";
+
             $db = static::getDB();
 
             $stmt = $db->prepare($sql);
@@ -49,24 +53,9 @@ class Register extends \Core\Model {
 
 
 
-    public static function getCategory() {
 
 
-        try {
-            $sql = "SELECT * FROM training_category";
-            $db = static::getDB();
 
-            $stmt = $db->prepare($sql);
-
-            $stmt->execute();
-
-            return $stmt->fetchAll();
-        } catch (Exception $ex) {
-            $error = $e->getMessage();
-        }
-
-
-    }
 
 
 

@@ -79,13 +79,11 @@ class Register extends \Core\Controller {
         $id = $this->route_params["id"];
 
         $training = RegisterModel::getTraining($id);
-        print_r("<pre>");
-        print_r($training[0]);
-        print_r("</pre>");
-        View::renderTemplate('Register/index.html',[
-            "training" => $training,
 
-        ]);
+        echo json_encode($training);
+
+
+
 
 
 

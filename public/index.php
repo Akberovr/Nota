@@ -78,7 +78,10 @@
 	$router->add('register/{id:\d+}',['controller'=>'Register','action'=>'getTraining']);
 	$router->add('teacher',['controller'=>'teacher','action'=>'index']);
 	$router->add('resource',['controller'=>'Resource','action'=>'index']);
+	$router->add('resource/{id:\d+}',['controller'=>'Register','action'=>'getTraining']);
+	$router->add('resource/{ids:\d+}/{id:\d+}',['controller'=>'Resource','action'=>'getResource']);
 	$router->add('photo-gallery',['controller'=>'Gallery','action'=>'photos']);
+$router->add('video-gallery',['controller'=>'Gallery','action'=>'videos']);
 	$router->add('{controller}/{action}');
 	$router->add('{controller}/{id:\d+}/{action}');
 	$router->add('password/reset/{token:[\da-f]+}',['controller'=>'Password','action'=>'reset']);
