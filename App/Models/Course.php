@@ -49,6 +49,8 @@ class Course extends \Core\Model {
         }
     }
 
+
+
     public static function getCategoryById($id) {
         try {
             $sql = "SELECT * FROM training_category WHERE  training_category_id = :id";
@@ -67,6 +69,7 @@ class Course extends \Core\Model {
         }
     }
 
+
     public static function getCourseById($id) {
         try {
             $sql = "SELECT * FROM trainings WHERE training_id = :id";
@@ -84,6 +87,12 @@ class Course extends \Core\Model {
             $error = $e->getMessage();
         }
     }
+
+
+
+
+
+
 
     public static function getCourseByCategory($id) {
         try {

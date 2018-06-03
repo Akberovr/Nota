@@ -9,10 +9,34 @@ namespace App\Controllers;
 use \Core\View;
 
 use App\Models\Navigation as NavigationModel;
+use App\Models\Register as RegisterModel;
 
 class Register extends \Core\Controller {
 
     public function indexAction() {
+//
+//        if(isset($_POST["category"])){
+//
+//            $sql = "SELECT * FROM trainings WHERE  training_cat_id = :id";
+//            $db = static::getDB();
+//
+//            $stmt = $db->prepare($sql);
+//
+//            $stmt->bindValue(":id" ,$_POST["category"],PDO::PARAM_INT);
+//
+//            $stmt->execute();
+//
+//
+//
+//            $trainings =  $stmt->fetchAll();
+//
+//            echo  json_encode($trainings);
+//
+//        }
+
+
+
+
         // Config
         $redirect = "http://localhost/sgi-google-sheets-api-append/tutorial-google-oauth-callback.php"; // Enter your API Callback URL here
         $client_id = "931826885258-qb5lff27f79l3s66ufriebi2v1sdc0sf.apps.googleusercontent.com"; // Enter your API Client ID Here
@@ -44,8 +68,26 @@ class Register extends \Core\Controller {
            
         }
         View::renderTemplate('Register/index.html',[
-             "navigation" => NavigationModel::getCategory()
+             "navigation" => NavigationModel::getCategory(),
+            "category" => RegisterModel::getCategory(),
         ]);
+    }
+
+
+    public function getTrainingAction() {
+
+        $id = $this->route_params["id"];
+
+        $training = RegisterModel::getTraining($id);
+
+        echo json_encode($training);
+
+
+
+
+
+
+
     }
 
 }
