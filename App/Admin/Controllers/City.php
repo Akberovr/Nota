@@ -45,6 +45,8 @@ class City extends \App\Controllers\Authenticated {
         View::renderTemplate("City/index.html");
 
     }
+    
+    
 
 
     /**

@@ -15,8 +15,8 @@
     </ol>
 
     <!-- Carousel Slides / Quotes -->
-    <div class="carousel-inner">
 
+  <div class="carousel-inner">
         <!-- Quote 1 -->
         <div class="item active">
             <blockquote>
@@ -50,10 +50,37 @@
                 </div>
             </blockquote>
         </div>
-    </div>
+         
+            
+        </div>
+      </div>
+
 
     <!-- Carousel Buttons Next/Prev
     <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
     <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
      -->
-</div>
+
+
+
+
+<!-- {% for feed in feedback %}
+  <div class="carousel-inner">
+         Quote 1 
+        <div class="item active">
+            {% if feed.id == 1  %}
+            <blockquote>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5>{{feed.name}}</h5>
+                        <img class="img-thumbnail quote-img" src="images/feedback/{{feed.image}}"><p>{{feed.feed}}</p>
+                    </div>
+                </div>
+            </blockquote>
+         {%  endif %}
+         
+         
+            
+        </div>
+      </div>
+ {% endfor %}-->

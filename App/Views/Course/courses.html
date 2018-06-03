@@ -1,115 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include "includes/header.html" %}
-<body>
-<!-- Fixed navbar -->
-{% include "includes/navigation.html"  %}
+    {% include "includes/header.html" %}
+    <body>
+        <!-- Fixed navbar -->
+        {% include "includes/navigation.html"  %}
 
-<!-- end of navbar -->
+        <!-- end of navbar -->
 
-<!-- Head BAR -->
-{% include "includes/jumbotron_logo.html" %}
+        <!-- Head BAR -->
+        {% include "includes/jumbotron_logo.html" %}
 
-<!-- End of Head BAR -->
+        <!-- End of Head BAR -->
 
-<div class="container-fluid nav-path">
-    <div class="container">
-        <div class="col-sm-12 col-xs-12"><!-- content section -->
-            <ol class="breadcrumb">
-                <li><a href="/">Ana Səhifə</a></li>
-                <li><a href="">Təlimlər</a></li>
-                <li class="active">Kompüter bilikləri və ofis proqramları</li>
-            </ol>
-        </div>
-    </div>
-</div>
+        <div class="container-fluid nav-path">
+            <div class="container">
+                <div class="col-sm-12 col-xs-12"><!-- content section -->
+                    <ol class="breadcrumb">
+                        <li><a href="/">Ana Səhifə</a></li>
+                        <li><a href="">Təlimlər</a></li>
+                        {% for cat in  category %}
+                        <li class="active"> {{cat.training_cat_name}}</li>
 
-<!-- CONTENT: About -->
-<div class="container">
-    <div class="row content">
-        <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
-            <h3><i class="fa fa-fw fa-dot-circle-o"></i>Kompüter bilikləri və ofis proqramları</h3>
-
-            <div class="col-md-6">
-                <a href="course.html"><div class="kurs">
-                    <img src="images/png_icons/programming.png">
-                    <p>Ümumi kompüter hazırlığı</p>
-                </div></a>
-            </div>
-            <div class="col-md-6">
-                <a href="course.html"><div class="kurs">
-                    <img src="images/png_icons/office.png">
-                    <p>Microsoft Office proqramları</p>
-                </div></a>
-            </div>
-            <div class="col-md-6">
-                <a href="course.html"><div class="kurs">
-                    <img src="images/png_icons/excel.png">
-                    <p>Peşəkar Microsoft Excel</p>
-                </div></a>
-            </div>
-            <div class="col-md-6">
-                <a href="course.html"><div class="kurs">
-                    <img src="images/png_icons/1c.png">
-                    <p>1C proqramı</p>
-                </div></a>
-            </div>
-            <div class="col-md-6">
-                <a href="course.html"><div class="kurs">
-                    <img src="images/png_icons/project.png">
-                    <p>Microsoft Project</p>
-                </div></a>
-            </div>
+                        {% endfor %}
 
 
-        </div> <!-- end of section -->
+                      
 
-        <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section -->
-            <div class="side-nav-inside">
-                <ul>
-                    <h4>TƏLİMLƏR</h4>
-                    <li><a href="#">“Elektron Hökumət”</a></li>
-                    <li><a href="#">Kompüter bilikləri və ofis proqramları</a></li>
-                    <li><a href="#">İT-nin əsasları</a></li>
-                    <li><a href="#">Şəbəkə və sistem inzibatçılığı</a></li>
-                    <li><a href="#">Qrafik dizayn</a></li>
-                    <li><a href="#">Proqramlaşdırma və kodlaşdırma</a></li>
-                    <li><a href="#">Biznes və menecment</a></li>
-                    <li><a href="#">Fərdi inkişaf</a></li>
-                </ul>
+                    </ol>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- closing CONTENT -->
 
-<!-- FOOTER -->
-{% include "includes/footer.html" %}
+        <!-- CONTENT: About -->
+        <div class="container">
+            <div class="row content">
+                <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
 
-<script src="../../js/plugins.js"></script>
-<script src="../../js/jquery.prettyPhoto.js"></script>
-<script src="../../js/main.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#news-slider").owlCarousel({
-            items : 2,
-            itemsDesktop:[1199,2],
-            itemsDesktopSmall:[980,2],
-            itemsMobile : [700,1],
-            pagination:false,
-            navigation:true,
-            navigationText:["",""],
-            autoPlay:true
-        });
-        $("a").tooltip(); // for tooltips
+                    {% for cat in  category %}
 
-        // Colorbox Call
-        $(document).ready(function(){
-            $("[rel^='lightbox']").prettyPhoto();
-        });
+                    <h3> <i class="fa fa-fw fa-dot-circle-o"></i>  {{cat.training_cat_name}}</h3>
+                    
+                    {% endfor %}
 
+
+                    {% for course in  courses %}
+                    <div class="col-md-6">
+                        
+                        <a href="/course/{{course.training_id}}"><div class="kurs">
+                                <p>{{course.training_name}}</p>
+                            </div></a>
+                    </div>
+                    {% endfor %}
+
+
+                </div> <!-- end of section -->
+
+                <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section -->
+                    <div class="side-nav-inside">
+                        <ul>
+                            <h4>TƏLİMLƏR</h4>
+                            {% for training in  trainings %}
+                            
+                                {% if route_name == training.cn_sef  %}
+                                      <li class="active"><i class="fa fa-long-arrow-right"></i>{{training.training_cat_name}}</li>
+                                {% else %}
+                                 <li><a href="/courses/{{training.cn_sef}}/{{training.training_category_id}}">{{training.training_cat_name}}</a></li>
+                                 {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- closing CONTENT -->
+
+        <!-- FOOTER -->
+        {% include "includes/footer.html" %}
+
+        <script src="../../js/plugins.js"></script>
+        <script src="../../js/jquery.prettyPhoto.js"></script>
+        <script src="../../js/main.js"></script>
+        <script>
+$(document).ready(function () {
+    $("#news-slider").owlCarousel({
+        items: 2,
+        itemsDesktop: [1199, 2],
+        itemsDesktopSmall: [980, 2],
+        itemsMobile: [700, 1],
+        pagination: false,
+        navigation: true,
+        navigationText: ["", ""],
+        autoPlay: true
     });
-</script>
-</body>
+    $("a").tooltip(); // for tooltips
+
+    // Colorbox Call
+    $(document).ready(function () {
+        $("[rel^='lightbox']").prettyPhoto();
+    });
+
+});
+        </script>
+    </body>
 </html>

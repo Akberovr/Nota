@@ -9,6 +9,7 @@
 namespace App\Controllers;
 use Core\View;
 use App\Admin\Models\Post as AdminPost;
+use App\Models\Navigation as NavigationModel;
 
 class Post extends \Core\Controller
 {
@@ -17,7 +18,8 @@ class Post extends \Core\Controller
     {
 
         View::renderTemplate("Post/announces.html",[
-            "announces" => AdminPost::getAnnounces()
+            "announces" => AdminPost::getAnnounces(),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
     }
@@ -26,7 +28,8 @@ class Post extends \Core\Controller
     {
 
         View::renderTemplate("Post/events.html",[
-            "events" => AdminPost::getEvents()
+            "events" => AdminPost::getEvents(),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
     }
@@ -35,7 +38,8 @@ class Post extends \Core\Controller
     {
 
         View::renderTemplate("Post/articles.html",[
-            "articles"  => AdminPost::getArticles()
+            "articles"  => AdminPost::getArticles(),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
     }
@@ -49,7 +53,8 @@ class Post extends \Core\Controller
     public function announceAction(){
 
         View::renderTemplate('Post/announce_detail.html',[
-            "member" => AdminPost::findByUrl($this->route_params["title"])
+            "member" => AdminPost::findByUrl($this->route_params["title"]),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
     }
@@ -63,7 +68,8 @@ class Post extends \Core\Controller
     public function eventAction(){
 
         View::renderTemplate('Post/event_detail.html',[
-            "member" => AdminPost::findByUrl($this->route_params["title"])
+            "member" => AdminPost::findByUrl($this->route_params["title"]),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
     }
@@ -77,7 +83,8 @@ class Post extends \Core\Controller
     public function articleAction(){
 
         View::renderTemplate('Post/article.html',[
-            "member" => AdminPost::findByUrl($this->route_params["title"])
+            "member" => AdminPost::findByUrl($this->route_params["title"]),
+            "navigation" => NavigationModel::getCategory()
         ]);
 
     }

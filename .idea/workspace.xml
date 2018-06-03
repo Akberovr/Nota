@@ -7,8 +7,32 @@
   <component name="ChangeListManager">
     <list default="true" id="e5863102-4c90-41f5-ae9b-f56a2c728ee0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/App/Admin/Views/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Admin/Views/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/header.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/jumbotron_logo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/includes/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/includes/regional_map.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/includes/regional_map.html" afterDir="false" />
+>>>>>>> 9081b71b7884b3d8ee0ef096dfdc19d134719338
+=======
+      <change beforePath="$PROJECT_DIR$/App/Admin/Controllers/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Admin/Controllers/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Admin/Models/Partner.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Admin/Models/Partner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Admin/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Admin/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Admin/Views/Partners/add_partner.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Admin/Views/Partners/add_partner.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Admin/Views/Post/edit_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Admin/Views/Post/edit_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Admin/Views/Post/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Admin/Views/Post/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Admin/Views/Post/show_posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Admin/Views/Post/show_posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Partners/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Partners/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/instructors/awdawd.jpg" beforeDir="false" />
+>>>>>>> 4143fb52f0af2ce5f0533ecd35e7ff0e6a87c993
     </list>
     <ignored path="$PROJECT_DIR$/vendor/clue/stream-filter/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -539,7 +563,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="679664000" />
+=======
+    <option name="totallyTimeSpent" value="644360000" />
+=======
+    <option name="totallyTimeSpent" value="646275000" />
+=======
+    <option name="totallyTimeSpent" value="667411000" />
+>>>>>>> ed702bd112abe134aba746cf208b595c5614703c
+=======
+    <option name="totallyTimeSpent" value="678402000" />
+>>>>>>> 3fd700ee43db6cf7ffe4eb76dacaa28df822566e
+>>>>>>> 4143fb52f0af2ce5f0533ecd35e7ff0e6a87c993
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
