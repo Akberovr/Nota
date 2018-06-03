@@ -22,7 +22,7 @@ class Settings extends \App\Controllers\Authenticated
      * @return void
      */
 
-    public function list ()
+    public function listAction ()
     {
 
         View::renderTemplate('Settings/index.html');
@@ -30,42 +30,108 @@ class Settings extends \App\Controllers\Authenticated
 
     }
 
-    public function slider()
+    /**
+     * Shows the slider page
+     *
+     * @return void
+     */
+
+    public function sliderAction()
     {
 
-        View::renderTemplate('Settings/index.html');
+        View::renderTemplate('Settings/index.html',[
+            "sliders" => ModelSetting::allSlider()
+        ]);
 
-        if(isset($_GET["create"])){
+    }
 
+    public function editSliderAction ()
+    {
 
-            $photo = new PhotoModel($_POST);
+        View::renderTemplate("Settings/index.html",[
+            "slider" => ModelSetting::sliderByID($this->route_params["id"])
+        ]);
 
-            $photo->setFile($_FILES['file']);
+    }
+    /**
+     * Adds new slider to the Database
+     *
+     * @return void
+     */
 
+    public function addSliderAction ()
+    {
 
+        $slider = new ModelSetting($_POST);
 
+        $slider->setFile($_FILES["image"]);
+
+        if ($slider->save('create')){
+
+            Flash::addMessage("Slider Added Succesfully!");
+            $this->redirect("/admin/settings/slider");
+
+        }else{
+
+            Flash::addMessage("Slider Couldn't be added!",Flash::WARNING);
+            $this->redirect("/admin/settings/slider");
 
         }
 
     }
 
     /**
-     * Adds new info to the related settings
-     *
-     * @returns void
+     * Update Slider data
+     * @return mixed
      */
 
-    public function add ()
+    public function updateSliderAction()
     {
-        if (isset($_GET["tab"],$_GET["section"])){
 
+        $setting = new ModelSetting($_POST);
+
+        $setting->setFile($_FILES['image']);
+
+        $id = $this->route_params["id"];
+
+        if ($setting->save('update', $id)) {
+
+            Flash::addMessage("Changes Saved");
+
+            $this->redirect("/admin/settings/slider");
+
+        } else {
+
+            $message = join(",", $setting->errors);
+
+            Flash::addMessage("Problem " . $message, Flash::WARNING);
+
+            $this->redirect("/admin/settings/slider");
 
         }
 
-        Flash::addMessage("Please Select so me category to set",Flash::WARNING);
+    }
+    /**
+     * Deletes slider from Database
+     *
+     * @return void
+     */
 
-        $this->redirect('/admin/settings/list');
+    public function deleteSliderAction ()
+    {
+
+        if (ModelSetting::deleteSlider($this->route_params["id"])){
+
+            Flash::addMessage("Slider Deleted Succesfully!");
+            $this->redirect("/admin/settings/slider");
+
+        }else{
+
+            Flash::addMessage("Slider Couldn't been deleted",Flash::WARNING);
+            $this->redirect("/admin/settings/slider");
+        }
 
     }
+
 
 }

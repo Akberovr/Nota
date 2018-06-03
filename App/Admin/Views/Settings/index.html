@@ -20,6 +20,13 @@
         {% elseif source == "footer&add" %}
 
             {% include "Settings/Footer/add.html" %}
+{% elseif source == "editSlider" %}
+
+{% include "Settings/Slider/edit.html" %}
+
+        {% else %}
+
+            {% include "Settings/Footer/footer.html" %}
 
         {% endif %}
 

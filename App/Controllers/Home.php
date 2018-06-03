@@ -16,6 +16,7 @@ use App\Models\Home as ModelHome;
 use App\Models\Feedback as FeedbackModel;
 use App\Models\Navigation as NavigationModel;
 use App\Models\Training as TrainingModel;
+use App\Admin\Models\Setting as SettingModel;
 
 class Home extends \Core\Controller {
 
@@ -32,7 +33,9 @@ class Home extends \Core\Controller {
             "events"       => AdminPost::getEvents(),
             "news"       => AdminNews::findAll(),
             "feedback" =>  FeedbackModel::getFeedback(),
-           "navigation" => NavigationModel::getCategory()
+           "navigation" => NavigationModel::getCategory(),
+            "sliders"   => SettingModel::allSlider(),
+            "indicatorCount" => 0
 
         ]);
     }
@@ -66,6 +69,13 @@ class Home extends \Core\Controller {
             "navigation" => NavigationModel::getCategory()
 
         ]);
+    }
+
+    public function contactAction ()
+    {
+
+        View::renderTemplate("Home/contact.html");
+
     }
 
     public function search ()

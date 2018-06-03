@@ -42,7 +42,7 @@ class Config {
      * Show or hide error message on screen
      * @var beeloan
      */
-    const SHOW_ERRORS = false;
+    const SHOW_ERRORS = true;
 
     /**
      * Secret key for hashing

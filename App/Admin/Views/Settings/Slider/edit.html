@@ -1,0 +1,24 @@
+<form action="/admin/settings/updateSlider/{{slider.id}}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input value="{{slider.title}}" type="text" class="form-control" name="title" >
+    </div>
+
+    <div class="form-group">
+        <label for="title">Date</label>
+        <input value="{{slider.deadline}}" type="text" class="form-control" name="deadline" >
+    </div>
+
+
+    <div class="form-group">
+        <label for="post_image">Image</label >
+        <input  type="file"  name="image" required>
+        <img  width="100" src="../../../images/top_slider/{{slider.image}}" alt="" />
+    </div>
+
+
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Add Slider</button>
+    </div>
+
+</form>

@@ -251,28 +251,28 @@
                             {% endif %}
                         </ul>
                     </li>
-                    <!--<li>-->
-                        <!--<a href="javascript:" data-toggle="collapse" data-target="#demo5"><i class="glyphicon glyphicon-cog"></i> Settings <i class="fa fa-fw fa-caret-down"></i></a>-->
-                        <!--<ul id="demo5" class="collapse">-->
+                    <li>
+                        <a href="javascript:" data-toggle="collapse" data-target="#demo5"><i class="glyphicon glyphicon-cog"></i> Settings <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo5" class="collapse">
 
-                            <!--{% if lang %}-->
-                            <!--<li>-->
-                                <!--<a href="/admin/settings/list?lang={{lang}}&tab=slider">Slider</a>-->
-                            <!--</li>-->
-                            <!--<li>-->
-                                <!--<a href="/admin/settings/list?lang={{lang}}&tab=footer">Footer</a>-->
-                            <!--</li>-->
+                            {% if lang %}
+                            <li>
+                                <a href="/admin/settings/list?lang={{lang}}&tab=slider">Slider</a>
+                            </li>
+                            <li>
+                                <a href="/admin/settings/list?lang={{lang}}&tab=footer">Footer</a>
+                            </li>
 
-                            <!--{% else %}-->
-                            <!--<li>-->
-                                <!--<a href="/admin/settings/list?tab=slider">Slider</a>-->
-                            <!--</li>-->
-                            <!--<li>-->
-                                <!--<a href="/admin/settings/list?tab=footer">Footer</a>-->
-                            <!--</li>-->
-                            <!--{% endif %}-->
-                        <!--</ul>-->
-                    <!--</li>-->
+                            {% else %}
+                            <li>
+                                <a href="/admin/settings/list?tab=slider">Slider</a>
+                            </li>
+                            <li>
+                                <a href="/admin/settings/list?tab=footer">Footer</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </li>
 
                 </ul>
             </div>

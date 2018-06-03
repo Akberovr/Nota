@@ -51,6 +51,7 @@
 
 	$router->add('', ['controller' => 'Home', 'action' => 'index']);
 	$router->add('home', ['controller' => 'Home', 'action' => 'index']);
+	$router->add('contact',['controller'=>'Home','action'=>'contact']);
 	$router->add('login',['controller'=>'Login','action'=>'new']);
 	$router->add('logout',['controller'=>'Login','action'=>'destroy']);
 //	$router->add('signup',['controller'=>'Signup','action'=>'new']);
@@ -81,7 +82,7 @@
 	$router->add('resource/{id:\d+}',['controller'=>'Register','action'=>'getTraining']);
 	$router->add('resource/{ids:\d+}/{id:\d+}',['controller'=>'Resource','action'=>'getResource']);
 	$router->add('photo-gallery',['controller'=>'Gallery','action'=>'photos']);
-$router->add('video-gallery',['controller'=>'Gallery','action'=>'videos']);
+	$router->add('video-gallery',['controller'=>'Gallery','action'=>'videos']);
 	$router->add('{controller}/{action}');
 	$router->add('{controller}/{id:\d+}/{action}');
 	$router->add('password/reset/{token:[\da-f]+}',['controller'=>'Password','action'=>'reset']);
