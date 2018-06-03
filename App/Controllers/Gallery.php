@@ -30,4 +30,10 @@ class Gallery extends \Core\Controller
 
     }
 
+    public function videosAction(){
+
+        View::renderTemplate('Gallery/video-galery.html');
+
+    }
+
 }

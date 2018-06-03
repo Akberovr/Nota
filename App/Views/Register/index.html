@@ -1,217 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% include "includes/header.html" %}
+{% include "includes/header.html" %}
 
-    <body>
-        <!-- Fixed navbar -->
-        {% include "includes/navigation.html" %}
-        <!-- end of navbar -->
-        {% include "includes/jumbotron_logo.html" %}
-        <!-- Head BAR -->
+<body>
+<!-- Fixed navbar -->
+{% include "includes/navigation.html" %}
+<!-- end of navbar -->
+{% include "includes/jumbotron_logo.html" %}
+<!-- Head BAR -->
 
-        <!-- End of Head BAR -->
+<!-- End of Head BAR -->
 
-        <!-- CONTENT: About -->
-        <div class="container">
-            <div class="row content">
-                <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
-                    <h3><i class="fa fa-fw fa-dot-circle-o"></i>İlkin qeydiyyat</h3>
-                    <div class="row">
-                        <form target="_self"  enctype="multipart/form-data" id="submit_form">
-                            <div class="col-md-6 forms">
-                                <input id="first_name" type="text" name="first_name" placeholder="Adınız" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="col-md-6 forms">
-                                <input id="last_name" name="last_name" type="text" placeholder="Soyadınız" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="col-md-6 forms">
-                                <input id="number" name="number" type="text" placeholder="Telefon nömrəsi" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="col-md-6 forms">
-                                <input id="email" name="email" type="text" placeholder="Email" aria-describedby="basic-addon1">   
-                            </div>
-                            <div class="col-md-6 forms">
+<!-- CONTENT: About -->
+<div class="container">
+    <div class="row content">
+        <div class="col-md-9 col-sm-12 col-xs-12 main-side"><!-- content section -->
+            <h3><i class="fa fa-fw fa-dot-circle-o"></i>İlkin qeydiyyat</h3>
+            <div class="row">
+                <form target="_self" enctype="multipart/form-data" id="submit_form">
+                    <div class="col-md-6 forms">
+                        <input id="first_name" type="text" name="first_name" placeholder="Adınız"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="col-md-6 forms">
+                        <input id="last_name" name="last_name" type="text" placeholder="Soyadınız"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="col-md-6 forms">
+                        <input id="number" name="number" type="text" placeholder="Telefon nömrəsi"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="col-md-6 forms">
+                        <input id="email" name="email" type="text" placeholder="Email" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="col-md-6 forms">
                                 <span class="custom-dropdown-box">
                                     <select id="category" name="category">
-                                        <option>İstiqaməti seçin</option>
-                                        <option>Elektron Hökumət</option>
-                                        <option>Kompüter bilikləri və ofis proqramları</option>
-                                        <option>İT-nin əsasları</option>
-                                        <option>Şəbəkə və sistem inzibatçılığı</option>
-                                        <option>Qrafik dizayn</option>
-                                        <option>Proqramlaşdırma və kodlaşdırma</option>
-                                        <option>Biznes və menecment</option>
-                                        <option>Fərdi inkişaf</option>
+                                        <option selected disabled>Select Course</option>
+                                           {% for categories in category %}
+                                                <option id="{{categories.training_category_id}}" value="{{categories.training_category_id}}">
+                                                    {{ categories.training_cat_name }}
+                                                </option>
+                                            {% endfor %}
                                     </select>
-                                </span>   
-                            </div>
-                            <div class="col-md-6 forms">
+                                </span>
+                    </div>
+                    <div class="col-md-6 forms">
+
                                 <span class="custom-dropdown-box">
                                     <select id="course" name="course">
-                                        <option>Kursu seçin</option>
+                                        <option selected disabled>Kursu seçin</option>
                                     </select>
-                                </span>   
-                            </div>
-                            <div class="col-md-6 forms">
-<!--                                <input type="button" name="submit" value="QEYDİYYAT" onClick="submit_form()">  -->
-                                 <input id="submit" name="submit" type="button" value="QEYDİYYAT" class="form_button" onClick="submit_form()">
-                                  <span id="success_message" class="text-success"></span>
-                                <span id="error_message" class="text-danger"></span>
-                            </div>
-
-                        </form>      
-                    </div>		  				 	 	 
-                </div> <!-- end of section -->
-
-                <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section --> 
-                    <div class="side-nav-inside"> 				
-                        <ul>
-                            <h4>QEYDİYYAT</h4>
-                            <li class="active"><i class="fa fa-long-arrow-right"></i> İlkin qeydiyyat</li>
-                            <li><a href="/question">Sual ver / Zəng edək</a></li>
-                            <li><a href="/call">Tədbirə qeydiyyat</a></li>
-                            <li><a href="/teacher">Təlimçi ol</a></li>
-                        </ul>
+                                </span>
                     </div>
-                </div>
+                    <div class="col-md-6 forms">
+                        <!--                                <input type="button" name="submit" value="QEYDİYYAT" onClick="submit_form()">  -->
+                        <input id="submit" name="submit" type="button" value="QEYDİYYAT" class="form_button"
+                               onClick="submit_form()">
+                        <span id="success_message" class="text-success"></span>
+                        <span id="error_message" class="text-danger"></span>
+                    </div>
+
+                </form>
+            </div>
+        </div> <!-- end of section -->
+
+        <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section -->
+            <div class="side-nav-inside">
+                <ul>
+                    <h4>QEYDİYYAT</h4>
+                    <h3 id="name"></h3>
+                    <li class="active"><i class="fa fa-long-arrow-right"></i> İlkin qeydiyyat</li>
+                    <li><a href="/question">Sual ver / Zəng edək</a></li>
+                    <li><a href="/call">Tədbirə qeydiyyat</a></li>
+                    <li><a href="/teacher">Təlimçi ol</a></li>
+                </ul>
             </div>
         </div>
-        <!-- closing CONTENT -->
+    </div>
+</div>
+<!-- closing CONTENT -->
+
+
+<!-- FOOTER -->
+
+{% include "includes/footer.html" %}
+<!-- ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="jquery/jquery.min.js"></script>
+<script src="jquery/main.js"></script>
+<script>window.jQuery || document.write('<script src="jquery/jquery.min.js"><\/script>')</script>
+<!--    <script src="js/bootstrap.min.js"></script>-->
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/register.js"></script>
+<script>
 
 
 
-        <!-- FOOTER -->
 
-        {% include "includes/footer.html" %}
-        <!-- ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="jquery/jquery.min.js"></script>
-        <script src="jquery/main.js"></script>
-        <script>window.jQuery || document.write('<script src="jquery/jquery.min.js"><\/script>')</script>
-        <!--    <script src="js/bootstrap.min.js"></script>-->
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/register.js"></script>
-        <script>
-                                    $(document).ready(function () {
-                                        
-                                        $('#submit').click(function () {
-                                            var name = $('#first_name').val();
-                                            var last_name = $('last_name').val();
-                                            var email = $('email').val();
-                                            var number = $('number').val();
-                                            var category = $('category').val();
-                                            var course = $('course').val();
-                                            if (name == '' || last_name == '' || email == '' || number == '' || category == '' || course == '' )
-                                            {
-                                                $('#error_message').html("Bütün  qutular doldurulmalıdır!");
-                                                
-                                            } else {
-                                                
-                                                $('#success_message').html("Sualınız qeyd olundu!");
+    $(document).ready(function () {
 
-                                                $.ajax({
-                                                    url: "",
-                                                    method: "POST",
-                                                    data: {
-                                                        name: name,
-                                                        last_name: last_name,
-                                                        email: email,
-                                                        number: number,
-                                                        category: category,
-                                                        course: course
-                                                    }, success: function (data) {
-                                                        $("form").trigger("reset");
-                                                        $("#success_message").fadeIn();
-                                                        $("#success_message").fadeOut(3000);
-                                                    }
-                                                })
-                                            }
-                                        });
-                                    });
+
+        $('#category').change(function () {
+            var categoryId = $('#category').val();
+
+            $.ajax({
+                url:'register/'+ categoryId,
+                method:'POST',
+                data:'categoryId=' + categoryId,
+                success:function(data) {
 
 
 
-                                    $(document).ready(function () {
+                    $('#course').empty();
+
+                    data = JSON.parse(data);
+                    data.forEach(function (datas) {
+                        $('#course').append('<option>'+ datas.training_name +'</option>')
+                    })
 
 
 
-                                        $("a").tooltip(); // for tooltips
 
-                                        // dependent select options
-                                        $department = $("select[name='dep']");
-                                        $cname = $("select[name='cname']");
 
-                                        $department.change(function () {
+                }
+            }).done(function (trainings) {
 
-                                            if ($(this).val() == "Elektron Hökumət") {
-                                                $("select[name='cname'] option").remove();
-                                                $("<option>Sahibkarlar və mühasiblər üçün e-hökumət</option>").appendTo($cname);
-                                                $("<option>Elektron hökumətin əsasları</option>").appendTo($cname);
-                                            }
+            })
+        })
 
-                                            if ($(this).val() == "Kompüter bilikləri və ofis proqramları") {
-                                                $("select[name='cname'] option").remove();
-                                                $("<option>Ümumi kompüter hazırlığı</option>").appendTo($cname);
-                                                $("<option>Microsoft Office proqramları</option>").appendTo($cname);
-                                                $("<option>Peşəkar Microsoft Excel</option>").appendTo($cname);
-                                                $("<option>1C proqramı</option>").appendTo($cname);
-                                                $("<option>Microsoft Project</option>").appendTo($cname);
-                                            }
 
-                                            if ($(this).val() == "İT-nin əsasları") {
-                                                $("select[name='cname'] option").remove();
-                                                $("<option>İT texnikliyi</option>").appendTo($cname);
-                                                $("<option>İT təhlükəsizliyinin əsasları</option>").appendTo($cname);
-                                            }
 
-                                            if ($(this).val() == "Şəbəkə və sistem inzibatçılığı") {
-                                                $("select[name='cname'] option").remove();
-                                                $("<option>Şəbəkə inzibatçılığının əsasları</option>").appendTo($cname);
-                                                $("<option>Peşəkar şəbəkə inzibatçılığı</option>").appendTo($cname);
-                                                $("<option>Sistem inzibatçılığının əsasları</option>").appendTo($cname);
-                                            }
+        $('#submit').click(function () {
+            var name = $('#first_name').val();
+            var last_name = $('last_name').val();
+            var email = $('email').val();
+            var number = $('number').val();
+            var category = $('category').val();
+            var course = $('course').val();
+            if (name == '' || last_name == '' || email == '' || number == '' || category == '' || course == '') {
+                $('#error_message').html("Bütün  qutular doldurulmalıdır!");
 
-                                            if ($(this).val() == "Qrafik dizayn") {
-                                                $("select[name='cname'] option").remove();
-                                                $("<option>2D qrafika</option>").appendTo($cname);
-                                                $("<option>3D qrafika</option>").appendTo($cname);
-                                            }
+            } else {
 
-                                            if ($(this).val() == "Proqramlaşdırma və kodlaşdırma") {
-                                                $("select[name='cname'] option").remove();
-                                                $("<option>Veb layihələrin hazırlanması</option>").appendTo($cname);
-                                                $("<option>Java proqramlaşdırma</option>").appendTo($cname);
-                                                $("<option>Python proqramlaşdırma</option>").appendTo($cname);
-                                                $("<option>C++ proqramlaşdırma</option>").appendTo($cname);
-                                                $("<option>Uşaqlar üçün Scratch proqramlaşdırma</option>").appendTo($cname);
-                                            }
+                $('#success_message').html("Sualınız qeyd olundu!");
 
-                                            if ($(this).val() == "Biznes və menecment") {
-                                                $("select[name='cname'] option").remove();
-                                                $("<option>Rəqəmli marketinq</option>").appendTo($cname);
-                                                $("<option>Layihələrin idarəedilməsi</option>").appendTo($cname);
-                                                $("<option>Peşəkar insan resursları</option>").appendTo($cname);
-                                            }
+                $.ajax({
+                    url: "",
+                    method: "POST",
+                    data: {
+                        name: name,
+                        last_name: last_name,
+                        email: email,
+                        number: number,
+                        category: category,
+                        course: course
+                    }, success: function (data) {
+                        $("form").trigger("reset");
+                        $("#success_message").fadeIn();
+                        $("#success_message").fadeOut(3000);
+                    }
+                })
+            }
+        });
+    });
 
-                                            if ($(this).val() == "Fərdi inkişaf") {
-                                                $("select[name='cname'] option").remove();
-                                                $("<option>Danışıq ingilis dili</option>").appendTo($cname);
-                                                $("<option>Ümumi ingilis dili</option>").appendTo($cname);
-                                                $("<option>Rus dili</option>").appendTo($cname);
-                                                $("<option>Yumşaq bacarıqlar</option>").appendTo($cname);
-                                                $("<option>Dövlət qulluğuna hazırlıq</option>").appendTo($cname);
-                                                $("<option>Magistratura hazırlığı</option>").appendTo($cname);
-                                            }
 
-                                            if ($(this).val() == "İstiqaməti seçin") {
-                                                $("select[name='cname'] option").remove();
-                                                $("<option>Kursu seçin</option>").appendTo($cname);
-                                            }
+    $(document).ready(function () {
 
-                                        });
 
-                                    });
-        </script>
-    </body>
+        $("a").tooltip(); // for tooltips
+
+        // dependent select options
+        $department = $("select[name='dep']");
+        $cname = $("select[name='cname']");
+
+        $department.change(function () {
+
+            if ($(this).val() == "Elektron Hökumət") {
+                $("select[name='cname'] option").remove();
+                $("<option>Sahibkarlar və mühasiblər üçün e-hökumət</option>").appendTo($cname);
+                $("<option>Elektron hökumətin əsasları</option>").appendTo($cname);
+            }
+
+            if ($(this).val() == "Kompüter bilikləri və ofis proqramları") {
+                $("select[name='cname'] option").remove();
+                $("<option>Ümumi kompüter hazırlığı</option>").appendTo($cname);
+                $("<option>Microsoft Office proqramları</option>").appendTo($cname);
+                $("<option>Peşəkar Microsoft Excel</option>").appendTo($cname);
+                $("<option>1C proqramı</option>").appendTo($cname);
+                $("<option>Microsoft Project</option>").appendTo($cname);
+            }
+
+            if ($(this).val() == "İT-nin əsasları") {
+                $("select[name='cname'] option").remove();
+                $("<option>İT texnikliyi</option>").appendTo($cname);
+                $("<option>İT təhlükəsizliyinin əsasları</option>").appendTo($cname);
+            }
+
+            if ($(this).val() == "Şəbəkə və sistem inzibatçılığı") {
+                $("select[name='cname'] option").remove();
+                $("<option>Şəbəkə inzibatçılığının əsasları</option>").appendTo($cname);
+                $("<option>Peşəkar şəbəkə inzibatçılığı</option>").appendTo($cname);
+                $("<option>Sistem inzibatçılığının əsasları</option>").appendTo($cname);
+            }
+
+            if ($(this).val() == "Qrafik dizayn") {
+                $("select[name='cname'] option").remove();
+                $("<option>2D qrafika</option>").appendTo($cname);
+                $("<option>3D qrafika</option>").appendTo($cname);
+            }
+
+            if ($(this).val() == "Proqramlaşdırma və kodlaşdırma") {
+                $("select[name='cname'] option").remove();
+                $("<option>Veb layihələrin hazırlanması</option>").appendTo($cname);
+                $("<option>Java proqramlaşdırma</option>").appendTo($cname);
+                $("<option>Python proqramlaşdırma</option>").appendTo($cname);
+                $("<option>C++ proqramlaşdırma</option>").appendTo($cname);
+                $("<option>Uşaqlar üçün Scratch proqramlaşdırma</option>").appendTo($cname);
+            }
+
+            if ($(this).val() == "Biznes və menecment") {
+                $("select[name='cname'] option").remove();
+                $("<option>Rəqəmli marketinq</option>").appendTo($cname);
+                $("<option>Layihələrin idarəedilməsi</option>").appendTo($cname);
+                $("<option>Peşəkar insan resursları</option>").appendTo($cname);
+            }
+
+            if ($(this).val() == "Fərdi inkişaf") {
+                $("select[name='cname'] option").remove();
+                $("<option>Danışıq ingilis dili</option>").appendTo($cname);
+                $("<option>Ümumi ingilis dili</option>").appendTo($cname);
+                $("<option>Rus dili</option>").appendTo($cname);
+                $("<option>Yumşaq bacarıqlar</option>").appendTo($cname);
+                $("<option>Dövlət qulluğuna hazırlıq</option>").appendTo($cname);
+                $("<option>Magistratura hazırlığı</option>").appendTo($cname);
+            }
+
+            if ($(this).val() == "İstiqaməti seçin") {
+                $("select[name='cname'] option").remove();
+                $("<option>Kursu seçin</option>").appendTo($cname);
+            }
+
+        });
+
+    });
+</script>
+</body>
 </html>

@@ -30,18 +30,17 @@
                         <div class="col-md-6">
                             <span class="custom-dropdown-box">
                                 <select name="category" id="category">
+                                     <option selected disabled>Kursu seçin</option>
                                     {% for nav in navigation %}
                                     <option value="{{nav.training_category_id}}">{{nav.training_cat_name}}</option>
                                     {% endfor %}
-                                   
-                                   
                                 </select>
                             </span>
                         </div>
                         <div class="col-md-6">
                             <span class="custom-dropdown-box">
-                                <select name="training" id="training">
-                                    <option>Kursu seçin</option>
+                                <select name="course" id="course">
+                                    <option selected disabled>Kursu seçin</option>
                                 </select>
                             </span>
                         </div>
@@ -55,7 +54,7 @@
                     <!-- content -->
                     <div col-md-12>
                         <hr>
-                        <div class="search-section">
+                        <div class="search-section" id="search-section">
                             </br>
 
                             </iframe>
@@ -67,7 +66,7 @@
                             <p><a href="#">6. Improving transparency through internet, social media, and collaborative e‐government</a></p>
                             <p><a href="#">7. Opportunities and threats: A security assessment of state E-Government websites</a></p>
                             <p><a href="#">8. Impact and challenges of E-Learning. Issues and Challenges in Open and Distance e-Learning
-                                </a></p>
+                            </a></p>
                         </div>
                         <nav aria-label="Page navigation"> <!-- pagination -->
                             <ul class="pagination">
@@ -109,35 +108,56 @@
         <script src="js/main.js"></script>
         <script>
 $(document).ready(function () {
-    
-    
-    $('#category').change(function() {
-        var category_id = {"training_cat_id" : $('#category').val()};
-        console.log(category_id);
-        
+
+
+    $('#category').change(function () {
+        var categoryId = $('#category').val();
+
         $.ajax({
-          type: "POST",
-          data: category_id,
-          url: "<?= base_url() ?>/resource",
+            url:'resource/'+ categoryId,
+            method:'POST',
+            data:'categoryId=' + categoryId,
+            success:function(data) {
+                $('#course').empty();
 
-          success: function(data){
+                data = JSON.parse(data);
+                    $('#course').append('<option selected disabled>'+ "Kursu secin" +'</option>');
+                data.forEach(function (datas) {
+                    $('#course').append('<option id='+ datas.training_id + '  value='+ datas.training_id + '>'+ datas.training_name +'</option>')
+                })
+            }
+        }).done(function (trainings) {
 
-            $.each(data, function(i, data){
-            console.log(data.name);
-            console.log(data.id_type)
-            });
-           }
-         });
-        
+        })
+    })
 
-    }
+    $('#course').change(function () {
+        var categoryId = $('#category').val();
+        var courseId = $('#course').val();
+        $.ajax({
+            url:'resource/'+ categoryId + '/'+ courseId,
+            method:'POST',
+            data:'courseId=' + courseId,
+            success:function(data) {
+
+                console.log(data);
+                $('#search-section').empty();
+                data = JSON.parse(data);
+                data.forEach(function (datas) {
+                    $('#search-section').append('<p id='+datas.material_id + '  value='+datas.material_id+'><a href="/resource/'+datas.material_id+ '">'+datas.material_title+'</a></p>')
+
+                })
+            },
+            error:function () {
+                console.log("error");
+            }
+        }).done(function (trainings) {
+            console.log("done");
+        })
+    })
+
     
-    
-    
-    
-    
-    
-    
+
     
 
     $("a").tooltip(); // for tooltips
