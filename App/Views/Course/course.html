@@ -17,9 +17,10 @@
                 <div class="col-sm-12 col-xs-12"><!-- content section -->
                     <ol class="breadcrumb">
                         <li><a href="/">Ana Səhifə</a></li>
-                        <li><a href="#">Təlimlər</a></li>
-                      
+                        <li><a href="">Təlimlər</a></li>
                         {% for crs in  course %}
+
+                       <li> <a href="/courses/{{crs.cn_sef}}/{{crs.training_cat_id}}">{{crs.training_cat_name}}</a></li>
                         <li class="active">{{crs.training_name}}</li>
                  
                         {% endfor %}
@@ -117,12 +118,27 @@
         <div class="col-md-3 col-sm-12 col-xs-12 side-nav"><!-- sidebar section -->
             <div class="side-nav-inside">
                 <ul>
-                    <h4>PROQRAMLAŞDIRMA VƏ KODLAŞDIRMA</h4>
-                    <li class="active"><i class="fa fa-long-arrow-right"></i> Veb layihələrin hazırlanması</li>
-                    <li><a href="#">Java proqramlaşdırma</a></li>
-                    <li><a href="#">Python proqramlaşdırma</a></li>
-                    <li><a href="#">C++ proqramlaşdırma</a></li>
-                    <li><a href="#">Uşaqlar üçün Scratch proqramlaşdırma</a></li>
+                    {% for crs in  course %}
+                    <h4>{{crs.training_cat_name}}</h4>
+                    {% endfor %}
+
+
+                    {% for crs in  course_detail %}
+
+                     <li><a href="#"></a></li>
+
+                        {% if route_name == crs.cn_sef_link %}
+
+                        <li class="active"><i class="fa fa-long-arrow-right"></i>{{crs.training_name}}</li>
+
+                        {% else %}
+
+                        <li><a href="/course/{{crs.cn_sef}}/{{crs.cn_sef_link}}/{{crs.training_id}}">{{crs.training_name}}</a></li>
+
+                        {% endif %}
+
+                    {% endfor %}
+
                 </ul>
             </div>
         </div>

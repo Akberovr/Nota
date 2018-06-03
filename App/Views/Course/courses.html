@@ -19,14 +19,14 @@
                     <ol class="breadcrumb">
                         <li><a href="/">Ana Səhifə</a></li>
                         <li><a href="">Təlimlər</a></li>
+
+
+
                         {% for cat in  category %}
-                        <li class="active"> {{cat.training_cat_name}}</li>
+
+                          <li class="active"> {{cat.training_cat_name}}</li>
 
                         {% endfor %}
-
-
-                      
-
                     </ol>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     {% for course in  courses %}
                     <div class="col-md-6">
                         
-                        <a href="/course/{{course.training_id}}"><div class="kurs">
+                        <a href="/course/{{course.cn_sef}}/{{course.cn_sef_link}}/{{course.training_id}}"><div class="kurs">
                                 <p>{{course.training_name}}</p>
                             </div></a>
                     </div>

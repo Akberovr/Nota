@@ -55,7 +55,7 @@
 	$router->add('logout',['controller'=>'Login','action'=>'destroy']);
 	$router->add('signup',['controller'=>'Signup','action'=>'new']);
 	$router->add('news',['controller'=>'News','action'=>'index']);
-	$router->add('course/{id:\d+}',['controller'=>'Course','action'=>'course']);
+	$router->add('course/{names:[a-z0-9-]+}/{name:[a-z0-9-]+}/{id:\d+}',['controller'=>'Course','action'=>'course']);
 	$router->add('courses/{name:[a-z0-9-]+}/{id:\d+}',['controller'=>'Course','action'=>'index']);
 	$router->add('partners',['controller'=>'Partner','action'=>'index']);
 	$router->add('instructors',['controller'=>'Instructors','action'=>'index']);
@@ -81,7 +81,7 @@
 	$router->add('resource/{id:\d+}',['controller'=>'Register','action'=>'getTraining']);
 	$router->add('resource/{ids:\d+}/{id:\d+}',['controller'=>'Resource','action'=>'getResource']);
 	$router->add('photo-gallery',['controller'=>'Gallery','action'=>'photos']);
-$router->add('video-gallery',['controller'=>'Gallery','action'=>'videos']);
+	$router->add('video-gallery',['controller'=>'Gallery','action'=>'videos']);
 	$router->add('{controller}/{action}');
 	$router->add('{controller}/{id:\d+}/{action}');
 	$router->add('password/reset/{token:[\da-f]+}',['controller'=>'Password','action'=>'reset']);

@@ -19,8 +19,11 @@ class Course extends \Core\Controller
     {
         
         $id = $this->route_params["id"];
+        $sef = $this->route_params["name"];
+
 
         View::renderTemplate('Course/courses.html',[
+            'route_name' => $sef,
             'courses' => CourseModel::getTraining($id),
             'category' => CourseModel::getCategoryById($id),
             'trainings' => CourseModel::getCategory(),
@@ -33,27 +36,29 @@ class Course extends \Core\Controller
     {   
         
         $id = $this->route_params["id"];
+        $sef = $this->route_params["names"];
+
+
+
+        $courses = CourseModel::getCourse($sef);
 
         $course = CourseModel::getCourseById($id);
 
-
-//        print_r("<pre>");
-//        print_r($course);
-//        print_r("</pre>");
 
         $program  = explode(",",$course[0][8]);
 
 
         $field  = explode(",",$course[0][9]);
 
-     $certificates  = explode(",",$course[0][10]);
 
-
+        $certificates  = explode(",",$course[0][10]);
 
 
 
 
         View::renderTemplate('Course/course.html',[
+            'route_name' =>  $this->route_params["name"],
+            'course_detail' => $courses,
             'course' => $course,
             'filtered' => CourseModel::getCourseByCategory($id),
             "navigation" => NavigationModel::getCategory(),

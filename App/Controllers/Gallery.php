@@ -32,7 +32,11 @@ class Gallery extends \Core\Controller
 
     public function videosAction(){
 
-        View::renderTemplate('Gallery/video-galery.html');
+        View::renderTemplate('Gallery/video-galery.html',
+            [
+
+                "navigation" => NavigationModel::getCategory()
+            ]);
 
     }
 
