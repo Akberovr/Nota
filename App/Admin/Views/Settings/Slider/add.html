@@ -1,4 +1,4 @@
-<form action="/admin/settings/slider?create" method="post" enctype="multipart/form-data">
+<form action="/admin/settings/addSlider" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="title">Title</label>
         <input value="" type="text" class="form-control" name="title" >
@@ -6,20 +6,19 @@
 
     <div class="form-group">
         <label for="title">Date</label>
-        <input value="" type="text" class="form-control" name="date" >
+        <input value="" type="text" class="form-control" name="deadline" >
     </div>
 
 
     <div class="form-group">
         <label for="post_image">Image</label >
-        <input  type="file"  name="photo" required>
+        <input  type="file"  name="image" required>
         <img  width="100" src="" alt="" />
     </div>
 
 
-
     <div class="form-group">
-        <button href="/admin/staff/create" class="btn btn-primary" type="submit">Add Slider</button>
+        <button class="btn btn-primary" type="submit">Add Slider</button>
     </div>
 
 </form>

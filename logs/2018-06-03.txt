@@ -1,0 +1,228 @@
+[03-Jun-2018 15:57:26 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(96): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 15:57:29 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(96): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:13:24 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(96): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:29:48 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(96): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:30:01 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(96): Core\Router->dispatch('course/js/plugi...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:30:01 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(96): Core\Router->dispatch('course/js/jquer...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:30:02 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(96): Core\Router->dispatch('course/js/main....')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:30:02 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(96): Core\Router->dispatch('course/js/plugi...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:30:02 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(96): Core\Router->dispatch('course/js/jquer...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:30:02 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(96): Core\Router->dispatch('course/js/main....')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:37:44 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:45:45 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 17:54:52 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 18:18:16 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 18:19:35 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 18:29:17 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 18:32:09 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 18:33:20 Asia/Baku] Uncaught exception: 'Error'With message 'Class 'App\Admin\Controllers\PhotoModel' not found'
+Stack Trace: #0 C:\xampp\htdocs\Nota\Core\Router.php(111): App\Admin\Controllers\Settings->slider()
+#1 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('admin/settings/...')
+#2 {main}
+Thrown in 'C:\xampp\htdocs\Nota\App\Admin\Controllers\Settings.php' on line 41
+[03-Jun-2018 18:33:20 Asia/Baku] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "500.html" (looked into: C:\xampp\htdocs\Nota/App/Admin/Views). in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('500.html')
+#1 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('500.html')
+#2 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('500.html')
+#3 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('500.html')
+#4 C:\xampp\htdocs\Nota\Core\View.php(68): Twig_Environment->render('500.html', Array)
+#5 C:\xampp\htdocs\Nota\Core\View.php(43): Core\View::getTemplate('500.html', Array)
+#6 C:\xampp\htdocs\Nota\Core\Error.php(65): Core\View::renderTemplate('500.html')
+#7 [internal function]: Core\Error::exceptionHandler(Object(Error))
+#8 {main}
+  thro in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php on line 226
+[03-Jun-2018 18:34:16 Asia/Baku] Uncaught exception: 'Twig_Error_Loader'With message 'Unable to find template "Settings/slider.html" (looked into: C:\xampp\htdocs\Nota/App/Admin/Views).'
+Stack Trace: #0 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('Settings/slider...')
+#1 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('Settings/slider...')
+#2 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('Settings/slider...')
+#3 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('Settings/slider...')
+#4 C:\xampp\htdocs\Nota\Core\View.php(68): Twig_Environment->render('Settings/slider...', Array)
+#5 C:\xampp\htdocs\Nota\Core\View.php(43): Core\View::getTemplate('Settings/slider...', Array)
+#6 C:\xampp\htdocs\Nota\App\Admin\Controllers\Settings.php(36): Core\View::renderTemplate('Settings/slider...')
+#7 C:\xampp\htdocs\Nota\Core\Router.php(111): App\Admin\Controllers\Settings->slider()
+#8 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('admin/settings/...')
+#9 {main}
+Thrown in 'C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php' on line 226
+[03-Jun-2018 18:34:17 Asia/Baku] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "500.html" (looked into: C:\xampp\htdocs\Nota/App/Admin/Views). in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('500.html')
+#1 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('500.html')
+#2 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('500.html')
+#3 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('500.html')
+#4 C:\xampp\htdocs\Nota\Core\View.php(68): Twig_Environment->render('500.html', Array)
+#5 C:\xampp\htdocs\Nota\Core\View.php(43): Core\View::getTemplate('500.html', Array)
+#6 C:\xampp\htdocs\Nota\Core\Error.php(65): Core\View::renderTemplate('500.html')
+#7 [internal function]: Core\Error::exceptionHandler(Object(Twig_Error_Loader))
+#8 { in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php on line 226
+[03-Jun-2018 18:34:21 Asia/Baku] Uncaught exception: 'Twig_Error_Loader'With message 'Unable to find template "Settings/slider.html" (looked into: C:\xampp\htdocs\Nota/App/Admin/Views).'
+Stack Trace: #0 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('Settings/slider...')
+#1 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('Settings/slider...')
+#2 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('Settings/slider...')
+#3 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('Settings/slider...')
+#4 C:\xampp\htdocs\Nota\Core\View.php(68): Twig_Environment->render('Settings/slider...', Array)
+#5 C:\xampp\htdocs\Nota\Core\View.php(43): Core\View::getTemplate('Settings/slider...', Array)
+#6 C:\xampp\htdocs\Nota\App\Admin\Controllers\Settings.php(36): Core\View::renderTemplate('Settings/slider...')
+#7 C:\xampp\htdocs\Nota\Core\Router.php(111): App\Admin\Controllers\Settings->slider()
+#8 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('admin/settings/...')
+#9 {main}
+Thrown in 'C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php' on line 226
+[03-Jun-2018 18:34:21 Asia/Baku] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "500.html" (looked into: C:\xampp\htdocs\Nota/App/Admin/Views). in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('500.html')
+#1 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('500.html')
+#2 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('500.html')
+#3 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('500.html')
+#4 C:\xampp\htdocs\Nota\Core\View.php(68): Twig_Environment->render('500.html', Array)
+#5 C:\xampp\htdocs\Nota\Core\View.php(43): Core\View::getTemplate('500.html', Array)
+#6 C:\xampp\htdocs\Nota\Core\Error.php(65): Core\View::renderTemplate('500.html')
+#7 [internal function]: Core\Error::exceptionHandler(Object(Twig_Error_Loader))
+#8 { in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php on line 226
+[03-Jun-2018 18:35:11 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('admin/settings/...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 18:35:11 Asia/Baku] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "404.html" (looked into: C:\xampp\htdocs\Nota/App/Admin/Views). in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('404.html')
+#1 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('404.html')
+#2 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('404.html')
+#3 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('404.html')
+#4 C:\xampp\htdocs\Nota\Core\View.php(68): Twig_Environment->render('404.html', Array)
+#5 C:\xampp\htdocs\Nota\Core\View.php(43): Core\View::getTemplate('404.html', Array)
+#6 C:\xampp\htdocs\Nota\Core\Error.php(65): Core\View::renderTemplate('404.html')
+#7 [internal function]: Core\Error::exceptionHandler(Object(Exception))
+#8 {main}
+   in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php on line 226
+[03-Jun-2018 18:35:36 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('admin/settings/...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 18:35:36 Asia/Baku] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "404.html" (looked into: C:\xampp\htdocs\Nota/App/Admin/Views). in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('404.html')
+#1 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('404.html')
+#2 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('404.html')
+#3 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('404.html')
+#4 C:\xampp\htdocs\Nota\Core\View.php(68): Twig_Environment->render('404.html', Array)
+#5 C:\xampp\htdocs\Nota\Core\View.php(43): Core\View::getTemplate('404.html', Array)
+#6 C:\xampp\htdocs\Nota\Core\Error.php(65): Core\View::renderTemplate('404.html')
+#7 [internal function]: Core\Error::exceptionHandler(Object(Exception))
+#8 {main}
+   in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php on line 226
+[03-Jun-2018 18:43:16 Asia/Baku] Uncaught exception: 'Error'With message 'Call to undefined method App\Admin\Models\Setting::save()'
+Stack Trace: #0 C:\xampp\htdocs\Nota\Core\Router.php(111): App\Admin\Controllers\Settings->addSlider()
+#1 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('admin/settings/...')
+#2 {main}
+Thrown in 'C:\xampp\htdocs\Nota\App\Admin\Controllers\Settings.php' on line 47
+[03-Jun-2018 18:43:16 Asia/Baku] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "500.html" (looked into: C:\xampp\htdocs\Nota/App/Admin/Views). in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('500.html')
+#1 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('500.html')
+#2 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('500.html')
+#3 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('500.html')
+#4 C:\xampp\htdocs\Nota\Core\View.php(68): Twig_Environment->render('500.html', Array)
+#5 C:\xampp\htdocs\Nota\Core\View.php(43): Core\View::getTemplate('500.html', Array)
+#6 C:\xampp\htdocs\Nota\Core\Error.php(65): Core\View::renderTemplate('500.html')
+#7 [internal function]: Core\Error::exceptionHandler(Object(Error))
+#8 {main}
+  thro in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php on line 226
+[03-Jun-2018 19:03:28 Asia/Baku] Uncaught exception: 'Exception'With message 'No route matched.'
+Stack Trace: #0 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('robots.txt')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Nota\Core\Router.php' on line 123
+[03-Jun-2018 19:22:11 Asia/Baku] Uncaught exception: 'ErrorException'With message 'Undefined property: App\Admin\Models\Setting::$photo'
+Stack Trace: #0 C:\xampp\htdocs\Nota\App\Admin\Models\Setting.php(220): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 220, Array)
+#1 C:\xampp\htdocs\Nota\App\Admin\Models\Setting.php(197): App\Admin\Models\Setting::picturePath(2)
+#2 C:\xampp\htdocs\Nota\App\Admin\Models\Setting.php(168): App\Admin\Models\Setting::deletePhoto('2')
+#3 C:\xampp\htdocs\Nota\App\Admin\Controllers\Settings.php(82): App\Admin\Models\Setting::deleteSlider('2')
+#4 [internal function]: App\Admin\Controllers\Settings->deleteSliderAction()
+#5 C:\xampp\htdocs\Nota\Core\Controller.php(49): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\Nota\Core\Router.php(111): Core\Controller->__call('deleteSlider', Array)
+#7 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('admin/settings/...')
+#8 {main}
+Thrown in 'C:\xampp\htdocs\Nota\App\Admin\Models\Setting.php' on line 220
+[03-Jun-2018 19:22:11 Asia/Baku] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "500.html" (looked into: C:\xampp\htdocs\Nota/App/Admin/Views). in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('500.html')
+#1 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('500.html')
+#2 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('500.html')
+#3 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('500.html')
+#4 C:\xampp\htdocs\Nota\Core\View.php(68): Twig_Environment->render('500.html', Array)
+#5 C:\xampp\htdocs\Nota\Core\View.php(43): Core\View::getTemplate('500.html', Array)
+#6 C:\xampp\htdocs\Nota\Core\Error.php(65): Core\View::renderTemplate('500.html')
+#7 [internal function]: Core\Error::exceptionHandler(Object(ErrorException))
+#8 {mai in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php on line 226
+[03-Jun-2018 19:22:28 Asia/Baku] Uncaught exception: 'ErrorException'With message 'Undefined property: App\Admin\Models\Setting::$photo'
+Stack Trace: #0 C:\xampp\htdocs\Nota\App\Admin\Models\Setting.php(220): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 220, Array)
+#1 C:\xampp\htdocs\Nota\App\Admin\Models\Setting.php(197): App\Admin\Models\Setting::picturePath(2)
+#2 C:\xampp\htdocs\Nota\App\Admin\Models\Setting.php(168): App\Admin\Models\Setting::deletePhoto('2')
+#3 C:\xampp\htdocs\Nota\App\Admin\Controllers\Settings.php(82): App\Admin\Models\Setting::deleteSlider('2')
+#4 [internal function]: App\Admin\Controllers\Settings->deleteSliderAction()
+#5 C:\xampp\htdocs\Nota\Core\Controller.php(49): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\Nota\Core\Router.php(111): Core\Controller->__call('deleteSlider', Array)
+#7 C:\xampp\htdocs\Nota\public\index.php(97): Core\Router->dispatch('admin/settings/...')
+#8 {main}
+Thrown in 'C:\xampp\htdocs\Nota\App\Admin\Models\Setting.php' on line 220
+[03-Jun-2018 19:22:28 Asia/Baku] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "500.html" (looked into: C:\xampp\htdocs\Nota/App/Admin/Views). in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php:226
+Stack trace:
+#0 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('500.html')
+#1 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('500.html')
+#2 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('500.html')
+#3 C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('500.html')
+#4 C:\xampp\htdocs\Nota\Core\View.php(68): Twig_Environment->render('500.html', Array)
+#5 C:\xampp\htdocs\Nota\Core\View.php(43): Core\View::getTemplate('500.html', Array)
+#6 C:\xampp\htdocs\Nota\Core\Error.php(65): Core\View::renderTemplate('500.html')
+#7 [internal function]: Core\Error::exceptionHandler(Object(ErrorException))
+#8 {mai in C:\xampp\htdocs\Nota\vendor\twig\twig\lib\Twig\Loader\Filesystem.php on line 226

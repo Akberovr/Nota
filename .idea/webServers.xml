@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c2025304-92dd-454f-9e18-3238f568af8a" name="egov.edu.az" url="http://egov.edu.az">
+        <fileTransfer host="egov.edu.az" port="21" rootFolder="/public_html/egov.edu.az">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

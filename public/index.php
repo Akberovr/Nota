@@ -51,9 +51,10 @@
 
 	$router->add('', ['controller' => 'Home', 'action' => 'index']);
 	$router->add('home', ['controller' => 'Home', 'action' => 'index']);
+	$router->add('contact',['controller'=>'Home','action'=>'contact']);
 	$router->add('login',['controller'=>'Login','action'=>'new']);
 	$router->add('logout',['controller'=>'Login','action'=>'destroy']);
-	$router->add('signup',['controller'=>'Signup','action'=>'new']);
+//	$router->add('signup',['controller'=>'Signup','action'=>'new']);
 	$router->add('news',['controller'=>'News','action'=>'index']);
 	$router->add('course/{names:[a-z0-9-]+}/{name:[a-z0-9-]+}/{id:\d+}',['controller'=>'Course','action'=>'course']);
 	$router->add('courses/{name:[a-z0-9-]+}/{id:\d+}',['controller'=>'Course','action'=>'index']);
