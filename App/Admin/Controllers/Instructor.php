@@ -123,6 +123,7 @@ class Instructor extends \App\Controllers\Authenticated
 
         } else {
 
+
             Flash::addMessage("Instructor didn't deleted", Flash::WARNING);
             $this->redirect("/admin/instructor/show");
 

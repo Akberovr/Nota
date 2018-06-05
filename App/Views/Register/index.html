@@ -36,7 +36,7 @@
                     <div class="col-md-6 forms">
                                 <span class="custom-dropdown-box">
                                     <select id="category" name="category">
-                                        <option selected disabled>Select Course</option>
+                                        <option selected disabled>Istiqaməti seçin</option>
                                            {% for categories in category %}
                                                 <option id="{{categories.training_category_id}}" value="{{categories.training_category_id}}">
                                                     {{ categories.training_cat_name }}
@@ -114,7 +114,7 @@
 
 
                     $('#course').empty();
-
+                    $('#course').append('<option selected disabled>'+ "Kursu seçin "+'</option>')
                     data = JSON.parse(data);
                     data.forEach(function (datas) {
                         $('#course').append('<option>'+ datas.training_name +'</option>')

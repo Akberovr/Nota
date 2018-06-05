@@ -250,7 +250,7 @@ class Feedback extends \Core\Model {
 
         if (isset($id)){
 
-            $target_path = dirname(dirname(dirname(__DIR__)))."\\"."public"."\\".static::picturePath($id);
+            $target_path = dirname(dirname(dirname(__DIR__)))."/"."public"."/".static::picturePath($id);
 
             if(file_exists($target_path)){
 

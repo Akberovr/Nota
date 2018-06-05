@@ -181,12 +181,14 @@ class Instructor extends \Core\Model
 
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
-            $stmt->execute();
+            return  $stmt->execute();
 
-            return true;
+
+        }else{
+            return false;
         }
 
-        return false;
+
 
     }
 
@@ -224,7 +226,7 @@ class Instructor extends \Core\Model
 
         if (isset($id)){
 
-            $target_path = dirname(dirname(dirname(__DIR__)))."\\"."public"."\\".static::picturePath($id);
+            $target_path = dirname(dirname(dirname(__DIR__)))."/"."public"."/".static::picturePath($id);
 
             if(file_exists($target_path)){
 

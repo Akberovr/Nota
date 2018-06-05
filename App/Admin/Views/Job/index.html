@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block subheading %} Job {% endblock %}
+
+{% block context %}
+
+{% if source == "show" %}
+
+{% include "Job/show_category.html" %}
+
+{% elseif source == "add" %}
+
+{% include "Job/add_category.html" %}
+
+{% elseif source == "edit" %}
+
+{% include "Job/show_category.html" %}
+
+{% else %}
+
+{% include "Job/show_category.html" %}
+
+{% endif %}
+
+
+{% endblock %}

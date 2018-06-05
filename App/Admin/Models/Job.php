@@ -70,5 +70,47 @@ class Job extends \Core\Model
 
     }
 
+     public  function  createCategory(){
+
+
+
+             $sql = "INSERT INTO job_category (category_name) VALUES (:name)";
+
+
+             $db = static::getDB();
+
+             $stmt = $db->prepare($sql);
+
+             $stmt->bindValue(':name',$this->category,PDO::PARAM_STR);
+
+             return $stmt->execute();
+
+
+     }
+
+
+    public  function deleteById($id){
+
+        try{
+            $sql = "DELETE FROM job_category WHERE category_id = :id ";
+
+            $db = static::getDB();
+
+            $stmt = $db->prepare($sql);
+
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+            return  $stmt->execute();
+        }catch (Exception $e) {
+
+            $error = $e->getMessage();
+        }
+
+
+
+
+
+    }
+
 
 }
